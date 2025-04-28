@@ -96,99 +96,99 @@ jobs:
         uses: ./.github/workflows/hugo-build.yaml
         needs: generate
 
-    screenshot:
-        needs: [generate, build]
-        uses: ./.github/workflows/generate-screenshot.yaml
-        with:
-            issue_no: ${{ needs.generate.outputs.issue_no }}
-            issue_id: ${{ needs.generate.outputs.issue_id }}
-            base_url: ${{ needs.build.outputs.base_url }}
+    # screenshot:
+    #     needs: [generate, build]
+    #     uses: ./.github/workflows/generate-screenshot.yaml
+    #     with:
+    #         issue_no: ${{ needs.generate.outputs.issue_no }}
+    #         issue_id: ${{ needs.generate.outputs.issue_id }}
+    #         base_url: ${{ needs.build.outputs.base_url }}
 
-    newsletter:
-        needs: [generate, build, screenshot]
-        uses: ./.github/workflows/roundup-email.yaml
-        with:
-            issue_no: ${{ needs.generate.outputs.issue_no }}
-            base_url: ${{ needs.build.outputs.base_url }}
-        secrets: inherit
+    # newsletter:
+    #     needs: [generate, build, screenshot]
+    #     uses: ./.github/workflows/roundup-email.yaml
+    #     with:
+    #         issue_no: ${{ needs.generate.outputs.issue_no }}
+    #         base_url: ${{ needs.build.outputs.base_url }}
+    #     secrets: inherit
 
 
     
-    share:
-        runs-on: ubuntu-latest
-        needs: [screenshot, generate, build, newsletter]
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        steps:
+    # share:
+    #     runs-on: ubuntu-latest
+    #     needs: [screenshot, generate, build, newsletter]
+    #     if: ${{ github.event_name == 'workflow_dispatch' }}
+    #     steps:
             
-            -   name: Bsky's
-                uses: myConsciousness/bluesky-post@v5
-                with: 
-                    text:
-                        St Louis Game Developer RoundUp Issue № ${{  needs.generate.outputs.issue_no }} is out!
+    #         -   name: Bsky's
+    #             uses: myConsciousness/bluesky-post@v5
+    #             with: 
+    #                 text:
+    #                     St Louis Game Developer RoundUp Issue № ${{  needs.generate.outputs.issue_no }} is out!
 
-                        ${{ needs.build.outputs.base_url }}/issue-${{  needs.generate.outputs.issue_no }}/
-                    link-preview-url: ${{ needs.build.outputs.base_url }}/issue-${{  needs.generate.outputs.issue_no }}/
-                    identifier: "axolstudio.com"
-                    password: ${{ secrets.BLUESKY_PASSWORD }}
-            -   name: Axol Discord
-                uses: Ilshidur/action-discord@master
-                env:
-                    DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-                    DISCORD_EMBEDS: |
-                        [
-                            {
-                                "title": "St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }}",
-                                "url": "${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/",
-                                "image": {
-                                    "url": "https://raw.githubusercontent.com/AxolStudio/STLGameDevRoundUp/main/screenshots/issue-${{ needs.generate.outputs.issue_no }}.png"
-                                }
-                            }
-                        ]
-                with:
-                    args: ":sparkles: St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }} is out!"
-            -   name: STL Game Dev Discord
-                uses: Ilshidur/action-discord@master
-                env:
-                    DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_2 }}
-                    DISCORD_EMBEDS: |
-                        [
-                            {
-                                "title": "St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }}",
-                                "url": "${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/",
-                                "image": {
-                                    "url": "https://raw.githubusercontent.com/AxolStudio/STLGameDevRoundUp/main/screenshots/issue-${{ needs.generate.outputs.issue_no }}.png"
-                                }
-                            }
-                        ]
-                with:
-                    args: ":sparkles: St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }} is out!"
+    #                     ${{ needs.build.outputs.base_url }}/issue-${{  needs.generate.outputs.issue_no }}/
+    #                 link-preview-url: ${{ needs.build.outputs.base_url }}/issue-${{  needs.generate.outputs.issue_no }}/
+    #                 identifier: "axolstudio.com"
+    #                 password: ${{ secrets.BLUESKY_PASSWORD }}
+    #         -   name: Axol Discord
+    #             uses: Ilshidur/action-discord@master
+    #             env:
+    #                 DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+    #                 DISCORD_EMBEDS: |
+    #                     [
+    #                         {
+    #                             "title": "St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }}",
+    #                             "url": "${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/",
+    #                             "image": {
+    #                                 "url": "https://raw.githubusercontent.com/AxolStudio/STLGameDevRoundUp/main/screenshots/issue-${{ needs.generate.outputs.issue_no }}.png"
+    #                             }
+    #                         }
+    #                     ]
+    #             with:
+    #                 args: ":sparkles: St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }} is out!"
+    #         -   name: STL Game Dev Discord
+    #             uses: Ilshidur/action-discord@master
+    #             env:
+    #                 DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_2 }}
+    #                 DISCORD_EMBEDS: |
+    #                     [
+    #                         {
+    #                             "title": "St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }}",
+    #                             "url": "${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/",
+    #                             "image": {
+    #                                 "url": "https://raw.githubusercontent.com/AxolStudio/STLGameDevRoundUp/main/screenshots/issue-${{ needs.generate.outputs.issue_no }}.png"
+    #                             }
+    #                         }
+    #                     ]
+    #             with:
+    #                 args: ":sparkles: St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }} is out!"
     
     
                 
 
-    finish:
-        runs-on: ubuntu-latest
-        needs: [screenshot, generate, build, newsletter]
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            OWNER: ${{ github.repository_owner }}
-            REPO: ${{ github.event.repository.name }}
-        steps:
-            -   name: Checkout
-                uses: actions/checkout@v4
-            -   name: Close Issue
-                run: gh issue close ${{ needs.generate.outputs.issue_id }} -c "[Issue № ${{ needs.generate.outputs.issue_no }}](${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/) has been released!" -r completed
-            -   name: Open New Issue
-                run: |
-                    new_no=$((${{ needs.generate.outputs.issue_no }}+1))
-                    gh issue create -t "RoundUp Issue #$new_no" -b "To add to the next roundup, use the following format:
-                    \`\`\`md
-                    {category} short description with [link](/link/to/item)
-                    \`\`\`
+    # finish:
+    #     runs-on: ubuntu-latest
+    #     needs: [screenshot, generate, build, newsletter]
+    #     if: ${{ github.event_name == 'workflow_dispatch' }}
+    #     env:
+    #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #         OWNER: ${{ github.repository_owner }}
+    #         REPO: ${{ github.event.repository.name }}
+    #     steps:
+    #         -   name: Checkout
+    #             uses: actions/checkout@v4
+    #         -   name: Close Issue
+    #             run: gh issue close ${{ needs.generate.outputs.issue_id }} -c "[Issue № ${{ needs.generate.outputs.issue_no }}](${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/) has been released!" -r completed
+    #         -   name: Open New Issue
+    #             run: |
+    #                 new_no=$((${{ needs.generate.outputs.issue_no }}+1))
+    #                 gh issue create -t "RoundUp Issue #$new_no" -b "To add to the next roundup, use the following format:
+    #                 \`\`\`md
+    #                 {category} short description with [link](/link/to/item)
+    #                 \`\`\`
 
-                    Which should generate the following:
+    #                 Which should generate the following:
 
-                    {category} short description with [link](/link/to/item)
+    #                 {category} short description with [link](/link/to/item)
 
-                    Use \`{!header}\` as the category for *only one comment* to set the header message for this RoundUp." -l "next-roundup" 
+    #                 Use \`{!header}\` as the category for *only one comment* to set the header message for this RoundUp." -l "next-roundup" 
