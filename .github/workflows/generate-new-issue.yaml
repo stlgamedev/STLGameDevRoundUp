@@ -52,7 +52,7 @@ jobs:
                     echo 'issue_id'=$issue_id >> $GITHUB_OUTPUT
                     issue_title=$(echo $RUIssue | jq -r '.data.repository.issues.nodes[0].title')
                     ru_no="${issue_title##*#}"
-                    save_to="data/issue-${ru_no}.json"
+                    save_to="data/issue${ru_no}.json"
                     mkdir -p data
 
                     echo '{
