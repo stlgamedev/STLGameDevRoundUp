@@ -58,8 +58,12 @@ jobs:
                     echo '{
                         "nodes": 
                     ' > $save_to
+                    
+                    echo $RUIssue
+                    
                     RUIComments=$(echo $RUIssue | jq '[.data.repository.issues.nodes[].comments.nodes[] | select(.body | startswith("{"))]')
                     RUIComments=$(echo $RUIComments | sed 's/\\r\\n/\\r\\n\\r\\n/g')
+                    
                     echo $RUIComments >> $save_to
                     echo '
                     }' >> $save_to
