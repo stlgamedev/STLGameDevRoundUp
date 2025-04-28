@@ -52,13 +52,13 @@ jobs:
                     echo 'issue_id'=$issue_id >> $GITHUB_OUTPUT
                     issue_title=$(echo $RUIssue | jq -r '.data.repository.issues.nodes[0].title')
                     ru_no="${issue_title##*#}"
-                    save_to="data/issue${ru_no}.json"
+                    save_to="data/issue-${ru_no}.json"
                     mkdir -p data
 
                     echo '{
                         "nodes": 
                     ' > $save_to
-                    RUIComments=$(echo $RUIssue | jq '[.data.repository.issues.nodes[].comments.nodes[] | select(.bodyText | startswith("{"))]')
+                    RUIComments=$(echo $RUIssue | jq '[.data.repository.issues.nodes[].comments.nodes[] | select(.body | startswith("{"))]')
                     RUIComments=$(echo $RUIComments | sed 's/\\r\\n/\\r\\n\\r\\n/g')
                     echo $RUIComments >> $save_to
                     echo '
@@ -71,6 +71,7 @@ jobs:
                     title: "Issue #$ru_no"
                     date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
                     draft: false
+                    is_test: false
                     no: $ru_no
                     ---
                     EOF
