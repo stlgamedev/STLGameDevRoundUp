@@ -56,12 +56,9 @@ jobs:
             id: screenshot
             uses: karol-brejna-i/webpage-screenshot-action@v1.1.2
             with:
-              url: "${{ inputs.base_url }}/issue-${{ inputs.issue_no }}"
+              url: "${{ inputs.base_url }}/issue-${{ inputs.issue_no }}/?ss=true"
               output: "issue-${{ inputs.issue_no }}.png"
               mode: page
-              scriptBefore: |
-                  document.querySelector("html").dataset.bs-theme ="dark";
-                  document.getElementById("color-switch").display = "none";
 
         -   name: Return Image
             if: ${{ ! inputs.do_push }}
