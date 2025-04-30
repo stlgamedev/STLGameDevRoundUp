@@ -12,11 +12,27 @@ on:
       base_url:
         required: true
         type: string
+      do_push:
+        default: true
+        type: boolean
     outputs: 
       base_url: 
           description: "The Base URL of the site"
           value: ${{ jobs.build.outputs.base_url }}
-
+  workflow_dispatch:
+    inputs:
+      issue_no:
+        type: string
+        required: true
+      base_url:
+        description: "The Base URL of the site"
+        default: "https://roundup.stlgame.dev"
+        type: string
+      do_push:
+        type: boolean
+        default: false
+        description: "Leave OFF"
+        
 permissions: write-all
 
 concurrency:
@@ -43,8 +59,19 @@ jobs:
               url: "${{ inputs.base_url }}/issue-${{ inputs.issue_no }}"
               output: "issue-${{ inputs.issue_no }}.png"
               mode: page
+              scriptBefore: |
+                  document.querySelector("html").dataset.bs-theme ="dark";
+                  document.getElementById("color-switch").display = "none";
+
+        -   name: Return Image
+            if: ${{ ! inputs.do_push }}
+            uses: actions/upload-artifact@v3
+            with:
+              name: simple-screenshot
+              path: ${{ github.workspace }}/*.png
 
         -   name: Commit image
+            if: ${{ inputs.do_push }} 
             run: |
                 git pull
                 mkdir -p screenshots
