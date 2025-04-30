@@ -7,10 +7,18 @@
 (() => {
     'use strict'
 
+    const paramsString = window.location.search;
+    const searchParams = new URLSearchParams(paramsString);
+    
     const getStoredTheme = () => localStorage.getItem('theme')
     const setStoredTheme = theme => localStorage.setItem('theme', theme)
 
     const getPreferredTheme = () => {
+
+        if (searchParams.get('ss') === true)
+        {
+            return 'dark';
+        }
         const storedTheme = getStoredTheme()
         if (storedTheme) {
             return storedTheme
@@ -28,7 +36,7 @@
     }
 
     setTheme(getPreferredTheme())
-
+    
     const showActiveTheme = (theme, focus = false) => {
         const themeSwitcher = document.querySelector('#bd-theme')
 
@@ -67,6 +75,12 @@
     window.addEventListener('DOMContentLoaded', () => {
         showActiveTheme(getPreferredTheme())
 
+        if (searchParams.get('ss') === true)
+        {
+            document.getlementById('color-switch').display = 'none';   
+        }
+        else 
+        {
         document.querySelectorAll('[data-bs-theme-value]')
             .forEach(toggle => {
                 toggle.addEventListener('click', () => {
@@ -76,5 +90,6 @@
                     showActiveTheme(theme, true)
                 })
             })
+        }
     })
 })()
