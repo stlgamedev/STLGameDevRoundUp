@@ -77,7 +77,7 @@
         
         if (searchParams.get('ss') === 'true')
         {
-            document.getlementById('color-switch').display = 'none';   
+            document.getElementById('color-switch').display = 'none';   
         }
         else 
         {
