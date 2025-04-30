@@ -65,7 +65,7 @@ jobs:
 
         -   name: Return Image
             if: ${{ ! inputs.do_push }}
-            uses: actions/upload-artifact@v3
+            uses: actions/upload-artifact@v4
             with:
               name: simple-screenshot
               path: ${{ github.workspace }}/*.png
