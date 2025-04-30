@@ -10,14 +10,12 @@
     const paramsString = window.location.search;
     const searchParams = new URLSearchParams(paramsString);
 
-    console.log(searchParams.toString());
-    
     const getStoredTheme = () => localStorage.getItem('theme')
     const setStoredTheme = theme => localStorage.setItem('theme', theme)
 
     const getPreferredTheme = () => {
 
-        if (searchParams.get('ss') === true)
+        if (searchParams.get('ss') === 'true')
         {
             return 'dark';
         }
@@ -76,8 +74,8 @@
 
     window.addEventListener('DOMContentLoaded', () => {
         showActiveTheme(getPreferredTheme())
-        console.log(searchParams.toString());
-        if (searchParams.get('ss') === true)
+        
+        if (searchParams.get('ss') === 'true')
         {
             document.getlementById('color-switch').display = 'none';   
         }
