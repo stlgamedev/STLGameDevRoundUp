@@ -154,7 +154,7 @@ w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       </tr>
       <tr class="content">
         <td>
-          <h1>St Louis Game Developer RoundUp</h1>
+          <h1>St Louis Game Developer RoundUp A</h1>
           <a style="display:inline-block; text-align: center; padding-top:1rem 0;"
             href="https://roundup.stlgame.dev/issue-{{ .Params.no }}/" target="_blank"><img
               src="{{ $stlru.Permalink }}"></a>
@@ -168,15 +168,21 @@ w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
         <td style="text-align:justify;">
           <p style="font-size: medium; color:#999;">The St Louis Game Developer RoundUp is a monthly news aggregator for
-            the St
-            Louis
-            Game Development community. It is a collection of news, events, and other items of interest to the community
+            the St Louis Game Development community. It is a collection of news, events, and other items of interest to the community
             brought to you by <a href="https://stlgame.dev" target="_blank">STLGameDev</a></p>
       </tr>
 
       {{- $categories := dict }}
 
       {{ $post := printf "%s" (string .Params.no) | printf "%s%s" "issue" | printf "%s" }}
+      {{ with .Params.is_test }}
+      {{ if . }}
+      {{ $post = "issue-test" }}
+      {{ end }}
+      {{ end }}
+
+      <div>POST: {{ $post }}</div>
+      
       {{ $posts := index .Site.Data $post }}
       {{ range index $posts.nodes }}
       {{ $body := .body }}
@@ -224,6 +230,38 @@ w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
         </td>
       </tr>
+      
+      {{ if $posts.events -}}
+
+      <tr class="content">
+        <td style="text-align:justify; color:#dee2e6 !important; ">
+          <h4>📆 Upcoming Events</h4>
+          <p style="font-size: medium; color:#999;">Participate in these events from our community!</p>
+          <ul>
+            {{ range $posts.events }}
+            <li>{{- time.Format "01/02/2006" .dateTime }} {{ time.Format "03:04 PM" .dateTime -}}&nbsp;→&nbsp;
+              {{/* we need to get the meetup id from the event, if there is one */}}
+              {{- $description := .description | safeHTML -}}
+              {{/* Match and extract the event ID from the RSVP section */}}
+              {{- $regex := `(?s)(<br\s*/?>)*\s*For full details, including the address, and to RSVP see:(?:.*)(?:<a[^>]*href=")?https://www\.meetup\.com/st-louis-game-developers/events/([0-9]+)/?(?:".*?>.*?</a>)?` -}}
+              {{- $matches := findRESubmatch $regex $description -}}
+              {{- if gt (len $matches) 0 -}}
+                {{- $firstMatch := index $matches 0 -}}          {{/* the inner []string */}}
+                {{- $fullMatch := index $firstMatch 0 -}}        {{/* full matched string */}}
+                {{- $eventID := index $firstMatch 2 -}}          {{/* captured group with event ID */}}
+                {{- $description = replace $description $fullMatch "" -}}
+              <a href="https://www.meetup.com/st-louis-game-developers/events/{{ $eventID }}" target="_blank" rel="noopener" >{{ .title }}</a>
+              {{- else -}}
+              {{ .title }}
+              {{- end -}}
+            </li>
+            {{ end }}
+          </ul>
+        </td>
+      </tr>
+
+      {{- end -}}
+
       <tr class="content">
         <td style="text-align: right; padding: 20px;">
           <a href="https://stlgame.dev" target="_blank"><img src="{{ $stlgdicon.Permalink }}" alt="STLGameDev Icon"

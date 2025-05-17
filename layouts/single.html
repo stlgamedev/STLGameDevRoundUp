@@ -1,0 +1,128 @@
+{{ define "main" }}
+
+<div class="text-center">
+  <h1 class="display-2">RoundUp № {{ .Params.no }}</h1>
+  {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
+  {{ $dateHuman := .Date |
+  time.Format ":date_full"
+  }}
+  <p class="lead text-body-tertiary"><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
+</div>
+<div class="p-2 fs-5 mx-auto text-body-secondary">
+  <p>{{ site.Params.explanation }}</p>
+</div>
+<hr />
+
+{{- $categories := dict }}
+
+{{ $post := printf "%s" (string .Params.no) | printf "%s%s" "issue" | printf "%s" }}
+{{ with .Params.is_test }}
+{{ if . }}
+{{ $post = "issue-test" }}
+{{ end }}
+{{ end }}
+
+{{ $posts := index .Site.Data $post }}
+
+{{ range index $posts.nodes }}
+{{ $body := .body }}
+{{ $category := replaceRE `(?s)^(?:\{)(.*)(?:\}).*` "$1" $body }}
+{{ $entry := replaceRE `(?s)^(?:\{.*\})(.*)` "$1" $body }}
+
+{{ $cat := index $categories $category }}
+{{ if not $cat }}
+{{ $categories = merge $categories (dict $category (dict "category" $category "count" 1 "entries" (slice $entry))) }}
+{{ else }}
+{{ $categories = merge $categories (dict $category (dict "category" $category "count" (int ($cat.count) | add 1)
+"entries" (append $entry $cat.entries))) }}
+{{ end }}
+{{ end -}}
+
+<div id="issue" >
+  {{- $header := index $categories "!header" }}
+  {{ if $header }}
+  <section class="issue-header d-block" >
+    {{ range $header.entries }}
+    <p class="lead fs-4 ">{{ . | markdownify }}</p>
+    {{ end }}
+  </section>
+  {{ end -}}
+
+  <section class="row py-4">
+    <div class="col issue-content">
+      {{- range sort $categories "count" "desc" }}
+      {{ if ne .category "!header" }}
+      <section class="issue-section d-block" >
+        <h3 class="display-6">{{ .category | title }}</h3>
+        <ul>
+          {{ range .entries }}
+          <li>{{ . | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </section>
+      {{ end }}
+      {{ end -}}
+    </div>
+  </section>
+</div>
+
+<hr class="my-4 mx-4" />
+
+{{ if $posts.events -}}
+<div id="events py-4 ">
+  <section class="events-header d-block" >
+    <h3 class="display-6">📆 Upcoming Events</h3>
+    <p class="lead text-body-tertiary">Participate in these events from our community!</p>
+  </section> 
+  <section class="">
+  <div class="col issue-content">
+    
+  {{ range $posts.events }}   
+    <section class="issue-section border-bottom border-2 mt-2 pb-2">
+      <div class="row event-top-row ">
+        <div class="col text-center col-sm-4 " >
+          <div class="d-inline-block bg-success-subtle bg-gradient text-success-emphasis border border-success-subtle rounded font-monospace event-time fw-bold fs-6 py-1 px-2">
+            {{- time.Format "01/02/2006" .dateTime }} {{ time.Format "03:04 PM" .dateTime -}}
+          </div> 
+        </div>
+        <div class="col event-title align-bottom col-sm-6 fs-5 fw-bolder" >{{ .title }}</div>
+        {{/* we need to get the meetup id from the event, if there is one */}}
+        {{- $description := .description | safeHTML -}}
+        {{/* Match and extract the event ID from the RSVP section */}}
+        {{- $regex := `(?s)(<br\s*/?>)*\s*For full details, including the address, and to RSVP see:(?:.*)(?:<a[^>]*href=")?https://www\.meetup\.com/st-louis-game-developers/events/([0-9]+)/?(?:".*?>.*?</a>)?` -}}
+        {{- $matches := findRESubmatch $regex $description -}}
+        {{- if gt (len $matches) 0 -}}
+          {{- $firstMatch := index $matches 0 -}}          {{/* the inner []string */}}
+          {{- $fullMatch := index $firstMatch 0 -}}        {{/* full matched string */}}
+          {{- $eventID := index $firstMatch 2 -}}          {{/* captured group with event ID */}}
+          {{- $description = replace $description $fullMatch "" -}}
+          <div class="rsvp-link col-sm-2 text-end"><a href="https://www.meetup.com/st-louis-game-developers/events/{{ $eventID }}" target="_blank" rel="noopener" >RSVP</a></div>
+        
+        {{- end -}}
+        
+      </div>
+      {{- if $description -}}
+      <div class="row event-description pt-1 ">
+        
+        <div class="border-start border-1 col-sm-11 offset-sm-1">{{ $description | safeHTML }}</div>
+      </div>
+      {{- end -}}
+    </section>
+  {{ end }}
+    
+</div>
+</section>
+</div> 
+
+<hr class="my-4 mx-4" />
+{{ end -}}
+
+<div class="row">
+  <div class="col-lg-auto">
+    <a class="btn btn-outline-danger  btn-sm" role="button"
+      href="https://github.com/AxolStudio/STLGameDevRoundUp/blob/main/data/issue{{ .Params.no }}.json"><i
+        class="bi bi-pencil-square"></i> Make a Correction</a>
+  </div>
+</div>
+</div>
+{{ end }}
