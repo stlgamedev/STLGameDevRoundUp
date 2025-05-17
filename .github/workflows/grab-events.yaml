@@ -40,5 +40,5 @@ jobs:
       - name: Set output
         id: set-output
         run: |
-          events=$(cat data/events.json)
-          echo "events=$events" >> $GITHUB_ENV
+          events=$(cat data/events.json | jq -c .)
+          echo "events=$events" >> $GITHUB_OUTPUT
