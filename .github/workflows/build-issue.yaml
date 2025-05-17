@@ -9,10 +9,6 @@ on:
 
 permissions: write-all
 
-concurrency:
-    group: "generate-pages"
-    cancel-in-progress: false
-
 defaults:
     run:
       shell: bash
