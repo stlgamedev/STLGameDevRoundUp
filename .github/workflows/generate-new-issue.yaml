@@ -23,11 +23,13 @@ jobs:
             issue_no: ${{ steps.issue.outputs.issue_no }}
             issue_id: ${{ steps.issue.outputs.issue_id }}
         steps:
+                
             -   name: Checkout
                 uses: actions/checkout@v4
                 with: 
                     submodules: recursive
                     fetch-depth: 0
+
             -   name: Grab Issue Comments
                 id: issue
                 run: |
@@ -81,6 +83,17 @@ jobs:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     OWNER: ${{ github.repository_owner }}
                     REPO: ${{ github.event.repository.name }}
+
+            -   name: Grab Events
+                id: grab
+                uses: grab-events.yaml@main
+                
+            -   name: Inject Events into JSON
+                run: |
+                    EVENTS_JSON='${{ steps.grab.outputs.events }}'
+                    tmpfile=$(mktemp)
+                    jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue{$ISSUE_NO}.json" > "$tmpfile" && mv "$tmpfile" "data/issue{$ISSUE_NO}.json"
+            
             -   name: Commit change
                 run: |
                     git config --global user.name "GitHub Actions"

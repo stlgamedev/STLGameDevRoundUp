@@ -79,6 +79,17 @@ jobs:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     OWNER: ${{ github.repository_owner }}
                     REPO: ${{ github.event.repository.name }}
+
+            -   name: Grab Events
+                id: grab
+                uses: grab-events.yaml@main
+            
+            -   name: Inject Events into JSON
+                run: |
+                    EVENTS_JSON='${{ steps.grab.outputs.events }}'
+                    tmpfile=$(mktemp)
+                    jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue-test.json" > "$tmpfile" && mv "$tmpfile" "data/issue-test.json"
+            
             -   name: Commit change
                 run: |
                     git config --global user.name "GitHub Actions"

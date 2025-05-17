@@ -24,6 +24,7 @@ on:
       issue_no:
         type: string
         required: true
+        description: "Which issue to take a screenshot of"
       base_url:
         description: "The Base URL of the site"
         default: "https://roundup.stlgame.dev"
