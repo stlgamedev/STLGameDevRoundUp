@@ -1,0 +1,137 @@
+name: 🛠 Build An Issue
+
+on:
+  workflow_call:
+    inputs:
+      issue_no:
+        required: true
+        type: string
+
+permissions: write-all
+
+concurrency:
+    group: "generate-pages"
+    cancel-in-progress: false
+
+defaults:
+    run:
+      shell: bash
+
+jobs:
+
+  grab-events:
+    if: ${{ github.event_name == 'workflow_call' }}
+    uses: ./.github/workflows/grab-events.yaml
+    secrets: inherit
+
+  generate:
+    
+    runs-on: ubuntu-latest
+    
+    needs: grab-events
+
+    if: ${{ github.event_name == 'workflow_call' }}
+    
+    steps:
+
+      -   name: Checkout
+          uses: actions/checkout@v4
+
+      -   name: Grab Issue Comments
+          id: issue
+          run: |
+              # if issue_no = 'next-roundup' then grab the next-roundup issue
+              if [[ "${{ inputs.issue_no }}" == "next-roundup"]]; then
+              RUIssue="$(gh api graphql -F owner=$OWNER -F name=$REPO -f query='
+                  query($name: String!, $owner: String!) {
+                      repository(name: $name, owner: $owner) {
+                          issues(first: 1, states: OPEN, labels: "next-roundup") {
+                              nodes {
+                                  title
+                                  number
+                                  comments(first:100) {
+                                      nodes {
+                                          body
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              ')"
+              else
+              RUIssue="$(gh api graphql -f query='
+                query getRepoByTitle {
+                  search(query: """repo:AxolStudio/STLGameDevRoundUp in:title #${{ inputs.issue_no }}""", type:ISSUE, first: 1 ) {
+                    nodes {
+                      ... on Issue {
+                        title
+                        number
+                      }
+                    }
+                  }
+                }
+              ')"
+              fi
+
+              issue_id=$(echo $RUIssue | jq -r '.data.repository.issues.nodes[0].number')
+              echo 'issue_id'=$issue_id >> $GITHUB_OUTPUT
+              issue_title=$(echo $RUIssue | jq -r '.data.repository.issues.nodes[0].title')
+              ru_no="${issue_title##*#}"
+              if [[ "${{ inputs.issue_no }}" == "test" ]]; then
+                ru_no="-test"
+              fi
+              save_to="data/issue${ru_no}.json"
+              mkdir -p data
+
+              echo '{
+                  "nodes": 
+              ' > $save_to
+              
+              RUIComments=$(echo $RUIssue | jq '[.data.repository.issues.nodes[].comments.nodes[] | select(.body | startswith("{"))]')
+              RUIComments=$(echo $RUIComments | sed 's/\\r\\n/\\r\\n\\r\\n/g')
+              
+              echo $RUIComments >> $save_to
+              echo '
+              }' >> $save_to
+              echo 'ISSUE_NO'=$ru_no >> $GITHUB_ENV
+              echo 'issue_no'=$ru_no >> $GITHUB_OUTPUT
+              md_file="content/issue-${ru_no}.md"
+              cat << EOF > $md_file
+              ---
+              title: "Issue #$ru_no"
+              date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+              draft: false
+              is_test: false
+              no: $ru_no
+              ---
+              EOF
+          env: 
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              OWNER: ${{ github.repository_owner }}
+              REPO: ${{ github.event.repository.name }}
+
+      -   name: Inject Events into JSON
+          env:
+              ISSUE_NO: ${{ env.ISSUE_NO }}
+              EVENTS_JSON: ${{ needs.grab-events.outputs.events }}
+          run: |
+              tmpfile=$(mktemp)
+              jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue${ISSUE_NO}.json" > "$tmpfile" && mv "$tmpfile" "data/issue${ISSUE_NO}.json"
+      
+      -   name: Commit change
+          run: |
+              git config --global user.name "GitHub Actions"
+              git config --global user.email "no-reply@github.com"
+              git tag generated-issue-${ISSUE_NO}
+              git add content/issue-${ISSUE_NO}.md data/issue${ISSUE_NO}.json
+              git commit -m "Update issue ${ISSUE_NO}"
+              git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+              git push --follow-tags 
+
+      -   name: Output
+          id: output
+          run: |
+              echo "issue_no=${{ env.ISSUE_NO }}" >> $GITHUB_OUTPUT
+              echo "issue_id=${{ steps.issue.outputs.issue_id }}" >> $GITHUB_OUTPUT
+              echo "issue_title=${{ steps.issue.outputs.issue_title }}" >> $GITHUB_OUTPUT

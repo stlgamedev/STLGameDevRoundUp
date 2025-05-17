@@ -10,7 +10,7 @@ on:
 jobs:
   
   update:
-    
+
     runs-on: ubuntu-latest
     outputs:
       events: ${{ steps.set-output.outputs.events }}
@@ -38,4 +38,3 @@ jobs:
         run: |
           events=$(cat data/events.json)
           echo "events=$events" >> $GITHUB_ENV
-          echo "::set-output name=events::$events"
