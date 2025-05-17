@@ -6,9 +6,6 @@ on:
       issue_no:
         required: true
         type: string
-      issue_id:
-        required: true
-        type: string
       base_url:
         required: true
         type: string

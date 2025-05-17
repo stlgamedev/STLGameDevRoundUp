@@ -1,8 +1,22 @@
-name: ▶ Generate a new RoundUp Issue!
-run-name: Generate a new Issue by @${{ github.actor }}
+name: ▶ Generate or Regenerate a RoundUp Issue!
+run-name: Generate an Issue by @${{ github.actor }}
 
 on:
     workflow_dispatch:
+        inputs:
+            issue_type:
+                type: choice
+                required: true
+                description: "Which issue to build"
+                default: "next-roundup"
+                options:
+                    -   "next-roundup"
+                    -   "test"
+                    -   "regenerate"
+            issue_no:
+                type: string
+                description: "Which issue no to take a build"
+                default: '-1'
 
 permissions: write-all
 
@@ -17,92 +31,15 @@ defaults:
 jobs:
 
     generate:
-        runs-on: ubuntu-latest
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-        outputs:
-            issue_no: ${{ steps.issue.outputs.issue_no }}
-            issue_id: ${{ steps.issue.outputs.issue_id }}
-        steps:
-                
-            -   name: Checkout
-                uses: actions/checkout@v4
-
-            -   name: Grab Issue Comments
-                id: issue
-                run: |
-                    RUIssue="$(gh api graphql -F owner=$OWNER -F name=$REPO -f query='
-                        query($name: String!, $owner: String!) {
-                            repository(name: $name, owner: $owner) {
-                                issues(first: 1, states: OPEN, labels: "next-roundup") {
-                                    nodes {
-                                        title
-                                        number
-                                        comments(first:100) {
-                                            nodes {
-                                                body
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    ')"
-                    issue_id=$(echo $RUIssue | jq -r '.data.repository.issues.nodes[0].number')
-                    echo 'issue_id'=$issue_id >> $GITHUB_OUTPUT
-                    issue_title=$(echo $RUIssue | jq -r '.data.repository.issues.nodes[0].title')
-                    ru_no="${issue_title##*#}"
-                    save_to="data/issue${ru_no}.json"
-                    mkdir -p data
-
-                    echo '{
-                        "nodes": 
-                    ' > $save_to
-                    
-                    RUIComments=$(echo $RUIssue | jq '[.data.repository.issues.nodes[].comments.nodes[] | select(.body | startswith("{"))]')
-                    RUIComments=$(echo $RUIComments | sed 's/\\r\\n/\\r\\n\\r\\n/g')
-                    
-                    echo $RUIComments >> $save_to
-                    echo '
-                    }' >> $save_to
-                    echo 'ISSUE_NO'=$ru_no >> $GITHUB_ENV
-                    echo 'issue_no'=$ru_no >> $GITHUB_OUTPUT
-                    md_file="content/issue-${ru_no}.md"
-                    cat << EOF > $md_file
-                    ---
-                    title: "Issue #$ru_no"
-                    date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
-                    draft: false
-                    is_test: false
-                    no: $ru_no
-                    ---
-                    EOF
-                env: 
-                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                    OWNER: ${{ github.repository_owner }}
-                    REPO: ${{ github.event.repository.name }}
-
-            -   name: Grab Events
-                id: grab
-                uses: ./.github/workflows/grab-events.yaml
-                
-            -   name: Inject Events into JSON
-                run: |
-                    EVENTS_JSON='${{ steps.grab.outputs.events }}'
-                    tmpfile=$(mktemp)
-                    jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue{$ISSUE_NO}.json" > "$tmpfile" && mv "$tmpfile" "data/issue{$ISSUE_NO}.json"
-            
-            -   name: Commit change
-                run: |
-                    git config --global user.name "GitHub Actions"
-                    git config --global user.email "no-reply@github.com"
-                    git tag generated-issue-${ISSUE_NO}
-                    git add content/issue-${ISSUE_NO}.md data/issue${ISSUE_NO}.json
-                    git commit -m "Update issue ${ISSUE_NO}"
-                    git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-                    git push --follow-tags 
-                env:
-                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                    ISSUE_NO: ${{ env.ISSUE_NO }}
+        uses: ./.github/workflows/build-issue.yaml
+        with:
+            issue_no: |
+                if (${{ github.event.inputs.issue_type }} == 'regenerate') then
+                    ${{ github.event.inputs.issue_no }}
+                else
+                    ${{ github.event.inputs.issue_type }}
+                fi
+        secrets: inherit
 
     build:
         uses: ./.github/workflows/hugo-build.yaml
@@ -110,26 +47,25 @@ jobs:
 
     screenshot:
         needs: [generate, build]
+        if: ${{ github.event.inputs.issue_type }} != 'test'
         uses: ./.github/workflows/generate-screenshot.yaml
         with:
             issue_no: ${{ needs.generate.outputs.issue_no }}
-            issue_id: ${{ needs.generate.outputs.issue_id }}
             base_url: ${{ needs.build.outputs.base_url }}
 
     newsletter:
         needs: [generate, build, screenshot]
+        if: ${{ github.event.inputs.issue_type }} == 'next-roundup'
         uses: ./.github/workflows/roundup-email.yaml
         with:
             issue_no: ${{ needs.generate.outputs.issue_no }}
             base_url: ${{ needs.build.outputs.base_url }}
         secrets: inherit
 
-
-    
     share:
         runs-on: ubuntu-latest
         needs: [screenshot, generate, build, newsletter]
-        if: ${{ github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event.inputs.issue_type }} == 'next-roundup'
         steps:
             
             -   name: Bsky's
@@ -174,14 +110,11 @@ jobs:
                         ]
                 with:
                     args: ":sparkles: St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }} is out!"
-    
-    
-                
 
     finish:
         runs-on: ubuntu-latest
         needs: [screenshot, generate, build, newsletter]
-        if: ${{ github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event.inputs.issue_type }} == 'next-roundup'}
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             OWNER: ${{ github.repository_owner }}
