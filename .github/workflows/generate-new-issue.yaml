@@ -86,7 +86,7 @@ jobs:
 
             -   name: Grab Events
                 id: grab
-                uses: grab-events.yaml@main
+                uses: ./.github/workflows/grab-events.yaml
                 
             -   name: Inject Events into JSON
                 run: |
