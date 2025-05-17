@@ -48,7 +48,7 @@ jobs:
 
     build: 
         needs: check-repo
-        if: needs.check-repo.outputs.is-official == 'true'
+        if: ${{ needs.check-repo.outputs.is-official== 'true' }}
         runs-on: ubuntu-latest
         env:
             HUGO_VERSION: 0.147.0
