@@ -34,7 +34,7 @@ jobs:
       -   name: Grab Issue Comments
           id: issue
           run: |
-              if [[ "${{ inputs.issue_no }}" == "next-roundup" ]]; then
+              if [[ "${{ inputs.issue_no }}" != "regenerate" ]]; then
               RUIssue="$(gh api graphql -F owner=$OWNER -F name=$REPO -f query='
                   query($name: String!, $owner: String!) {
                       repository(name: $name, owner: $owner) {
@@ -55,7 +55,7 @@ jobs:
               else
               RUIssue="$(gh api graphql -f query='
                 query getRepoByTitle {
-                  search(query: """repo:AxolStudio/STLGameDevRoundUp in:title #${{ inputs.issue_no }}""", type:ISSUE, first: 1 ) {
+                  search(query: """repo:STLGameDev/STLGameDevRoundUp in:title #${{ inputs.issue_no }}""", type:ISSUE, first: 1 ) {
                     nodes {
                       ... on Issue {
                         title
