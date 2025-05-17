@@ -14,6 +14,8 @@ on:
             - generated.**
         paths-ignore:
             - '.github/**'
+            - 'screenshots/**'
+            - 'scripts/**'
             
     
 permissions: write-all    
