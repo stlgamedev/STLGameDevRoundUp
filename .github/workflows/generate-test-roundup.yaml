@@ -16,7 +16,12 @@ defaults:
 
 jobs:
 
+    grab-events:
+        uses: ./.github/workflows/grab-events.yaml
+        secrets: inherit
+
     generate:
+        needs: grab-events
         runs-on: ubuntu-latest
         if: ${{ github.event_name == 'workflow_dispatch' }}
         outputs:
@@ -25,7 +30,7 @@ jobs:
         steps:
             -   name: Checkout
                 uses: actions/checkout@v4
-                
+
             -   name: Grab Issue Comments
                 id: issue
                 run: |
@@ -78,13 +83,11 @@ jobs:
                     OWNER: ${{ github.repository_owner }}
                     REPO: ${{ github.event.repository.name }}
 
-            -   name: Grab Events
-                id: grab
-                uses: ./.github/workflows/grab-events.yaml
-            
             -   name: Inject Events into JSON
+                env:
+                    ISSUE_NO: ${{ env.ISSUE_NO }}
+                    EVENTS_JSON: ${{ needs.grab-events.outputs.events }}
                 run: |
-                    EVENTS_JSON='${{ steps.grab.outputs.events }}'
                     tmpfile=$(mktemp)
                     jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue-test.json" > "$tmpfile" && mv "$tmpfile" "data/issue-test.json"
             
