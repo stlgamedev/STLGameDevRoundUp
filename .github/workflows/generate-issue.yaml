@@ -30,15 +30,25 @@ defaults:
 
 jobs:
 
+    prepare:
+        runs-on: ubuntu-latest
+        outputs:
+            final-issue-no: ${{ steps.set-value.outputs.issue_no }}
+        steps:
+            -   name: Set issue_no dynamically
+                id: set-value
+                run: |
+                    if [ "${{ github.event.inputs.issue_type }}" = "regenerate" ]; then
+                        echo "issue_no=${{ github.event.inputs.issue_no }}" >> $GITHUB_OUTPUT
+                    else
+                        echo "issue_no=${{ github.event.inputs.issue_type }}" >> $GITHUB_OUTPUT
+                    fi
+
     generate:
+        needs: prepare
         uses: ./.github/workflows/build-issue.yaml
         with:
-            issue_no: |
-                if (${{ github.event.inputs.issue_type }} == 'regenerate') then
-                    ${{ github.event.inputs.issue_no }}
-                else
-                    ${{ github.event.inputs.issue_type }}
-                fi
+            issue_no: ${{ needs.prepare.outputs.final-issue-no }}
         secrets: inherit
 
     build:
