@@ -1,0 +1,41 @@
+name: 📅▶ Update Events from Google Calendar
+
+on:
+  workflow_call:
+    outputs: 
+      events_list:
+        description: "The list of events"
+        value: ${{ jobs.update.outputs.events }}
+
+jobs:
+  
+  update:
+    
+    runs-on: ubuntu-latest
+    outputs:
+      events: ${{ steps.set-output.outputs.events }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install ical-expander luxon
+        
+      - name: Download calendar
+        run: curl -s "https://calendar.google.com/calendar/ical/c_dd5b9f0b9b6887c36cde8da86ef9282654e82998c89b4787cc8100fb65dc225e%40group.calendar.google.com/public/basic.ics" -o calendar.ics
+
+      - name: Convert ICS to JSON
+        run: node scripts/convert-ics-to-json.js
+
+      - name: Set output
+        id: set-output
+        run: |
+          events=$(cat data/events.json)
+          echo "events=$events" >> $GITHUB_ENV
+          echo "::set-output name=events::$events"
