@@ -79,7 +79,7 @@ jobs:
                 content_no="test";
                 is_test="true";
               fi
-              echo 'is_test'=$is_test >> $GITHUB_OUTPUT
+              echo 'is_test'=$is_test >> $GITHUB_ENV
               save_to="data/issue${file_no}.json"
               mkdir -p data
 
