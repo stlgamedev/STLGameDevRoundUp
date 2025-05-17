@@ -80,7 +80,7 @@ jobs:
                     HUGO_ENV: production
                 run: |
                     hugo \
-                    --debug \
+                    --cleanDestinationDir \
                     --gc \
                     --minify \
                     --baseURL "${{ steps.pages.outputs.base_url }}/"
