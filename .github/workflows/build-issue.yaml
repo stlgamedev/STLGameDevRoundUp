@@ -79,7 +79,6 @@ jobs:
                 content_no="test";
                 is_test="true";
               fi
-              echo 'is_test'=$is_test >> $GITHUB_ENV
               save_to="data/issue${file_no}.json"
               mkdir -p data
 
@@ -111,13 +110,13 @@ jobs:
               REPO: ${{ github.event.repository.name }}
 
       -   name: Inject Events into JSON
+          id: inject
           env:
               ISSUE_NO: ${{ env.ISSUE_NO }}
-              IS_TEST: ${{ env.IS_TEST }}
               EVENTS_JSON: ${{ needs.grab-events.outputs.events }}
           run: |
               tmpfile=$(mktemp)
-              if ${IS_TEST} == "true"; then
+              if [[ "${{ inputs.issue_no }}" == "test" ]]; then
                 jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue-test.json" > "$tmpfile" && mv "$tmpfile" "data/issue-test.json"
               else
                 jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue${ISSUE_NO}.json" > "$tmpfile" && mv "$tmpfile" "data/issue${ISSUE_NO}.json"
