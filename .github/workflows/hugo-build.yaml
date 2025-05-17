@@ -29,6 +29,22 @@ defaults:
         shell: bash
     
 jobs:
+
+    check-repo:
+        runs-on: ubuntu-latest
+        outputs:
+            is-official: ${{ steps.set.outputs.is-official }}
+        steps:
+            -   name: Check if running on stlgamedev/STLGameDevRoundUp
+                id: set
+                run: |
+                    if [[ "${GITHUB_REPOSITORY}" == "stlgamedev/STLGameDevRoundUp" ]]; then
+                        echo "Running in official repo."
+                        echo "is-official=true" >> $GITHUB_OUTPUT
+                    else
+                        echo "⚠️ This workflow runs only on the main stlgamedev/STLGameDevRoundUp repo. Skipping..."
+                        echo "is-official=false" >> $GITHUB_OUTPUT
+
     build: 
         runs-on: ubuntu-latest
         env:
