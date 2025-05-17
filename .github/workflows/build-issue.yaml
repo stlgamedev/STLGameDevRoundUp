@@ -71,10 +71,16 @@ jobs:
               echo 'issue_id'=$issue_id >> $GITHUB_OUTPUT
               issue_title=$(echo $RUIssue | jq -r '.data.repository.issues.nodes[0].title')
               ru_no="${issue_title##*#}"
+              file_no=$ru_no;
+              content_no=$ru_no;
+              is_test="false";
               if [[ "${{ inputs.issue_no }}" == "test" ]]; then
-                ru_no="-test"
+                file_no="-test"
+                content_no="test";
+                is_test="true";
               fi
-              save_to="data/issue${ru_no}.json"
+              echo 'is_test'=$is_test >> $GITHUB_OUTPUT
+              save_to="data/issue${file_no}.json"
               mkdir -p data
 
               echo '{
@@ -89,13 +95,13 @@ jobs:
               }' >> $save_to
               echo 'ISSUE_NO'=$ru_no >> $GITHUB_ENV
               echo 'issue_no'=$ru_no >> $GITHUB_OUTPUT
-              md_file="content/issue-${ru_no}.md"
+              md_file="content/issue-${content_no}.md"
               cat << EOF > $md_file
               ---
               title: "Issue #$ru_no"
               date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
               draft: false
-              is_test: false
+              is_test: $is_test
               no: $ru_no
               ---
               EOF
@@ -107,18 +113,33 @@ jobs:
       -   name: Inject Events into JSON
           env:
               ISSUE_NO: ${{ env.ISSUE_NO }}
+              IS_TEST: ${{ env.IS_TEST }}
               EVENTS_JSON: ${{ needs.grab-events.outputs.events }}
           run: |
               tmpfile=$(mktemp)
-              jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue${ISSUE_NO}.json" > "$tmpfile" && mv "$tmpfile" "data/issue${ISSUE_NO}.json"
+              if ${IS_TEST} == "true"; then
+                jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue-test.json" > "$tmpfile" && mv "$tmpfile" "data/issue-test.json"
+              else
+                jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue${ISSUE_NO}.json" > "$tmpfile" && mv "$tmpfile" "data/issue${ISSUE_NO}.json"
+              fi
       
       -   name: Commit change
           run: |
               git config --global user.name "GitHub Actions"
               git config --global user.email "no-reply@github.com"
-              git tag generated-issue-${ISSUE_NO}
-              git add content/issue-${ISSUE_NO}.md data/issue${ISSUE_NO}.json
-              git commit -m "Update issue ${ISSUE_NO}"
+              if [[ "${{ inputs.issue_no }}" == "regenerate" ]]; then
+                git tag re-generated-issue-${ISSUE_NO}
+                git add data/issue${ISSUE_NO}.json
+                git commit -m "Regenerated issue ${ISSUE_NO}"
+              elif [[ "${{ inputs.issue_no }}" == "test" ]]; then
+                git tag generated-test-issue-${ISSUE_NO}
+                git add content/issue-test.md data/issue-test.json
+                git commit -m "Update issue ${ISSUE_NO}"
+              else
+                git tag generated-issue-${ISSUE_NO}
+                git add content/issue-${ISSUE_NO}.md data/issue${ISSUE_NO}.json
+                git commit -m "Update issue ${ISSUE_NO}"
+              fi
               git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
               git push --follow-tags 
 

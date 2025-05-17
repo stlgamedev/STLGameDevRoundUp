@@ -26,19 +26,35 @@ ignoreErrors = ["error-disable-taxonomy", "error-no-layout"]
 [markup.goldmark.renderer]
   unsafe = true
 
-[outputFormats.email]
-  mediaType = "text/html"
-  isHTML = true
-  name = "email" 
-  permalinkable = false
-  baseName = "email"
-  notAlternative = true
+[outputFormats]
+  [outputFormats.html]
+    baseName = 'index'
+    isHTML = true
+    isPlainText = false
+    mediaType = 'text/html'
+    noUgly = true
+    notAlternative = false
+    permalinkable = true
+    protocol = ''
+    rel = 'canonical'
+    weight = 10
+  [outputFormats.email]
+    baseName = 'email'
+    isHTML = true
+    isPlainText = false
+    mediaType = 'text/html'
+    noUgly = false
+    notAlternative = true
+    permalinkable = true
+    protocol = ''
+    weight = 0
+    path =''
 
 
 [outputs]
   home = ["HTML", "RSS", "json"]
   section = ["HTML", "RSS"]
-  page = ["HTML", "EMAIL"]
+  page = ["HTML", "email"]
 
 [module]
   [[module.mounts]]
