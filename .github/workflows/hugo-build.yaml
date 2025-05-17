@@ -21,8 +21,8 @@ on:
 permissions: write-all    
 
 concurrency:
-    group: "pages"
-    cancel-in-progress: false
+    group: ${{ github.repository }}-build-hugo
+    cancel-in-progress: true
 
 defaults:
     run:

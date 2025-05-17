@@ -9,6 +9,10 @@ on:
 
 permissions: write-all
 
+concurrency:
+    group: ${{ github.repository }}-build-issue
+    cancel-in-progress: true
+
 defaults:
     run:
       shell: bash
@@ -16,18 +20,12 @@ defaults:
 jobs:
 
   grab-events:
-    if: ${{ github.event_name == 'workflow_call' }}
     uses: ./.github/workflows/grab-events.yaml
     secrets: inherit
 
   generate:
-    
     runs-on: ubuntu-latest
-    
     needs: grab-events
-
-    if: ${{ github.event_name == 'workflow_call' }}
-    
     steps:
 
       -   name: Checkout

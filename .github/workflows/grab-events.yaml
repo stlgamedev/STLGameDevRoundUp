@@ -3,9 +3,13 @@ name: 📅▶ Update Events from Google Calendar
 on:
   workflow_call:
     outputs: 
-      events_list:
+      events:
         description: "The list of events"
         value: ${{ jobs.update.outputs.events }}
+
+concurrency:
+    group: ${{ github.repository }}-grab-events
+    cancel-in-progress: true
 
 jobs:
   
