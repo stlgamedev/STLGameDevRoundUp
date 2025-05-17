@@ -154,7 +154,7 @@ w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       </tr>
       <tr class="content">
         <td>
-          <h1>St Louis Game Developer RoundUp A</h1>
+          <h1>St Louis Game Developer RoundUp</h1>
           <a style="display:inline-block; text-align: center; padding-top:1rem 0;"
             href="https://roundup.stlgame.dev/issue-{{ .Params.no }}/" target="_blank"><img
               src="{{ $stlru.Permalink }}"></a>
