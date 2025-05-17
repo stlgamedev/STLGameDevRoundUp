@@ -7,6 +7,10 @@ on:
         description: "The list of events"
         value: ${{ jobs.update.outputs.events }}
 
+concurrency:
+    group: ${{ github.repository }}-grab-events
+    cancel-in-progress: true
+
 jobs:
   
   update:
