@@ -57,7 +57,7 @@ jobs:
 
     screenshot:
         needs: [generate, build]
-        if: ${{ github.event.inputs.issue_type }} != 'test'
+        if: ${{ github.event.inputs.issue_type != 'test' }}
         uses: ./.github/workflows/generate-screenshot.yaml
         with:
             issue_no: ${{ needs.generate.outputs.issue_no }}
@@ -65,7 +65,7 @@ jobs:
 
     newsletter:
         needs: [generate, build, screenshot]
-        if: ${{ github.event.inputs.issue_type }} == 'next-roundup'
+        if: ${{ github.event.inputs.issue_type == 'next-roundup' }}
         uses: ./.github/workflows/roundup-email.yaml
         with:
             issue_no: ${{ needs.generate.outputs.issue_no }}
@@ -75,7 +75,7 @@ jobs:
     share:
         runs-on: ubuntu-latest
         needs: [screenshot, generate, build, newsletter]
-        if: ${{ github.event.inputs.issue_type }} == 'next-roundup'
+        if: ${{ github.event.inputs.issue_type == 'next-roundup' }}
         steps:
             
             -   name: Bsky's
@@ -124,7 +124,7 @@ jobs:
     finish:
         runs-on: ubuntu-latest
         needs: [screenshot, generate, build, newsletter]
-        if: ${{ github.event.inputs.issue_type }} == 'next-roundup'}
+        if: ${{ github.event.inputs.issue_type == 'next-roundup' }}
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             OWNER: ${{ github.repository_owner }}
