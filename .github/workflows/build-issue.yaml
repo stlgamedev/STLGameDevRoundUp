@@ -34,7 +34,7 @@ jobs:
       -   name: Grab Issue Comments
           id: issue
           run: |
-              if [[ "${{ inputs.issue_no }}" == "next-roundup"]]; then
+              if [[ "${{ inputs.issue_no }}" == "next-roundup" ]]; then
               RUIssue="$(gh api graphql -F owner=$OWNER -F name=$REPO -f query='
                   query($name: String!, $owner: String!) {
                       repository(name: $name, owner: $owner) {
