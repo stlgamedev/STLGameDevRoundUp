@@ -1,6 +1,89 @@
 {
-    "nodes": 
-
-[ { "body": "{📢 announcements} _Colorgrave_ announced [April Grove](https://www.youtube.com/watch?v=IyLO-7ZJ8oU), a game where your new job is a forester in a mystic and peaceful wood. [Wishlist it on Steam](https://store.steampowered.com/app/3622260/?snr=1_5_9__205)! " }, { "body": "{📢 announcements} The [Nintendo Switch 2 was announced](https://youtu.be/VrTVeYm4iIM?si=1PJvjqc82f1Cj0qA), and will be releasing **<time datetime=\"2025-06-05\">June 5th</time>**. We look forward to seeing what innovations our developers can create with the new hardware!" }, { "body": "{🎮 releases} _AzeTron_ released [PokeDraft](https://machine-box.itch.io/pokedraft), a **Pokemon CPU** that is designed to challenge the player" }, { "body": "{🎮 releases} _Michael Hicks’s Dissent on Mars_ was released! [Please support the game](https://store.steampowered.com/app/2138560/Dissent_on_Mars/) and give it a review too!" }, { "body": "{🎮 releases} _DoodleDupe_ released [Battle House](https://doodledupe.itch.io/battle-house) for their **Game Design Senior Show**!" }, { "body": "{🎮 releases} After years of development, _Butterscotch Shenanigans' [Crashlands 2](https://store.steampowered.com/app/1401730/Crashlands_2/)_ has landed on _Steam_ and _mobile_!" }, { "body": "{📅 events} _STLGameDev_’s monthly [Gamedev Social](https://www.meetup.com/st-louis-game-developers/events/307069688/) is on **May 8th at 7pm** at _Dirty20 Bar_. Hang out with fellow creators. Chat about making, playing, and admiring games, share game ideas, and get inspired! Make friends and find collaborators. _Also_, paint a miniature _Plorp_!" }, { "body": "{📚 resources} The full book on [Game Programming Patterns](https://gameprogrammingpatterns.com/contents.html) is available online for free!" }, { "body": "{📅 events} _Gateway Game Jam_ and _Creative Lab_ are hosting the [Pixel and Page Game Jam](https://www.slcl.org/events/pixel-and-page-game-jam) for ages 12-18 at the _St. Louis County Library_ on **May 3rd at 11am**. Participants will team up with volunteer first responders, tech industry professionals, and game developers to create their own video game using the program, [Bloxels](https://play.bloxels.com/)." }, { "body": "{📅 events} The _STLGameDev_ will be hosting an extended week-long [Spring Jam](https://www.meetup.com/st-louis-game-developers/events/307433670/)! The theme will be revealed on [Twitch](https://www.twitch.tv/STLGameDev/about) at **7pm CDT on May 23rd**, with a showcase on **June 1st at 7:00 pm CDT** to close out the jam." }, { "body": "{📖 articles} Read up on the latest events involved with our community in our latest [blog post](https://stlgame.dev/blog/spring-2025-update/)!" }, { "body": "{📽 videos} _[The Professor](https://www.youtube.com/@TolarianCommunityCollege)_ explains the nightmare when licensing an IP for your game goes wrong in his [latest video](https://www.youtube.com/watch?v=l8MPpOfKogM)." }, { "body": "{🎼 releases} _Lazarus D. Richardson_ has released the last decade of his music on [Spotify](https://open.spotify.com/artist/4oGsoDMcPqT0ZUNA52m8H0?si=4sdWyTBpSV2Iiyo1GBdfug) and [Bandcamp](https://lazarusrichardson.bandcamp.com/)! It spans a many genres, from goofy witch themes to microtonal orchestras!" }, { "body": "{📢 announcements} Kris Truitt's *Mansion of a Million Monsters* now has a [steam page](https://store.steampowered.com/app/3627210/Mansion_of_a_Million_Monsters/)! Add it to your wishlist!" }, { "body": "{!header} We appologize for the previous RoundUp Issue's Technical problems." } ]
-
+  "nodes": [
+    {
+      "body": "{!header} May has been packed with hits ones after another! We started out with painting Plorps (link to pictures) and haven't slowed down with our Spring Jam (link to pictures) concluding this past week!"
+    },
+    {
+      "body": "{📅 events} [Share & Play Q2](https://www.meetup.com/st-louis-game-developers/events/307697634/) @ Grand Glaize Library (Meeting Rm 2), June 7th"
+    },
+    {
+      "body": "{📅 events} Dev Night Out @ Puttshack, June 21st at 6pm"
+    },
+    {
+      "body": "{📅 events} GameDev Social @ Dirty 20, June 12th at 7pm"
+    },
+    {
+      "body": "{📅 events} Game Club will be discussing _Baba is You_ @ Qdoba, [June 30th at 6:30pm](https://www.meetup.com/st-louis-game-developers/events/307697799/)"
+    },
+    {
+      "body": "{📢 announcements} Playstation [showcased a deep dive](https://blog.playstation.com/2025/04/29/watch-the-borderlands-4-gameplay-deep-dive-state-of-play-on-april-30/) on the upcoming Borderlands 4!"
+    },
+    {
+      "body": "{📚 resources} _Scottyp123_ made a cool [3D animation tool](https://mesh2motion.org/) similar to Mixamo"
+    },
+    {
+      "body": "{🎮 releases} _Simple Pixel Games_ released [Word Scores](https://store.steampowered.com/app/3340020/Word_Scores/), a relaxing casual strategy word game, on Steam! "
+    },
+    {
+      "body": "{🎮 releases} _Limebranch_ released [Missouri Riverbank Restorer](https://limebranch.itch.io/mrr) on itch.io! Learn about Missouri rivers and the native flora and fauna as you progress through several minigames!"
+    }
+  ],
+  "events": [
+    {
+      "title": "Spring Game Jam",
+      "description": "Team up with local creators and make a game over a few weekends (and the week in between)! This jam will be <b>mostly virtual</b>. <b><a href=\"https://itch.io/jam/stlgamedev-spring-jam\" target=\"_blank\">SIGN UP ON ITCH.IO!</a></b><br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307433670/\">https://www.meetup.com/st-louis-game-developers/events/307433670/</a>",
+      "location": "https://itch.io/jam/stlgamedev-spring-jam",
+      "dateTime": "2025-05-23T18:00:00.000-05:00",
+      "endTime": "2025-06-01T19:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Spring Jam Work Session 1",
+      "description": "The <b><a href=\"https://www.meetup.com/st-louis-game-developers/events/307433670/\" target=\"_blank\">Spring Game Jam</a></b> is virtual, but we decided to have an in-person get together anyway. Come hang out with fellow jammers and work on your games at the library!  <b>We will be in Meeting Room 2.</b><br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307748696/\">https://www.meetup.com/st-louis-game-developers/events/307748696/</a>",
+      "location": "St. Louis County Library Grand Glaize Branch  - 1010 Meramec Station Rd - Manchester, MO, us",
+      "dateTime": "2025-05-24T12:00:00.000-05:00",
+      "endTime": "2025-05-24T17:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Game Audio Club",
+      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio.<br>We’re a chill group where you can share your work, get feedback, or just vibe with people who love game audio.<br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307433670/\">https://www.meetup.com/st-louis-game-developers/events/307433670/</a>",
+      "location": "MAP St. Louis, 3840 Washington Ave, St. Louis, MO 63108, USA",
+      "dateTime": "2025-05-24T16:00:00.000-05:00",
+      "endTime": "2025-05-24T19:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Game Club: Baba Is You",
+      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. This month's game is <a href=\"https://store.steampowered.com/app/736260/Baba_Is_You/\" target=\"_blank\"><b>Baba Is You</b></a>, a brilliant puzzle game! Come share your thoughts on the game with us!<br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307697799/\">https://www.meetup.com/st-louis-game-developers/events/307697799/</a>",
+      "location": "QDOBA Mexican Eats, 766 N New Ballas Rd, Creve Coeur, MO 63141, USA",
+      "dateTime": "2025-05-26T18:30:00.000-05:00",
+      "endTime": "2025-05-26T20:30:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Spring Jam Work Session 2",
+      "description": "<p>The <strong><a href=\"https://www.meetup.com/st-louis-game-developers/events/307433670/\" target=\"_blank\">Spring Game Jam</a></strong> is virtual, but we decided to have an in-person get together anyway. Come hang out with fellow jammers and work on your games at the library! <strong>We will be in Meeting Room 2.</strong></p>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307824136/\">https://www.meetup.com/st-louis-game-developers/events/307824136/</a>",
+      "location": "St. Louis County Library Grand Glaize Branch  - 1010 Meramec Station Rd - Manchester, MO, us",
+      "dateTime": "2025-05-29T16:00:00.000-05:00",
+      "endTime": "2025-05-29T20:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Spring Jam Game Demos",
+      "description": "Spring Jam game demos will be streamed live online on our <a href=\"https://www.twitch.tv/STLGameDev\" target=\"_blank\">Twitch</a> channel",
+      "location": "https://www.twitch.tv/STLGameDev",
+      "dateTime": "2025-06-01T18:00:00.000-05:00",
+      "endTime": "2025-06-01T20:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Share & Play",
+      "description": "Join us for casual game testing! This is an opportunity for developers to share their progress, observe playtesting, and get feedback on their projects, and for local game enthusiasts to get their hands on new games, prototypes, and give helpful feedback.<b> We will be in Meeting Room 2 in the library.</b><br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307697634/\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/307697634/</a>",
+      "location": "St. Louis County Library–Grand Glaize Branch, 1010 Meramec Station Road, Manchester, MO 63021, USA",
+      "dateTime": "2025-06-07T14:00:00.000-05:00",
+      "endTime": "2025-06-07T17:00:00.000-05:00",
+      "eventUrl": ""
+    }
+  ]
 }
