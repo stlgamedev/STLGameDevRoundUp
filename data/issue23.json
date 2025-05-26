@@ -1,0 +1,110 @@
+{
+  "nodes": [
+    {
+      "body": "{!header} May has been packed with hits ones after another! We started out with [painting Plorps](https://www.instagram.com/p/DJemOngx95O/?img_index=1) and haven't slowed down with our [Spring Jam](https://itch.io/jam/stlgamedev-spring-jam) concluding this week!"
+    },
+    {
+      "body": "{📰 news} Playstation [showcased a deep dive](https://blog.playstation.com/2025/04/29/watch-the-borderlands-4-gameplay-deep-dive-state-of-play-on-april-30/) on the upcoming Borderlands 4!"
+    },
+    {
+      "body": "{📚 resources} Scott Petrovic made a cool 3D animation tool, [_Mesh2Motion_](https://mesh2motion.org/) similar to Mixamo"
+    },
+    {
+      "body": "{🎮 releases} Simple Pixel Games released [_Word Scores_](https://store.steampowered.com/app/3340020/Word_Scores/), a relaxing casual strategy word game on Steam! "
+    },
+    {
+      "body": "{🎮 releases} Limebranch released [_Missouri Riverbank Restorer_](https://limebranch.itch.io/mrr) on itch.io! Learn about Missouri rivers and the native flora and fauna as you progress through several minigames!"
+    },
+    {
+      "body": "{📢 announcements} There will be no Audio Club for June, but feel free to post your work to the [#audio](https://discord.com/channels/406541601750515718/492514209922416640) channel in the [Discord](https://discord.gg/D2Khxsgj)!"
+    },
+    {
+      "body": "{📚 resources} [The 20 Games Challenge](https://20_games_challenge.gitlab.io/challenge/) is a way to challenge yourself to program complex games over time. What elements are needed to recreate Jetpack Joyride? "
+    },
+    {
+      "body": "{📚 resources} Detective Fantasia made an excellent tech breakdown of their [pixelated ocean](https://bsky.app/profile/detfantasia.bsky.social/post/3lmxfkuym7c27)"
+    },
+    {
+      "body": "{🕹️ updates} Tony Wojnar continues work on _Dribble 2_ by adding more cute underwater enemies like this [inflatable pufferfish](https://bsky.app/profile/tonywojnar.bsky.social/post/3lpeuvjhwvc2f) and [scuba bizbot](https://bsky.app/profile/tonywojnar.bsky.social/post/3lpwp5ui5bc2c)! "
+    },
+    {
+      "body": "{🎮 releases} neitherw0rld's epic MegaMan64-style music video for Sohlaroids' [_Fight or Flight_](https://www.youtube.com/watch?v=SjSddinwFpM) is finally out! "
+    },
+    {
+      "body": "{🕹️ updates} Colorgrave is hard at work on [_April Grove_](https://store.steampowered.com/app/3622260/April_Grove/), a cozy casual lumberjack experience. It is planned to release next month. Wishlist it now on Steam!"
+    },
+    {
+      "body": "{🕹️ updates} Soobly is continuing work on his PSX-inspired horror game, [_Ascent_](https://bsky.app/profile/s00bly.bsky.social/post/3lpkgpswlf22r)"
+    },
+    {
+      "body": "{🕹️ updates} Kris Truitt finished up some [killer key art](https://bsky.app/profile/kristruitt.bsky.social/post/3loyd6zedsc26) for his game [_Mansion of a Million Monsters_](https://store.steampowered.com/app/3627210/Mansion_of_a_Million_Monsters/)"
+    },
+    {
+      "body": "{📰 news} Microsoft Announces [Retro Classics With Game Pass](https://www.ign.com/articles/microsoft-announces-retro-classics-with-game-pass-kicks-things-off-with-over-50-activision-games-from-the-80s-and-90s), reviving a collection of over 50 classic Activision games "
+    },
+    {
+      "body": "{📚 resources} Lu Gossian designed a [one-page game design document template](https://www.lugossian.com/gdd-1-page-template-download) perfect for planning out jam games and smaller game development projects"
+    },
+    {
+      "body": "{📢 announcements} [Indie City Games](https://www.indiecitygames.org/) is hosting their 2025 _**Chicago Indie Game Showcase (C.I.G.S)**_ this September! [Back their kickstarter now](https://www.kickstarter.com/projects/indiecitygames/chicago-indie-game-showcase) to get tickets to the event at a discount!\nWe’d love to see some STL faces there— whether you’re showing a game, scoping out the scene, or just road-tripping for the vibes. Let’s represent! 🚗 *road trip!*"
+    }
+  ],
+  "events": [
+    {
+      "title": "Spring Game Jam",
+      "description": "Team up with local creators and make a game over a few weekends (and the week in between)! This jam will be <b>mostly virtual</b>. <b><a href=\"https://itch.io/jam/stlgamedev-spring-jam\" target=\"_blank\">SIGN UP ON ITCH.IO!</a></b><br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307433670/\">https://www.meetup.com/st-louis-game-developers/events/307433670/</a>",
+      "location": "https://itch.io/jam/stlgamedev-spring-jam",
+      "dateTime": "2025-05-23T18:00:00.000-05:00",
+      "endTime": "2025-06-01T19:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Game Club: Baba Is You",
+      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. This month's game is <a href=\"https://store.steampowered.com/app/736260/Baba_Is_You/\" target=\"_blank\"><b>Baba Is You</b></a>, a brilliant puzzle game! Come share your thoughts on the game with us!<br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307697799/\">https://www.meetup.com/st-louis-game-developers/events/307697799/</a>",
+      "location": "QDOBA Mexican Eats, 766 N New Ballas Rd, Creve Coeur, MO 63141, USA",
+      "dateTime": "2025-05-26T18:30:00.000-05:00",
+      "endTime": "2025-05-26T20:30:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Spring Jam Work Session 2",
+      "description": "<p>The <strong><a href=\"https://www.meetup.com/st-louis-game-developers/events/307433670/\" target=\"_blank\">Spring Game Jam</a></strong> is virtual, but we decided to have an in-person get together anyway. Come hang out with fellow jammers and work on your games at the library! <strong>We will be in Meeting Room 2.</strong></p>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307824136/\">https://www.meetup.com/st-louis-game-developers/events/307824136/</a>",
+      "location": "St. Louis County Library Grand Glaize Branch  - 1010 Meramec Station Rd - Manchester, MO, us",
+      "dateTime": "2025-05-29T16:00:00.000-05:00",
+      "endTime": "2025-05-29T20:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Spring Jam Game Demos",
+      "description": "Spring Jam game demos will be streamed live online on our <a href=\"https://www.twitch.tv/STLGameDev\" target=\"_blank\">Twitch</a> channel",
+      "location": "https://www.twitch.tv/STLGameDev",
+      "dateTime": "2025-06-01T18:00:00.000-05:00",
+      "endTime": "2025-06-01T20:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Share & Play",
+      "description": "Join us for casual game testing! This is an opportunity for developers to share their progress, observe playtesting, and get feedback on their projects, and for local game enthusiasts to get their hands on new games, prototypes, and give helpful feedback.<b> We will be in Meeting Room 2 in the library.</b><br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307697634/\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/307697634/</a>",
+      "location": "St. Louis County Library–Grand Glaize Branch, 1010 Meramec Station Road, Manchester, MO 63021, USA",
+      "dateTime": "2025-06-07T14:00:00.000-05:00",
+      "endTime": "2025-06-07T17:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "GameDev Social!",
+      "description": "<p>Come chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators.</p>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/307236089",
+      "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
+      "dateTime": "2025-06-12T19:00:00.000-05:00",
+      "endTime": "2025-06-12T22:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Dev Night Out @ Puttshack!",
+      "description": "<p>Join fellow game developers on June 21st as we conquer <strong>Puttshack,</strong> a new concept of mini golf with patented technology, world-class dining and high-energy vibes!  After, we will discuss what criticisms we have with this location-based entertainment and what we would change given the chance!</p><br>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/308068741",
+      "location": "Puttshack  - 3730 Foundry Way Suite 100,  - St Louis, MO, US",
+      "dateTime": "2025-06-21T18:00:00.000-05:00",
+      "endTime": "2025-06-21T20:00:00.000-05:00",
+      "eventUrl": ""
+    }
+  ]
+}
