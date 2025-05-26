@@ -86,9 +86,9 @@ jobs:
 
                         ${{ needs.build.outputs.base_url }}/issue-${{  needs.generate.outputs.issue_no }}/
                     link-preview-url: ${{ needs.build.outputs.base_url }}/issue-${{  needs.generate.outputs.issue_no }}/
-                    identifier: "axolstudio.com"
+                    identifier: "stlgame.dev"
                     password: ${{ secrets.BLUESKY_PASSWORD }}
-            -   name: Axol Discord
+            -   name: STLGameDev Discord
                 uses: Ilshidur/action-discord@master
                 env:
                     DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
