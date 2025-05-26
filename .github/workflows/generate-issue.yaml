@@ -1,5 +1,5 @@
 name: ▶ Generate or Regenerate a RoundUp Issue!
-run-name: Generate an Issue by @${{ github.actor }}
+run-name: Generate ${{ github.event.inputs.issue_type }} - by @${{ github.actor }}
 
 on:
     workflow_dispatch:
