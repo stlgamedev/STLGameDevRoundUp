@@ -1,7 +1,7 @@
 {
   "nodes": [
     {
-      "body": "{!header} May has been packed with hits ones after another! We started out with painting Plorps (link to pictures) and haven't slowed down with our Spring Jam (link to pictures) concluding this past week!"
+      "body": "{!header} May has been packed with hits ones after another! We started out with [painting Plorps](https://www.instagram.com/p/DJemOngx95O/?img_index=1) and haven't slowed down with our [Spring Jam](https://itch.io/jam/stlgamedev-spring-jam) concluding this week!"
     },
     {
       "body": "{📢 announcements} Playstation [showcased a deep dive](https://blog.playstation.com/2025/04/29/watch-the-borderlands-4-gameplay-deep-dive-state-of-play-on-april-30/) on the upcoming Borderlands 4!"
@@ -14,6 +14,15 @@
     },
     {
       "body": "{🎮 releases} _Limebranch_ released [Missouri Riverbank Restorer](https://limebranch.itch.io/mrr) on itch.io! Learn about Missouri rivers and the native flora and fauna as you progress through several minigames!"
+    },
+    {
+      "body": "{📅 events} Game demos showcasing the [Spring Game Jam](https://itch.io/jam/stlgamedev-spring-jam) games will be streamed online on [Twitch](https://www.twitch.tv/STLGameDev) on Sunday, June 1st at 6:00PM "
+    },
+    {
+      "body": "{📅 events} There will be no Audio Club this month, but feel free to post your work to the #audio channel in the [Discord](https://discord.gg/D2Khxsgj)!"
+    },
+    {
+      "body": "{📚 resources} [The 20 Games Challenge](https://20_games_challenge.gitlab.io/challenge/) is a way to challenge yourself to program complex games over time. What elements are needed to recreate Jetpack Joyride? "
     }
   ],
   "events": [
@@ -23,22 +32,6 @@
       "location": "https://itch.io/jam/stlgamedev-spring-jam",
       "dateTime": "2025-05-23T18:00:00.000-05:00",
       "endTime": "2025-06-01T19:00:00.000-05:00",
-      "eventUrl": ""
-    },
-    {
-      "title": "Spring Jam Work Session 1",
-      "description": "The <b><a href=\"https://www.meetup.com/st-louis-game-developers/events/307433670/\" target=\"_blank\">Spring Game Jam</a></b> is virtual, but we decided to have an in-person get together anyway. Come hang out with fellow jammers and work on your games at the library!  <b>We will be in Meeting Room 2.</b><br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307748696/\">https://www.meetup.com/st-louis-game-developers/events/307748696/</a>",
-      "location": "St. Louis County Library Grand Glaize Branch  - 1010 Meramec Station Rd - Manchester, MO, us",
-      "dateTime": "2025-05-24T12:00:00.000-05:00",
-      "endTime": "2025-05-24T17:00:00.000-05:00",
-      "eventUrl": ""
-    },
-    {
-      "title": "Game Audio Club",
-      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio.<br>We’re a chill group where you can share your work, get feedback, or just vibe with people who love game audio.<br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/307433670/\">https://www.meetup.com/st-louis-game-developers/events/307433670/</a>",
-      "location": "MAP St. Louis, 3840 Washington Ave, St. Louis, MO 63108, USA",
-      "dateTime": "2025-05-24T16:00:00.000-05:00",
-      "endTime": "2025-05-24T19:00:00.000-05:00",
       "eventUrl": ""
     },
     {
@@ -71,6 +64,14 @@
       "location": "St. Louis County Library–Grand Glaize Branch, 1010 Meramec Station Road, Manchester, MO 63021, USA",
       "dateTime": "2025-06-07T14:00:00.000-05:00",
       "endTime": "2025-06-07T17:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "GameDev Social!",
+      "description": "<p>Come chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators.</p>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/307236089",
+      "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
+      "dateTime": "2025-06-12T19:00:00.000-05:00",
+      "endTime": "2025-06-12T22:00:00.000-05:00",
       "eventUrl": ""
     }
   ]
