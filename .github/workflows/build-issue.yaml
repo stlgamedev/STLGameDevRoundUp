@@ -9,6 +9,10 @@ on:
     outputs:
       issue_no:
         value: ${{ jobs.generate.outputs.issue_no }}
+      issue_id:
+        value: ${{ jobs.generate.outputs.issue_id }}
+      issue_title:
+        value: ${{ jobs.generate.outputs.issue_title }}
 
 permissions: write-all
 
