@@ -1,5 +1,51 @@
 {
-  "nodes": [],
+  "nodes": [
+    {
+      "body": "{!header} May has been packed with hits ones after another! We started out with [painting Plorps](https://www.instagram.com/p/DJemOngx95O/?img_index=1) and haven't slowed down with our [Spring Jam](https://itch.io/jam/stlgamedev-spring-jam) concluding this week!"
+    },
+    {
+      "body": "{📰 news} Playstation [showcased a deep dive](https://blog.playstation.com/2025/04/29/watch-the-borderlands-4-gameplay-deep-dive-state-of-play-on-april-30/) on the upcoming Borderlands 4!"
+    },
+    {
+      "body": "{📚 resources} _Scott Petrovic_ made a cool [3D animation tool](https://mesh2motion.org/) similar to Mixamo"
+    },
+    {
+      "body": "{🎮 releases} _Simple Pixel Games_ released [Word Scores](https://store.steampowered.com/app/3340020/Word_Scores/), a relaxing casual strategy word game, on Steam! "
+    },
+    {
+      "body": "{🎮 releases} _Limebranch_ released [Missouri Riverbank Restorer](https://limebranch.itch.io/mrr) on itch.io! Learn about Missouri rivers and the native flora and fauna as you progress through several minigames!"
+    },
+    {
+      "body": "{📢 announcements} There will be no Audio Club this month, but feel free to post your work to the #audio channel in the [Discord](https://discord.gg/D2Khxsgj)!"
+    },
+    {
+      "body": "{📚 resources} [The 20 Games Challenge](https://20_games_challenge.gitlab.io/challenge/) is a way to challenge yourself to program complex games over time. What elements are needed to recreate Jetpack Joyride? "
+    },
+    {
+      "body": "{📚 resources} Detective Fantasia made an excellent tech breakdown of their [pixelated ocean](https://bsky.app/profile/detfantasia.bsky.social/post/3lmxfkuym7c27)"
+    },
+    {
+      "body": "{🕹️ updates} _Tony Wojnar_ continues work on _Dribble 2_ by adding more cute underwater enemies like this [Inflatable Pufferfish](https://bsky.app/profile/tonywojnar.bsky.social/post/3lpeuvjhwvc2f) and [Scuba Bizbot](https://bsky.app/profile/tonywojnar.bsky.social/post/3lpwp5ui5bc2c)! "
+    },
+    {
+      "body": "{🎮 releases} _neitherw0rld_'s epic MegaMan64 style music video for _Sohlaroids'_ [Fight or Flight](https://www.youtube.com/watch?v=SjSddinwFpM) is finally out! "
+    },
+    {
+      "body": "{🕹️ updates} _Colorgrave_ is hard at work on [April Grove](https://store.steampowered.com/app/3622260/April_Grove/), a cozy casual lumberjack experience. It is planned to release next month. Wishlist it now on Steam!"
+    },
+    {
+      "body": "{🕹️ updates} _Soobly_ is continuing work on his PSX-inspired horror game, [Ascent](https://bsky.app/profile/s00bly.bsky.social/post/3lpkgpswlf22r)"
+    },
+    {
+      "body": "{🕹️ updates} _Kris Truitt_ finished up some [killer key art](https://bsky.app/profile/kristruitt.bsky.social/post/3loyd6zedsc26) for his game [Mansion of a Million Monsters](https://store.steampowered.com/app/3627210/Mansion_of_a_Million_Monsters/)"
+    },
+    {
+      "body": "{📰 news} Microsoft Announces [Retro Classics With Game Pass](https://www.ign.com/articles/microsoft-announces-retro-classics-with-game-pass-kicks-things-off-with-over-50-activision-games-from-the-80s-and-90s), reviving a collection of over 50 classic Activision games "
+    },
+    {
+      "body": "{📚 resources} Lu Gossian designed a [one-page game design document template](https://www.lugossian.com/gdd-1-page-template-download) perfect for planning out jam games and smaller game development projects"
+    }
+  ],
   "events": [
     {
       "title": "Spring Game Jam",
