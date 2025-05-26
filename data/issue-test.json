@@ -1,30 +1,5 @@
 {
-  "nodes": [
-    {
-      "body": "{!header} May has been packed with hits ones after another! We started out with [painting Plorps](https://www.instagram.com/p/DJemOngx95O/?img_index=1) and haven't slowed down with our [Spring Jam](https://itch.io/jam/stlgamedev-spring-jam) concluding this week!"
-    },
-    {
-      "body": "{📢 announcements} Playstation [showcased a deep dive](https://blog.playstation.com/2025/04/29/watch-the-borderlands-4-gameplay-deep-dive-state-of-play-on-april-30/) on the upcoming Borderlands 4!"
-    },
-    {
-      "body": "{📚 resources} _Scottyp123_ made a cool [3D animation tool](https://mesh2motion.org/) similar to Mixamo"
-    },
-    {
-      "body": "{🎮 releases} _Simple Pixel Games_ released [Word Scores](https://store.steampowered.com/app/3340020/Word_Scores/), a relaxing casual strategy word game, on Steam! "
-    },
-    {
-      "body": "{🎮 releases} _Limebranch_ released [Missouri Riverbank Restorer](https://limebranch.itch.io/mrr) on itch.io! Learn about Missouri rivers and the native flora and fauna as you progress through several minigames!"
-    },
-    {
-      "body": "{📅 events} Game demos showcasing the [Spring Game Jam](https://itch.io/jam/stlgamedev-spring-jam) games will be streamed online on [Twitch](https://www.twitch.tv/STLGameDev) on Sunday, June 1st at 6:00PM "
-    },
-    {
-      "body": "{📅 events} There will be no Audio Club this month, but feel free to post your work to the #audio channel in the [Discord](https://discord.gg/D2Khxsgj)!"
-    },
-    {
-      "body": "{📚 resources} [The 20 Games Challenge](https://20_games_challenge.gitlab.io/challenge/) is a way to challenge yourself to program complex games over time. What elements are needed to recreate Jetpack Joyride? "
-    }
-  ],
+  "nodes": [],
   "events": [
     {
       "title": "Spring Game Jam",
@@ -72,6 +47,14 @@
       "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
       "dateTime": "2025-06-12T19:00:00.000-05:00",
       "endTime": "2025-06-12T22:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Dev Night Out @ Puttshack!",
+      "description": "<p>Join fellow game developers on June 21st as we conquer <strong>Puttshack,</strong> a new concept of mini golf with patented technology, world-class dining and high-energy vibes!  After, we will discuss what criticisms we have with this location-based entertainment and what we would change given the chance!</p><br>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/308068741",
+      "location": "Puttshack  - 3730 Foundry Way Suite 100,  - St Louis, MO, US",
+      "dateTime": "2025-06-21T18:00:00.000-05:00",
+      "endTime": "2025-06-21T20:00:00.000-05:00",
       "eventUrl": ""
     }
   ]
