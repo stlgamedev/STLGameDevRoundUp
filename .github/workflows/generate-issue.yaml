@@ -72,55 +72,6 @@ jobs:
             base_url: ${{ needs.build.outputs.base_url }}
         secrets: inherit
 
-    share:
-        runs-on: ubuntu-latest
-        needs: [screenshot, generate, build, newsletter]
-        if: ${{ github.event.inputs.issue_type == 'next-roundup' }}
-        steps:
-            
-            -   name: Bsky's
-                uses: myConsciousness/bluesky-post@v5
-                with: 
-                    text:
-                        St Louis Game Developer RoundUp Issue № ${{  needs.generate.outputs.issue_no }} is out!
-
-                        ${{ needs.build.outputs.base_url }}/issue-${{  needs.generate.outputs.issue_no }}/
-                    link-preview-url: ${{ needs.build.outputs.base_url }}/issue-${{  needs.generate.outputs.issue_no }}/
-                    identifier: "stlgame.dev"
-                    password: ${{ secrets.BLUESKY_PASSWORD }}
-            -   name: STLGameDev Discord
-                uses: Ilshidur/action-discord@master
-                env:
-                    DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-                    DISCORD_EMBEDS: |
-                        [
-                            {
-                                "title": "St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }}",
-                                "url": "${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/",
-                                "image": {
-                                    "url": "https://raw.githubusercontent.com/AxolStudio/STLGameDevRoundUp/main/screenshots/issue-${{ needs.generate.outputs.issue_no }}.png"
-                                }
-                            }
-                        ]
-                with:
-                    args: ":sparkles: St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }} is out!"
-            -   name: STL Game Dev Discord
-                uses: Ilshidur/action-discord@master
-                env:
-                    DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_2 }}
-                    DISCORD_EMBEDS: |
-                        [
-                            {
-                                "title": "St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }}",
-                                "url": "${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/",
-                                "image": {
-                                    "url": "https://raw.githubusercontent.com/AxolStudio/STLGameDevRoundUp/main/screenshots/issue-${{ needs.generate.outputs.issue_no }}.png"
-                                }
-                            }
-                        ]
-                with:
-                    args: ":sparkles: St Louis Game Developer RoundUp Issue № ${{ needs.generate.outputs.issue_no }} is out!"
-
     finish:
         runs-on: ubuntu-latest
         needs: [screenshot, generate, build, newsletter]
