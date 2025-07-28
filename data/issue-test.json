@@ -10,9 +10,6 @@
       "body": "{🧑‍💻 dev updates} Cheezy-Z has been hard at work prototyping a [visual novel style dialog system](https://bsky.app/profile/cheezy.bsky.social/post/3lss3zmlxhs2u) in Unreal Engine 5, with working advancing [auto-text and transitions](https://bsky.app/profile/cheezy.bsky.social/post/3ltaf6zqlp22g)"
     },
     {
-      "body": "{📅 events} placeholder"
-    },
-    {
       "body": "{📢 news} itch.io and steam have started to [deindex NSFW games](https://itch.io/updates/update-on-nsfw-content) because of scrutiny from their payment processors"
     },
     {
@@ -22,16 +19,13 @@
       "body": "{📚 resources} The [Ren'Py Phone System](https://kleineluka.itch.io/phone) by zoey formats Ren'Py like a text conversation on a smart phone"
     },
     {
-      "body": "{🧑‍💻 dev updates} Cheezy-Z has been hard at work prototyping a [visual novel style dialog system](https://bsky.app/profile/cheezy.bsky.social/post/3lss3zmlxhs2u) in Unreal Engine 5, with working advancing [auto-text and transitions](https://bsky.app/profile/cheezy.bsky.social/post/3ltaf6zqlp22g)"
-    },
-    {
       "body": "{🧑‍💻 dev updates} Isabelle has been working on her [Puppy Tools](https://github.com/puppy-tools/) for Godot 4.4, with a [documentation website](https://puppy-tools.github.io/) for easy instructions"
     },
     {
-      "body": "{🎮 releases} Carrington Smith made a [Tiny Bulbs Survival](https://carrington-smith.itch.io/httpscarrington-smithitchio) in 10 days for the Gamedev.tv TV Game Jam! Defend your home and protect the town's food from being stolen!"
+      "body": "{🕹️ game jam releases} Carrington Smith made a [Tiny Bulbs Survival](https://carrington-smith.itch.io/httpscarrington-smithitchio) in 10 days for the Gamedev.tv TV Game Jam! Defend your home and protect the town's food from being stolen!"
     },
     {
-      "body": "{🎮 releases} Razri voiced [Ashen Covenant](https://azurextwilight.itch.io/ashen-convenant), a game where a demon walks into the realm of death, carrying his lover's swords and a letter stained with her blood"
+      "body": "{🕹️ game jam releases} Razri voiced [Ashen Covenant](https://azurextwilight.itch.io/ashen-convenant), a game where a demon walks into the realm of death, carrying his lover's swords and a letter stained with her blood"
     },
     {
       "body": "{🎮 releases} ludicrousda3ve's official Doom mod [Operation: Reaper v1.0](https://mods.bethesda.net/en/doom_doomii/details/cf3f26a8-5a4a-4518-a0bc-d30b81d06538/Operation__Reaper) released, and has a 32 level campaign for 1-4 players, deathmatch support, and a separate pack for tournament-level competition. "
@@ -56,6 +50,15 @@
     },
     {
       "body": "{🎶 music} Lazarus D. Richardson created two original compositions in less than 24 hours for the SLPL Game Jam - [Panic! at the Graveyard](https://soundcloud.com/lazthecomposer/panic-at-the-graveyard?si=ab5421744e554646b15a0693b4c6c31a&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing) and [Smooth & Sinister](https://soundcloud.com/lazthecomposer/smooth-sinister?si=769f3941ccc04850b31b32b5f3c56ce8&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing)!"
+    },
+    {
+      "body": "{🕹️ game jam releases} Forge_builder, neitherworld, Demetré Bailey, Lazarus Richardson, Tyler Reinhardt, and Kyle Casey created [MALLevolence](https://neitherworld.itch.io/mallevolence) in 27 hours for [The St. Louis Public Library Summer Game Jam](https://itch.io/jam/2025-summer-slpl-game-jam)! Point and click to disturb the peace at a local mall."
+    },
+    {
+      "body": "{🕹️ game jam releases} chbandy, carson, Lazarus Richardson, and Timconcieveable created [Grave Danger](https://simplepixelgamesllc.itch.io/grave-danger) in 27 hours for [The St. Louis Public Library Summer Game Jam](https://itch.io/jam/2025-summer-slpl-game-jam)! Inspired by Vampire Survivors, survive waves of enemies in the graveyard!"
+    },
+    {
+      "body": "{🕹️ game jam releases} IncaWawita and crew made [Spooky Ghosty](https://incawawita.itch.io/spooky-ghosty) in 27 hours for [The St. Louis Public Library Summer Game Jam](https://itch.io/jam/2025-summer-slpl-game-jam)! Create afterimages of your ghostly physique to scare ghost hunters! "
     }
   ],
   "events": [
@@ -92,8 +95,8 @@
       "eventUrl": ""
     },
     {
-      "title": "Dev Night Out @ Paint Louis!",
-      "description": "<p>The world&#39;s largest graffiti festival! We will meet at the flood wall south of the Arch, and walk the path to see how graffiti artists can make a masterpiece in 48 hours!</p><p>&#160;</p><p><span style=\"color:#FFFFFF\">Full event description:  <a href=\"https://paintlouis.com/\"></span><span style=\"color:#FFFFFF\">https://paintlouis.com/</a></span></p>",
+      "title": "Dev Day Out @ Paint Louis!",
+      "description": "<p>Join us as we admire the world's largest graffiti festival! WE WILL *NOT* BE PAINTING, just looking at masterpieces created in 48 hours. In true game developer fashion, you will be asked to think critically about the pieces and how you might incorporate styles like this into your games.</p><p>This event is over a mile of walking outside with no shade! Wear good shoes, sunglasses, and stay hydrated!</p><p>Parking might be chaos. Ride with a buddy if you can.</p><ul><li>1:00-1:15: <strong>Group up in front of the Mill Creek Pumping Station</strong></li><li>1:15-2:30: Walk and talk about the art!</li><li>2:30-3:00: Brainstorming exercise in the shade</li></ul><br>To RSVP, go to: <span><a href=\"https://www.meetup.com/st-louis-game-developers/events/310235870/?utm_medium=referral&amp;utm_campaign=share-btn_savedevents_share_modal&amp;utm_source=link\">https://www.meetup.com/st-louis-game-developers/events/310235870</a></span>",
       "location": "1000 S Wharf St, St. Louis, MO 63104, USA",
       "dateTime": "2025-08-31T13:00:00.000-05:00",
       "endTime": "2025-08-31T15:00:00.000-05:00",
