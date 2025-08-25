@@ -33,6 +33,8 @@ jobs:
   generate:
     outputs: 
       issue_no: ${{ steps.output.outputs.issue_no }}
+      issue_id: ${{ steps.output.outputs.issue_id }}
+      issue_title: ${{ steps.output.outputs.issue_title }}
     runs-on: ubuntu-latest
     needs: grab-events
     steps:
