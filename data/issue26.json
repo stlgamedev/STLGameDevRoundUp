@@ -1,0 +1,77 @@
+{
+  "nodes": [
+    {
+      "body": "{ 🎶 Music } _Lazarus D. Richardson_ released \"[A Yoke For The Beast Machines](https://open.spotify.com/album/3VzpLdH9leDrcHOsRBTL2V?si=OV4evXWMRzeuKGnrTe9jgQ)\" - a music pack that is 8-Bit Sci-Fi Adventure Music with 25 original, loopable tracks with multiple cuts of the intros and sections of the tunes for maximum customability! "
+    },
+    {
+      "body": "{!header} August was a whirlwind month for the STLGameDev Community, packed with exciting game releases, major updates, original soundtracks, stunning new artwork, and so much more. From ambitious solo projects to polished team collaborations, creators brought their visions to life and shared incredible progress every step of the way! Here's what you missed:"
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Walpang_ created the music and sound for [Sk8 Breaker](https://filthyhouseplant.itch.io/sk8-breaker), a GMTK Game Jam game. Use your cybernetic nano-rope to cut off the fascist robot army's communications!"
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Simple Pixel Games_ created [Pixel Village](https://simplepixelgamesllc.itch.io/pixel-village) for the LowRezJam! Manage a tiny village. Create buildings and people. "
+    },
+    {
+      "body": "{ 📚 Resources } _Fairlii_ released a video about the tricky world of collectible designs in their video, [Some Neat Things About Designing Collectibles ](https://www.youtube.com/watch?v=aQOlU2cIFOU)!"
+    },
+    {
+      "body": "{🧑‍💻 Dev Updates } _Kris Truitt_ added a [headbanging mummy boss](https://bsky.app/profile/kristruitt.bsky.social/post/3lwtzj7jogk2z) and a [baseball bat](https://bsky.app/profile/kristruitt.bsky.social/post/3lx4ho67xt22z) for the Earthbound fans to his game, [Mansion of a Million Monsters](https://store.steampowered.com/app/3627210/Mansion_of_a_Million_Monsters/)!"
+    },
+    {
+      "body": "{ 📢 News } STLGameDev was at the Science Center for their Play & Creativity Expo this month which had over 5000 attendees! Many youngsters were impressed by the games that were demoed!"
+    },
+    {
+      "body": "{🧑‍💻 Dev Updates } _Tony Wojnar_ is starting to create the newest level for Dribble 2, the \"[Lactose Lake](https://bsky.app/profile/tonywojnar.bsky.social/post/3lwjssv4dks2e)\", as well as adding some [new SFX](https://bsky.app/profile/tonywojnar.bsky.social/post/3lx373qgxb223) by _Case Portman_! "
+    },
+    {
+      "body": "{ 📢 News } Claire a la Mode's [Kickstarter Campaign](https://www.kickstarter.com/projects/colorgrave/claire-a-la-mode) made their goal in less than a day, and have since doubled the goal! "
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Butterscotch Shenanigans_ created [HOW MANY DUDES?](https://bscotch.itch.io/how-many-dudes) for the GMTK Game Jam, that answers the question: \"How many dudes does it take to beat up a gorilla?\""
+    },
+    {
+      "body": "{ 🎨 Art } Tashkas has been creating some lovely low-poly [trees, camping equipment, and characters](https://x.com/rbutrimavicius/status/1956195798540280116) "
+    },
+    {
+      "body": "{ 📚 Resources } [Nonsensical 2D](https://www.youtube.com/@nonsensical2d) is a Youtube channel that talks about consistency and style in game art and other game dev topics"
+    },
+    {
+      "body": "{🎮 Releases } Westin B created [Mule Zine](https://mrblacksbox.net/mule/zine.html), a zine about a game that refuses to be forgotten"
+    }
+  ],
+  "events": [
+    {
+      "title": "Game Audio Club: Music Show & Tell!",
+      "description": "<span>If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. We’re a chill group where you can share your work, get feedback, or just vibe with people who love game audio.</span> <br><br>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/310319911",
+      "location": "MAP St. Louis Montessori School - 3840 Washington Ave - St. Louis, MO, us",
+      "dateTime": "2025-08-30T16:00:00.000-05:00",
+      "endTime": "2025-08-30T18:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Dev Day Out @ Paint Louis!",
+      "description": "<p>Join us as we admire the <span>masterpieces created in 48 hours</span> at the world's largest graffiti festival! In true game developer fashion, you will be asked to think critically about the pieces and how you might incorporate styles like this into your games.</p><span><span>For full details, including the address, and to RSVP see: </span></span><span><a href=\"https://www.meetup.com/st-louis-game-developers/events/310235870/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/310235870</a></span>",
+      "location": "1000 S Wharf St, St. Louis, MO 63104, USA",
+      "dateTime": "2025-08-31T13:00:00.000-05:00",
+      "endTime": "2025-08-31T15:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Chicago Indie Games Showcase (C.I.G.S.)",
+      "description": "Chicago Indie Game Showcase returns for its second year, this time at The Hairpin Arts Center in Logan Square! C.I.G.S. is a one-day convention showcasing guest speakers and spotlighting in-development and recently released independent games, focused on games produced within Chicago and the greater Midwestern area. <b><br><br></b>STLGameDev will have a table showcasing games by local STL game developers!<b> </b>Join us for a day full of open-play games, featured speakers, music, and get to know local developers. <br><span><span><br>For more details and to buy tickets, check out Indie City Games website: </span></span><a href=\"https://www.indiecitygames.org/chicagoindiegameshowcase\">https://www.indiecitygames.org/chicagoindiegameshowcase</a><br><span>Use code STL25 to get a 25% discount on tickets!</span>",
+      "location": "Hairpin Arts Center, 2810 N Milwaukee Ave, Chicago, IL 60618, USA",
+      "dateTime": "2025-09-06T13:00:00.000-05:00",
+      "endTime": "2025-09-06T21:00:00.000-05:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "September GameDev Social!",
+      "description": "<p>Come chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to EVERYONE.</p>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/307236093",
+      "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
+      "dateTime": "2025-09-11T19:00:00.000-05:00",
+      "endTime": "2025-09-11T22:00:00.000-05:00",
+      "eventUrl": ""
+    }
+  ]
+}
