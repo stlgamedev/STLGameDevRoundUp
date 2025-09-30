@@ -51,11 +51,21 @@ jobs:
           run: |
             set -euo pipefail
             url="${{ inputs.base_url }}/issue-${{ inputs.issue_no }}/email.html"
-            ru_content="$(curl -s "$url")"
+            ru_content="$(curl -fsSL "$url")"
+            if [ $? -ne 0 ] || [ -z "$ru_content" ]; then
+              echo "Error: Failed to fetch HTML or content is empty!" >&2
+              exit 1
+            fi
             # Remove all newlines and carriage returns
             ru_content="$(echo "$ru_content" | tr -d '\n' | tr -d '\r')"
-            # Encode HTML as JSON and store in env
-            email_json="$(jq -n --arg html "$ru_content" '{html: $html}')"
+            # Log first 100 characters for debug
+            echo "HTML preview: ${ru_content:0:100}" >&2
+            # Encode HTML as compact JSON and store in env
+            email_json="$(jq -c -n --arg html "$ru_content" '{html: $html}')"
+            if ! echo "$email_json" | jq empty; then
+              echo "Error: Invalid JSON generated!" >&2
+              exit 1
+            fi
             echo "email_json=$email_json" >> $GITHUB_ENV
 
       -   name: update campaign
