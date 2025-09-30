@@ -55,7 +55,9 @@ jobs:
             # Remove all newlines and carriage returns
             ru_content="$(echo "$ru_content" | tr -d '\n' | tr -d '\r')"
             # Use jq to safely encode as JSON string
-            echo "email_content=$(jq -n --arg html "$ru_content" '$html')" >> $GITHUB_ENV
+            echo "email_content<<EOF" >> $GITHUB_ENV
+            echo "$ru_content" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
 
       -   name: update campaign
           run: |
