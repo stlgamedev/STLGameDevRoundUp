@@ -54,20 +54,18 @@ jobs:
             ru_content="$(curl -s "$url")"
             # Remove all newlines and carriage returns
             ru_content="$(echo "$ru_content" | tr -d '\n' | tr -d '\r')"
-            # Use jq to safely encode as JSON string
-            echo "email_content<<EOF" >> $GITHUB_ENV
-            echo "$ru_content" >> $GITHUB_ENV
-            echo "EOF" >> $GITHUB_ENV
+            # Encode HTML as JSON and store in env
+            email_json="$(jq -n --arg html "$ru_content" '{html: $html}')"
+            echo "email_json=$email_json" >> $GITHUB_ENV
 
       -   name: update campaign
           run: |
             set -euo pipefail
             id="${{ env.campaign_id }}"
-            payload="$(jq -n --arg html "${{ env.email_content }}" '{html: $html}')"
             curl --location --request PUT "https://${{ secrets.MAILCHIMP_DC }}.api.mailchimp.com/3.0/campaigns/$id/content" \
               --header 'Content-Type: application/json' \
               --user "admin@stlgame.dev:${{ secrets.MAILCHIMP_API_KEY }}" \
-              --data-raw "$payload"
+              --data-raw "${{ env.email_json }}"
 
       -   name: test email
           run: |
