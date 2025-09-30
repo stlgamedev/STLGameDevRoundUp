@@ -63,8 +63,8 @@ jobs:
 
           # Sanitize: remove newlines and carriage returns
           sanitized_html=$(tr -d '\n\r' < "$html_file")
-          # Encode as JSON
-          echo "{\"html\":\"$sanitized_html\"}" > email.json
+          # Encode as JSON using jq for safe escaping
+          jq -c -n --arg html "$sanitized_html" '{html: $html}' > email.json
           if ! jq empty email.json; then
             echo "Error: Invalid JSON generated!" >&2
             exit 1
