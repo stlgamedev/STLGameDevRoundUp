@@ -21,17 +21,17 @@ jobs:
   mailchimp:
     runs-on: ubuntu-latest
     steps:
-      - name: Create Mailchimp Campaign
+      - name: Create, Update, and Send Mailchimp Campaign
         run: |
-          id=$(curl -X POST \
-          "https://${{ secrets.MAILCHIMP_DC }}.api.mailchimp.com/3.0/campaigns" \
-          --user "admin@stlgame.dev:${{ secrets.MAILCHIMP_API_KEY }}" \
-          --data-raw '{
-            "type": "regular",
-            "recipients": {
-                "list_id": "c120d5d29b"
-            },
-            "settings": {
+          set -euo pipefail
+          # Create campaign
+          campaign_id=$(curl -fsSL -X POST \
+            "https://${{ secrets.MAILCHIMP_DC }}.api.mailchimp.com/3.0/campaigns" \
+            --user "admin@stlgame.dev:${{ secrets.MAILCHIMP_API_KEY }}" \
+            --data-raw '{
+              "type": "regular",
+              "recipients": {"list_id": "c120d5d29b"},
+              "settings": {
                 "subject_line": "St Louis Game Developer RoundUp Issue № ${{ inputs.issue_no }}",
                 "preview_text": "Monthly Game Development News from STLGameDev!",
                 "title": "RoundUp № ${{ inputs.issue_no }}",
@@ -41,46 +41,52 @@ jobs:
                 "to_name": "*|FNAME|*",
                 "auto_footer": true,
                 "inline_css": true
-            },
-            "content_type": "template"
-          }' | jq -r '.id')
-          echo "campaign_id=$id" >> $GITHUB_ENV
-        
-      -   name: get issue content
-          id: issue-content
-          run: |
-            set -euo pipefail
-            url="${{ inputs.base_url }}/issue-${{ inputs.issue_no }}/email.html"
-            ru_content="$(curl -fsSL "$url")"
-            if [ $? -ne 0 ] || [ -z "$ru_content" ]; then
-              echo "Error: Failed to fetch HTML or content is empty!" >&2
-              exit 1
-            fi
-            # Remove all newlines and carriage returns
-            ru_content="$(echo "$ru_content" | tr -d '\n' | tr -d '\r')"
-            # Log first 100 characters for debug
-            echo "HTML preview: ${ru_content:0:100}" >&2
-            # Encode HTML as compact JSON and store in env
-            email_json="$(jq -c -n --arg html "$ru_content" '{html: $html}')"
-            if ! echo "$email_json" | jq empty; then
-              echo "Error: Invalid JSON generated!" >&2
-              exit 1
-            fi
-            echo "email_json=$email_json" >> $GITHUB_ENV
+              },
+              "content_type": "template"
+            }' | jq -r '.id')
+          if [ -z "$campaign_id" ]; then
+            echo "Error: Failed to create Mailchimp campaign!" >&2
+            exit 1
+          fi
+          echo "Created campaign: $campaign_id" >&2
 
-      -   name: update campaign
-          run: |
-            set -euo pipefail
-            id="${{ env.campaign_id }}"
-            curl --location --request PUT "https://${{ secrets.MAILCHIMP_DC }}.api.mailchimp.com/3.0/campaigns/$id/content" \
-              --header 'Content-Type: application/json' \
-              --user "admin@stlgame.dev:${{ secrets.MAILCHIMP_API_KEY }}" \
-              --data-raw "${{ env.email_json }}"
+          # Fetch HTML content
+          url="${{ inputs.base_url }}/issue-${{ inputs.issue_no }}/email.html"
+          html_file="issue_email.html"
+          curl -fsSL "$url" -o "$html_file"
+          if [ $? -ne 0 ] || [ ! -s "$html_file" ]; then
+            echo "Error: Failed to fetch HTML or file is empty!" >&2
+            exit 1
+          fi
+          # Log first 100 characters for debug
+          head -c 100 "$html_file" >&2
 
-      -   name: test email
-          run: |
-            id=${{ env.campaign_id }}
+          # Sanitize: remove newlines and carriage returns
+          sanitized_html=$(tr -d '\n\r' < "$html_file")
+          # Encode as JSON
+          echo "{\"html\":\"$sanitized_html\"}" > email.json
+          if ! jq empty email.json; then
+            echo "Error: Invalid JSON generated!" >&2
+            exit 1
+          fi
 
-            curl -X POST \
-                "https://${{ secrets.MAILCHIMP_DC }}.api.mailchimp.com/3.0/campaigns/$id/actions/send" \
-                --user "admin@stlgame.dev:${{ secrets.MAILCHIMP_API_KEY }}"
+          # Update campaign content
+          curl --location --request PUT "https://${{ secrets.MAILCHIMP_DC }}.api.mailchimp.com/3.0/campaigns/$campaign_id/content" \
+            --header 'Content-Type: application/json' \
+            --user "admin@stlgame.dev:${{ secrets.MAILCHIMP_API_KEY }}" \
+            --data @email.json
+          if [ $? -ne 0 ]; then
+            echo "Error: Failed to update campaign content!" >&2
+            exit 1
+          fi
+          echo "Updated campaign content." >&2
+
+          # Send test email
+          curl -X POST \
+            "https://${{ secrets.MAILCHIMP_DC }}.api.mailchimp.com/3.0/campaigns/$campaign_id/actions/send" \
+            --user "admin@stlgame.dev:${{ secrets.MAILCHIMP_API_KEY }}"
+          if [ $? -ne 0 ]; then
+            echo "Error: Failed to send test email!" >&2
+            exit 1
+          fi
+          echo "Test email sent." >&2
