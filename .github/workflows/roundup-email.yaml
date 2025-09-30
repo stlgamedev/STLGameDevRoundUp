@@ -46,35 +46,26 @@ jobs:
           }' | jq -r '.id')
           echo "campaign_id=$id" >> $GITHUB_ENV
         
-
-        
-
       -   name: get issue content
           id: issue-content
           run: |
-              url="${{ inputs.base_url }}/issue-${{ inputs.issue_no }}/email.html"
-              
-              ru_content=$(curl -s $url)
-              
-              ru_content=$(echo "$ru_content" | sed 's~\\~\\\\"~g')
-              ru_content=$(echo "$ru_content" | sed "s~\\/~\\\\/~g")
-              ru_content=$(echo "$ru_content" | sed 's~"~\\"~g')
-              ru_content=$(echo "$ru_content" | sed "s~'~\\'~g")
-
-              ru_content=$(echo $ru_content)
-
-              echo "email_content=$ru_content" >> $GITHUB_ENV
+            set -euo pipefail
+            url="${{ inputs.base_url }}/issue-${{ inputs.issue_no }}/email.html"
+            ru_content="$(curl -s "$url")"
+            # Remove all newlines and carriage returns
+            ru_content="$(echo "$ru_content" | tr -d '\n' | tr -d '\r')"
+            # Use jq to safely encode as JSON string
+            echo "email_content=$(jq -n --arg html "$ru_content" '$html')" >> $GITHUB_ENV
 
       -   name: update campaign
           run: |
-                id=${{ env.campaign_id }}
-
-                curl --location --request PUT "https://${{ secrets.MAILCHIMP_DC }}.api.mailchimp.com/3.0/campaigns/$id/content" \
-                --header 'Content-Type: application/json' \
-                --user "admin@stlgame.dev:${{ secrets.MAILCHIMP_API_KEY }}" \
-                --data-raw '{
-                  "html" : "${{ env.email_content }}"
-                }'
+            set -euo pipefail
+            id="${{ env.campaign_id }}"
+            payload="$(jq -n --arg html "${{ env.email_content }}" '{html: $html}')"
+            curl --location --request PUT "https://${{ secrets.MAILCHIMP_DC }}.api.mailchimp.com/3.0/campaigns/$id/content" \
+              --header 'Content-Type: application/json' \
+              --user "admin@stlgame.dev:${{ secrets.MAILCHIMP_API_KEY }}" \
+              --data-raw "$payload"
 
       -   name: test email
           run: |
