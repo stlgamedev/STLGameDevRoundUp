@@ -9,10 +9,10 @@
     {{- if .IsHome }}
     {{ partial "header-home.html" . }}
     {{ end -}}
-    <main class="container">
+    <main class="container" style="margin-bottom: 6rem;">
       {{ block "main" . }}{{ end }}
     </main>
-    <footer class="footer mt-3 py-3 ">
+    <footer class="footer mt-3 py-3 fixed-bottom ">
       {{ partial "footer.html" . }}
     </footer>
   </body>
