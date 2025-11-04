@@ -1,7 +1,7 @@
 ---
-title: "Issue #27"
-date: 2025-09-29T19:43:59Z
+title: "Issue #28"
+date: 2025-11-04T03:41:50Z
 draft: false
 is_test: true
-no: 27
+no: 28
 ---
