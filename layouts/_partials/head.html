@@ -32,11 +32,7 @@
 {{ if hugo.IsProduction }}
 {{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
 <script src="{{ $bootstrap.RelPermalink }}" crossorigin="anonymous"></script>
-{{ $js := resources.Get "js/bootstrap-color-switch.js" | minify }}
-<script src="{{ $js.RelPermalink }}"  ></script>
 {{ else }}
 {{ $bootstrap := resources.Get "js/bootstrap.bundle.js" }}
 <script src="{{ $bootstrap.RelPermalink }}" ></script>
-{{ $js := resources.Get "js/bootstrap-color-switch.js" }}
-<script src="{{ $js.RelPermalink }}"  ></script>
 {{ end}}

@@ -1,12 +1,34 @@
-$gamedev-red: #f76a52;
-$gamedev-blue: #0da5c1;
-$gamedev-grey: #999;
-$gamedev-darkgrey: #34383f;
+// STL Game Dev main colors
+$color-yellow: #F5E92F;
+$color-orange: #E48723;
+$color-purple: #D131D3;
+$color-blue: #142ca7;
+$color-green: #499272;
+$color-black: #000;
+$color-white: #fff;
 
-$gamedev-red-rgb: rgb(247, 106, 82);
-$gamedev-blue-rgb: rgb(13, 165, 193);
-$gamedev-grey-rgb: rgb(153, 153, 153);
-$gamedev-darkgrey-rgb: rgb(52, 56, 63);
+// Dark tinted versions for card backgrounds
+$color-yellow-dark: rgba($color-yellow, 0.25);
+$color-orange-dark: rgba($color-orange, 0.25);
+$color-purple-dark: rgba($color-purple, 0.25);
+
+// body {
+//   --s: 84px; /* control the size*/
+//   --c1: #282828;
+//   --c2: #1e1e1e;
+//   --c3: #141414;
+  
+//   --_g: 0 120deg,#0000 0;
+//   background:
+//     conic-gradient(             at calc(250%/3) calc(100%/3),var(--c3) var(--_g)),
+//     conic-gradient(from -120deg at calc( 50%/3) calc(100%/3),var(--c2) var(--_g)),
+//     conic-gradient(from  120deg at calc(100%/3) calc(250%/3),var(--c1) var(--_g)),
+//     conic-gradient(from  120deg at calc(200%/3) calc(250%/3),var(--c1) var(--_g)),
+//     conic-gradient(from -180deg at calc(100%/3) 50%,var(--c2)  60deg,var(--c1) var(--_g)),
+//     conic-gradient(from   60deg at calc(200%/3) 50%,var(--c1)  60deg,var(--c3) var(--_g)),
+//     conic-gradient(from  -60deg at 50% calc(100%/3),var(--c1) 120deg,var(--c2) 0 240deg,var(--c3) 0);
+//   background-size: calc(var(--s)*sqrt(3)) var(--s);
+// }
 
 
 @media (min-width: 400px) {
@@ -70,44 +92,105 @@ $gamedev-darkgrey-rgb: rgb(52, 56, 63);
 }
 
 .issue-content {
-
     column-gap: 4rem;
-    column-rule-style: dotted;
-    column-rule-color: var(--bs-tertiary-color);
+    column-rule-style: solid;
+    column-rule-width: 2px;
+    column-rule-color: rgba($color-purple, 0.3);
+    column-fill: balance;
 }
 
-#color-switch {
-    font-size: 1em;
 
-    button {
-        border-radius: 10rem;
-    }
 
-    .bi {
-        width: 1em;
-        height: 1em;
-    }
-}
 
 .bi {
     fill: currentColor;
 }
 
+header {
+    background: $color-black;
+    
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, $color-yellow, $color-orange, $color-purple) 1;
+    border-image-slice: 0 0 1 0;
+    
+    h1 {
+        color: $color-white !important;
+    }
+    
+    .lead {
+        color: rgba($color-white, 0.8) !important;
+    }
+}
+
+#issue {
+    margin-bottom: 4rem;
+    
+    > .text-center {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        
+        h1 {
+            color: $color-purple !important;
+        }
+    }
+}
+
 .issue-section {
-    page-break-inside: avoid;
+    // Allow breaking for better column balance, but avoid breaking inside list items
+    break-inside: avoid-column;
+    page-break-inside: auto;
+    margin-top: 2.5rem;
+    
+    // No margin on first section in column
+    &:first-child {
+        margin-top: 0;
+    }
 
 
 
     ul {
         display: block;
-
-        padding-inline-start: 4rem;
-
-        list-style-type: disc;
+        padding-inline-start: 2rem;
+        list-style-type: none;
 
         li {
             display: list-item;
-            margin-bottom: .5rem;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            background: rgba($color-white, 0.02);
+            border-left: 3px solid rgba($color-yellow, 0.4);
+            border-radius: 0.25rem;
+            line-height: 1.6;
+            transition: all 0.2s ease;
+            position: relative;
+            // Prevent bullets from splitting across columns
+            break-inside: avoid;
+            page-break-inside: avoid;
+            
+            // Orange for 2nd, 5th, 8th...
+            &:nth-child(3n+2) {
+                border-left-color: rgba($color-orange, 0.4);
+                
+                &:hover {
+                    border-left-color: $color-orange;
+                }
+            }
+            
+            // Purple for 3rd, 6th, 9th...
+            &:nth-child(3n+3) {
+                border-left-color: rgba($color-purple, 0.4);
+                
+                &:hover {
+                    border-left-color: $color-purple;
+                }
+            }
+            
+            &:hover {
+                background: rgba($color-white, 0.04);
+                border-left-color: $color-yellow;
+                border-left-width: 4px;
+                padding-left: 0.7rem;
+            }
 
         }
     }
@@ -115,13 +198,16 @@ $gamedev-darkgrey-rgb: rgb(52, 56, 63);
 
 
 :not(nav) a {
-    color: $gamedev-blue;
-    text-decoration: wavy;
+    color: $color-orange;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 
     &:hover,
     &:focus,
     &:active {
-        color: $gamedev-red;
+        color: $color-yellow;
+        border-bottom-color: rgba($color-yellow, 0.5);
     }
 
     i {
@@ -129,28 +215,73 @@ $gamedev-darkgrey-rgb: rgb(52, 56, 63);
     }
 }
 
+
+
+footer {
+    background: $color-black;
+    color: rgba($color-white, 0.7);
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, $color-purple, $color-orange, $color-yellow) 1;
+    padding-bottom: 2rem !important;
+}
+
+nav {
+    background-color: $color-black !important;
+    background-image: none !important;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, $color-yellow, $color-orange, $color-purple) 1;
+    
+    .navbar-brand {
+        color: $color-white !important;
+        border-bottom: none !important;
+        
+        &:hover {
+            color: $color-orange !important;
+        }
+    }
+    
+    a.nav-link {
+        color: rgba($color-white, 0.7) !important;
+        transition: all 0.2s ease;
+        border-bottom: none !important;
+        
+        &.active {
+            color: $color-orange !important;
+            font-weight: 600;
+        }
+        
+        &:hover {
+            color: $color-orange !important;
+        }
+    }
+}
+
 a.btn-share {
-    color: white;
-    background-color: $gamedev-blue;
-    border-color: $gamedev-blue;
+    color: $color-white;
+    background: rgba($color-purple, 0.15);
+    border: 2px solid $color-purple;
+    box-shadow: 0 0 10px rgba($color-purple, 0.3);
+    transition: all 0.2s ease;
 
     &:hover,
     &:focus {
-        color: $gamedev-blue !important;
-        background-color: white !important;
+        color: $color-white !important;
+        background: rgba($color-purple, 0.25) !important;
+        border-color: $color-purple !important;
+        box-shadow: 0 0 15px rgba($color-purple, 0.6);
+        transform: translateY(-1px);
     }
 
     &:active {
-        color: white !important;
-        background-color: $gamedev-red !important;
-        border-color: $gamedev-red !important;
+        color: $color-white !important;
+        background: rgba($color-orange, 0.25) !important;
+        border-color: $color-orange !important;
+        box-shadow: 0 0 15px rgba($color-orange, 0.6);
     }
 
     border-radius: 10rem;
     text-align: center;
-    font-size:1em;
-
-
+    font-size: 1em;
 
     i {
         margin: 0;
@@ -158,9 +289,173 @@ a.btn-share {
     }
 }
 
-footer {
-    background-color: $gamedev-darkgrey;
-    color: white;
+h1, h2, h3, h4, h5, h6 {
+    color: $color-purple;
+    font-weight: 600;
+}
+
+// Add orange to some headings for variety
+h2 {
+    color: $color-orange;
+}
+
+.text-secondary {
+    color: rgba($color-white, 0.5) !important;
+}
+
+.event-time {
+    background: rgba($color-yellow, 0.15) !important;
+    border: 2px solid $color-yellow !important;
+    color: $color-yellow !important;
+    box-shadow: 0 0 8px rgba($color-yellow, 0.3);
+}
+
+.events-list {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-appointment {
+    display: flex;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-left: 4px solid rgba($color-purple, 0.4);
+    background: rgba($color-white, 0.15);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    position: relative;
+    
+    &:hover {
+        border-left-color: $color-purple;
+        border-left-width: 6px;
+        padding-left: 1.35rem;
+        background: rgba($color-white, 0.2);
+        
+        .event-time-indicator {
+            transform: translateX(-3px);
+        }
+        
+        .event-image img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.event-time-indicator {
+    flex-shrink: 0;
+    width: 160px;
+    text-align: center;
+    padding-right: 1.5rem;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    
+    .event-time-badge {
+        background: $color-purple;
+        border: none;
+        color: $color-white;
+        box-shadow: 0 0 10px rgba($color-purple, 0.5);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-family: monospace;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        
+        div:first-child {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        div:last-child {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.event-details {
+    flex-grow: 1;
+    padding-right: 1.5rem;
+    
+    .event-title-text {
+        font-size: 1.5rem;
+        color: $color-white;
+        margin: 0 0 0.75rem 0;
+        font-weight: 700;
+    }
+    
+    .event-location {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+        
+        .location-link {
+            color: $color-orange;
+            text-decoration: none;
+            border-bottom: 1px solid rgba($color-orange, 0.3);
+            transition: all 0.2s ease;
+            
+            &:hover {
+                color: $color-yellow;
+                border-bottom-color: $color-yellow;
+            }
+            
+            i {
+                margin-right: 0.25rem;
+            }
+        }
+    }
+    
+    .event-description {
+        color: rgba($color-white, 0.7);
+        line-height: 1.6;
+        margin-top: 0.5rem;
+    }
+}
+
+.event-image {
+    flex-shrink: 0;
+    align-self: flex-start;
+    padding-left: 1rem;
+    
+    img {
+        max-width: 300px;
+        min-width: 300px;
+        height: auto;
+        border-radius: 0.5rem;
+        border: 2px solid rgba($color-purple, 0.3);
+        box-shadow: 0 0 10px rgba($color-purple, 0.2);
+        transition: all 0.3s ease;
+        display: block;
+    }
+}
+
+.btn-rsvp {
+    background: $color-green;
+    border: none;
+    color: $color-white;
+    box-shadow: 0 0 10px rgba($color-green, 0.5);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    display: block;
+    text-align: center;
+    
+    &:hover {
+        background: lighten($color-green, 10%);
+        color: $color-white;
+        box-shadow: 0 0 15px rgba($color-green, 0.7);
+        transform: translateY(-1px);
+    }
+    
+    i {
+        margin-right: 0.5rem;
+    }
 }
 
 
@@ -169,8 +464,14 @@ footer {
         flex-wrap: wrap;
         margin: 0;
         padding: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.8) 2rem, rgba(0, 0, 0, 0.8) calc(100% - 2rem), rgba(0, 0, 0, 0) 100%);
 
         li {
+            
+            a {
+                border-bottom: none !important;
+            }
+            position: relative;
             flex-grow: 1;
             text-align: center;
             display: flex;
@@ -179,39 +480,199 @@ footer {
             list-style-type: none;
             min-height: 20vh;
             min-width: 20vh;
-            border-radius: 0.1rem;
-            border: 1px solid $gamedev-grey;
-            box-shadow: $box-shadow;
-
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background: rgba($color-white, 0.03);
+            border: 1px solid rgba($color-white, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+            
+            // Subtle corner accents instead of full borders
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 30px;
+                height: 30px;
+                border-top: 2px solid rgba($color-purple, 0.4);
+                border-left: 2px solid rgba($color-purple, 0.4);
+                border-top-left-radius: 0.5rem;
+                transition: all 0.3s ease;
+            }
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 30px;
+                height: 30px;
+                border-bottom: 2px solid rgba($color-purple, 0.4);
+                border-right: 2px solid rgba($color-purple, 0.4);
+                border-bottom-right-radius: 0.5rem;
+                transition: all 0.3s ease;
+            }
+            
+            &:hover {
+                background: rgba($color-white, 0.05);
+                border-color: rgba($color-white, 0.15);
+                transform: translateY(-2px);
+                
+                &::before {
+                    width: 50px;
+                    height: 50px;
+                    border-color: $color-purple;
+                }
+                
+                &::after {
+                    width: 50px;
+                    height: 50px;
+                    border-color: $color-purple;
+                }
+            }
+            
+            // Yellow corners for 2nd, 5th, 8th...
+            &:nth-child(3n+2) {
+                &::before {
+                    border-top-color: rgba($color-yellow, 0.4);
+                    border-left-color: rgba($color-yellow, 0.4);
+                }
+                
+                &::after {
+                    border-bottom-color: rgba($color-yellow, 0.4);
+                    border-right-color: rgba($color-yellow, 0.4);
+                }
+                
+                &:hover {
+                    &::before {
+                        border-top-color: $color-yellow;
+                        border-left-color: $color-yellow;
+                    }
+                    
+                    &::after {
+                        border-bottom-color: $color-yellow;
+                        border-right-color: $color-yellow;
+                    }
+                }
+            }
+            
+            // Orange corners for 3rd, 6th, 9th...
+            &:nth-child(3n+3) {
+                &::before {
+                    border-top-color: rgba($color-orange, 0.4);
+                    border-left-color: rgba($color-orange, 0.4);
+                }
+                
+                &::after {
+                    border-bottom-color: rgba($color-orange, 0.4);
+                    border-right-color: rgba($color-orange, 0.4);
+                }
+                
+                &:hover {
+                    &::before {
+                        border-top-color: $color-orange;
+                        border-left-color: $color-orange;
+                    }
+                    
+                    &::after {
+                        border-bottom-color: $color-orange;
+                        border-right-color: $color-orange;
+                    }
+                }
+            }
+            
+            // Purple corners for 4th, 7th, 10th...
+            &:nth-child(3n+4) {
+                &::before {
+                    border-top-color: rgba($color-purple, 0.4);
+                    border-left-color: rgba($color-purple, 0.4);
+                }
+                
+                &::after {
+                    border-bottom-color: rgba($color-purple, 0.4);
+                    border-right-color: rgba($color-purple, 0.4);
+                }
+                
+                &:hover {
+                    &::before {
+                        border-top-color: $color-purple;
+                        border-left-color: $color-purple;
+                    }
+                    
+                    &::after {
+                        border-bottom-color: $color-purple;
+                        border-right-color: $color-purple;
+                    }
+                }
+            }
+            
             h2 {
                 font-size: 1.5rem;
+                position: relative;
+                z-index: 1;
+                color: $color-white;
             }
 
             time {
-                color: $gamedev-red;
                 font-size: 0.8rem;
+                position: relative;
+                z-index: 1;
+                color: rgba($color-white, 0.6);
             }
 
             &:first-child {
                 flex-basis: 100% !important;
                 padding: 2rem;
+                background: rgba($color-orange, 0.05);
+                border: 1px solid rgba($color-orange, 0.2);
+                
+                &::before {
+                    border-top-color: rgba($color-orange, 0.6);
+                    border-left-color: rgba($color-orange, 0.6);
+                    width: 40px;
+                    height: 40px;
+                }
+                
+                &::after {
+                    border-bottom-color: rgba($color-orange, 0.6);
+                    border-right-color: rgba($color-orange, 0.6);
+                    width: 40px;
+                    height: 40px;
+                }
+
+                &:hover {
+                    background: rgba($color-orange, 0.08);
+                    border-color: rgba($color-orange, 0.3);
+                    transform: translateY(-3px);
+                    
+                    &::before {
+                        width: 60px;
+                        height: 60px;
+                        border-top-color: $color-orange;
+                        border-left-color: $color-orange;
+                    }
+                    
+                    &::after {
+                        width: 60px;
+                        height: 60px;
+                        border-bottom-color: $color-orange;
+                        border-right-color: $color-orange;
+                    }
+                }
 
                 h2 {
                     font-size: 3rem;
+                    color: $color-orange;
                 }
 
                 time {
                     font-size: 1.5rem;
+                    color: rgba($color-white, 0.7);
                 }
-
             }
         }
     }
 
 
-nav {
-    a.nav-link.active {
-        color:$gamedev-red !important;
-        font-weight: bold;
-    }
-}
+

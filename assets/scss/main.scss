@@ -1,4 +1,6 @@
+// Disable Bootstrap's color mode system
 $color-mode-type: data;
+$enable-dark-mode: false;
 
 $enable-gradients: true;
 $enable-shadows: true;
@@ -11,11 +13,44 @@ $font-family-base: $my-font-family;
 
 @import "bootstrap/functions";
 
-// colors!
+// STL Game Dev colors
+$color-yellow: #F5E92F;
+$color-orange: #E48723;
+$color-purple: #d131d3;
+$color-blue: #142ca7;
+$color-black: #000;
+$color-white: #fff;
 
+// Dark tinted versions for card backgrounds (70% darker)
+$color-yellow-dark: rgba($color-yellow, 0.15);
+$color-orange-dark: rgba($color-orange, 0.15);
+$color-purple-dark: rgba($color-purple, 0.15);
+
+// Override Bootstrap theme colors
+$primary: $color-purple;
+$secondary: $color-blue;
+$success: tint-color($color-yellow, 20%);
+$info: $color-blue;
+$warning: $color-orange;
+$danger: shade-color($color-orange, 20%);
+$light: #333;
+$dark: $color-black;
+
+// Body colors - simple dark theme with subtle gray
+$body-bg: rgb(26, 26, 26);
+$body-color: #e8e8e8;
+
+// Link colors - more subtle
+$link-color: $color-orange;
+$link-hover-color: $color-yellow;
+
+// Component colors
+$border-color: rgba($color-white, 0.15);
 
 @import "bootstrap/variables";
-@import "bootstrap/variables-dark";
+
+// Skip dark mode variables since we disabled it
+// @import "bootstrap/variables-dark";
 
 // custom colors
 
@@ -63,6 +98,6 @@ $font-family-base: $my-font-family;
 
 @import "bootstrap/utilities/api";
 
-@import "node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@import "bootstrap-icons/bootstrap-icons.scss";
 
 @import "styles.scss";

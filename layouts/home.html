@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $count := 0 }}
-<ul id="home-list"> 
+<ul id="home-list" class="p-5"> 
     {{ range $index, $issue := sort site.RegularPages ".Params.no" "desc" }}
     {{ if ne $issue.Params.no nil }}
     {{ if not $issue.Params.is_test }}

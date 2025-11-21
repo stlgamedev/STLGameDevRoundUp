@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<div class="text-center">
+<div class="text-center mt-5 mb-4">
   <h1 class="display-2">RoundUp № {{ .Params.no }}</h1>
   {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
   {{ $dateHuman := .Date |
@@ -8,10 +8,6 @@
   }}
   <p class="lead text-body-tertiary"><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
 </div>
-<div class="p-2 fs-5 mx-auto text-body-secondary">
-  <p>{{ site.Params.explanation }}</p>
-</div>
-<hr />
 
 {{- $categories := dict }}
 
@@ -47,6 +43,12 @@
     {{ end }}
   </section>
   {{ end -}}
+  
+  <div class="text-center mb-4">
+    <p class="text-body-secondary" style="font-size: 0.9rem;">{{ site.Params.explanation }}</p>
+  </div>
+
+<hr class="my-4" style="border: 0; height: 4px; background: linear-gradient(to right, #D131D3, #E48723); box-shadow: 0 0 15px rgba(209, 49, 211, 0.5);" />
 
   <section class="row py-4">
     <div class="col issue-content">
@@ -66,26 +68,31 @@
   </section>
 </div>
 
-<hr class="my-4 mx-4" />
+<hr class="my-5 mx-4" style="border: 0; height: 4px; background: linear-gradient(to right, #E48723, #F5E92F); box-shadow: 0 0 15px rgba(228, 135, 35, 0.5);" />
 
 {{ if $posts.events -}}
-<div id="events py-4 ">
-  <section class="events-header d-block" >
+<div id="events" class="py-4">
+  <section class="events-header d-block mb-4">
     <h3 class="display-6">📆 Upcoming Events</h3>
     <p class="lead text-body-tertiary">Participate in these events from our community!</p>
   </section> 
-  <section class="">
-  <div class="col issue-content">
+  <section>
+  <div class="events-list">
     
   {{ range $posts.events }}   
-    <section class="issue-section border-bottom border-2 mt-2 pb-2">
-      <div class="row event-top-row ">
-        <div class="col text-center col-sm-4 " >
-          <div class="d-inline-block bg-success-subtle bg-gradient text-success-emphasis border border-success-subtle rounded font-monospace event-time fw-bold fs-6 py-1 px-2">
-            {{- time.Format "01/02/2006" .dateTime }} {{ time.Format "03:04 PM" .dateTime -}}
-          </div> 
+    {{- $eventImagePath := "images/events/generic.png" -}}
+    {{- if strings.Contains .title "GameDev Social" -}}
+      {{- $eventImagePath = "images/events/social.png" -}}
+    {{- else if strings.Contains .title "Share & Play" -}}
+      {{- $eventImagePath = "images/events/shares.png" -}}
+    {{- end -}}
+    {{- $eventImage := resources.Get $eventImagePath -}}
+    <section class="event-appointment">
+      <div class="event-time-indicator">
+        <div class="event-time-badge" style="white-space: nowrap;">
+          <div>{{- time.Format "01/02/2006" .dateTime -}}</div>
+          <div>{{ time.Format "03:04 PM" .dateTime }}</div>
         </div>
-        <div class="col event-title align-bottom col-sm-6 fs-5 fw-bolder" >{{ .title }}</div>
         {{/* we need to get the meetup id from the event, if there is one */}}
         {{- $description := .description | safeHTML -}}
         {{/* Match and extract the event ID from the RSVP section */}}
@@ -96,17 +103,26 @@
           {{- $fullMatch := index $firstMatch 0 -}}        {{/* full matched string */}}
           {{- $eventID := index $firstMatch 2 -}}          {{/* captured group with event ID */}}
           {{- $description = replace $description $fullMatch "" -}}
-          <div class="rsvp-link col-sm-2 text-end"><a href="https://www.meetup.com/st-louis-game-developers/events/{{ $eventID }}" target="_blank" rel="noopener" >RSVP</a></div>
-        
+        <a href="https://www.meetup.com/st-louis-game-developers/events/{{ $eventID }}" target="_blank" rel="noopener" class="btn btn-sm btn-rsvp mt-2"><i class="bi bi-calendar-check"></i> RSVP</a>
         {{- end -}}
-        
       </div>
-      {{- if $description -}}
-      <div class="row event-description pt-1 ">
-        
-        <div class="border-start border-1 col-sm-11 offset-sm-1">{{ $description | safeHTML }}</div>
+      <div class="event-details">
+        <h4 class="event-title-text">{{ .title }}</h4>
+        {{- if .location -}}
+        {{- $displayLocation := .location | replaceRE `, us$` "" -}}
+        <div class="event-location">
+          <a href="https://www.google.com/maps/search/?api=1&query={{ .location | urlquery }}" target="_blank" rel="noopener" class="location-link">
+            <i class="bi bi-geo-alt-fill"></i> {{ $displayLocation }}
+          </a>
+        </div>
+        {{- end -}}
+        {{- if $description -}}
+        <div class="event-description">{{ $description | safeHTML }}</div>
+        {{- end -}}
       </div>
-      {{- end -}}
+      <div class="event-image">
+        <img src="{{ $eventImage.RelPermalink }}" alt="{{ .title }}" />
+      </div>
     </section>
   {{ end }}
     
@@ -114,10 +130,10 @@
 </section>
 </div> 
 
-<hr class="my-4 mx-4" />
+<hr class="my-5 mx-4" style="border: 0; height: 4px; background: linear-gradient(to right, #F5E92F, #D131D3); box-shadow: 0 0 15px rgba(245, 233, 47, 0.5);" />
 {{ end -}}
 
-<div class="row">
+<div class="row mt-5 pb-5">
   <div class="col-lg-auto">
     <a class="btn btn-outline-danger  btn-sm" role="button"
       href="https://github.com/AxolStudio/STLGameDevRoundUp/blob/main/data/issue{{ .Params.no }}.json"><i

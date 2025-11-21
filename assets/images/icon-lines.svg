@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="120" height="200" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Three thick slanted parallelograms, closely spaced -->
+    <!-- Left parallelogram -->
+    <polygon points="10,200 40,200 70,0 40,0" fill="white"/>
+    <!-- Middle parallelogram -->  
+    <polygon points="45,200 75,200 105,0 75,0" fill="white"/>
+    <!-- Right parallelogram -->
+    <polygon points="80,200 110,200 140,0 110,0" fill="white"/>
+</svg>

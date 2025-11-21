@@ -5,7 +5,9 @@
     {{ partial "head.html" . }}
   </head>
   <body class="  ">
+    {{- if not .IsHome }}
     {{ partial "nav.html" . }}
+    {{ end -}}
     {{- if .IsHome }}
     {{ partial "header-home.html" . }}
     {{ end -}}

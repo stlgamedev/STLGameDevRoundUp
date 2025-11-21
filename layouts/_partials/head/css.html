@@ -6,6 +6,7 @@
     "targetPath" "css/styles.css"
     "outputStyle" "compressed"
     "enableSourceMap" (not hugo.IsProduction)
+    "transpiler" "dartsass"
 -}}
 {{- with resources.Get "/scss/main.scss" | toCSS  $options | minify -}}
 <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" media="screen" crossorigin="anonymous" />

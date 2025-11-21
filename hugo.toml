@@ -5,7 +5,7 @@ title = 'St Louis Game Developer RoundUp'
 enableEmoji = true
 
 [params]
-  explanation = "The St Louis Game Developer RoundUp is a monthly news aggregator for the St Louis Game Development community.  It is a collection of news, events, and other items of interest to the community."
+  explanation = "The St Louis Game Developer RoundUp is the official monthly digest of the St Louis Game Developer community. Curated by STLGameDev and built through community contributions, it aggregates news, project updates, resources, and upcoming events from our local game development scene."
   github = "https://github.com/AxolStudio/STLGameDevRoundUp"
   shareText = "Check out St Louis Game Dev RoundUp № %s!"
   keywords = "indie game development, game development, game developers, game dev, indie games, indie game developers, indie game dev, st louis, saint louis, missouri, mo"
@@ -25,6 +25,20 @@ ignoreErrors = ["error-disable-taxonomy", "error-no-layout"]
 
 [markup.goldmark.renderer]
   unsafe = true
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = "assets/.*\\.(js|ts|jsx|tsx)"
+    target = "(js|scripts|javascript)"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(.*)$"
+    target = "$1"
+
+[services]
+  [services.scss]
+    transpiler = "dartsass"
 
 [outputFormats]
   [outputFormats.html]
@@ -72,3 +86,6 @@ ignoreErrors = ["error-disable-taxonomy", "error-no-layout"]
   [[module.mounts]]
     source = "node_modules/bootstrap-icons/font/fonts"
     target = "static/css/fonts"
+  [[module.mounts]]
+    source = "node_modules/bootstrap-icons/font"
+    target = "assets/scss/bootstrap-icons"
