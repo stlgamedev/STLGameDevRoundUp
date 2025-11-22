@@ -1,12 +1,12 @@
 {{ define "main" }}
 
-<div class="text-center mt-5 mb-4">
+<div class="text-center mb-4">
   <h1 class="display-2">RoundUp № {{ .Params.no }}</h1>
   {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
   {{ $dateHuman := .Date |
   time.Format ":date_full"
   }}
-  <p class="lead text-body-tertiary"><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
+  <p class="lead text-body-tertiary"><i class="bi bi-calendar"></i> <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
 </div>
 
 {{- $categories := dict }}
@@ -48,14 +48,14 @@
     <p class="text-body-secondary" style="font-size: 0.9rem;">{{ site.Params.explanation }}</p>
   </div>
 
-<hr class="my-4" style="border: 0; height: 4px; background: linear-gradient(to right, #D131D3, #E48723); box-shadow: 0 0 15px rgba(209, 49, 211, 0.5);" />
+  <hr class="my-4" style="border: 0; height: 4px; background: linear-gradient(to right, #D131D3, #E48723); box-shadow: 0 0 15px rgba(209, 49, 211, 0.5);" />
 
-  <section class="row py-4">
+  <section class="row ">
     <div class="col issue-content">
       {{- range sort $categories "count" "desc" }}
       {{ if ne .category "!header" }}
       <section class="issue-section d-block" >
-        <h3 class="display-6">{{ .category | title }}</h3>
+        <h3 class="display-6 pb-2">{{ .category | title }}</h3>
         <ul>
           {{ range .entries }}
           <li>{{ . | markdownify }}</li>
@@ -71,7 +71,7 @@
 <hr class="my-5 mx-4" style="border: 0; height: 4px; background: linear-gradient(to right, #E48723, #F5E92F); box-shadow: 0 0 15px rgba(228, 135, 35, 0.5);" />
 
 {{ if $posts.events -}}
-<div id="events" class="py-4">
+<div id="events" class="">
   <section class="events-header d-block mb-4">
     <h3 class="display-6">📆 Upcoming Events</h3>
     <p class="lead text-body-tertiary">Participate in these events from our community!</p>

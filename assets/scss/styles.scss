@@ -91,11 +91,12 @@ $color-purple-dark: rgba($color-purple, 0.25);
     }
 }
 
+.text-body-tertiary {
+    color: rgba($color-yellow-dark, 1.0) !important;
+}
+
 .issue-content {
-    column-gap: 4rem;
-    column-rule-style: solid;
-    column-rule-width: 2px;
-    column-rule-color: rgba($color-purple, 0.3);
+    column-gap: 2rem;
     column-fill: balance;
 }
 
@@ -122,6 +123,11 @@ header {
     }
 }
 
+main {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.8) 2rem, rgba(0, 0, 0, 0.8) calc(100% - 2rem), rgba(0, 0, 0, 0) 100%);
+    
+}
+
 #issue {
     margin-bottom: 4rem;
     
@@ -141,55 +147,53 @@ header {
     page-break-inside: auto;
     margin-top: 2.5rem;
     
+    border-bottom: 3px solid $color-purple-dark;
+
     // No margin on first section in column
     &:first-child {
         margin-top: 0;
     }
 
-
+    &:last-child{
+        border-bottom: none;
+    }
 
     ul {
         display: block;
-        padding-inline-start: 2rem;
+        padding-inline-start: 0.5rem;
         list-style-type: none;
 
         li {
             display: list-item;
             margin-bottom: 0.75rem;
             padding: 0.5rem 0.75rem;
-            background: rgba($color-white, 0.02);
+            background: rgba($color-white, 0.15);
             border-left: 3px solid rgba($color-yellow, 0.4);
+            border-right: 3px solid rgba($color-yellow, 0.4);
             border-radius: 0.25rem;
             line-height: 1.6;
-            transition: all 0.2s ease;
             position: relative;
             // Prevent bullets from splitting across columns
             break-inside: avoid;
             page-break-inside: avoid;
+
             
             // Orange for 2nd, 5th, 8th...
             &:nth-child(3n+2) {
                 border-left-color: rgba($color-orange, 0.4);
-                
-                &:hover {
-                    border-left-color: $color-orange;
-                }
+                border-right-color: rgba($color-orange, 0.4);
             }
             
             // Purple for 3rd, 6th, 9th...
             &:nth-child(3n+3) {
                 border-left-color: rgba($color-purple, 0.4);
-                
-                &:hover {
-                    border-left-color: $color-purple;
-                }
+                border-right-color: rgba($color-purple, 0.4);
             }
-            
+
             &:hover {
-                background: rgba($color-white, 0.04);
-                border-left-color: $color-yellow;
-                border-left-width: 4px;
-                padding-left: 0.7rem;
+        
+                background: rgba($color-white, 0.2);
+       
             }
 
         }
@@ -327,17 +331,17 @@ h2 {
     
     &:hover {
         border-left-color: $color-purple;
-        border-left-width: 6px;
-        padding-left: 1.35rem;
+        // border-left-width: 6px;
+        // padding-left: 1.35rem;
         background: rgba($color-white, 0.2);
         
-        .event-time-indicator {
-            transform: translateX(-3px);
-        }
+        // .event-time-indicator {
+        //     transform: translateX(-3px);
+        // }
         
-        .event-image img {
-            transform: scale(1.05);
-        }
+        // .event-image img {
+        //     transform: scale(1.05);
+        // }
     }
 }
 
@@ -462,9 +466,7 @@ h2 {
     ul#home-list {
         display: flex;
         flex-wrap: wrap;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.8) 2rem, rgba(0, 0, 0, 0.8) calc(100% - 2rem), rgba(0, 0, 0, 0) 100%);
+        
 
         li {
             
@@ -482,7 +484,7 @@ h2 {
             min-width: 20vh;
             border-radius: 0.5rem;
             overflow: hidden;
-            background: rgba($color-white, 0.03);
+            background: rgba($color-white, 0.15);
             border: 1px solid rgba($color-white, 0.1);
             position: relative;
             transition: all 0.3s ease;
@@ -515,8 +517,8 @@ h2 {
             }
             
             &:hover {
-                background: rgba($color-white, 0.05);
-                border-color: rgba($color-white, 0.15);
+                
+                border-color: rgba($color-white, 0.2);
                 transform: translateY(-2px);
                 
                 &::before {
