@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <div class="text-center mb-4">
-  <h1 class="display-2">RoundUp № {{ .Params.no }}</h1>
+  <h1 class="display-2" style="font-weight: 700;">RoundUp № {{ .Params.no }}</h1>
   {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
   {{ $dateHuman := .Date |
   time.Format ":date_full"
@@ -73,7 +73,7 @@
 {{ if $posts.events -}}
 <div id="events" class="">
   <section class="events-header d-block mb-4">
-    <h3 class="display-6">📆 Upcoming Events</h3>
+    <h2 class="display-6" style="font-weight: 700;">📆 Upcoming Events</h2>
     <p class="lead text-body-tertiary">Participate in these events from our community!</p>
   </section> 
   <section>
@@ -90,8 +90,8 @@
     <section class="event-appointment">
       <div class="event-time-indicator">
         <div class="event-time-badge" style="white-space: nowrap;">
-          <div>{{- time.Format "01/02/2006" .dateTime -}}</div>
-          <div>{{ time.Format "03:04 PM" .dateTime }}</div>
+          <div class="event-date">{{- time.Format "JAN 02" .dateTime | upper -}}</div>
+          <div class="event-time">{{ time.Format "03:04 PM" .dateTime }}</div>
         </div>
         {{/* we need to get the meetup id from the event, if there is one */}}
         {{- $description := .description | safeHTML -}}

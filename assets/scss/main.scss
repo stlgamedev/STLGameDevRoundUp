@@ -36,8 +36,8 @@ $danger: shade-color($color-orange, 20%);
 $light: #333;
 $dark: $color-black;
 
-// Body colors - simple dark theme with subtle gray
-$body-bg: rgb(26, 26, 26);
+// Body colors - pure black background
+$body-bg: #000;
 $body-color: #e8e8e8;
 
 // Link colors - more subtle
@@ -101,3 +101,26 @@ $border-color: rgba($color-white, 0.15);
 @import "bootstrap-icons/bootstrap-icons.scss";
 
 @import "styles.scss";
+
+// Footer button styling
+.btn-outline-success {
+    border-color: rgba($color-green, 0.6);
+    color: rgba($color-green, 0.9);
+    
+    &:hover {
+        background: rgba($color-green, 0.1);
+        border-color: $color-green;
+        color: $color-green;
+    }
+}
+
+.btn-outline-primary {
+    border-color: rgba($color-white, 0.3);
+    color: rgba($color-white, 0.7);
+    
+    &:hover {
+        background: rgba($color-white, 0.05);
+        border-color: rgba($color-white, 0.5);
+        color: $color-white;
+    }
+}
