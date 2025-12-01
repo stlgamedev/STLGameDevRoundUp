@@ -1,97 +1,85 @@
 {
   "nodes": [
     {
-      "body": "{!header} What a spooktacular end to October, with the [2025 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2025) having **[15 submissions](https://itch.io/jam/stlgamedev-spooky-jam-2025/entries)**! The theme was \"The Unknown\". Make sure to try out each of them on the list! \nThis has also been a great month of content from the rest of the community. Something about October just brings out the creativity in everyone. "
+      "body": "{!header} November brought a helping of games, as well as the Share and Play! \nSave the date! The Global Game Jam is set to take place January 30th - February 1st, 2026, at UMSL!\nMiss last month's RoundUp? [Catch up with the game development scene in St. Louis here](https://roundup.stlgame.dev/)! "
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Lucy the Pirate_ released [Which Witch?](https://lucythepirate.itch.io/which-witch) for the STLGameDev SpookyJam! Soot wants you, her most loyal (and only) servant to do some spring cleaning by selling to witches to convert her meager magical junk pile into a proper gold hoard!"
+      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ continues work on Dribble 2 with the new [Toxic Tavern](https://bsky.app/profile/tonywojnar.bsky.social/post/3m5oi6a4m2s2l) level. a pub of pollutants where the Bizbots like to spend time getting oil and chemical drinks!"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Vik10_ released [Trick or Treat on Spooky Street](https://vik10.itch.io/trick-or-treat-on-spooky-street) for the STLGameDev SpookyJam! Walk from door to door to collect candy in this isometric stylistic throwback! "
+      "body": "{ 🎮 Releases } _Jigokuro_ created a variant of sudoku, called \"[Twisted Arrows in Fog 1](https://sudokupad.app/0kqk60anqv)\". "
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Michael Wojnar_, _Tony Wojnar_, and _Lazarus Richardson_ released [Bottomless Hell](https://wojworks.itch.io/bottomless-hell) for the STLGameDev SpookyJam! You are falling down a deep, dark, and mysterious hole. Armed with nothing but your flashlight and your pistol, how long can you survive the unknown horrors within? "
+      "body": "{ 🎼 Releases } _Daniel Christmas_ is the composer and lyricist of [Death by Denial](https://open.spotify.com/artist/2WXodf2wj1ZzsjVRPZliEN?si=PDWbZG82Sbuf61XFqDzULA), a dark melodic metal transformational experimentation"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Sabrex15_ released [Unknown Labyrinth](https://sabrex15.itch.io/unknown-labyrinth) for the STLGameDev SpookyJam! Track down clues, avoid traps, and dodge monsters as you search for the final portal that will free you from this nightmare before the darkness drives you to madness, or worse."
+      "body": "{ 🧑‍💻 Dev Updates } _Fairlii_ posted a comprehensive Devlog about their work thus far on Gelli Fields: \"[6 Months Progress On My Slime Farming Game!](https://www.youtube.com/watch?v=C8Y90AqYIPw)\""
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _SuperWes_ released [Gravesweeper](https://superwes.itch.io/gravesweeper) for the STLGameDev SpookyJam! Navigate through haunted dungeons as a brave skeleton, using Minesweeper-style logic to avoid deadly traps and find your way to freedom. Each level is a unique procedurally-generated puzzle with increasing challenge and danger! "
+      "body": "{ 📚 Resources } _Eddie_ built the [Bevy Collider Editor](https://collider.visionsquid.com/), a free online tool for creating and editing colliders for the [Bevy game engine](https://collider.visionsquid.com/), and services it for free!"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _machine-box_ released [Valence](https://machine-box.itch.io/valence) for the STLGameDev SpookyJam! It's a groovy bullet hell!"
+      "body": "{ 🎮 Releases } _James C. Kane_ released [The Shadow of the Czar]( https://theshadowoftheczar.com/ ), available for mobile or desktop browser. ‘Shadow’ is an action-packed, jazz-infused narrative web game in film noir style, designed to push both my storytelling and World Labs' incredible technology to the limits. "
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _lupuchard_ released [Bathyalspeloeology](https://lupuchard.itch.io/twilight-depths), a short submarine game, for the STLGameDev SpookyJam!"
+      "body": "{ 🕹️ Game Jam Releases } _Ziyanthus_ released [May the Rain ](https://ziyanthus.itch.io/may-the-rain), a game jam made in Godot. Explore the surreal, foggy peak of a lonely tepui mountain, in this short 10-15 minute long narrative. What has brought this lonely soul to a place where none belong? "
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _chelseaz6_ released [Search for Cryptids](https://chelseaz6.itch.io/search-for-cryptids) for the STLGameDev SpookyJam! You have come to this mysterious forest to investigate the rumors of unknown creatures seen inside. The locals claim that the animals that live here are cryptids from legends around the world. Can you take a photograph of every cryptid without succumbing to the dangers in the darkness?"
+      "body": "{ 🎮 Releases } _Wes Ehrlichman_ released [Gravesweeper ](https://midnightlaunchgames.com/games/gravesweeper/) for iOS and Android! Navigate through haunted dungeons as a brave skeleton, using Minesweeper-style logic to avoid deadly traps and find your way to freedom! "
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } Maryville University's 2025 Game Design Club released [Masked Memories](https://infinityjka.itch.io/masked-memories) for the STLGameDev SpookyJam! "
+      "body": "{ 🎮 Releases } _Colorgrave_ released [Claire a la Mode](https://store.steampowered.com/app/2292860/Claire_a_la_Mode/?curator_clanid=39485717)! Team up with a friend or go it alone in a sugar-high adventure! Bake your dessert masterpiece and collect new bakers as you rise through a high-stakes bake-off full of cheaters. Fend off their decadent lackeys and against all odds, come out on top in a worldwide baking frenzy!"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Auron_ released [Ritual of the Shroud](https://1-auron-664989.itch.io/ritual-of-the-shroud) for the STLGameDev SpookyJam! Finding yourself in a forest, you grab a torch and make your way through the fog to begin a ritual against the unknown."
+      "body": "{ 🧑‍💻 Dev Updates } _meepaleepsheep_ showcased the [chaindashing](https://bsky.app/profile/meepalasheep.bsky.social/post/3m5eoig7ygc2k) in [Ginger Snap](https://meepalasheep.itch.io/gingersnap-demo)!"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Axol Studio_, _Lazarus Richardson_, _SamaraOpal_, and _ilikethepixies_ released [Chimera Obscura ](https://axolstudio.itch.io/chimera-obscura) for the STLGameDev SpookyJam! You are an explorer who happened to accidentally open a portal to another dimension! Armed with only your wits and your camera, you venture through the portal into a weird and dark dimension full of grotesque, misshapen creatures you have dubbed \"Chimera\" - because they resemble the amalgamated monsters of myth."
+      "body": "{ 📢 News } Blender 5.0 has been released! [View the changelog and get up to date here](https://www.blender.org/download/releases/5-0/). "
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _WestMansionHero_ released [Darklight Manor](https://westmansionhero.itch.io/darklight-manor) for the STLGameDev SpookyJam! Navigate your way through a hand-drawn top down adventure! "
+      "body": "{ 🎼 Releases } _Fat Bard_ created the sound design for [Kingdoms of the Dump](https://bsky.app/profile/fatbard.com/post/3m5yh6zynbk2d), a SNES styled JRPG set in a fantasy world of garbage, created by two janitors. Join Trash Can Knight, Dustin Binsley, as he fights his way through the Five and a Half Kingdoms of the Dump! "
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Dorian Kavadlo_, _Nathan Amiri_, _Gavin Banes_, _Vannia “navinau” U_, and _Taylor Poorman_ released [Beneath The Surface](https://cutloaf.itch.io/beneath-the-surface) for the STLGameDev SpookyJam! You’ve been contacted by a mysterious entity lurking in the depths, demanding sacrifices in exchange for something unknown. Each cast pulls you closer to uncovering, or becoming, what lies beneath."
+      "body": "{ 🎼 Releases } _Austin Miller_ posted a demo of the main theme for [DIONYSIA](https://bsky.app/profile/austinmwav.com/post/3m6ky45mlv22l), a photography boomer shooter"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _zariok_ released [Un-Gnome (JAM)](https://zariok.itch.io/un-gnome) for the STLGameDev SpookyJam! Grab all collectibles and STOMP all gnomes to finish the level!"
+      "body": "{ 🎼 Releases } _Fat Bard_ co-composed [Cross Blitz](https://bsky.app/profile/fatbard.com/post/3m6fckvb2tk26), a unique RPG deckbuilder featuring fast-paced tactical combat with loads of cards to collect and synergies to wield. Explore, level up, craft new cards and build the perfect decks as you carve your own path to victory! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Kris Truitt_ added a \"[fishing minigame](https://bsky.app/profile/kristruitt.bsky.social/post/3m25emw2nps23)\" to his game, Mansion of a Million Monsters. [Follow the Kickstarter](https://www.kickstarter.com/projects/lkmkgames/mansion-of-a-million-monsters) to be notified when it goes live! There is also an [early/test version of the demo on itch now](https://bsky.app/profile/kristruitt.bsky.social/post/3m4dmrpdu6c2u)! "
-    },
-    {
-      "body": "{ 🕹️ Game Jam Releases } _Lazarus Richardson_ released [The Pumpkin Witch](https://www.youtube.com/watch?v=9H-uEVy4gNg) and [Lost in the Labyrinth](https://soundcloud.com/lazthecomposer/lost-in-the-labyrinth?si=d1be764098ba42638666e99248eb269c) for [In a Bottle](https://xsangyhix.itch.io/in-a-bottle), a game made for the the Ludum Dare 58 Gamejam!"
-    },
-    {
-      "body": "{ 🕹️ Game Jam Releases } Lazarus Richardson released all of the music - [Chimera Obscura's Theme](https://lazarusrichardson.bandcamp.com/track/chimera-obscura-title-theme), [Depths Thy Shan't Know](https://lazarusrichardson.bandcamp.com/track/depths-thy-shant-know), [Vertigo](https://lazarusrichardson.bandcamp.com/track/vertigo), and [Clean Rag](https://lazarusrichardson.bandcamp.com/track/clean-rag) - made for the Spooky Jam! "
-    },
-    {
-      "body": "{📚 resources} Affinity, an all-in-one app for photo editing, vector illustration, and page layouts, [is free now](https://www.theverge.com/news/810251/canva-affinity-design-suite-free-app-relaunch)."
-    },
-    {
-      "body": "{📚 resources} Community member Auron helped troubleshoot how to make a glowing 2D particle in Unity! (It's in Project Settings > Graphics > Pipeline Specific Settings > [URP tab] > Bloom > Raise the intensity on the material for what you want to glow!)"
+      "body": "{ 📢 News } Rockstar Games [fired unionising developers](https://hitmarker.net/news/rockstar-games-fired-unionising-developers-following-discord-conversations-about-slack-policy-changes-report-claims-1584626) following Discord conversations about Slack policy changes, report claims"
     }
   ],
   "events": [
     {
-      "title": "November GameDev Social!",
-      "description": "Come chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators.\n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/308213046",
+      "title": "December GameDev Social!",
+      "description": "Come chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. \n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/312186563",
       "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
-      "dateTime": "2025-11-13T19:00:00.000-06:00",
-      "endTime": "2025-11-13T22:00:00.000-06:00",
-      "eventUrl": ""
-    },
-    {
-      "title": "Share & Play: Game Showcase/Playtesting!",
-      "description": "<p>Join us for game playtesting! This is an opportunity for developers to share their progress, observe playtesting, and get feedback on their projects, and for local game enthusiasts to get their hands on new games, prototypes, and give helpful feedback. We will be in the <a href=\"https://www.slcl.org/library-services/creative-lab\" target=\"_blank\">Creative Lab</a> upstairs on the second floor!<b><br></b></p><p><b><a href=\"https://forms.gle/akeXf1DBDsvqWFCaA\">SIGNUP HERE</a> to demo a game!</b></p>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/311042464\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/311042464</a>",
-      "location": "St. Louis County Library - Clark Family branch - 1640 South Lindbergh Blvd - St. Louis, MO, us",
-      "dateTime": "2025-11-15T12:00:00.000-06:00",
-      "endTime": "2025-11-15T16:30:00.000-06:00",
-      "eventUrl": ""
-    },
-    {
-      "title": "Game Club: Yoku's Island Express",
-      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. This month's game is... <strong><a href=\"https://store.steampowered.com/app/334940/Yokus_Island_Express/\" target=\"_blank\">Yoku's Island Express</a></strong>, a pinball platformer metroidvania! <br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/311115814\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/311115814</a>",
-      "location": "Qdoba (Creve Coeur) - 766 N New Ballas Rd - Creve Coeur, MO, us",
-      "dateTime": "2025-11-24T18:30:00.000-06:00",
-      "endTime": "2025-11-24T20:30:00.000-06:00",
+      "dateTime": "2025-12-11T19:00:00.000-06:00",
+      "endTime": "2025-12-11T22:00:00.000-06:00",
       "eventUrl": ""
     },
     {
       "title": "Game Audio Club: Music Share",
-      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio. We’re a chill group where you can share your work, get feedback, or just vibe with people who love game audio. \n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/311795809",
+      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio. We’re a chill group where you can share your work, get feedback, or just vibe with people who love game audio. <br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/312256681/\">https://www.meetup.com/st-louis-game-developers/events/312256681/</a>",
       "location": "MAP St. Louis Montessori School - 3840 Washington Ave - St. Louis, MO, us",
-      "dateTime": "2025-11-29T16:00:00.000-06:00",
-      "endTime": "2025-11-29T18:00:00.000-06:00",
+      "dateTime": "2025-12-27T16:00:00.000-06:00",
+      "endTime": "2025-12-27T18:00:00.000-06:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "December Game Club: TBD",
+      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. We're voting on our game for December right now!  Jump into our Discord to vote in the Game Club channel.\n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/311772690",
+      "location": "Qdoba (Creve Coeur) - 766 N New Ballas Rd - Creve Coeur, MO, us",
+      "dateTime": "2025-12-29T18:30:00.000-06:00",
+      "endTime": "2025-12-29T20:30:00.000-06:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "Global Game Jam 2026",
+      "description": "We are excited to announce Global Game Jam 2026! Come team up with local creators and make a game over the weekend! This event is open to ALL (even remote friends).  Students from any campus are welcome!<br><br>Online and In-Person participants are both welcome.  We will be using our community-run Discord server to handle announcements and online participation.  <a href=\"https://discord.gg/mTMKpre\" target=\"_blank\">Join here!</a> <br><br><a href=\"https://globalgamejam.org/jam-sites/2026/university-missouri-st-louis-it-and-cybersecurity-club-hosting-stlgamedev\" target=\"_blank\"><b>Registration for Global Game Jam is now open!</b></a>",
+      "location": "Millennium Student Center, 17 Arnold B Grobman Dr, St. Louis, MO 63121, USA",
+      "dateTime": "2026-01-30T17:00:00.000-06:00",
+      "endTime": "2026-02-01T18:00:00.000-06:00",
       "eventUrl": ""
     }
   ]
