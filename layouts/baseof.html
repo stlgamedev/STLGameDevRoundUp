@@ -3,8 +3,14 @@
   {{ partial "icons" . }}
   <head>
     {{ partial "head.html" . }}
+    <script>
+      // Hide footer during screenshot generation
+      if (window.location.search.includes('ss=true')) {
+        document.documentElement.classList.add('screenshot-mode');
+      }
+    </script>
   </head>
-  <body class="  ">
+  <body class="{{ if isset .Params "ss" }}screenshot-mode{{ end }}">
     {{- if not .IsHome }}
     {{ partial "nav.html" . }}
     {{ end -}}

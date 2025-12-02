@@ -195,6 +195,11 @@ footer {
     padding-bottom: 2rem !important;
 }
 
+// Hide footer during screenshots
+html.screenshot-mode footer {
+    display: none !important;
+}
+
 nav {
     background-color: #1a1a1a !important;
     background-image: none !important;
