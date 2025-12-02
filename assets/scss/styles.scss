@@ -406,6 +406,85 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+// Rainbow HR bars
+.rainbow-hr {
+    border: 0;
+    height: 4px;
+    background: linear-gradient(to right, #D131D3, #E48723);
+    box-shadow: 0 0 15px rgba(209, 49, 211, 0.5);
+}
+
+.rainbow-hr-rev {
+    border: 0;
+    height: 4px;
+    background: linear-gradient(to right, #E48723, #F5E92F);
+    box-shadow: 0 0 15px rgba(228, 135, 35, 0.5);
+}
+
+.rainbow-hr-alt {
+    border: 0;
+    height: 4px;
+    background: linear-gradient(to right, #F5E92F, #D131D3);
+    box-shadow: 0 0 15px rgba(245, 233, 47, 0.5);
+}
+
+// Important section (mirrors home page first-child style)
+.important-section {
+    background: rgba($color-white, 0.05);
+    border: 1px solid rgba($color-white, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1rem;
+    padding-left: 5rem;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3rem;
+        background: $color-purple;
+        border-radius: 0.5rem 0 0 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    li {
+        margin-bottom: 1rem;
+        position: relative;
+        font-size: 1.05rem;
+        font-weight: 500;
+        padding: 0.5rem 0;
+    }
+
+    .important-label {
+        position: absolute;
+        left: -4.5rem;
+        height:100%;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-90deg);
+        transform-origin: center;
+        color: $color-white !important;
+        font-weight: 500;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        z-index: 2;
+    }
+}
+
     ul#home-list {
         display: flex;
         flex-wrap: wrap;
