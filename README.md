@@ -1,6 +1,6 @@
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
-[![⚙ Build the Hugo Site](https://github.com/AxolStudio/STLGameDevRoundUp/actions/workflows/hugo-build.yaml/badge.svg)](https://github.com/AxolStudio/STLGameDevRoundUp/actions/workflows/hugo-build.yaml)
+[![⚙ Build the Hugo Site](https://github.com/STLGameDev/STLGameDevRoundUp/actions/workflows/hugo-build.yaml/badge.svg)](https://github.com/STLGameDev/STLGameDevRoundUp/actions/workflows/hugo-build.yaml)
 
 <p align="center">
     <img src="assets/images/stlgdru-logo.svg" alt="St Louis Game Developer RoundUp Logo" width=220 height=220 />
@@ -14,7 +14,7 @@ This is the repository for the St Louis Game Developer RoundUp: a monthly news a
 
 EVERYONE IS ENCOURAGED TO CONTRIBUTE* 
 
-It is simple and easy to contribute: read how [HERE](https://github.com/AxolStudio/STLGameDevRoundUp/blob/main/CONTRIBUTING.md).
+It is simple and easy to contribute: read how [HERE](https://github.com/STLGameDev/STLGameDevRoundUp/blob/main/CONTRIBUTING.md).
 
 
 *(as long as their contribution adheres to our guidelines)!
