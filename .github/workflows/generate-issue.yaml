@@ -89,6 +89,8 @@ jobs:
                 run: |
                     new_no=$((${{ needs.generate.outputs.issue_no }}+1))
                     gh issue create -t "RoundUp Issue #$new_no" -b "To add to the next roundup, use the following format:
+                    
+                    Regular Entry:
                     \`\`\`md
                     {category} short description with [link](/link/to/item)
                     \`\`\`
@@ -97,4 +99,10 @@ jobs:
 
                     {category} short description with [link](/link/to/item)
 
-                    Use \`{!header}\` as the category for *only one comment* to set the header message for this RoundUp." -l "next-roundup" 
+                    Major Release Entry:
+                    \`\`\`md
+                    {*Name of Release|URL|ImageURL|Creator Name} short description
+                    \`\`\`
+
+                    Use \`{!header}\` as the category for *only one comment* to set the header message for this RoundUp.
+                    Use \`{#title}\` as the category for Important messages which will appear above the rest (use sparingly!)" -l "next-roundup" 
