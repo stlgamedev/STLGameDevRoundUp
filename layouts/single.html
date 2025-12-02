@@ -192,7 +192,7 @@
     <section class="event-appointment">
       <div class="event-time-indicator">
         <div class="event-time-badge text-nowrap">
-          <div class="event-date">{{- time.Format "JAN 02" .dateTime | upper -}}</div>
+          <div class="event-date">{{- time.Format "Jan 02" .dateTime | upper -}}</div>
           <div class="event-time">{{ time.Format "03:04 PM" .dateTime }}</div>
         </div>
         {{/* we need to get the meetup id from the event, if there is one */}}
