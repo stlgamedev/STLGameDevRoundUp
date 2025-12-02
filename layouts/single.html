@@ -23,7 +23,15 @@
 {{ range index $posts.nodes }}
 {{ $body := trim .body " \t\n\r" }}
 {{ $category := trim (replaceRE `(?s)^(?:\{)(.*)(?:\}).*` "$1" $body) " \t\n\r" }}
-{{ $entry := trim (replaceRE `(?s)^(?:\{.*\})(.*)` "$1" $body) " \t\n\r" }}
+
+{{/* For major releases, store the full entry including metadata */}}
+{{ $entry := "" }}
+{{ if hasPrefix $category "*" }}
+  {{ $entry = trim (replaceRE `(?s)^(?:\{\*)(.*)` "$1" $body) " \t\n\r" }}
+  {{ $category = "*" }}
+{{ else }}
+  {{ $entry = trim (replaceRE `(?s)^(?:\{.*\})(.*)` "$1" $body) " \t\n\r" }}
+{{ end }}
 
 {{ $cat := index $categories $category }}
 {{ if not $cat }}
@@ -57,10 +65,71 @@
   <hr class="my-4 rainbow-hr" />
 
   {{ $important := slice }}
+  {{ $majorReleases := slice }}
   {{ range $categories }}
     {{ if strings.Contains .category "#" }}
       {{ $important = $important | append . }}
+    {{ else if strings.Contains .category "*" }}
+      {{ $majorReleases = $majorReleases | append . }}
     {{ end }}
+  {{ end }}
+
+  
+
+  {{ if gt (len $majorReleases) 0 }}
+    <section class="major-releases-section mb-5">
+      <h2 class="display-6 mb-4 text-center">✨ Major Releases ✨</h2>
+      <p class="lead text-body-secondary text-center mb-4">Celebrate these exciting new releases from members of the St Louis Game Development community!</p>
+      <div class="major-releases-grid d-flex flex-wrap justify-content-center">
+        {{ range $majorReleases }}
+          {{ range .entries }}
+            {{/* Entry format: Title|URL|ImageURL|Creator} Description */}}
+            {{ $parts := split . "}" }}
+            {{ if ge (len $parts) 2 }}
+              {{ $metadata := index $parts 0 }}
+              {{ $description := trim (index $parts 1) " \t\n\r" }}
+              {{ $metaParts := split $metadata "|" }}
+              {{ if ge (len $metaParts) 4 }}
+                {{ $title := trim (index $metaParts 0) " \t\n\r" }}
+                {{ $url := trim (index $metaParts 1) " \t\n\r" }}
+                {{ $imageUrl := trim (index $metaParts 2) " \t\n\r" }}
+                {{ $creator := trim (index $metaParts 3) " \t\n\r" }}
+                <div class="major-release-card">
+                  <h3 class="major-release-title">
+                    <a href="{{ $url }}" target="_blank" rel="noopener">{{ $title }}</a>
+                  </h3>
+                  <p class="major-release-creator">by {{ $creator }}</p>
+                  <div class="major-release-description">{{ $description | markdownify }}</div>
+                  <div class="major-release-image">
+                    {{- $image := "" -}}
+                    {{- if hasPrefix $imageUrl "http" -}}
+                      {{- $image = resources.GetRemote $imageUrl -}}
+                      {{- if $image -}}
+                        <img src="{{ $image.RelPermalink }}" alt="{{ $title }}" />
+                      {{- else -}}
+                        <img src="{{ $imageUrl }}" alt="{{ $title }}" />
+                      {{- end -}}
+                    {{- else -}}
+                      {{- $image = resources.Get $imageUrl -}}
+                      {{- if $image -}}
+                        <img src="{{ $image.RelPermalink }}" alt="{{ $title }}" />
+                      {{- else -}}
+                        <img src="{{ $imageUrl }}" alt="{{ $title }}" />
+                      {{- end -}}
+                    {{- end -}}
+                  </div>
+                  <div class="major-release-actions">
+                    <a href="{{ $url }}" target="_blank" rel="noopener" class="btn-play-now">Play Now!</a>
+                  </div>
+                </div>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+
+    <hr class="my-4 rainbow-hr-alt" />
   {{ end }}
 
   {{ if gt (len $important) 0 }}
@@ -77,12 +146,14 @@
         {{ end }}
       </ul>
     </section>
+
+    <hr class="my-4 rainbow-hr-alt" />
   {{ end }}
 
   <section class="row ">
     <div class="col issue-content">
       {{- range sort $categories "count" "desc" }}
-      {{ if and (ne .category "!header") (not (strings.Contains .category "#")) }}
+      {{ if and (ne .category "!header") (not (strings.Contains .category "#")) (not (strings.Contains .category "*")) }}
       <section class="issue-section d-block" >
         <h3 class="display-6 pb-2">{{ .category | title }}</h3>
         <ul>
