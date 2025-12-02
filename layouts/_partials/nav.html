@@ -1,6 +1,7 @@
-{{ $logo := resources.Get "images/stlgdru-logo.svg" }}
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
+{{ $logo := resources.Get "images/stlgdru-logo-neon.svg" }}
+{{ $stlgdLogo := resources.Get "images/stlgd-logo.png" }}
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
 
         <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
             <img src="{{ $logo.RelPermalink }}" alt="St Louis Game Developer RoundUp Logo" width="30" height="30" />
@@ -8,8 +9,8 @@
             <span class="d-md-none">StLGD RoundUp</span>
         </a>
         
-        <div class="d-lg-flex col-lg-2 justify-content-end ">
-            {{ partial "color-switch.html" . }}
-        </div>
+        <a href="https://stlgame.dev" target="_blank" rel="noopener" class="navbar-brand ms-auto" title="St Louis Game Dev">
+            <img src="{{ $stlgdLogo.RelPermalink }}" alt="St Louis Game Dev" style="height: 30px; width: auto;" />
+        </a>
     </div>
 </nav>

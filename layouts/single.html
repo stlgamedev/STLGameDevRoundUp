@@ -1,17 +1,13 @@
 {{ define "main" }}
 
-<div class="text-center">
-  <h1 class="display-2">RoundUp № {{ .Params.no }}</h1>
+<div class="text-center mb-4">
+  <h1 class="display-2 fw-bold">RoundUp № {{ .Params.no }}</h1>
   {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
   {{ $dateHuman := .Date |
   time.Format ":date_full"
   }}
-  <p class="lead text-body-tertiary"><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
+  <p class="lead text-body-tertiary"><i class="bi bi-calendar"></i> <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
 </div>
-<div class="p-2 fs-5 mx-auto text-body-secondary">
-  <p>{{ site.Params.explanation }}</p>
-</div>
-<hr />
 
 {{- $categories := dict }}
 
@@ -25,9 +21,9 @@
 {{ $posts := index .Site.Data $post }}
 
 {{ range index $posts.nodes }}
-{{ $body := .body }}
-{{ $category := replaceRE `(?s)^(?:\{)(.*)(?:\}).*` "$1" $body }}
-{{ $entry := replaceRE `(?s)^(?:\{.*\})(.*)` "$1" $body }}
+{{ $body := trim .body " \t\n\r" }}
+{{ $category := trim (replaceRE `(?s)^(?:\{)(.*)(?:\}).*` "$1" $body) " \t\n\r" }}
+{{ $entry := trim (replaceRE `(?s)^(?:\{.*\})(.*)` "$1" $body) " \t\n\r" }}
 
 {{ $cat := index $categories $category }}
 {{ if not $cat }}
@@ -43,17 +39,52 @@
   {{ if $header }}
   <section class="issue-header d-block" >
     {{ range $header.entries }}
-    <p class="lead fs-4 ">{{ . | markdownify }}</p>
+      {{ $lines := split . "\n" }}
+      {{ range $lines }}
+        {{ if gt (len (trim . " \t\n\r")) 0 }}
+          <p class="lead fs-4">{{ . | markdownify }}</p>
+        {{ end }}
+      {{ end }}
     {{ end }}
   </section>
   {{ end -}}
+  
+  <div class="text-center mb-4">
+    <p class="text-body-secondary small">{{ site.Params.explanation }}</p>
+    <p class="text-body-secondary lead">Missed a recent RoundUp? <a href="https://roundup.stlgamedev.com">Browse our 🗄Archive</a> and stay in the loop with STL game development!</p>
+  </div>
 
-  <section class="row py-4">
+  <hr class="my-4 rainbow-hr" />
+
+  {{ $important := slice }}
+  {{ range $categories }}
+    {{ if strings.Contains .category "#" }}
+      {{ $important = $important | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if gt (len $important) 0 }}
+    <section class="important-section d-block mb-4">
+      <ul>
+        {{ range $important }}
+          {{ $tag := replace .category "#" "" }}
+          {{ range .entries }}
+            <li>
+              <span class="important-label">{{ trim $tag " \t\n\r" | title }}</span>
+              {{ . | markdownify }}
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+  {{ end }}
+
+  <section class="row ">
     <div class="col issue-content">
       {{- range sort $categories "count" "desc" }}
-      {{ if ne .category "!header" }}
+      {{ if and (ne .category "!header") (not (strings.Contains .category "#")) }}
       <section class="issue-section d-block" >
-        <h3 class="display-6">{{ .category | title }}</h3>
+        <h3 class="display-6 pb-2">{{ .category | title }}</h3>
         <ul>
           {{ range .entries }}
           <li>{{ . | markdownify }}</li>
@@ -66,26 +97,31 @@
   </section>
 </div>
 
-<hr class="my-4 mx-4" />
+<hr class="my-5 mx-4 rainbow-hr-rev" />
 
 {{ if $posts.events -}}
-<div id="events py-4 ">
-  <section class="events-header d-block" >
-    <h3 class="display-6">📆 Upcoming Events</h3>
+<div id="events" class="">
+  <section class="events-header d-block mb-4">
+    <h2 class="display-6 fw-bold">📆 Upcoming Events</h2>
     <p class="lead text-body-tertiary">Participate in these events from our community!</p>
   </section> 
-  <section class="">
-  <div class="col issue-content">
+  <section>
+  <div class="events-list">
     
   {{ range $posts.events }}   
-    <section class="issue-section border-bottom border-2 mt-2 pb-2">
-      <div class="row event-top-row ">
-        <div class="col text-center col-sm-4 " >
-          <div class="d-inline-block bg-success-subtle bg-gradient text-success-emphasis border border-success-subtle rounded font-monospace event-time fw-bold fs-6 py-1 px-2">
-            {{- time.Format "01/02/2006" .dateTime }} {{ time.Format "03:04 PM" .dateTime -}}
-          </div> 
+    {{- $eventImagePath := "images/events/generic.png" -}}
+    {{- if strings.Contains .title "GameDev Social" -}}
+      {{- $eventImagePath = "images/events/social.png" -}}
+    {{- else if strings.Contains .title "Share & Play" -}}
+      {{- $eventImagePath = "images/events/shares.png" -}}
+    {{- end -}}
+    {{- $eventImage := resources.Get $eventImagePath -}}
+    <section class="event-appointment">
+      <div class="event-time-indicator">
+        <div class="event-time-badge text-nowrap">
+          <div class="event-date">{{- time.Format "JAN 02" .dateTime | upper -}}</div>
+          <div class="event-time">{{ time.Format "03:04 PM" .dateTime }}</div>
         </div>
-        <div class="col event-title align-bottom col-sm-6 fs-5 fw-bolder" >{{ .title }}</div>
         {{/* we need to get the meetup id from the event, if there is one */}}
         {{- $description := .description | safeHTML -}}
         {{/* Match and extract the event ID from the RSVP section */}}
@@ -96,17 +132,26 @@
           {{- $fullMatch := index $firstMatch 0 -}}        {{/* full matched string */}}
           {{- $eventID := index $firstMatch 2 -}}          {{/* captured group with event ID */}}
           {{- $description = replace $description $fullMatch "" -}}
-          <div class="rsvp-link col-sm-2 text-end"><a href="https://www.meetup.com/st-louis-game-developers/events/{{ $eventID }}" target="_blank" rel="noopener" >RSVP</a></div>
-        
+        <a href="https://www.meetup.com/st-louis-game-developers/events/{{ $eventID }}" target="_blank" rel="noopener" class="btn btn-sm btn-rsvp mt-2"><i class="bi bi-calendar-check"></i> RSVP</a>
         {{- end -}}
-        
       </div>
-      {{- if $description -}}
-      <div class="row event-description pt-1 ">
-        
-        <div class="border-start border-1 col-sm-11 offset-sm-1">{{ $description | safeHTML }}</div>
+      <div class="event-details">
+        <h4 class="event-title-text">{{ trim .title " \t\n\r" }}</h4>
+        {{- if .location -}}
+        {{- $displayLocation := trim .location " \t\n\r" | replaceRE `, us$` "" -}}
+        <div class="event-location">
+          <a href="https://www.google.com/maps/search/?api=1&query={{ .location | urlquery }}" target="_blank" rel="noopener" class="location-link">
+            <i class="bi bi-geo-alt-fill"></i> {{ $displayLocation }}
+          </a>
+        </div>
+        {{- end -}}
+        {{- if $description -}}
+        <div class="event-description">{{ $description | safeHTML }}</div>
+        {{- end -}}
       </div>
-      {{- end -}}
+      <div class="event-image">
+        <img src="{{ $eventImage.RelPermalink }}" alt="{{ .title }}" />
+      </div>
     </section>
   {{ end }}
     
@@ -114,10 +159,10 @@
 </section>
 </div> 
 
-<hr class="my-4 mx-4" />
+<hr class="my-5 mx-4 rainbow-hr-alt" />
 {{ end -}}
 
-<div class="row">
+<div class="row mt-5 pb-5">
   <div class="col-lg-auto">
     <a class="btn btn-outline-danger  btn-sm" role="button"
       href="https://github.com/AxolStudio/STLGameDevRoundUp/blob/main/data/issue{{ .Params.no }}.json"><i

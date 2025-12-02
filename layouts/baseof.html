@@ -5,11 +5,13 @@
     {{ partial "head.html" . }}
   </head>
   <body class="  ">
+    {{- if not .IsHome }}
     {{ partial "nav.html" . }}
+    {{ end -}}
     {{- if .IsHome }}
     {{ partial "header-home.html" . }}
     {{ end -}}
-    <main class="container" style="margin-bottom: 6rem;">
+    <main class="container p-5 mb-5" >
       {{ block "main" . }}{{ end }}
     </main>
     <footer class="footer mt-3 py-3 fixed-bottom ">

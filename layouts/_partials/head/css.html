@@ -1,11 +1,11 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Work+Sans:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Color+Emoji&display=swap');
 </style>
-
 {{- $options := dict 
     "targetPath" "css/styles.css"
     "outputStyle" "compressed"
     "enableSourceMap" (not hugo.IsProduction)
+    "transpiler" "dartsass"
 -}}
 {{- with resources.Get "/scss/main.scss" | toCSS  $options | minify -}}
 <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" media="screen" crossorigin="anonymous" />
