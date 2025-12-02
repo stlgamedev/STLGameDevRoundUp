@@ -74,6 +74,24 @@
     {{ end }}
   {{ end }}
 
+  {{ if gt (len $important) 0 }}
+    <section class="important-section d-block mb-4">
+      <ul>
+        {{ range $important }}
+          {{ $tag := replace .category "#" "" }}
+          {{ range .entries }}
+            <li>
+              <span class="important-label">{{ trim $tag " \t\n\r" | title }}</span>
+              {{ . | markdownify }}
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+
+    <hr class="my-4 rainbow-hr-alt" />
+  {{ end }}
+
   
 
   {{ if gt (len $majorReleases) 0 }}
@@ -132,23 +150,7 @@
     <hr class="my-4 rainbow-hr-alt" />
   {{ end }}
 
-  {{ if gt (len $important) 0 }}
-    <section class="important-section d-block mb-4">
-      <ul>
-        {{ range $important }}
-          {{ $tag := replace .category "#" "" }}
-          {{ range .entries }}
-            <li>
-              <span class="important-label">{{ trim $tag " \t\n\r" | title }}</span>
-              {{ . | markdownify }}
-            </li>
-          {{ end }}
-        {{ end }}
-      </ul>
-    </section>
-
-    <hr class="my-4 rainbow-hr-alt" />
-  {{ end }}
+  
 
   <section class="row ">
     <div class="col issue-content">
