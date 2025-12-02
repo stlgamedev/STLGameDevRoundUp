@@ -1,5 +1,5 @@
 {
     "yaml.schemas": {
-        "https://json.schemastore.org/github-workflow.json": "vscode-vfs://github/AxolStudio/STLGameDevRoundUp/.github/workflows/generate-new-issue.yaml"
+        "https://json.schemastore.org/github-workflow.json": "vscode-vfs://github/STLGameDev/STLGameDevRoundUp/.github/workflows/generate-new-issue.yaml"
     }
 }

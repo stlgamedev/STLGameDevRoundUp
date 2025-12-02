@@ -46,7 +46,7 @@ Here is a list of the kinds of things we *encourage* anyone to share!
 
 ### How to Share your news
 
-Every future RoundUp Issue will have an Open Issue pre-generated under the [Repository's Issues](https://github.com/AxolStudio/STLGameDevRoundUp/issues). Simply leave a comment under that Issue with your news item you want to share, and it will end up in the next RoundUp Issue automatically!
+Every future RoundUp Issue will have an Open Issue pre-generated under the [Repository's Issues](https://github.com/STLGameDev/STLGameDevRoundUp/issues). Simply leave a comment under that Issue with your news item you want to share, and it will end up in the next RoundUp Issue automatically!
 
 When adding your news item, it should match the following format:
 
@@ -66,13 +66,13 @@ Feel free to add as many new news items as you want, but keep it to one entry pe
 
 ### Generating a New RoundUp Issue
 
-This site uses a [GitHub Action](https://github.com/AxolStudio/STLGameDevRoundUp/actions/workflows/generate-new-issue.yaml) to generate a new RoundUp Issue. We can do this at any time, however, for now, we are going to try to only put out a new issue every other week on Wednesday - IF there is enough content to warrant putting one out. You can leave this to [SeiferTim](https://github.com/SeiferTim) to handle.
+This site uses a [GitHub Action](https://github.com/STLGameDev/STLGameDevRoundUp/actions/workflows/generate-new-issue.yaml) to generate a new RoundUp Issue. We can do this at any time, however, for now, we are going to try to only put out a new issue every other week on Wednesday - IF there is enough content to warrant putting one out. You can leave this to [SeiferTim](https://github.com/SeiferTim) to handle.
 
 ### Fixing an error
 
 If you discover an error or need to correct some information in an *already generated RoundUp*, you must edit the Data file for that issue directly.
 
-In the Repository, under the `data` folder, find the `.json` file for the issue you need to change. For example, Issue #1 is located here: [https://github.com/AxolStudio/STLGameDevRoundUp/blob/main/data/issue1.json]
+In the Repository, under the `data` folder, find the `.json` file for the issue you need to change. For example, Issue #1 is located here: [https://github.com/STLGameDev/STLGameDevRoundUp/blob/main/data/issue1.json]
 
 Make your change as a new PR and it will be added later.
 
@@ -109,4 +109,4 @@ The site is made with [Hugo](https://gohugo.io/) and [Bootstrap](https://gohugo.
 
 The site is deliberately designed to be fairly simple to encourage even less experienced developers to take the plunge and share their changes.
 
-We use [GitHub Actions](https://github.com/AxolStudio/STLGameDevRoundUp/actions) to automatically build and deploy the site whenever changes to the code are committed.
+We use [GitHub Actions](https://github.com/STLGameDev/STLGameDevRoundUp/actions) to automatically build and deploy the site whenever changes to the code are committed.
