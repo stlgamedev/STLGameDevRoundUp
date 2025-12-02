@@ -64,6 +64,7 @@
       "/issue-26/",
       "/issue-27/",
       "/issue-28/",
+      "/issue-29/",
       "/issue-3/",
       "/issue-4/",
       "/issue-5/",
@@ -137,7 +138,6 @@
       "location-link",
       "major-release-actions",
       "major-release-card",
-      "major-release-content",
       "major-release-creator",
       "major-release-description",
       "major-release-image",
@@ -199,6 +199,7 @@
       "26",
       "27",
       "28",
+      "29",
       "3",
       "4",
       "5",
@@ -213,7 +214,8 @@
       "home-list",
       "issue",
       "moon-stars-fill",
-      "sun-fill"
+      "sun-fill",
+      "we-are-excited-to-announce-global-game-jam-2026-will-be-held-at-umsl-january-30th---february-1st-2026"
     ]
   }
 }
