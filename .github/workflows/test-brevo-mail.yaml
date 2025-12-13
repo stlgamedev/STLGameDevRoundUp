@@ -21,6 +21,7 @@ on:
 jobs:
   send-test-with-brevo:
     uses: ./.github/workflows/roundup-email-brevo.yaml
+    secrets: inherit
     with:
       issue_no: ${{ inputs.issue_no }}
       base_url: ${{ inputs.base_url }}
