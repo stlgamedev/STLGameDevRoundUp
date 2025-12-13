@@ -68,26 +68,27 @@ jobs:
       - name: ✉️ Send test email via Brevo (single recipient)
         if: ${{ inputs.test_mode == true }}
         run: |
+          SUBJECT="STLGameDev RoundUp TEST #${{ inputs.issue_no }}"
+
+          # Safety check
           if [ -z "${{ inputs.test_email }}" ]; then
             echo "Error: test_mode is true but test_email is not set." >&2
             exit 1
           fi
 
-          SUBJECT="STLGameDev RoundUp TEST #${{ inputs.issue_no }}"
-
-          # Build JSON payload using jq so we don't fight with quoting
+          # Build JSON payload using jq
           jq -n \
             --arg apiSubject "$SUBJECT" \
             --arg senderEmail "$BREVO_SENDER_EMAIL" \
             --arg senderName "$BREVO_SENDER_NAME" \
             --arg toEmail "${{ inputs.test_email }}" \
-            --arg encodedHtml "${{ steps.encode_html.outputs.encoded_html }}" \
+            --rawfile html email.html \
             '
             {
               sender: { email: $senderEmail, name: $senderName },
               to: [ { email: $toEmail } ],
               subject: $apiSubject,
-              htmlContent: ($encodedHtml | fromjson)
+              htmlContent: $html
             }
             ' > payload.json
 
@@ -104,6 +105,7 @@ jobs:
           fi
 
           echo "Test email sent successfully." >&2
+
 
       # ---------- NORMAL MODE: create & send campaign to list ----------
       - name: 📮 Create email campaign in Brevo
