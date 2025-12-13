@@ -27,8 +27,8 @@ jobs:
     env:
       BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
       BREVO_LIST_ID: 3
-      BREVO_SENDER_EMAIL: roundup@stlgame.dev
-      BREVO_SENDER_NAME: STLGameDev RoundUp
+      BREVO_SENDER_EMAIL: "roundup@stlgame.dev"
+      BREVO_SENDER_NAME: "STLGameDev RoundUp"
 
     steps:
       - name: ⬇️ Checkout repo
