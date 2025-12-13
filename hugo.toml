@@ -37,6 +37,8 @@ ignoreErrors = ["error-disable-taxonomy", "error-no-layout"]
     target = "$1"
 
 [services]
+  [services.googleAnalytics]
+    ID = "G-P29TNS4V9P"
   [services.scss]
     transpiler = "dartsass"
 
