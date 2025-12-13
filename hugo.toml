@@ -55,16 +55,15 @@ ignoreErrors = ["error-disable-taxonomy", "error-no-layout"]
     rel = 'canonical'
     weight = 10
   [outputFormats.email]
-    baseName = 'email'
+    baseName = 'email/index'
     isHTML = true
     isPlainText = false
     mediaType = 'text/html'
-    noUgly = false
+    noUgly = true
     notAlternative = true
     permalinkable = true
-    protocol = ''
     weight = 0
-    path =''
+    path = ""
 
 
 [outputs]

@@ -8,7 +8,7 @@ w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   {{ $dateHuman := .Date |
   time.Format ":date_full"
   -}}
-  {{- $stlru := resources.Get "images/stlgdru-logo.png" }}
+  {{- $stlru := resources.Get "images/stlgdru-logo-neon.png" }}
   {{ $stlgdlogo := resources.Get "images/stlgd-logo.png" }}
   {{ $stlgdicon := resources.Get "images/stlgd-icon.png" -}}
   <title>St Louis Game Developer RoundUp Issue № {{ .Params.no }}</title>
