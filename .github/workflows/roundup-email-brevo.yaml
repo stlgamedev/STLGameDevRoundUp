@@ -1,0 +1,177 @@
+name: 📧 RoundUp Newsletter Email (Brevo)
+run-name: 📧 RoundUp Newsletter Email (Brevo) by @${{ github.actor }}
+
+on:
+  workflow_call:
+    inputs:
+      issue_no:
+        required: true
+        type: string
+      base_url:
+        required: true
+        type: string
+      test_mode:
+        required: false
+        type: boolean
+        default: false
+      test_email:
+        required: false
+        type: string
+
+permissions: read-all
+
+jobs:
+  send-with-brevo:
+    runs-on: ubuntu-latest
+
+    env:
+      BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+      BREVO_LIST_ID: 3
+      BREVO_SENDER_EMAIL: roundup@stlgame.dev
+      BREVO_SENDER_NAME: STLGameDev RoundUp
+
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🔧 Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: 🌐 Fetch email HTML from RoundUp site
+        id: fetch_html
+        run: |
+          ISSUE_NO="${{ inputs.issue_no }}"
+          BASE_URL="${{ inputs.base_url }}"
+
+          # ⚠️ IMPORTANT: adjust this path to match your existing email URL
+          # e.g. https://roundup.stlgame.dev/roundup/NN/email/
+          EMAIL_URL="${BASE_URL}/roundup/${ISSUE_NO}/email/"
+
+          echo "Fetching email HTML from: $EMAIL_URL" >&2
+
+          html_content=$(curl -fsSL "$EMAIL_URL")
+          if [ $? -ne 0 ] || [ -z "$html_content" ]; then
+            echo "Error: Failed to fetch email HTML from $EMAIL_URL" >&2
+            exit 1
+          fi
+
+          # Store raw HTML in a temp file so jq can safely JSON-escape it
+          echo "$html_content" > email.html
+
+      - name: 🧪 JSON-encode HTML content
+        id: encode_html
+        run: |
+          encoded=$(jq -Rs '.' < email.html)
+          echo "encoded_html=$encoded" >> "$GITHUB_OUTPUT"
+
+      # ---------- TEST MODE: send ONLY to a single address ----------
+      - name: ✉️ Send test email via Brevo (single recipient)
+        if: ${{ inputs.test_mode == true }}
+        run: |
+          if [ -z "${{ inputs.test_email }}" ]; then
+            echo "Error: test_mode is true but test_email is not set." >&2
+            exit 1
+          fi
+
+          SUBJECT="STLGameDev RoundUp TEST #${{ inputs.issue_no }}"
+
+          # Build JSON payload using jq so we don't fight with quoting
+          jq -n \
+            --arg apiSubject "$SUBJECT" \
+            --arg senderEmail "$BREVO_SENDER_EMAIL" \
+            --arg senderName "$BREVO_SENDER_NAME" \
+            --arg toEmail "${{ inputs.test_email }}" \
+            --arg encodedHtml "${{ steps.encode_html.outputs.encoded_html }}" \
+            '
+            {
+              sender: { email: $senderEmail, name: $senderName },
+              to: [ { email: $toEmail } ],
+              subject: $apiSubject,
+              htmlContent: ($encodedHtml | fromjson)
+            }
+            ' > payload.json
+
+          echo "Sending test email to ${{ inputs.test_email }} via Brevo..." >&2
+
+          curl -fsSL -X POST "https://api.brevo.com/v3/smtp/email" \
+            -H "api-key: $BREVO_API_KEY" \
+            -H "Content-Type: application/json" \
+            --data-binary @payload.json
+
+          if [ $? -ne 0 ]; then
+            echo "Error: Failed to send test email via Brevo." >&2
+            exit 1
+          fi
+
+          echo "Test email sent successfully." >&2
+
+      # ---------- NORMAL MODE: create & send campaign to list ----------
+      - name: 📮 Create email campaign in Brevo
+        if: ${{ inputs.test_mode == false }}
+        id: create_campaign
+        run: |
+          SUBJECT="STLGameDev RoundUp #${{ inputs.issue_no }}"
+
+          if [ -z "$BREVO_LIST_ID" ]; then
+            echo "Error: BREVO_LIST_ID secret is not set." >&2
+            exit 1
+          fi
+
+          jq -n \
+            --arg name "$SUBJECT" \
+            --arg subject "$SUBJECT" \
+            --arg senderEmail "$BREVO_SENDER_EMAIL" \
+            --arg senderName "$BREVO_SENDER_NAME" \
+            --arg listId "$BREVO_LIST_ID" \
+            --arg encodedHtml "${{ steps.encode_html.outputs.encoded_html }}" \
+            '
+            {
+              name: $name,
+              subject: $subject,
+              sender: { email: $senderEmail, name: $senderName },
+              type: "classic",
+              htmlContent: ($encodedHtml | fromjson),
+              recipients: { listIds: [ ($listId | tonumber) ] },
+              inlineCss: true
+            }
+            ' > payload.json
+
+          echo "Creating Brevo email campaign..." >&2
+
+          response=$(curl -fsSL -X POST "https://api.brevo.com/v3/emailCampaigns" \
+            -H "api-key: $BREVO_API_KEY" \
+            -H "Content-Type: application/json" \
+            --data-binary @payload.json)
+
+          if [ $? -ne 0 ]; then
+            echo "Error: Failed to create Brevo campaign." >&2
+            echo "Response: $response" >&2
+            exit 1
+          fi
+
+          echo "Raw response: $response" >&2
+
+          campaign_id=$(echo "$response" | jq -r '.id')
+          if [ -z "$campaign_id" ] || [ "$campaign_id" = "null" ]; then
+            echo "Error: Could not parse campaign id from Brevo response." >&2
+            exit 1
+          fi
+
+          echo "campaign_id=$campaign_id" >> "$GITHUB_OUTPUT"
+
+      - name: 🚀 Send Brevo campaign now
+        if: ${{ inputs.test_mode == false }}
+        run: |
+          campaign_id="${{ steps.create_campaign.outputs.campaign_id }}"
+          echo "Sending Brevo campaign id=$campaign_id now..." >&2
+
+          curl -fsSL -X POST "https://api.brevo.com/v3/emailCampaigns/${campaign_id}/sendNow" \
+            -H "api-key: $BREVO_API_KEY" \
+            -H "Content-Type: application/json"
+
+          if [ $? -ne 0 ]; then
+            echo "Error: Failed to send Brevo campaign." >&2
+            exit 1
+          fi
+
+          echo "Brevo campaign send triggered." >&2
