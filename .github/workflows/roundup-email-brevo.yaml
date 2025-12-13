@@ -44,8 +44,8 @@ jobs:
           BASE_URL="${{ inputs.base_url }}"
 
           # ⚠️ IMPORTANT: adjust this path to match your existing email URL
-          # e.g. https://roundup.stlgame.dev/roundup/NN/email/
-          EMAIL_URL="${BASE_URL}/roundup/${ISSUE_NO}/email/"
+          # e.g. https://roundup.stlgame.dev/issue-${ISSUE_NO}/email/
+          EMAIL_URL="${BASE_URL}/issue-${ISSUE_NO}/email"
 
           echo "Fetching email HTML from: $EMAIL_URL" >&2
 
