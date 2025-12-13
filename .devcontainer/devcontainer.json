@@ -1,10 +1,7 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
-	"features": {
-		"ghcr.io/devcontainers/features/hugo:1": {
-			"version": "latest",
-			"extended": true
-		}
-	},
-	"postCreateCommand": "npm install"
+	"image": "mcr.microsoft.com/devcontainers/base:alpine",
+	"postCreateCommand": ".devcontainer/setup.sh",
+	"remoteEnv": {
+		"PATH": "/usr/local/bin:${containerEnv:PATH}"
+	}
 }
