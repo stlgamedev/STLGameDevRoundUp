@@ -1,0 +1,28 @@
+name: 🧪 Test Brevo RoundUp Email
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_no:
+        required: true
+        type: string
+        default: "test"
+        description: "Issue number or slug used in the RoundUp URL"
+      base_url:
+        required: true
+        type: string
+        default: "https://roundup.stlgame.dev"
+        description: "Base URL for the RoundUp site"
+      test_email:
+        required: true
+        type: string
+        description: "Your email to send the test newsletter to"
+
+jobs:
+  send-test-with-brevo:
+    uses: ./.github/workflows/roundup-email-brevo.yaml
+    with:
+      issue_no: ${{ inputs.issue_no }}
+      base_url: ${{ inputs.base_url }}
+      test_mode: true
+      test_email: ${{ inputs.test_email }}
