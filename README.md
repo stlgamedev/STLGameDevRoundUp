@@ -3,7 +3,7 @@
 [![⚙ Build the Hugo Site](https://github.com/STLGameDev/STLGameDevRoundUp/actions/workflows/hugo-build.yaml/badge.svg)](https://github.com/STLGameDev/STLGameDevRoundUp/actions/workflows/hugo-build.yaml)
 
 <p align="center">
-    <img src="assets/images/stlgdru-logo.svg" alt="St Louis Game Developer RoundUp Logo" width=220 height=220 />
+    <img src="assets/images/stlgdru-logo-neon.svg" alt="St Louis Game Developer RoundUp Logo" width=220 height=220 />
 </p>
 
 # St Louis Game Developer RoundUp

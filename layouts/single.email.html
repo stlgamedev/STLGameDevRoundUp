@@ -1,0 +1,564 @@
+{{/* ==== Build same data structures as main single.html ==== */}}
+{{ $categories := dict }}
+
+{{ $post := printf "%s" (string .Params.no) | printf "%s%s" "issue" | printf "%s" }}
+{{ with .Params.is_test }}
+{{ if . }}
+{{ $post = "issue-test" }}
+{{ end }}
+{{ end }}
+
+{{ $posts := index .Site.Data $post }}
+
+{{ range index $posts.nodes }}
+{{ $body := trim .body " \t\n\r" }}
+{{ $category := trim (replaceRE `(?s)^(?:\{)(.*)(?:\}).*` "$1" $body) " \t\n\r" }}
+
+{{/* For major releases, store full entry including metadata */}}
+{{ $entry := "" }}
+{{ if hasPrefix $category "*" }}
+{{ $entry = trim (replaceRE `(?s)^(?:\{\*)(.*)` "$1" $body) " \t\n\r" }}
+{{ $category = "*" }}
+{{ else }}
+{{ $entry = trim (replaceRE `(?s)^(?:\{.*\})(.*)` "$1" $body) " \t\n\r" }}
+{{ end }}
+
+{{ $cat := index $categories $category }}
+{{ if not $cat }}
+{{ $categories = merge $categories (dict $category (dict "category" $category "count" 1 "entries" (slice $entry))) }}
+{{ else }}
+{{ $categories = merge $categories (dict $category (dict "category" $category "count" (int ($cat.count) | add 1)
+"entries" (append $entry $cat.entries))) }}
+{{ end }}
+{{ end }}
+
+{{ $header := index $categories "!header" }}
+
+{{ $important := slice }}
+{{ $majorReleases := slice }}
+{{ range $categories }}
+{{ if strings.Contains .category "#" }}
+{{ $important = $important | append . }}
+{{ else if strings.Contains .category "*" }}
+{{ $majorReleases = $majorReleases | append . }}
+{{ end }}
+{{ end }}
+
+{{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
+{{- $dateHuman := .Date | time.Format ":date_full" -}}
+
+{{ $html := .OutputFormats.Get "HTML" }}
+
+
+{{- $stlru := resources.Get "images/stlgdru-logo-neon.png" }}
+  {{ $stlgdlogo := resources.Get "images/stlgd-logo.png" }}
+  {{ $stlgdicon := resources.Get "images/stlgd-icon.png" -}}
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+
+  <!-- Request Work Sans / Noto Color Emoji (clients that ignore this will just fall back) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <style type="text/css">
+  :root {
+    /* Theme-matched tokens (mirrors `assets/scss/main.scss`) */
+    --bg-page:    #000000;  /* $body-bg */
+    --bg-main:    #000000;  /* keep email background consistent with site */
+    --bg-card:    #1a1a1a;  /* used in site header + good card contrast */
+    --bg-header:  #000000;
+    --bg-footer:  #000000;
+
+    --text-main:  #e8e8e8;  /* $body-color */
+    --text-muted: rgba(255,255,255,0.60);
+
+    --border-soft: rgba(255,255,255,0.15); /* $border-color */
+
+    --accent:     #E48723;  /* $link-color */
+    --accent-alt: #F5E92F;  /* $link-hover-color */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    -webkit-text-size-adjust: none;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .outer {
+    width: 100%;
+    background-color: #000000;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 system-ui, sans-serif;
+    color: #e8e8e8;
+  }
+
+  /* Match site link treatment: orange, subtle underline, yellow hover */
+  a {
+    color: #E48723 !important;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  a:hover,
+  a:focus,
+  a:active {
+    color: #F5E92F !important;
+    border-bottom-color: rgba(245,233,47,0.5);
+  }
+
+  .header {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+  }
+  .header td {
+    padding: 10px 24px;
+  }
+
+  .content {
+    background-color: #000000;
+    color: #e8e8e8 !important;
+  }
+  .content td {
+    padding: 16px 24px;
+  }
+  .content p {
+    line-height: 1.5;
+    margin: 0 0 0.75rem;
+  }
+  .content ul {
+    padding-left: 0;
+    margin: 0 0 0.75rem;
+    list-style: none;
+  }
+  /* Match site issue bullet cards */
+  .content li {
+    margin: 0 0 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid rgba(255,255,255,0.10);
+    border-radius: 4px;
+    line-height: 1.6;
+  }
+
+  /* Important Updates: add a subtle purple accent */
+  .important-list li {
+    border-left-color: rgba(209,49,211,0.65);
+    box-shadow: inset 3px 0 0 rgba(209,49,211,0.25);
+  }
+
+  .intro {
+    font-size: 14px;
+    color: rgba(255,255,255,0.70);
+    text-align: justify;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .muted {
+    color: rgba(255,255,255,0.50);
+    font-size: 13px;
+  }
+
+  /* Match site rainbow hr bars */
+  .divider {
+    height: 4px;
+    background: linear-gradient(to right, #E48723, #F5E92F);
+    box-shadow: 0 0 15px rgba(228, 135, 35, 0.35);
+    margin: 18px 0;
+  }
+  .divider-alt {
+    height: 4px;
+    background: linear-gradient(to right, #F5E92F, #D131D3);
+    box-shadow: 0 0 15px rgba(245, 233, 47, 0.35);
+    margin: 18px 0;
+  }
+
+  .events-header {
+    font-size: 15px;
+    color: rgba(255,255,255,0.50);
+  }
+
+  /* Major release card: closer to site (top gradient bar + glow) */
+  .major-card {
+    border: 1px solid rgba(245,233,47,0.5);
+    margin-bottom: 14px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px rgba(245,233,47,0.25), 0 0 22px rgba(245,233,47,0.12);
+    overflow: hidden;
+  }
+  .major-card td {
+    padding: 12px 14px;
+  }
+  /* Major release images: constrain large external headers (Steam, etc.) */
+  .major-image-wrap {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .major-image {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    max-height: 220px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  .major-title {
+    font-size: 18px;
+    margin: 0 0 4px;
+  }
+  .major-creator {
+    font-size: 13px;
+    color: rgba(255,255,255,0.60);
+    margin: 0 0 6px;
+  }
+  .major-desc {
+    font-size: 14px;
+    margin: 0 0 8px;
+  }
+
+  /* Event cards: approximate site event-appointment */
+  .event-card {
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 14px 14px;
+    margin: 0 0 14px;
+  }
+  .event-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: #ffffff;
+  }
+  .event-title-table {
+    width: 100%;
+  }
+  .event-title-table td {
+    padding: 0;
+    vertical-align: top;
+  }
+  .event-title-date {
+    width: 1%;
+    white-space: nowrap;
+    padding-right: 12px;
+    padding-top: 2px;
+  }
+  .event-title-text {
+    width: 99%;
+  }
+  .event-when {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 system-ui, sans-serif;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    background: rgba(209,49,211,0.25);
+    border: 1px solid rgba(209,49,211,0.45);
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+</style>
+
+
+</head>
+
+<body>
+  <table class="outer" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td align="center">
+        <table class="container" width="100%" cellspacing="0" cellpadding="0" border="0">
+
+          <!-- View in browser -->
+          <tr class="header">
+            <td>
+              {{ if $html }}
+              <p style="margin:0;">
+                <a href="{{ $html.Permalink }}" target="_blank" style="color:#ffffff !important;font-size:12px;">
+                  View this email in your browser
+                </a>
+              </p>
+              {{ end }}
+            </td>
+          </tr>
+
+          <!-- Logo / header -->
+          <tr class="header">
+            <td>
+              <a href="https://stlgame.dev" target="_blank">
+                <img src="{{ $stlgdlogo.Permalink }}" alt="STLGameDev"
+                  style="margin: 8px auto 16px; max-width:260px;">
+              </a>
+            </td>
+          </tr>
+
+          <!-- Title / issue / date -->
+          <tr class="content">
+            <td class="text-center">
+              <h1 style="margin:0 0 0.5rem;font-size:26px;">St Louis Game Developer RoundUp</h1>
+              <a href="{{ if $html }}{{ $html.Permalink }}{{ else }}{{ .Permalink }}{{ end }}" target="_blank"
+                style="display:inline-block;margin-bottom:8px;">
+                <img src="{{ $stlru.Permalink }}" alt="STLGameDev RoundUp"
+                  width="360" style="display:block;margin:0 auto;max-width:360px;width:100%;height:auto;">
+              </a>
+              <h2 style="margin:0 0 0.25rem;font-size:20px;">
+                {{ if .Params.no }}Issue № {{ .Params.no }}{{ else }}{{ .Title }}{{ end }}
+              </h2>
+              <p style="margin:0;font-size:14px;color:#bbbbbb;">
+                <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Intro / explanation -->
+          <tr class="content">
+            <td>
+              <p class="intro">
+                {{ with site.Params.explanation }}
+                {{ . }}
+                {{ else }}
+                The St Louis Game Developer RoundUp is the official monthly digest of the St Louis Game Developer
+                community. Curated by STLGameDev and built through community contributions, it aggregates news, project
+                updates, resources, and upcoming events from our local game development scene.
+                {{ end }}
+              </p>
+              <p class="muted text-center" style="margin-top:0.75rem;">
+                Missed a recent RoundUp?
+                <a href="https://roundup.stlgame.dev" target="_blank">Browse our 🗄 Archive</a>
+                and stay in the loop with STL game development!
+              </p>
+              <div class="divider"></div>
+            </td>
+          </tr>
+
+          <!-- Header block (!header) -->
+          {{ if $header }}
+          <tr class="content">
+            <td>
+              {{ range $header.entries }}
+              {{ $lines := split . "\n" }}
+              {{ range $lines }}
+              {{ if gt (len (trim . " \t\n\r")) 0 }}
+              <p class="lead">{{ . | markdownify }}</p>
+              {{ end }}
+              {{ end }}
+              {{ end }}
+              <div class="divider"></div>
+            </td>
+          </tr>
+          {{ end }}
+
+          <!-- Important items (#category) -->
+          {{ if gt (len $important) 0 }}
+          <tr class="content">
+            <td>
+              <h2 class="section-title">Important Updates</h2>
+              <ul class="important-list">
+                {{ range $important }}
+                {{ $tag := replace .category "#" "" }}
+                {{ range .entries }}
+                <li>
+                  <strong>{{ trim $tag " \t\n\r" | title }}:</strong>
+                  {{ . | markdownify }}
+                </li>
+                {{ end }}
+                {{ end }}
+              </ul>
+              <div class="divider"></div>
+            </td>
+          </tr>
+          {{ end }}
+
+          <!-- Major Releases (stacked cards) -->
+          {{ if gt (len $majorReleases) 0 }}
+          <tr class="content">
+            <td>
+              <h2 class="section-title" style="text-align:center;">✨ Major Releases ✨</h2>
+              <p class="muted text-center" style="margin-bottom:1rem;">
+                Celebrate these exciting new releases from members of the St Louis Game Development community!
+              </p>
+
+              {{ range $majorReleases }}
+              {{ range .entries }}
+              {{/* Entry format: Title|URL|ImageURL|Creator} Description */}}
+              {{ $parts := split . "}" }}
+              {{ if ge (len $parts) 2 }}
+              {{ $metadata := index $parts 0 }}
+              {{ $description := trim (index $parts 1) " \t\n\r" }}
+              {{ $metaParts := split $metadata "|" }}
+              {{ if ge (len $metaParts) 4 }}
+              {{ $title := trim (index $metaParts 0) " \t\n\r" }}
+              {{ $url := trim (index $metaParts 1) " \t\n\r" }}
+              {{ $imageUrl := trim (index $metaParts 2) " \t\n\r" }}
+              {{ $creator := trim (index $metaParts 3) " \t\n\r" }}
+
+              <table class="major-card" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td>
+                    {{ if $imageUrl }}
+                    <div class="major-image-wrap">
+                      {{ if hasPrefix $imageUrl "http" }}
+                      <img class="major-image" src="{{ $imageUrl }}" alt="{{ $title }}">
+                      {{ else }}
+                      <img class="major-image" src="{{ printf " %s%s" site.BaseURL $imageUrl }}" alt="{{ $title }}">
+                      {{ end }}
+                    </div>
+                    {{ end }}
+                    <h3 class="major-title">
+                      <a href="{{ $url }}" target="_blank" rel="noopener">{{ $title }}</a>
+                    </h3>
+                    <p class="major-creator">by {{ $creator }}</p>
+                    <div class="major-desc">
+                      {{ $description | markdownify }}
+                    </div>
+                    <p style="margin:0;">
+                      <a href="{{ $url }}" target="_blank" rel="noopener" class="btn-link">Play Now →</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              {{ end }}
+              {{ end }}
+              {{ end }}
+              {{ end }}
+
+              <div class="divider"></div>
+            </td>
+          </tr>
+          {{ end }}
+
+          <!-- Regular sections -->
+          <tr class="content">
+            <td>
+              {{ range sort $categories "count" "desc" }}
+              {{ if and (ne .category "!header") (not (strings.Contains .category "#")) (not (strings.Contains .category
+              "*")) }}
+              <h2 class="section-title">{{ .category | title }}</h2>
+              <ul>
+                {{ range .entries }}
+                <li>{{ . | markdownify }}</li>
+                {{ end }}
+              </ul>
+              {{ end }}
+              {{ end }}
+              <div class="divider"></div>
+            </td>
+          </tr>
+
+          <!-- Upcoming events -->
+          {{ if $posts.events }}
+          <tr class="content">
+            <td>
+              <h2 class="section-title">📆 Upcoming Events</h2>
+              <p class="events-header">Participate in these events from our community!</p>
+              <ul style="padding-left:0;list-style:none;">
+                {{ range $posts.events }}
+                <li class="event-card">
+                  <table class="event-title-table" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                      <td class="event-title-date">
+                        <span class="event-when">
+                          {{- time.Format "Jan 02" .dateTime | upper -}} {{- " " -}}{{ time.Format "03:04 PM" .dateTime -}}
+                        </span>
+                      </td>
+                      <td class="event-title-text" style="padding-left:8px;">
+                        <div class="event-title">{{ trim .title " \t\n\r" }}</div>
+                      </td>
+                    </tr>
+                  </table>
+                  {{ if .location }}
+                  <div class="muted" style="margin:0 0 6px;">{{ .location }}</div>
+                  {{ end }}
+                  {{ if .description }}
+                  <div style="margin-top:4px;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.70);">
+                    {{ .description | safeHTML }}
+                  </div>
+                  {{ end }}
+                </li>
+                {{ end }}
+              </ul>
+              <div class="divider"></div>
+            </td>
+          </tr>
+          {{ end }}
+
+          <!-- Icon/footer -->
+          <tr class="content">
+            <td align="right">
+              <a href="https://stlgame.dev" target="_blank">
+                <img src="{{ $stlgdicon.Permalink }}" alt="STLGameDev Icon" width="50"
+                  height="50" style="margin-left:auto;">
+              </a>
+            </td>
+          </tr>
+
+          <tr class="header">
+            <td>
+              <p style="margin:0 0 6px;font-size:12px;">
+                &copy; {{ now.Year }} STLGameDev. All rights reserved.
+              </p>
+              <p style="margin:0 0 6px;font-size:12px;">
+                You're receiving this email because you signed up for updates from STLGameDev.
+              </p>
+              <p style="margin:0;font-size:12px;">
+                To change how you receive these emails or unsubscribe, use the links provided by our email provider in
+                the footer of this message.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
