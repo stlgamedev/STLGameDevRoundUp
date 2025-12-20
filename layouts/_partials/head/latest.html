@@ -1,0 +1,35 @@
+{{/* Find the latest issue page for meta tags */}}
+{{ $latestIssue := "" }}
+{{ $latestNo := 0 }}
+{{ range where .Site.RegularPages "Section" "" }}
+  {{ if .Params.no }}
+    {{ if and (not .Params.is_test) (gt .Params.no $latestNo) }}
+      {{ $latestNo = .Params.no }}
+      {{ $latestIssue = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if $latestIssue }}
+{{- $image := printf "https://raw.githubusercontent.com/STLGameDev/STLGameDevRoundUp/main/screenshots/issue-%s.png" (string $latestIssue.Params.no) -}}
+
+<meta   name="twitter:card"         content="summary_large_image" />
+<meta   name="twitter:site"         content="@stlgamedev" />
+<meta   name="twitter:creator"      content="@seifertim" />
+<meta name="twitter:title" content="St Louis Game Developer RoundUp № {{ $latestIssue.Params.no }}" />
+<meta   name="twitter:description"  content="{{ site.Params.explanation }}" />
+<meta   name="twitter:image"         content="{{ $image }}" />
+
+<meta   property="og:url"           content="{{ .Permalink | safeURL }}" />
+<meta   property="og:type"          content="article" />
+<meta property="og:title" content="St Louis Game Developer RoundUp № {{ $latestIssue.Params.no }}" />
+<meta   property="og:description"   content="{{ site.Params.explanation }}" />
+<meta   property="og:image"         content="{{ $image }}" />
+<meta   property="og:site_name"     content="{{ site.Title }}" />
+<meta   property="og:locale"        content="en_US" />
+<meta   property="og:image:secure_url"    content="{{ $image }}" />
+<meta   property="og:image:width"         content="1280" />
+<meta   property="og:image:height"        content="800" />
+<meta property="og:image:alt" content="St Louis Game Developer RoundUp № {{ $latestIssue.Params.no }}" />
+<meta   property="og:image:type"          content="image/png" />
+{{ end }}

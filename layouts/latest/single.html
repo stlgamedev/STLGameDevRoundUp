@@ -1,0 +1,268 @@
+{{ define "main" }}
+
+{{/* Find the latest issue page and its data */}}
+{{ $latestIssue := "" }}
+{{ $latestNo := 0 }}
+{{ range where .Site.RegularPages "Section" "" }}
+  {{ if .Params.no }}
+    {{ if and (not .Params.is_test) (gt .Params.no $latestNo) }}
+      {{ $latestNo = .Params.no }}
+      {{ $latestIssue = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if $latestIssue }}
+
+<div class="text-center mb-4">
+  <h1 class="display-2 fw-bold">RoundUp № {{ $latestIssue.Params.no }}</h1>
+  {{- $dateMachine := $latestIssue.Date | time.Format "2006-01-02T15:04:05-07:00" -}}
+  {{ $dateHuman := $latestIssue.Date |
+  time.Format ":date_full"
+  }}
+  <p class="lead text-body-tertiary"><i class="bi bi-calendar"></i> <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
+</div>
+
+{{- $categories := dict }}
+
+{{ $post := printf "%s" (string $latestIssue.Params.no) | printf "%s%s" "issue" | printf "%s" }}
+{{ with $latestIssue.Params.is_test }}
+{{ if . }}
+{{ $post = "issue-test" }}
+{{ end }}
+{{ end }}
+
+{{ $posts := index .Site.Data $post }}
+
+{{ range index $posts.nodes }}
+{{ $body := trim .body " \t\n\r" }}
+{{ $category := trim (replaceRE `(?s)^(?:\{)(.*)(?:\}).*` "$1" $body) " \t\n\r" }}
+
+{{/* For major releases, store the full entry including metadata */}}
+{{ $entry := "" }}
+{{ if hasPrefix $category "*" }}
+  {{ $entry = trim (replaceRE `(?s)^(?:\{\*)(.*)` "$1" $body) " \t\n\r" }}
+  {{ $category = "*" }}
+{{ else }}
+  {{ $entry = trim (replaceRE `(?s)^(?:\{.*\})(.*)` "$1" $body) " \t\n\r" }}
+{{ end }}
+
+{{ $cat := index $categories $category }}
+{{ if not $cat }}
+{{ $categories = merge $categories (dict $category (dict "category" $category "count" 1 "entries" (slice $entry))) }}
+{{ else }}
+{{ $categories = merge $categories (dict $category (dict "category" $category "count" (add (int $cat.count) 1)
+"entries" ($cat.entries | append $entry))) }}
+{{ end }}
+{{ end -}}
+
+<div id="issue" >
+  {{- $header := index $categories "!header" }}
+  {{ if $header }}
+  <section class="issue-header d-block" >
+    {{ range $header.entries }}
+      {{ $lines := split . "\n" }}
+      {{ range $lines }}
+        {{ if gt (len (trim . " \t\n\r")) 0 }}
+          <p class="lead fs-4">{{ . | markdownify }}</p>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </section>
+  {{ end -}}
+  
+  <div class="text-center mb-4">
+    <p class="text-body-secondary small">{{ site.Params.explanation }}</p>
+    <p class="text-body-secondary lead">Missed a recent RoundUp? <a href="https://roundup.stlgamedev.com">Browse our 🗄Archive</a> and stay in the loop with STL game development!</p>
+  </div>
+
+  <hr class="my-4 rainbow-hr" />
+
+  {{ $important := slice }}
+  {{ $majorReleases := slice }}
+  {{ range $categories }}
+    {{ if strings.Contains .category "#" }}
+      {{ $important = $important | append . }}
+    {{ else if strings.Contains .category "*" }}
+      {{ $majorReleases = $majorReleases | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if gt (len $important) 0 }}
+    <section class="important-section d-block mb-4">
+      <ul>
+        {{ range $important }}
+          {{ $tag := replace .category "#" "" }}
+          {{ range .entries }}
+            <li>
+              <span class="important-label">{{ trim $tag " \t\n\r" | title }}</span>
+              {{ . | markdownify }}
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+
+    <hr class="my-4 rainbow-hr-alt" />
+  {{ end }}
+
+  
+
+  {{ if gt (len $majorReleases) 0 }}
+    <section class="major-releases-section mb-5">
+      <h2 class="display-6 mb-4 text-center">✨ Major Releases ✨</h2>
+      <p class="lead text-body-secondary text-center mb-4">Celebrate these exciting new releases from members of the St Louis Game Development community!</p>
+      <div class="major-releases-grid d-flex flex-wrap justify-content-center">
+        {{ range $majorReleases }}
+          {{ range .entries }}
+            {{/* Entry format: Title|URL|ImageURL|Creator} Description */}}
+            {{ $parts := split . "}" }}
+            {{ if ge (len $parts) 2 }}
+              {{ $metadata := index $parts 0 }}
+              {{ $description := trim (index $parts 1) " \t\n\r" }}
+              {{ $metaParts := split $metadata "|" }}
+              {{ if ge (len $metaParts) 4 }}
+                {{ $title := trim (index $metaParts 0) " \t\n\r" }}
+                {{ $url := trim (index $metaParts 1) " \t\n\r" }}
+                {{ $imageUrl := trim (index $metaParts 2) " \t\n\r" }}
+                {{ $creator := trim (index $metaParts 3) " \t\n\r" }}
+                <div class="major-release-card">
+                  <h3 class="major-release-title">
+                    <a href="{{ $url }}" target="_blank" rel="noopener">{{ $title }}</a>
+                  </h3>
+                  <p class="major-release-creator">by {{ $creator }}</p>
+                  <div class="major-release-description">{{ $description | markdownify }}</div>
+                  <div class="major-release-image">
+                    {{- $image := "" -}}
+                    {{- if hasPrefix $imageUrl "http" -}}
+                      {{- $image = resources.GetRemote $imageUrl -}}
+                      {{- if $image -}}
+                        <img src="{{ $image.RelPermalink }}" alt="{{ $title }}" />
+                      {{- else -}}
+                        <img src="{{ $imageUrl }}" alt="{{ $title }}" />
+                      {{- end -}}
+                    {{- else -}}
+                      {{- $image = resources.Get $imageUrl -}}
+                      {{- if $image -}}
+                        <img src="{{ $image.RelPermalink }}" alt="{{ $title }}" />
+                      {{- else -}}
+                        <img src="{{ $imageUrl }}" alt="{{ $title }}" />
+                      {{- end -}}
+                    {{- end -}}
+                  </div>
+                  <div class="major-release-actions">
+                    <a href="{{ $url }}" target="_blank" rel="noopener" class="btn-play-now">Play Now!</a>
+                  </div>
+                </div>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+
+    <hr class="my-4 rainbow-hr-alt" />
+  {{ end }}
+
+  
+
+  <section class="row ">
+    <div class="col issue-content">
+      {{- range sort $categories "count" "desc" }}
+      {{ if and (ne .category "!header") (not (strings.Contains .category "#")) (not (strings.Contains .category "*")) }}
+      <section class="issue-section d-block" >
+        <h3 class="display-6 pb-2">{{ .category | title }}</h3>
+        <ul>
+          {{ range .entries }}
+          <li>{{ . | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </section>
+      {{ end }}
+      {{ end -}}
+    </div>
+  </section>
+</div>
+
+<hr class="my-5 mx-4 rainbow-hr-rev" />
+
+{{ if $posts.events -}}
+<div id="events" class="">
+  <section class="events-header d-block mb-4">
+    <h2 class="display-6 fw-bold">📆 Upcoming Events</h2>
+    <p class="lead text-body-tertiary">Participate in these events from our community!</p>
+  </section> 
+  <section>
+  <div class="events-list">
+    
+  {{ range $posts.events }}   
+    {{- $eventImagePath := "images/events/generic.png" -}}
+    {{- if strings.Contains .title "GameDev Social" -}}
+      {{- $eventImagePath = "images/events/social.png" -}}
+    {{- else if strings.Contains .title "Share & Play" -}}
+      {{- $eventImagePath = "images/events/shares.png" -}}
+    {{- end -}}
+    {{- $eventImage := resources.Get $eventImagePath -}}
+    <section class="event-appointment">
+      <div class="event-time-indicator">
+        <div class="event-time-badge text-nowrap">
+          <div class="event-date">{{- time.Format "Jan 02" .dateTime | upper -}}</div>
+          <div class="event-time">{{ time.Format "03:04 PM" .dateTime }}</div>
+        </div>
+        {{/* we need to get the meetup id from the event, if there is one */}}
+        {{- $description := .description | safeHTML -}}
+        {{/* Match and extract the event ID from the RSVP section */}}
+        {{- $regex := `(?s)(<br\s*/?>)*\s*For full details, including the address, and to RSVP see:(?:.*)(?:<a[^>]*href=")?https://www\.meetup\.com/st-louis-game-developers/events/([0-9]+)/?(?:".*?>.*?</a>)?` -}}
+        {{- $matches := findRESubmatch $regex $description -}}
+        {{- if gt (len $matches) 0 -}}
+          {{- $firstMatch := index $matches 0 -}}          {{/* the inner []string */}}
+          {{- $fullMatch := index $firstMatch 0 -}}        {{/* full matched string */}}
+          {{- $eventID := index $firstMatch 2 -}}          {{/* captured group with event ID */}}
+          {{- $description = replace $description $fullMatch "" -}}
+        <a href="https://www.meetup.com/st-louis-game-developers/events/{{ $eventID }}" target="_blank" rel="noopener" class="btn btn-sm btn-rsvp mt-2"><i class="bi bi-calendar-check"></i> RSVP</a>
+        {{- end -}}
+      </div>
+      <div class="event-details">
+        <h4 class="event-title-text">{{ trim .title " \t\n\r" }}</h4>
+        {{- if .location -}}
+        {{- $displayLocation := trim .location " \t\n\r" | replaceRE `, us$` "" -}}
+        <div class="event-location">
+          <a href="https://www.google.com/maps/search/?api=1&query={{ .location | urlquery }}" target="_blank" rel="noopener" class="location-link">
+            <i class="bi bi-geo-alt-fill"></i> {{ $displayLocation }}
+          </a>
+        </div>
+        {{- end -}}
+        {{- if $description -}}
+        <div class="event-description">{{ $description | safeHTML }}</div>
+        {{- end -}}
+      </div>
+      <div class="event-image">
+        <img src="{{ $eventImage.RelPermalink }}" alt="{{ .title }}" />
+      </div>
+    </section>
+  {{ end }}
+    
+</div>
+</section>
+</div> 
+
+<hr class="my-5 mx-4 rainbow-hr-alt" />
+{{ end -}}
+
+<div class="row mt-5 pb-5">
+  <div class="col-lg-auto">
+    <a class="btn btn-outline-danger  btn-sm" role="button"
+      href="https://github.com/STLGameDev/STLGameDevRoundUp/blob/main/data/issue{{ $latestIssue.Params.no }}.json"><i
+        class="bi bi-pencil-square"></i> Make a Correction</a>
+  </div>
+</div>
+</div>
+
+{{ else }}
+  <div class="text-center my-5">
+    <h1>No Issues Found</h1>
+    <p>There are no published issues yet.</p>
+  </div>
+{{ end }}
+
+{{ end }}

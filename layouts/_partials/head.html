@@ -1,8 +1,23 @@
 <meta name="generator" content="Hugo {{ hugo.Version }}" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}RoundUp № {{ .Params.no }} | {{ site.Title }} {{ end
-  }}</title>
+<title>
+  {{- if .IsHome -}}
+    {{ site.Title }}
+  {{- else if eq .Type "latest" -}}
+    {{- $latestNo := 0 -}}
+    {{- range where .Site.RegularPages "Section" "" -}}
+      {{- if .Params.no -}}
+        {{- if and (not .Params.is_test) (gt .Params.no $latestNo) -}}
+          {{- $latestNo = .Params.no -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    RoundUp № {{ $latestNo }} | {{ site.Title }}
+  {{- else -}}
+    RoundUp № {{ .Params.no }} | {{ site.Title }}
+  {{- end -}}
+</title>
 
 <meta name="keywords" content="{{ .Param "keywords" }}" />
 <meta name="author" content="{{ .Param "author" }}" />
@@ -23,6 +38,8 @@
 
 {{ if .IsHome }}
 {{ partial "head/home.html" . }}
+{{ else if eq .Type "latest" }}
+{{ partial "head/latest.html" . }}
 {{ else }}
 {{ partial "head/page.html" . }}
 {{ end -}}
