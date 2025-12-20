@@ -1,0 +1,28 @@
+{{- /* Find the latest issue page */ -}}
+{{- $latestIssue := "" -}}
+{{- $latestNo := 0 -}}
+{{- range where .Site.RegularPages "Section" "" -}}
+  {{- if .Params.no -}}
+    {{- if and (not .Params.is_test) (gt .Params.no $latestNo) -}}
+      {{- $latestNo = .Params.no -}}
+      {{- $latestIssue = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if $latestIssue -}}
+{{- $image := printf "https://raw.githubusercontent.com/STLGameDev/STLGameDevRoundUp/main/screenshots/issue-%s.png" (string $latestIssue.Params.no) -}}
+{
+  "issueNumber": {{ $latestIssue.Params.no }},
+  "title": "St Louis Game Developer RoundUp № {{ $latestIssue.Params.no }}",
+  "date": "{{ $latestIssue.Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "url": "{{ $latestIssue.Permalink }}",
+  "relativeUrl": "{{ $latestIssue.RelPermalink }}",
+  "emailUrl": "{{ $latestIssue.Permalink }}email/",
+  "imageUrl": "{{ $image }}",
+  "description": "{{ site.Params.explanation }}"
+}
+{{- else -}}
+{
+  "error": "No issues found"
+}
+{{- end -}}
