@@ -6,8 +6,16 @@ $enable-gradients: true;
 $enable-shadows: true;
 
 $my-font-family: 'Inter',
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
 sans-serif,
-"Noto Color Emoji";
+"Noto Color Emoji",
+"Apple Color Emoji",
+"Segoe UI Emoji";
 
 $font-family-base: $my-font-family;
 
