@@ -1,5 +1,6 @@
-{{/* Load local fonts */}}
-<link rel="stylesheet" href="/fonts/fonts.css">
+{{/* Preload critical fonts */}}
+<link rel="preload" href="/fonts/helvetica-neue/HelveticaNeueRoman.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="/fonts/helvetica-neue/HelveticaNeueBold.otf" as="font" type="font/otf" crossorigin>
 {{- $options := dict 
     "targetPath" "css/styles.css"
     "outputStyle" "compressed"

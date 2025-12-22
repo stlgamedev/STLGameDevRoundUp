@@ -74,7 +74,7 @@
   
   <div class="text-center mb-4">
     <p class="text-body-secondary small">{{ site.Params.explanation }}</p>
-    <p class="text-body-secondary lead">Missed a recent RoundUp? <a href="https://roundup.stlgamedev.com">Browse our 🗄Archive</a> and stay in the loop with STL game development!</p>
+    <p class="text-body-secondary lead">{{ "Missed a recent RoundUp? <a href=\"https://roundup.stlgamedev.com\">Browse our 🗄Archive</a> and stay in the loop with STL game development!" | partial "emoji.html" }}</p>
   </div>
 
   <hr class="my-4 rainbow-hr" />
@@ -111,7 +111,7 @@
 
   {{ if gt (len $majorReleases) 0 }}
     <section class="major-releases-section mb-5">
-      <h2 class="display-6 mb-4 text-center">✨ Major Releases ✨</h2>
+      <h2 class="display-6 mb-4 text-center">{{ "✨ Major Releases ✨" | partial "emoji.html" }}</h2>
       <p class="lead text-body-secondary text-center mb-4">Celebrate these exciting new releases from members of the St Louis Game Development community!</p>
       <div class="major-releases-grid d-flex flex-wrap justify-content-center">
         {{ range $majorReleases }}
@@ -190,7 +190,7 @@
 {{ if $posts.events -}}
 <div id="events" class="">
   <section class="events-header d-block mb-4">
-    <h2 class="display-6 fw-bold">📆 Upcoming Events</h2>
+    <h2 class="display-6 fw-bold">{{ "📆 Upcoming Events" | partial "emoji.html" }}</h2>
     <p class="lead text-body-tertiary">Participate in these events from our community!</p>
   </section> 
   <section>
