@@ -30,6 +30,27 @@ $color-purple-dark: rgba($color-purple, 0.25);
 //   background-size: calc(var(--s)*sqrt(3)) var(--s);
 // }
 
+// Desktop header styles
+@media (min-width: 768px) {
+    header {
+        .header-content {
+            display: block;
+            text-align: center;
+        }
+        
+        .header-logo {
+            display: block;
+            margin: 0 auto 1rem auto;
+            width: 144px;
+            height: 144px;
+        }
+        
+        h1 {
+            display: block;
+        }
+    }
+}
+
 
 @media (min-width: 400px) {
      ul#home-list li {
@@ -42,6 +63,254 @@ $color-purple-dark: rgba($color-purple, 0.25);
 
     .issue-content {
         columns: 1;
+    }
+}
+
+// Mobile-specific fixes
+@media (max-width: 767px) {
+    // No extra padding needed
+    body {
+        padding-bottom: 0;
+    }
+    
+    // Fix navbar on issue pages
+    nav {
+        padding: 0.5rem 0.5rem !important;
+        
+        .container-fluid {
+            padding: 0 !important;
+        }
+        
+        .navbar-brand {
+            font-size: 0.9rem !important;
+            padding: 0.25rem 0.5rem !important;
+        }
+        
+        img {
+            height: 28px !important;
+            width: auto !important;
+        }
+    }
+    
+    // Make header with logo inline like an emoji, everything centered
+    header {
+        padding: 1rem 0.5rem !important;
+        text-align: center !important;
+        
+        .header-content {
+            display: block;
+            text-align: center;
+        }
+        
+        .header-logo {
+            width: 32px !important;
+            height: 32px !important;
+            margin: 0 !important;
+            margin-right: 0.25rem !important;
+            display: inline !important;
+            vertical-align: middle !important;
+        }
+        
+        h1 {
+            font-size: 1.4rem !important;
+            margin: 0 !important;
+            display: inline !important;
+            vertical-align: middle !important;
+            line-height: 32px !important;
+        }
+        
+        .col-lg-6 {
+            text-align: center !important;
+            max-width: 100% !important;
+            padding: 0 0.5rem !important;
+        }
+        
+        .lead {
+            font-size: 0.85rem !important;
+            margin-top: 0.5rem !important;
+        }
+    }
+    
+    // Fix issue content padding and margins on mobile
+    main.container {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    .issue-content {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    #issue {
+        padding: 0.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    // Fix event cards on mobile
+    .event-appointment {
+        flex-direction: column;
+        padding: 1rem !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        
+        .event-time-indicator {
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .event-details {
+            padding-right: 0;
+        }
+        
+        .event-image {
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow: hidden !important;
+            
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+                width: 100% !important;
+                object-fit: contain !important;
+                display: block !important;
+            }
+        }
+    }
+    
+    // Fix home list items on mobile
+    ul#home-list {
+        gap: 0.75rem !important;
+        justify-content: center !important;
+        padding: 0 0.5rem !important;
+        
+        li {
+            flex-basis: 100% !important;
+            min-width: auto !important;
+            min-height: auto !important;
+            padding: 1rem !important;
+            margin: 0 !important;
+            
+            &:first-child {
+                padding: 1rem !important;
+                padding-top: 2.5rem !important;
+                
+                &:before {
+                    display: none !important;
+                }
+                
+                .text-secondary {
+                    position: absolute !important;
+                    left: 0 !important;
+                    top: 0 !important;
+                    width: 100% !important;
+                    height: 2rem !important;
+                    transform: none !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    background: $color-purple !important;
+                    font-size: 0.75rem !important;
+                    letter-spacing: 0.1em !important;
+                }
+                
+                h2 {
+                    font-size: 1.5rem !important;
+                }
+                
+                time {
+                    font-size: 0.9rem !important;
+                }
+            }
+        }
+    }
+    
+    // Scale down display headings on mobile
+    .display-6 {
+        font-size: 1.5rem !important;
+    }
+    
+    .display-4 {
+        font-size: 2rem !important;
+    }
+    
+    // Reduce space before footer
+    main.container {
+        margin-bottom: 1rem !important;
+    }
+    
+    // Fix footer layout on mobile
+    footer {
+        margin-top: 1rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        
+        .container {
+            padding: 0 0.5rem !important;
+            max-width: 100% !important;
+        }
+        
+        .row {
+            gap: 1rem;
+            margin: 0 !important;
+        }
+        
+        .col-12 {
+            margin-top: 0.5rem !important;
+            padding: 0 !important;
+        }
+        
+        .btn {
+            font-size: 0.75rem !important;
+            padding: 0.4rem 0.6rem !important;
+            white-space: normal !important;
+            line-height: 1.2 !important;
+        }
+        
+        // Make maintained-by section horizontal
+        .col-12:last-child .d-flex {
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            
+            .text-center {
+                text-align: left !important;
+                font-size: 0.7rem !important;
+            }
+            
+            img {
+                height: 28px !important;
+            }
+        }
+    }
+}
+
+// Extra small screens (320px)
+@media (max-width: 375px) {
+    nav img {
+        height: 24px !important;
+    }
+    
+    .navbar-brand {
+        font-size: 0.8rem !important;
+    }
+    
+    footer {
+        .btn {
+            font-size: 0.7rem !important;
+            padding: 0.3rem 0.5rem !important;
+        }
+        
+        .text-center {
+            font-size: 0.65rem !important;
+        }
+        
+        img {
+            height: 24px !important;
+        }
     }
 }
 

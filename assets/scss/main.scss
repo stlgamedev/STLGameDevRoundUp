@@ -39,6 +39,15 @@ img.emoji {
   display: inline;
 }
 
+// Mobile: scale down emoji in headings
+@media (max-width: 767px) {
+  h1 img.emoji,
+  h2 img.emoji {
+    height: 0.8em;
+    width: 0.8em;
+  }
+}
+
 $my-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $font-family-base: $my-font-family;
