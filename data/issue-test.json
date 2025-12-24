@@ -1,69 +1,55 @@
 {
   "nodes": [
     {
-      "body": "{!header} November cooked up a heaping helping of games, music, and events including our third **Share and Play: Game Showcase/Playtesting** event this year! 🍗🥧\nLet's keep the snowball rolling as we head into December! ☃"
+      "body": "{ 🧑‍💻 Dev Updates } Plunderer's Run Devlogs are now live on Itch! [Check them out here!](https://blusurfacemedia.itch.io/plunderers-run)"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ continues work on Dribble 2 with the new [Toxic Tavern](https://bsky.app/profile/tonywojnar.bsky.social/post/3m5oi6a4m2s2l) level. a pub of pollutants where the Bizbots like to spend time getting oil and chemical drinks!"
+      "body": "{!header} December was a creative and productive month for STLGameDev! Even with the busy end of the year, members continued to share exciting submissions and updates across their projects. From new mechanics and prototypes to art, audio, and polish, this RoundUp highlights the progress our developers made throughout the month.\n⭐ Did you know we're active on social media? Pick your favorite site to follow us on:\n• [Instagram](https://www.instagram.com/stlgamedev/) • [Bluesky](https://bsky.app/profile/stlgame.dev) • [Youtube](https://www.youtube.com/@stlgame-dev) • [Twitter](https://x.com/stlgamedev) • [Meetup](https://www.meetup.com/st-louis-game-developers/) •"
     },
     {
-      "body": "{ 🎮 Releases } _Jigokuro_ created a variant of sudoku, called \"[Twisted Arrows in Fog 1](https://sudokupad.app/0kqk60anqv)\". "
+      "body": "{ 🎼 Releases } _Lazarus D. Richardson_ made [N%](https://lazarusrichardson.bandcamp.com/track/n) for Dorian's music jam"
     },
     {
-      "body": "{ 🎼 Releases } _Daniel Christmas_ is the composer and lyricist of [Death by Denial](https://open.spotify.com/artist/2WXodf2wj1ZzsjVRPZliEN?si=PDWbZG82Sbuf61XFqDzULA), a dark melodic metal transformational experimentation"
+      "body": "{ 📢 News } Clair Obscur: Expedition 33 absolutely [sweeps the game awards](https://www.npr.org/2025/12/12/nx-s1-5640839/game-awards-2025-winners-clair-obscur-expedition-33), but [loses the Indie Game of the Year Award to Blue Prince due to AI](https://www.pcmag.com/news/clair-obscur-expedition-33-stripped-of-a-game-of-the-year-award-because)"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Fairlii_ posted a comprehensive Devlog about their work thus far on Gelli Fields: \"[6 Months Progress On My Slime Farming Game!](https://www.youtube.com/watch?v=C8Y90AqYIPw)\""
+      "body": "{ 📢 News } [Naughty Dog has reportedly mandated crunch for Intergalactic](https://www.thegamer.com/naughty-dog-crunch-internal-intergalactic-the-heretic-prophet-demo/)"
     },
     {
-      "body": "{ 📚 Resources } _Eddie_ built the [Bevy Collider Editor](https://collider.visionsquid.com/), a free online tool for creating and editing colliders for the [Bevy game engine](https://collider.visionsquid.com/), and services it for free!"
+      "body": "{ 📢 News } [Rockstar claims recent firings were for leaking confidential game information, union fires back](https://hitmarker.net/news/rockstar-claims-recent-firings-were-for-leaking-confidential-game-information-union-fires-back-1597277)"
     },
     {
-      "body": "{ 🎮 Releases } _James C. Kane_ released [The Shadow of the Czar]( https://theshadowoftheczar.com/ ), available for mobile or desktop browser. ‘Shadow’ is an action-packed, jazz-infused narrative web game in film noir style, designed to push both my storytelling and World Labs' incredible technology to the limits. "
+      "body": "{ 🎮 Releases } _Garry Alcorn_ released [ERL](https://asoftmedia.itch.io/erl), a fast-paced endless running game where your goal is to make the number go up! Collect multipliers and bonuses through 8 stages of a dynamic multisided platform. [Check out his devlogs on his throwback site](https://garryalcorn.com/)! "
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Ziyanthus_ released [May the Rain ](https://ziyanthus.itch.io/may-the-rain), a game jam made in Godot. Explore the surreal, foggy peak of a lonely tepui mountain, in this short 10-15 minute long narrative. What has brought this lonely soul to a place where none belong? "
+      "body": "{ 🧑‍💻 Dev Updates } _Tony Woljnar_ continued working on the Toxic Tavern level for Dribble 2, with some [countertop platforms & a cool jukebox](https://bsky.app/profile/tonywojnar.bsky.social/post/3m7dhcu4l5s2l), [added spike shockwaves on certain enemies](https://bsky.app/profile/tonywojnar.bsky.social/post/3m7vavwniws2d), and experimented with [adding mugs that pop chemicals into the air](https://bsky.app/profile/tonywojnar.bsky.social/post/3magstpup7s25)."
     },
     {
-      "body": "{*Gravesweeper|https://midnightlaunchgames.com/games/gravesweeper/|https://midnightlaunchgames.com/_nuxt/img/01_gameplay_graveyard.3029e52.png|Wes Ehrlichman} Navigate through haunted dungeons as a brave skeleton, using Minesweeper-style logic to avoid deadly traps and find your way to freedom! On iOS & Android!"
+      "body": "{ 🕹️ Game Jam Releases } _Axol Studio_ released [Echoes of the Infinite Recursor](https://axolstudio.itch.io/echoes-of-the-infinite-recursor), a game made in 1-week for the [Yogscast Games - Jingle Game Jam 2025](https://itch.io/jam/jinglegamejam2025), with the theme \"If you can't beat them, join them\". An ancient evil is waking from it's slumber - you must try to stop it, but keep in mind, if you fail, you will fight on your enemy's behalf... _Lazarus D. Richardson_ created an accompanying [soundtrack with six tracks](https://lazarusrichardson.bandcamp.com/album/echoes-of-the-infinite-recursor). "
     },
     {
-      "body": "{*Claire a la Mode|https://store.steampowered.com/app/2292860/Claire_a_la_Mode/|https://cdn.cloudflare.steamstatic.com/steam/apps/2292860/header.jpg|Colorgrave} Team up with a friend or go it alone in a sugar-high adventure! Bake your dessert masterpiece and collect new bakers as you rise through a high-stakes bake-off full of cheaters. Fend off their decadent lackeys and against all odds, come out on top in a worldwide baking frenzy!"
+      "body": "{ 🕹️ Game Jam Releases } [Planet Poachers](https://danidomain.itch.io/planet-poachers) was made in two weeks as part of the Webster University Fall 2025 Intro to Unreal Engine class. You're a smuggler and poacher of exotic alien eggs. Repair your ship and find the eggs if you want to make it out alive!"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _meepaleepsheep_ showcased the [chaindashing](https://bsky.app/profile/meepalasheep.bsky.social/post/3m5eoig7ygc2k) in [Ginger Snap](https://meepalasheep.itch.io/gingersnap-demo)!"
+      "body": "{ 🕹️ Game Jam Releases } [Loaner's Pub](https://mirid7.itch.io/loaners-pub) was made in two weeks as part of the Webster University Fall 2025 Intro to Unreal Engine class. After several loans taken out to create your own business(and several failed attempts), a group of loan sharks have gotten angry at you. In one final ditch effort, you take out yet another loan with confidence that this business will succeed. You've opened up a bar and need to make enough money to pay your rent on time. If you don't, those loan sharks might seek payment another way..."
     },
     {
-      "body": "{ 📢 News } Blender 5.0 has been released! [View the changelog and get up to date here](https://www.blender.org/download/releases/5-0/). "
+      "body": "{ 🕹️ Game Jam Releases } [Slimber](https://whyinds.itch.io/slimber) was made in two weeks as part of the Webster University Fall 2025 Intro to Unreal Engine class. Talk to townsfolk and complete their quests. Solve the issues of the town of Slimber, and see how the town unfolds. Who knows what might happen?"
     },
     {
-      "body": "{ 🎼 Releases } _Fat Bard_ created the sound design for [Kingdoms of the Dump](https://bsky.app/profile/fatbard.com/post/3m5yh6zynbk2d), a SNES styled JRPG set in a fantasy world of garbage, created by two janitors. Join Trash Can Knight, Dustin Binsley, as he fights his way through the Five and a Half Kingdoms of the Dump! "
+      "body": "{ 🧑‍💻 Dev Updates } _Colorgrave_ announced their latest game coming soon: [Curse Chapter: Dawnthief](https://store.steampowered.com/app/4228390/Curse_Chapter_Dawnthief/)! Plunder all the treasure worth taking from the exotic wilderness with your band of rogues. Jump, kick and sling your chain mace to smash and climb your way through any obstacle. Face off against beasts and hopeful heroes that rise up to stop you. "
     },
     {
-      "body": "{ 🎼 Releases } _Austin Miller_ posted a demo of the main theme for [DIONYSIA](https://bsky.app/profile/austinmwav.com/post/3m6ky45mlv22l), a photography boomer shooter"
+      "body": "{ 🧑‍💻 Dev Updates } _Butterscotch Shenanigans'_ newest game, How Many Dudes? - an autobattler roguelike that seeks to answer one of humanity's oldest questions - How many dudes does it take? - has a [demo out now](https://store.steampowered.com/app/3934270/How_Many_Dudes/)! "
     },
     {
-      "body": "{ 🎼 Releases } _Fat Bard_ co-composed [Cross Blitz](https://bsky.app/profile/fatbard.com/post/3m6fckvb2tk26), a unique RPG deckbuilder featuring fast-paced tactical combat with loads of cards to collect and synergies to wield. Explore, level up, craft new cards and build the perfect decks as you carve your own path to victory! "
+      "body": "{ 📚 Resources } [The Brutal Truth About Pricing Your Art](https://www.youtube.com/watch?v=_o5mE8o39bM) - the most comprehensive advice online on pricing illustration artwork"
     },
     {
-      "body": "{ 📢 News } Rockstar Games [fired unionising developers](https://hitmarker.net/news/rockstar-games-fired-unionising-developers-following-discord-conversations-about-slack-policy-changes-report-claims-1584626) following Discord conversations about Slack policy changes, report claims"
-    },
-    {
-      "body": "{#🎮 Global Game Jam 2026} \n# We are excited to announce Global Game Jam 2026 will be held at UMSL January 30th - February 1st, 2026!\n\nCome team up with local creators and make a game over the weekend! This event is open to ALL (even remote friends)! Students from any campus are also welcome. Online and in-person participants are both welcome!\n\n**Registration is Required!** \n\nThe official GGJ site registration is now up! [REGISTER HERE!](https://globalgamejam.org/jam-sites/2026/university-missouri-st-louis-it-and-cybersecurity-club-hosting-stlgamedev)"
-    },
-    {
-      "body": "{ 🧑‍💻 Dev Updates } _Butterscotch Shenanigans_ have been hard at work on their next game **How Many Dudes?** and sharing some unexpected but hilarious results, like... [vampires infinitely farting themselves back to life](https://www.youtube.com/watch/sDcD1yXuugw). If that kind of thing makes you chuckle, give _How Many Dudes?_ a [wishlist now](https://store.steampowered.com/app/3934270/How_Many_Dudes/) on Steam!"
+      "body": "{ 📢 News } Lucia Robbins won big for [Draco vs Decoy](https://www.instagram.com/p/DRadkm3kW9b/?img_index=1) at the Big Picture Peoria Film Festival! "
     }
   ],
   "events": [
-    {
-      "title": "December GameDev Social!",
-      "description": "Come chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. \n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/312186563",
-      "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
-      "dateTime": "2025-12-11T19:00:00.000-06:00",
-      "endTime": "2025-12-11T22:00:00.000-06:00",
-      "eventUrl": ""
-    },
     {
       "title": "Game Audio Club: Music Share",
       "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio. We’re a chill group where you can share your work, get feedback, or just vibe with people who love game audio. <br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/312256681/\">https://www.meetup.com/st-louis-game-developers/events/312256681/</a>",
@@ -73,11 +59,19 @@
       "eventUrl": ""
     },
     {
-      "title": "December Game Club: TBD",
-      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. We're voting on our game for December right now!  Jump into our Discord to vote in the Game Club channel.\n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/311772690",
-      "location": "Qdoba (Creve Coeur) - 766 N New Ballas Rd - Creve Coeur, MO, us",
+      "title": "Game Club: Webbed",
+      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. This month's game is... <a href=\"https://store.steampowered.com/app/1390350/Webbed/\" target=\"_blank\">Webbed</a>, a physics-y pixel platformer where you play as an adorable little spider!<br>Come share your thoughts on the game with us! <br><br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/311772690\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/311772690</a>",
+      "location": "Sauce on the Side, 701 N New Ballas Rd, Creve Coeur, MO 63141, USA",
       "dateTime": "2025-12-29T18:30:00.000-06:00",
       "endTime": "2025-12-29T20:30:00.000-06:00",
+      "eventUrl": ""
+    },
+    {
+      "title": "STLGameDev New Year's Eve Party Mixer w/STLVGM!",
+      "description": "Ring in the New Year with creativity, community, and a little friendly competition! STLGameDev and STLVGM are teaming up for a special New Year’s Eve Mixer at <b>Dirty 20</b> starting at <b>8:00 PM</b>.<br>Whether you make games, make music, or just love the scene, come hang out, network, and celebrate with fellow developers and audio artists from around St. Louis. We’ll have <b>old-school multiplayer Mario Kart</b> set up, so bring your best drifting skills and get ready to battle it out retro-style.<br><b>Let’s kick off the new year with pixels, playlists, and plenty of power-ups!</b><br><span><span> </span></span><br><span><span>For full details, including the address, and to RSVP see: </span></span><a href=\"https://www.meetup.com/st-louis-game-developers/events/312397463/\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/312397463/</a>",
+      "location": "Dirty 20 Bar, 14051 Manchester Rd, Ballwin, MO 63011, USA",
+      "dateTime": "2025-12-31T20:00:00.000-06:00",
+      "endTime": "2026-01-01T00:30:00.000-06:00",
       "eventUrl": ""
     },
     {
