@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ partial "social-links.html" (dict "showLabel" true "variant" "home") }}
 {{ $count := 0 }}
 <ul id="home-list"> 
     {{ range $index, $issue := sort site.RegularPages ".Params.no" "desc" }}

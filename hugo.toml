@@ -6,9 +6,14 @@ enableEmoji = true
 
 [params]
   explanation = "The St Louis Game Developer RoundUp is the official monthly digest of the St Louis Game Developer community. Curated by STLGameDev and built through community contributions, it aggregates news, project updates, resources, and upcoming events from our local game development scene."
-  github = "https://github.com/STLGameDev/STLGameDevRoundUp"
   shareText = "Check out St Louis Game Dev RoundUp № %s!"
   keywords = "indie game development, game development, game developers, game dev, indie games, indie game developers, indie game dev, st louis, saint louis, missouri, mo"
+  [params.social]
+    instagram = "https://www.instagram.com/stlgamedev/"
+    bluesky   = "https://bsky.app/profile/stlgame.dev"
+    youtube   = "https://www.youtube.com/@stlgame-dev"
+    twitter   = "https://x.com/stlgamedev"
+    meetup    = "https://www.meetup.com/st-louis-game-developers/"
   [params.author]
     name = "Tim I Hely"
     email = "tim@axolstudio.com"

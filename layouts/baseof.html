@@ -18,10 +18,10 @@
     {{- if .IsHome }}
     {{ partial "header-home.html" . }}
     {{ end -}}
-    <main class="container p-3 p-md-5 mb-5" >
+    <main class="container p-2 " >
       {{ block "main" . }}{{ end }}
     </main>
-    <footer class="footer mt-3 py-3">
+    <footer class="footer mt-2 py-2">
       {{ partial "footer.html" . }}
     </footer>
   </body>

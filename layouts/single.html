@@ -62,6 +62,11 @@
     <p class="text-body-secondary lead">{{ "Missed a recent RoundUp? <a href=\"https://roundup.stlgamedev.com\">Browse our 🗄Archive</a> and stay in the loop with STL game development!" | partial "emoji.html" }}</p>
   </div>
 
+  
+  <hr class="my-4 rainbow-hr" />
+
+  {{ partial "social-links.html" (dict "showLabel" true) }}
+
   <hr class="my-4 rainbow-hr" />
 
   {{ $important := slice }}
@@ -150,8 +155,6 @@
     <hr class="my-4 rainbow-hr-alt" />
   {{ end }}
 
-  
-
   <section class="row ">
     <div class="col issue-content">
       {{- range sort $categories "count" "desc" }}
@@ -170,7 +173,7 @@
   </section>
 </div>
 
-<hr class="my-5 mx-4 rainbow-hr-rev" />
+<hr class="my-4 mx-4 rainbow-hr-rev" />
 
 {{ if $posts.events -}}
 <div id="events" class="">
@@ -232,10 +235,10 @@
 </section>
 </div> 
 
-<hr class="my-5 mx-4 rainbow-hr-alt" />
+<hr class="my-3 mx-4 rainbow-hr-alt" />
 {{ end -}}
 
-<div class="row mt-5 pb-5">
+<div class="row mt-3 pb-2">
   <div class="col-lg-auto">
     <a class="btn btn-outline-danger  btn-sm" role="button"
       href="https://github.com/STLGameDev/STLGameDevRoundUp/blob/main/data/issue{{ .Params.no }}.json"><i

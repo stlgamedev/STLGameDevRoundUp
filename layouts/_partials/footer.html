@@ -1,5 +1,6 @@
 {{ $icon := resources.Get "images/stlgd-icon.png" }}
 <div class="container">
+  {{ partial "social-links.html" (dict "showLabel" false "variant" "footer") }}
   <div class="row align-items-center">
     <div class="col-12 col-md-6 mt-3">
       <div class="d-flex flex-column flex-md-row gap-2 justify-content-md-start">
