@@ -1,5 +1,4 @@
 {{ define "main" }}
-{{ partial "social-links.html" (dict "showLabel" true "variant" "home") }}
 {{ $count := 0 }}
 <ul id="home-list"> 
     {{ range $index, $issue := sort site.RegularPages ".Params.no" "desc" }}
@@ -17,7 +16,12 @@
     <time datecreated="{{ $issue.Params.Date.Format " 2006-01-02" }}" itemprop="datePublished" pubdate
       datetime="{{ $issue.Params.Date.Format " 2006-01-02" }}">{{ $issue.Params.Date.Format "January 2, 2006" }}</time>
   </li>
-    {{- $count = 1 }}
+    {{- $count = add $count 1 }}
+    {{- if eq $count 1 }}
+    <li class="email-signup-card">
+      {{ partial "email-signup.html" . }}
+    </li>
+    {{- end }}
     {{ end }}
     {{ end }}
     {{ end -}}

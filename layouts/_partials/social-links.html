@@ -40,7 +40,7 @@
 {{ end }}
 
 {{ if gt (len $links) 0 }}
-<div class="social-links d-flex flex-wrap align-items-center justify-content-center {{ if $variant = "footer" }}mb-4 {{ else }}my-4 {{ end}} {{ if $variant }}social-links--{{ $variant }}{{ end }}">
+<div class="social-links d-flex flex-wrap align-items-center justify-content-center {{ if eq $variant "footer" }}mb-4{{ else if eq $variant "head" }} mt-4 {{ else }}my-4 {{ end }} {{ if $variant }}social-links--{{ $variant }}{{ end }}">
   <div class="d-flex align-items-center gap-5">
     {{ if $showLabel }}
       <div class="social-links__label text-body-secondary small fw-semibold me-4">Follow us!</div>

@@ -146,7 +146,10 @@ $border-color: rgba($color-white, 0.15);
 // Footer button styling
 .btn-outline-success {
     border-color: rgba($color-green, 0.6);
+    border-width: 2px;
     color: rgba($color-green, 0.9);
+    padding: 0.5rem 1rem;
+    padding-top: 0.6rem;
     
     &:hover {
         background: rgba($color-green, 0.1);
@@ -156,12 +159,15 @@ $border-color: rgba($color-white, 0.15);
 }
 
 .btn-outline-primary {
-    border-color: rgba($color-white, 0.3);
-    color: rgba($color-white, 0.7);
+    border-color: rgba($color-purple, 0.6);
+    border-width: 2px;
+    color: $color-purple;
+    padding: 0.5rem 1rem;
+    padding-top: 0.6rem;
     
     &:hover {
-        background: rgba($color-white, 0.05);
-        border-color: rgba($color-white, 0.5);
-        color: $color-white;
+        background: rgba($color-purple, 0.1);
+        border-color: $color-purple;
+        color: $color-purple;
     }
 }
