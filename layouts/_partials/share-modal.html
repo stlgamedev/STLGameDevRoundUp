@@ -1,0 +1,59 @@
+{{/* Share Modal
+     Params:
+       id: unique modal ID
+       shareText: pre-populated text to share
+       shareUrl: URL to share
+*/}}
+
+{{ $modalId := .id | default "shareModal" }}
+{{ $shareText := .shareText | default "" }}
+{{ $shareUrl := .shareUrl | default "" }}
+
+<!-- Share Modal -->
+<div class="modal fade" id="{{ $modalId }}" tabindex="-1" aria-labelledby="{{ $modalId }}Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="{{ $modalId }}Label">Share</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="{{ $modalId }}Text" class="form-label">Share this message:</label>
+          <textarea class="form-control share-text" id="{{ $modalId }}Text" rows="3" readonly>{{ $shareText }}</textarea>
+        </div>
+        
+        <div class="d-grid gap-2 mb-3">
+          <button type="button" class="btn btn-outline-primary btn-copy-text" data-text-id="{{ $modalId }}Text">
+            <i class="bi bi-clipboard"></i> Copy Text
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-copy-link" data-url="{{ $shareUrl }}">
+            <i class="bi bi-link-45deg"></i> Copy Link
+          </button>
+        </div>
+        
+        <div class="mb-2 text-center text-body-secondary small">Or share directly:</div>
+        <div class="share-buttons d-flex justify-content-center gap-2 flex-wrap">
+          <a href="https://twitter.com/intent/tweet?text={{ $shareText | urlquery }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on X">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="https://bsky.app/intent/compose?text={{ $shareText | urlquery }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on Bluesky">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026"/></svg>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ $shareUrl | urlquery }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $shareUrl | urlquery }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="https://www.reddit.com/submit?url={{ $shareUrl | urlquery }}&title={{ $shareText | urlquery }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on Reddit">
+            <i class="bi bi-reddit"></i>
+          </a>
+          <a href="mailto:?subject=Check this out&body={{ $shareText | urlquery }}%0A%0A{{ $shareUrl | urlquery }}" class="btn btn-sm btn-outline-secondary" title="Share via Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

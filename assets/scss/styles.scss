@@ -564,6 +564,145 @@ header {
     }
 }
 
+// Share button styling
+.issue-share-btn-container {
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+    z-index: 100;
+    
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 0.75rem;
+        
+        i {
+            font-size: 1.25rem;
+            line-height: 1;
+            margin: 0;
+        }
+    }
+}
+
+.shareable-entry {
+    position: relative;
+    padding-bottom: 0.5rem;
+    
+    .entry-share-btn {
+        position: absolute;
+        right: 0.25rem;
+        bottom: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.35rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 0.7rem;
+        border: none;
+        color: $color-purple;
+        background-color: transparent;
+        opacity: 0.33;
+        transition: opacity 0.2s ease;
+        
+        i {
+            font-size: 0.875rem;
+            line-height: 1;
+            margin: 0;
+        }
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.modal-content {
+    background: rgba($color-black, 0.95);
+    border: 1px solid rgba($color-white, 0.2);
+    color: $color-white;
+    
+    .modal-header {
+        border-bottom-color: rgba($color-white, 0.1);
+        
+        .modal-title {
+            color: $color-orange;
+            font-weight: 500;
+        }
+        
+        .btn-close {
+            filter: invert(1);
+            opacity: 0.8;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    
+    .btn-outline-primary {
+        border-color: rgba($color-orange, 0.6);
+        color: $color-orange;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        
+        &:hover {
+            background: rgba($color-orange, 0.1);
+            border-color: $color-orange;
+            color: $color-orange;
+        }
+        
+        i {
+            margin: 0;
+            line-height: 1;
+        }
+    }
+    
+    .btn-outline-secondary {
+        border-color: rgba($color-yellow, 0.6);
+        color: $color-yellow;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0.5rem;
+        
+        &:hover {
+            background: rgba($color-yellow, 0.1);
+            border-color: $color-yellow;
+            color: $color-yellow;
+        }
+        
+        i {
+            font-size: 1.25rem;
+            line-height: 1;
+            margin: 0;
+        }
+        
+        svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    }
+    
+    .share-text {
+        background-color: rgba($color-white, 0.05) !important;
+        border-color: rgba($color-white, 0.2);
+        color: $color-white !important;
+        
+        &:focus {
+            background-color: rgba($color-white, 0.08) !important;
+            border-color: rgba($color-purple, 0.5);
+            color: $color-white !important;
+            box-shadow: 0 0 0 0.25rem rgba($color-purple, 0.1);
+        }
+    }
+}
+
 
 :not(nav) a {
     color: $color-orange;
@@ -683,6 +822,12 @@ h1, h2, h3, h4, h5, h6 {
     &:hover {
         background: rgba($color-white, 0.08);
         border-color: rgba($color-white, 0.15);
+    }
+    
+    .entry-share-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
     }
 }
 
@@ -946,22 +1091,72 @@ h1, h2, h3, h4, h5, h6 {
 
 .major-release-actions {
     display: flex;
-    justify-content: flex-end;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.major-release-share-btn {
+    flex: 0 0 calc(33.333% - 0.25rem);
+    padding: 0.625rem 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    background: $color-purple;
+    border: none;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba($color-purple, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    
+    i {
+        font-size: 1rem;
+        line-height: 1;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    &:hover {
+        background: lighten($color-purple, 10%);
+        box-shadow: 0 6px 20px rgba($color-purple, 0.5);
+        color: $color-white;
+    }
 }
 
 .btn-play-now {
+    flex: 0 0 calc(66.667% - 0.5rem);
     background: linear-gradient(135deg, $color-yellow, $color-orange);
     border: none;
     color: $color-black;
     font-weight: 700;
     font-size: 1rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.625rem 0.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
     transition: all 0.5s ease;
     box-shadow: 0 4px 15px rgba($color-yellow, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    line-height: 1;
+    
+    i {
+        font-size: 1rem;
+        line-height: 1;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+    }
     
     &:hover {
         background: linear-gradient(315deg, $color-yellow, $color-orange);
@@ -1005,6 +1200,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.05rem;
         font-weight: 500;
         padding: 0.5rem 0;
+        padding-bottom: 0.5rem;
     }
 
     .important-label {

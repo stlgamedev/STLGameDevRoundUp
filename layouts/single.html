@@ -9,6 +9,13 @@
   <p class="lead text-body-tertiary"><i class="bi bi-calendar"></i> <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
 </div>
 
+<!-- Issue Share Button -->
+<div class="issue-share-btn-container">
+  <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#issueShareModal" title="Share this issue">
+    <i class="bi bi-share"></i>
+  </button>
+</div>
+
 {{- $categories := dict }}
 
 {{ $post := printf "%s" (string .Params.no) | printf "%s%s" "issue" | printf "%s" }}
@@ -84,10 +91,13 @@
       <ul>
         {{ range $important }}
           {{ $tag := replace .category "#" "" }}
-          {{ range .entries }}
-            <li>
+          {{ range $index, $entry := .entries }}
+            <li class="shareable-entry">
               <span class="important-label">{{ trim $tag " \t\n\r" | title }}</span>
-              {{ . | markdownify | partial "emoji.html" }}
+              {{ $entry | markdownify | partial "emoji.html" }}
+              <button type="button" class="btn btn-sm btn-outline-primary entry-share-btn" data-entry-text="{{ $entry | plainify }}" title="Share this announcement">
+                <i class="bi bi-share"></i>
+              </button>
             </li>
           {{ end }}
         {{ end }}
@@ -142,7 +152,10 @@
                     {{- end -}}
                   </div>
                   <div class="major-release-actions">
-                    <a href="{{ $url }}" target="_blank" rel="noopener" class="btn-play-now">Play Now!</a>
+                    <button type="button" class="btn btn-sm major-release-share-btn" data-entry-text="Check out {{ $title }} by {{ $creator }}! {{ $description | plainify }} {{ $url }}" title="Share this release">
+                      <i class="bi bi-share"></i> Share
+                    </button>
+                    <a href="{{ $url }}" target="_blank" rel="noopener" class="btn-play-now"><i class="bi bi-controller"></i> Play Now!</a>
                   </div>
                 </div>
               {{ end }}
@@ -162,8 +175,13 @@
       <section class="issue-section d-block" >
         <h3 class="display-6 pb-2">{{ .category | title | partial "emoji.html" }}</h3>
         <ul>
-          {{ range .entries }}
-          <li>{{ . | markdownify | partial "emoji.html" }}</li>
+          {{ range $index, $entry := .entries }}
+          <li class="shareable-entry">
+            {{ $entry | markdownify | partial "emoji.html" }}
+            <button type="button" class="btn btn-sm btn-outline-primary entry-share-btn" data-entry-text="{{ $entry | plainify }}" data-bs-toggle="modal" data-bs-target="#entryShareModal{{ $index }}" title="Share this entry">
+              <i class="bi bi-share"></i>
+            </button>
+          </li>
           {{ end }}
         </ul>
       </section>
@@ -192,7 +210,7 @@
       {{- $eventImagePath = "images/events/shares.png" -}}
     {{- end -}}
     {{- $eventImage := resources.Get $eventImagePath -}}
-    <section class="event-appointment">
+    <section class="event-appointment shareable-entry">
       <div class="event-time-indicator">
         <div class="event-time-badge text-nowrap">
           <div class="event-date">{{- time.Format "Jan 02" .dateTime | upper -}}</div>
@@ -228,6 +246,9 @@
       <div class="event-image">
         <img src="{{ $eventImage.RelPermalink }}" alt="{{ .title }}" />
       </div>
+      <button type="button" class="btn btn-sm btn-outline-primary entry-share-btn" data-entry-text="{{ .title }} - {{ time.Format "Jan 02, 2006" .dateTime }} at {{ time.Format "3:04 PM" .dateTime }}{{ with .location }} - {{ . }}{{ end }}{{ with .description }} - {{ . | plainify }}{{ end }}" title="Share this event">
+        <i class="bi bi-share"></i>
+      </button>
     </section>
   {{ end }}
     
@@ -246,4 +267,119 @@
   </div>
 </div>
 </div>
+
+{{/* Issue Share Modal */}}
+{{ $issueShareText := printf "Check out the STLGameDev RoundUp Issue № %d\n%s" .Params.no .Permalink }}
+{{ partial "share-modal.html" (dict "id" "issueShareModal" "shareText" $issueShareText "shareUrl" .Permalink) }}
+
+{{/* Entry Share Modals - create one shared modal that updates dynamically */}}
+<div class="modal fade" id="entryShareModal" tabindex="-1" aria-labelledby="entryShareModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="entryShareModalLabel">Share Entry</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="entryShareText" class="form-label">Share this message:</label>
+          <textarea class="form-control share-text" id="entryShareText" rows="4" readonly></textarea>
+        </div>
+        
+        <div class="d-grid gap-2 mb-3">
+          <button type="button" class="btn btn-outline-primary btn-copy-text" data-text-id="entryShareText">
+            <i class="bi bi-clipboard"></i> Copy Text
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-copy-link" data-url="{{ .Permalink }}">
+            <i class="bi bi-link-45deg"></i> Copy Link
+          </button>
+        </div>
+        
+        <div class="mb-2 text-center text-body-secondary small">Or share directly:</div>
+        <div class="share-buttons d-flex justify-content-center gap-2 flex-wrap">
+          <a href="#" id="entryShareTwitter" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on X">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="#" id="entryShareBluesky" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on Bluesky">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16"><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026"/></svg>
+          </a>
+          <a href="#" id="entryShareFacebook" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" id="entryShareLinkedIn" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="#" id="entryShareReddit" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" title="Share on Reddit">
+            <i class="bi bi-reddit"></i>
+          </a>
+          <a href="#" id="entryShareEmail" class="btn btn-sm btn-outline-secondary" title="Share via Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Copy text functionality
+document.querySelectorAll('.btn-copy-text').forEach(button => {
+  button.addEventListener('click', function() {
+    const textId = this.getAttribute('data-text-id');
+    const textarea = document.getElementById(textId);
+    textarea.select();
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      const originalHTML = this.innerHTML;
+      this.innerHTML = '<i class="bi bi-check-lg"></i> Copied!';
+      setTimeout(() => {
+        this.innerHTML = originalHTML;
+      }, 2000);
+    });
+  });
+});
+
+// Copy link functionality
+document.querySelectorAll('.btn-copy-link').forEach(button => {
+  button.addEventListener('click', function() {
+    const url = this.getAttribute('data-url');
+    navigator.clipboard.writeText(url).then(() => {
+      const originalHTML = this.innerHTML;
+      this.innerHTML = '<i class="bi bi-check-lg"></i> Copied!';
+      setTimeout(() => {
+        this.innerHTML = originalHTML;
+      }, 2000);
+    });
+  });
+});
+
+// Entry share button functionality (handles all entry types)
+document.querySelectorAll('.entry-share-btn, .major-release-share-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const entryText = this.getAttribute('data-entry-text');
+    const shareText = `From STLGameDev RoundUp Issue № {{ .Params.no }}:\n\n${entryText}\n\n{{ .Permalink }}`;
+    const shareUrl = '{{ .Permalink }}';
+    
+    // Update modal content
+    document.getElementById('entryShareText').value = shareText;
+    document.querySelector('#entryShareModal .btn-copy-link').setAttribute('data-url', shareUrl);
+    
+    // Update social share links
+    document.getElementById('entryShareTwitter').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+    document.getElementById('entryShareBluesky').href = `https://bsky.app/intent/compose?text=${encodeURIComponent(shareText)}`;
+    document.getElementById('entryShareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+    document.getElementById('entryShareLinkedIn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+    document.getElementById('entryShareReddit').href = `https://www.reddit.com/submit?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(shareText)}`;
+    document.getElementById('entryShareEmail').href = `mailto:?subject=Check this out&body=${encodeURIComponent(shareText)}`;
+  });
+});
+
+// Show entry share modal
+document.querySelectorAll('.entry-share-btn, .major-release-share-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const modal = new bootstrap.Modal(document.getElementById('entryShareModal'));
+    modal.show();
+  });
+});
+</script>
+
 {{ end }}
