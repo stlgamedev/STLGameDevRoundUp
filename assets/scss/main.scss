@@ -77,8 +77,8 @@ $danger: shade-color($color-orange, 20%);
 $light: #333;
 $dark: $color-black;
 
-// Body colors - pure black background
-$body-bg: #000;
+// Body colors - sophisticated dark background with subtle embossed pattern
+$body-bg: #1a1a1a;
 $body-color: #e8e8e8;
 
 // Link colors - more subtle
@@ -142,6 +142,26 @@ $border-color: rgba($color-white, 0.15);
 @import "bootstrap-icons/bootstrap-icons.scss";
 
 @import "styles.scss";
+
+// Body background pattern - elegant embossed texture
+body {
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 3px,
+            rgba($color-white, 0.02) 3px,
+            rgba($color-white, 0.02) 6px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 3px,
+            rgba($color-black, 0.03) 3px,
+            rgba($color-black, 0.03) 6px
+        );
+    background-size: 40px 40px;
+}
 
 // Footer button styling
 .btn-outline-success {

@@ -91,9 +91,9 @@
       <ul>
         {{ range $important }}
           {{ $tag := replace .category "#" "" }}
+          <h3 class="ribbon ribbon-purple">{{ trim $tag " \t\n\r" | title | partial "emoji.html" }}</h3>
           {{ range $index, $entry := .entries }}
             <li class="shareable-entry">
-              <span class="important-label">{{ trim $tag " \t\n\r" | title }}</span>
               {{ $entry | markdownify | partial "emoji.html" }}
               <button type="button" class="btn btn-sm btn-outline-primary entry-share-btn" data-entry-text="{{ $entry | plainify }}" title="Share this announcement">
                 <i class="bi bi-share"></i>

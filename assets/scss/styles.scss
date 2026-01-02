@@ -393,8 +393,27 @@ $color-purple-dark: rgba($color-purple, 0.25);
 }
 
 header {
-    background: #1a1a1a;
+    background: #0f0f0f;
     border-bottom: 1px solid rgba($color-white, 0.1);
+    box-shadow: 0 2px 10px rgba($color-black, 0.5);
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba($color-orange, 0.4) 5%, 
+            rgba($color-orange, 0.4) 95%, 
+            transparent 100%);
+        pointer-events: none;
+    }
     
     h1 {
         color: $color-white !important;
@@ -442,8 +461,8 @@ header {
             display: list-item;
             margin-bottom: 0.75rem;
             padding: 0.75rem 1rem;
-            background: rgba($color-white, 0.03);
-            border-left: 2px solid rgba($color-white, 0.1);
+            background: rgba($color-black, 0.35);
+            border-left: 2px solid rgba($color-orange, 0.3);
             border-radius: 0.25rem;
             line-height: 1.6;
             position: relative;
@@ -725,10 +744,32 @@ header {
 
 
 footer {
-    background: #1a1a1a;
+    background: #0f0f0f;
     color: rgba($color-white, 0.7);
     border-top: 1px solid rgba($color-white, 0.1);
-    padding-bottom: 1rem !important;
+    box-shadow: 0 -2px 10px rgba($color-black, 0.5);
+    padding: 1.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem !important;
+    position: relative;
+    
+    .container {
+        padding-top: 0.5rem;
+    }
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba($color-orange, 0.4) 5%, 
+            rgba($color-orange, 0.4) 95%, 
+            transparent 100%);
+        pointer-events: none;
+    }
 }
 
 // Hide footer during screenshots
@@ -737,9 +778,30 @@ html.screenshot-mode footer {
 }
 
 nav {
-    background-color: #1a1a1a !important;
+    background-color: #0f0f0f !important;
     background-image: none !important;
     border-bottom: 1px solid rgba($color-white, 0.1);
+    padding-bottom: 1rem;
+    position: relative;
+    
+    .container {
+        padding-bottom: 0.5rem;
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0.25rem;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba($color-orange, 0.4) 5%, 
+            rgba($color-orange, 0.4) 95%, 
+            transparent 100%);
+        pointer-events: none;
+    }
     
     .navbar-brand {
         color: $color-white !important;
@@ -813,15 +875,17 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: rgba($color-white, 0.05);
+    background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
     border-radius: 0.5rem;
-    border: 1px solid rgba($color-white, 0.1);
+    border: 2px solid rgba($color-white, 0.15);
     transition: all 0.2s ease;
     position: relative;
+    box-shadow: 0 2px 10px rgba($color-black, 0.3);
     
     &:hover {
-        background: rgba($color-white, 0.08);
-        border-color: rgba($color-white, 0.15);
+        background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+        border-color: rgba($color-purple, 0.3);
+        box-shadow: 0 4px 20px rgba($color-black, 0.5), 0 0 20px rgba($color-purple, 0.15);
     }
     
     .entry-share-btn {
@@ -953,26 +1017,86 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-// Rainbow HR bars
+// Elegant HR bars with golden filigree
 .rainbow-hr {
     border: 0;
-    height: 4px;
-    background: linear-gradient(to right, #D131D3, #E48723);
-    box-shadow: 0 0 15px rgba(209, 49, 211, 0.5);
+    height: 2px;
+    background: linear-gradient(to right, 
+        transparent,
+        rgba($color-yellow, 0.3) 20%,
+        rgba($color-orange, 0.5) 50%,
+        rgba($color-yellow, 0.3) 80%,
+        transparent
+    );
+    position: relative;
+    margin: 2rem 0;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 6px;
+        background: linear-gradient(to right, $color-yellow, $color-orange);
+        border-radius: 3px;
+        box-shadow: 0 0 10px rgba($color-yellow, 0.4);
+    }
 }
 
 .rainbow-hr-rev {
     border: 0;
-    height: 4px;
-    background: linear-gradient(to right, #E48723, #F5E92F);
-    box-shadow: 0 0 15px rgba(228, 135, 35, 0.5);
+    height: 2px;
+    background: linear-gradient(to right, 
+        transparent,
+        rgba($color-orange, 0.3) 20%,
+        rgba($color-yellow, 0.5) 50%,
+        rgba($color-orange, 0.3) 80%,
+        transparent
+    );
+    position: relative;
+    margin: 2rem 0;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 6px;
+        background: linear-gradient(to right, $color-orange, $color-yellow);
+        border-radius: 3px;
+        box-shadow: 0 0 10px rgba($color-orange, 0.4);
+    }
 }
 
 .rainbow-hr-alt {
     border: 0;
-    height: 4px;
-    background: linear-gradient(to right, #F5E92F, #D131D3);
-    box-shadow: 0 0 15px rgba(245, 233, 47, 0.5);
+    height: 2px;
+    background: linear-gradient(to right, 
+        transparent,
+        rgba($color-purple, 0.3) 20%,
+        rgba($color-yellow, 0.5) 50%,
+        rgba($color-purple, 0.3) 80%,
+        transparent
+    );
+    position: relative;
+    margin: 2rem 0;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 6px;
+        background: linear-gradient(to right, $color-yellow, $color-purple);
+        border-radius: 3px;
+        box-shadow: 0 0 10px rgba($color-purple, 0.4);
+    }
 }
 
 // Major Releases section
@@ -992,15 +1116,15 @@ h1, h2, h3, h4, h5, h6 {
 .major-release-card {
     display: flex;
     flex-direction: column;
-    background: rgba($color-white, 0.05);
-    border: none;
+    background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+    border: 3px solid rgba($color-white, 0.15);
     border-radius: 0.75rem;
     padding: 1.5rem;
-    padding-top: 2rem;
+    padding-top: 6rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     transition: all 0.3s ease;
-    box-shadow: 0 0 0 1px rgba($color-yellow, 0.5), 0 0 30px rgba($color-yellow, 0.2);
+    box-shadow: 0 4px 20px rgba($color-black, 0.4);
     width: 100%;
     max-width: 350px;
     margin: 1rem;
@@ -1011,47 +1135,103 @@ h1, h2, h3, h4, h5, h6 {
         left: 0;
         top: 0;
         right: 0;
-        height: 1rem;
-        background: linear-gradient(to right, $color-yellow, $color-orange);
-        box-shadow: 0 0 20px rgba($color-yellow, 0.5);
-        border-radius: 0.75rem 0.75rem 0 0;
+        height: 4px;
+        background: linear-gradient(to right, 
+            transparent,
+            rgba($color-yellow, 0.5) 25%,
+            $color-orange 50%,
+            rgba($color-yellow, 0.5) 75%,
+            transparent
+        );
+        box-shadow: 0 2px 10px rgba($color-orange, 0.3);
+    }
+    
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 0.75rem;
+        padding: 2px;
+        background: linear-gradient(135deg, 
+            rgba($color-yellow, 0.15) 0%,
+            transparent 30%,
+            transparent 70%,
+            rgba($color-orange, 0.15) 100%
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     &:hover {
-        background: rgba($color-white, 0.08);
-        box-shadow: 0 0 0 1px rgba($color-yellow, 0.8), 0 0 40px rgba($color-yellow, 0.4);
+        background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+        border-color: rgba($color-yellow, 0.3);
+        box-shadow: 0 8px 30px rgba($color-black, 0.6), 0 0 40px rgba($color-orange, 0.2);
         transform: translateY(-4px);
+        
+        &:after {
+            opacity: 1;
+        }
     }
 }
 
 .major-release-title {
-    font-size: 1.5rem;
+    position: absolute;
+    left: calc(-1 * 0.5em);
+    top: 1rem;
+    padding-inline: 0.5em;
+    line-height: 1.8;
     font-weight: 700;
-    margin: 0 0 0.5rem 0;
-    min-height: 3rem;
-    display: flex;
-    align-items: center;
+    color: $color-black;
+    margin: 0;
+    font-size: 1.25rem;
+    --f: 0.5em;
+    --r: 0.8em;
+    background: $color-yellow;
+    border-bottom: var(--f) solid rgba($color-black, 0.3);
+    border-right: var(--r) solid transparent;
+    clip-path: polygon(calc(100% - var(--r)) 0, 0 0, 0 calc(100% - var(--f)), var(--f) 100%,
+        var(--f) calc(100% - var(--f)), calc(100% - var(--r)) calc(100% - var(--f)),
+        100% calc(50% - var(--f)/2));
+    box-shadow: 0 4px 10px rgba($color-black, 0.4);
     
     a {
-        color: $color-yellow;
+        color: $color-black;
         text-decoration: none;
-        border-bottom: 2px solid transparent;
         transition: all 0.2s ease;
         
         &:hover {
-            color: lighten($color-yellow, 10%);
-            border-bottom-color: rgba($color-yellow, 0.5);
+            color: darken($color-black, 10%);
         }
     }
 }
 
 .major-release-creator {
-    font-size: 0.95rem;
-    color: $color-orange;
-    font-weight: 500;
+    position: absolute;
+    right: calc(-1 * 0.5em);
+    top: 3.5rem;
+    padding-inline: 0.5em;
+    line-height: 1.8;
+    font-weight: 700;
+    color: $color-white;
     font-style: italic;
-    margin: 0 0 1rem 0;
-    text-align: right;
+    margin: 0;
+    font-size: 1rem;
+    --f: 0.5em;
+    --r: 0.8em;
+    background: $color-orange;
+    border-bottom: var(--f) solid rgba($color-black, 0.3);
+    border-left: var(--r) solid transparent;
+    clip-path: polygon(var(--r) 0, 100% 0, 100% calc(100% - var(--f)), calc(100% - var(--f)) 100%,
+        calc(100% - var(--f)) calc(100% - var(--f)), var(--r) calc(100% - var(--f)),
+        0 calc(50% - var(--f)/2));
+    box-shadow: 0 4px 10px rgba($color-black, 0.4);
 }
 
 .major-release-description {
@@ -1167,31 +1347,43 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
-// Important section (mirrors home page first-child style)
+// Important section with elegant styling
 .important-section {
-    background: rgba($color-white, 0.05);
-    border: 1px solid rgba($color-white, 0.1);
+    background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+    border: 2px solid rgba($color-purple, 0.3);
     border-radius: 0.5rem;
     padding: 1.25rem 1rem;
-    padding-left: 5rem;
+    padding-top: 3rem;
+    padding-left: 1.5rem;
+    box-shadow: 0 4px 15px rgba($color-black, 0.3), inset -2px 0 10px rgba($color-purple, 0.1);
     position: relative;
-
-    &:before {
+    
+    &::before {
         content: '';
         position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 3rem;
-        background: $color-purple;
-        border-radius: 0.5rem 0 0 0.5rem;
-        padding: 0.5rem 0;
+        top: 0.5rem;
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.5rem;
+        border: 1px solid rgba($color-purple, 0.5);
+        border-radius: 0.25rem;
+        pointer-events: none;
+    }
+    
+    .ribbon {
+        top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    h3.ribbon:first-child {
+        margin-top: 0;
     }
 
     ul {
         list-style: none;
         padding-left: 0;
         margin: 0;
+        margin-top: 2rem;
     }
 
     li {
@@ -1204,24 +1396,16 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .important-label {
-        position: absolute;
-        left: -4.5rem;
-        height:100%;
-        width: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(-90deg);
-        transform-origin: center;
-        color: $color-white !important;
-        font-weight: 500;
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
+        display: inline-block;
+        color: $color-purple;
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
-        margin: 0;
-        padding: 0;
-        white-space: nowrap;
-        z-index: 2;
+        margin-right: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        background: rgba($color-purple, 0.15);
+        border-radius: 0.25rem;
     }
 }
 
@@ -1244,17 +1428,33 @@ h1, h2, h3, h4, h5, h6 {
             justify-content: center;
             list-style-type: none;
             border-radius: 0.5rem;
-            overflow: hidden;
-            background: rgba($color-white, 0.05);
-            border: 1px solid rgba($color-white, 0.1);
-            position: relative;
+            background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+            border: 2px solid rgba($color-white, 0.15);
             transition: all 0.2s ease;
-            padding: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba($color-black, 0.3);
+            position: relative;
 
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0.5rem;
+                left: 0.5rem;
+                right: 0.5rem;
+                bottom: 0.5rem;
+                border: 1px solid rgba($color-orange, 0.5);
+                border-radius: 0.25rem;
+                pointer-events: none;
+            }
             
             &:hover {
-                background: rgba($color-white, 0.08);
-                border-color: rgba($color-white, 0.2);
+                background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+                border-color: rgba($color-orange, 0.3);
+                box-shadow: 0 4px 15px rgba($color-black, 0.4), 0 0 20px rgba($color-orange, 0.1);
+                
+                &::before {
+                    border-color: rgba($color-yellow, 0.6);
+                }
             }
             
             h2 {
@@ -1289,45 +1489,34 @@ h1, h2, h3, h4, h5, h6 {
                 grid-column: 1 / -2;
                 grid-row: 1;
                 padding: 2rem;
-                padding-left: 5rem;
-                background: rgba($color-white, 0.05);
-                border: 1px solid rgba($color-white, 0.1);
+                padding-left: 2rem;
+                background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+                border: 2px solid rgba($color-orange, 0.3);
+                box-shadow: 0 4px 20px rgba($color-black, 0.4), inset -4px 0 15px rgba($color-orange, 0.1);
                 position: relative;
 
-                &:before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    width: 3rem;
-                    background: $color-purple;
-                }
-
                 &:hover {
-                    background: rgba($color-white, 0.08);
-                    border-color: rgba($color-white, 0.2);
+                    background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+                    border-color: rgba($color-orange, 0.5);
+                    box-shadow: 0 6px 25px rgba($color-black, 0.5), 0 0 30px rgba($color-orange, 0.2), inset -4px 0 15px rgba($color-orange, 0.15);
+                }
+                
+                .ribbon {
+                    top: 1rem;
+                    font-size: 1.75rem;
                 }
                 
                 .text-secondary {
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    width: 3rem;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transform: translateY(-50%) rotate(-90deg);
-                    transform-origin: center;
-                    color: $color-white !important;
+                    display: inline-block;
+                    color: $color-orange !important;
                     font-weight: 700;
-                    font-size: 0.9rem;
-                    letter-spacing: 0.15em;
+                    font-size: 0.85rem;
+                    letter-spacing: 0.1em;
                     text-transform: uppercase;
-                    margin: 0;
-                    white-space: nowrap;
-                    z-index: 2;
+                    margin-bottom: 1rem;
+                    padding: 0.25rem 0.75rem;
+                    background: rgba($color-orange, 0.2);
+                    border-radius: 0.25rem;
                 }
 
                 h2 {
@@ -1338,7 +1527,7 @@ h1, h2, h3, h4, h5, h6 {
 
                 time {
                     font-size: 1.5rem;
-                    color: darken($color-purple, 25%);
+                    color: $color-yellow;
                     font-weight: 500;
                 }
             }
@@ -1349,17 +1538,42 @@ h1, h2, h3, h4, h5, h6 {
                 padding: 0;
                 background: transparent;
                 border: none;
+                box-shadow: none;
                 
                 .card {
                     height: 100%;
-                    background: rgba($color-white, 0.05);
-                    border: 1px solid rgba($color-white, 0.1);
+                    background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+                    border: 2px solid rgba($color-green, 0.3);
                     border-radius: 0.5rem;
                     transition: all 0.2s ease;
+                    box-shadow: 0 2px 8px rgba($color-black, 0.3);
+                    position: relative;
+                    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0.5rem;
+                        left: 0.5rem;
+                        right: 0.5rem;
+                        bottom: 0.5rem;
+                        border: 1px solid rgba($color-orange, 0.5);
+                        border-radius: 0.25rem;
+                        pointer-events: none;
+                    }
+                    
+                    .ribbon {
+                        top: 1rem;
+                        font-size: 1.75rem;
+                    }
                     
                     &:hover {
-                        background: rgba($color-white, 0.08);
-                        border-color: rgba($color-white, 0.2);
+                        background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+                        border-color: rgba($color-green, 0.3);
+                        box-shadow: 0 4px 15px rgba($color-black, 0.4), 0 0 20px rgba($color-green, 0.1);
+                        
+                        &::before {
+                            border-color: rgba($color-yellow, 0.6);
+                        }
                     }
                 }
                 
@@ -1367,13 +1581,13 @@ h1, h2, h3, h4, h5, h6 {
                     display: flex;
                     flex-direction: column;
                     padding: 1.5rem;
+                    padding-top: 5.5rem;
                     padding-bottom: 1rem;
                 }
                 
                 .email-signup-form {
                     h3 {
                         font-size: 1.5rem;
-                        color: $color-orange;
                         margin-bottom: 0.5rem;
                     }
                     
@@ -1423,4 +1637,53 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 
-
+// Ribbon styles for headings
+.ribbon {
+    --f: 0.5em; /* control the folded part*/
+    --r: 0.8em; /* control the ribbon shape */
+    
+    position: absolute;
+    left: calc(-1 * var(--f));
+    padding-inline: 0.5em;
+    line-height: 1.8;
+    font-weight: 700;
+    color: $color-white;
+    border-bottom: var(--f) solid rgba($color-black, 0.3);
+    border-right: var(--r) solid transparent;
+    clip-path: 
+        polygon(calc(100% - var(--r)) 0, 0 0, 0 calc(100% - var(--f)), var(--f) 100%,
+            var(--f) calc(100% - var(--f)), calc(100% - var(--r)) calc(100% - var(--f)),
+            100% calc(50% - var(--f)/2));
+    box-shadow: 0 4px 10px rgba($color-black, 0.4);
+    
+    &.ribbon-orange {
+        background: $color-orange;
+    }
+    
+    &.ribbon-purple {
+        background: $color-purple;
+    }
+    
+    &.ribbon-green {
+        background: $color-green;
+        color: $color-white !important;
+    }
+    
+    &.ribbon-yellow {
+        background: linear-gradient(135deg, $color-yellow, $color-orange);
+        color: $color-black;
+    }
+    
+    // Right-side ribbon variant
+    &.ribbon-right {
+        left: auto;
+        right: calc(-1 * var(--f));
+        border-bottom: var(--f) solid rgba($color-black, 0.3);
+        border-right: none;
+        border-left: var(--r) solid transparent;
+        clip-path: 
+            polygon(var(--r) 0, 100% 0, 100% calc(100% - var(--f)), calc(100% - var(--f)) 100%,
+                calc(100% - var(--f)) calc(100% - var(--f)), var(--r) calc(100% - var(--f)),
+                0 calc(50% - var(--f)/2));
+    }
+}
