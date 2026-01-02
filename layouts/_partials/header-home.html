@@ -5,7 +5,7 @@
         <h1 class="display-4 fw-bold">{{ site.Title }}</h1>
     </div>
     <div class="col-lg-6 mx-auto">
-        <p class="lead text-body-secondary mb-2">{{ site.Params.explanation }}</p>
+        <p class="lead text-body-secondary mb-2">{{ site.Params.explanation | markdownify }}</p>
     </div>
     {{ partial "social-links.html" (dict "showLabel" true "variant" "head") }}
 </header>

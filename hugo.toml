@@ -5,7 +5,7 @@ title = 'St Louis Game Developer RoundUp'
 enableEmoji = true
 
 [params]
-  explanation = "The St Louis Game Developer RoundUp is the official monthly digest of the St Louis Game Developer community. Curated by STLGameDev and built through community contributions, it aggregates news, project updates, resources, and upcoming events from our local game development scene."
+  explanation = "The **St Louis Game Developer RoundUp** is the official monthly digest of the **St Louis Game Developer community**. Curated by [STLGameDev](https://stlgame.dev/), it brings together news, project updates, resources, and upcoming events from our local game development scene contributed by community members."
   shareText = "Check out St Louis Game Dev RoundUp № %s!"
   keywords = "indie game development, game development, game developers, game dev, indie games, indie game developers, indie game dev, st louis, saint louis, missouri, mo"
   [params.social]

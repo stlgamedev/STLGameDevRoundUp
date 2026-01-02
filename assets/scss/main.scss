@@ -143,24 +143,18 @@ $border-color: rgba($color-white, 0.15);
 
 @import "styles.scss";
 
-// Body background pattern - elegant embossed texture
+// Body background pattern - hexagonal tile pattern
 body {
-    background-image: 
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 3px,
-            rgba($color-white, 0.02) 3px,
-            rgba($color-white, 0.02) 6px
-        ),
-        repeating-linear-gradient(
-            -45deg,
-            transparent,
-            transparent 3px,
-            rgba($color-black, 0.03) 3px,
-            rgba($color-black, 0.03) 6px
-        );
-    background-size: 40px 40px;
+    --s: 34px; /* control the size*/
+    --c1: #0a0a0a;
+    --c2: #121212;
+    --c3: #151515;
+    
+    background:
+        repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+         calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+        repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+    background-size: var(--s) calc(var(--s)*tan(30deg));
 }
 
 // Footer button styling

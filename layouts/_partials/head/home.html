@@ -6,14 +6,14 @@
 <meta   name="twitter:site"         content="@stlgamedev" />
 <meta   name="twitter:creator"      content="@seifertim" />
 <meta name="twitter:title" content="St Louis Game Developer RoundUp" />
-<meta   name="twitter:description"  content="{{ site.Params.explanation }}" />
+<meta   name="twitter:description"  content="{{ site.Params.explanation | plainify }}" />
 {{ with $image }}
 <meta   name="twitter:image"         content="{{ .Permalink }}" />
 
 <meta   property="og:url"           content="{{ .Permalink | safeURL }}" />
 <meta   property="og:type"          content="website" />
 <meta property="og:title" content="St Louis Game Developer RoundUp" />
-<meta   property="og:description"   content="{{ site.Params.explanation }}" />
+<meta   property="og:description"   content="{{ site.Params.explanation | plainify }}" />
 <meta   property="og:image"         content="{{ .Permalink }}" />
 <meta   property="og:site_name"     content="{{ site.Title }}" />
 <meta   property="og:locale"        content="en_US" />

@@ -1,14 +1,5 @@
 {{ define "main" }}
 
-<div class="text-center mb-4">
-  <h1 class="display-2 fw-bold">RoundUp № {{ .Params.no }}</h1>
-  {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
-  {{ $dateHuman := .Date |
-  time.Format ":date_full"
-  }}
-  <p class="lead text-body-tertiary"><i class="bi bi-calendar"></i> <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
-</div>
-
 <!-- Issue Share Button -->
 <div class="issue-share-btn-container">
   <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#issueShareModal" title="Share this issue">
@@ -50,31 +41,38 @@
 {{ end -}}
 
 <div id="issue" >
-  {{- $header := index $categories "!header" }}
-  {{ if $header }}
-  <section class="issue-header d-block" >
-    {{ range $header.entries }}
-      {{ $lines := split . "\n" }}
-      {{ range $lines }}
-        {{ if gt (len (trim . " \t\n\r")) 0 }}
-          <p class="lead fs-4">{{ . | markdownify | partial "emoji.html" }}</p>
+  <div class="issue-header-card">
+    <div class="text-center mb-4">
+      <h1 class="display-2 fw-bold">RoundUp № {{ .Params.no }}</h1>
+      {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
+      {{ $dateHuman := .Date |
+      time.Format ":date_full"
+      }}
+      <p class="lead text-body-tertiary"><i class="bi bi-calendar"></i> <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
+    </div>
+
+    {{- $header := index $categories "!header" }}
+    {{ if $header }}
+    <section class="issue-header d-block" >
+      {{ range $header.entries }}
+        {{ $lines := split . "\n" }}
+        {{ range $lines }}
+          {{ if gt (len (trim . " \t\n\r")) 0 }}
+            <p class="lead fs-4">{{ . | markdownify | partial "emoji.html" }}</p>
+          {{ end }}
         {{ end }}
       {{ end }}
-    {{ end }}
-  </section>
-  {{ end -}}
-  
-  <div class="text-center mb-4">
-    <p class="text-body-secondary small">{{ site.Params.explanation }}</p>
-    <p class="text-body-secondary lead">{{ "Missed a recent RoundUp? <a href=\"https://roundup.stlgamedev.com\">Browse our 🗄Archive</a> and stay in the loop with STL game development!" | partial "emoji.html" }}</p>
+    </section>
+    {{ end -}}
+    
+    <div class="text-center mb-4">
+      <p class="text-body-secondary small">{{ site.Params.explanation | markdownify }}</p>
+      <p class="text-body-secondary lead">{{ "Missed a recent RoundUp? <a href=\"https://roundup.stlgamedev.com\">Browse our 🗄Archive</a> and stay in the loop with STL game development!" | partial "emoji.html" }}</p>
+    </div>
   </div>
 
   
-  <hr class="my-4 rainbow-hr" />
-
   {{ partial "social-links.html" (dict "showLabel" true) }}
-
-  <hr class="my-4 rainbow-hr" />
 
   {{ $important := slice }}
   {{ $majorReleases := slice }}
@@ -104,8 +102,6 @@
         </ul>
       </section>
     {{ end }}
-
-    <hr class="my-4 rainbow-hr-alt" />
   {{ end }}
 
   
@@ -165,8 +161,6 @@
         {{ end }}
       </div>
     </section>
-
-    <hr class="my-4 rainbow-hr-alt" />
   {{ end }}
 
   <section class="row ">
@@ -191,8 +185,6 @@
     </div>
   </section>
 </div>
-
-<hr class="my-4 mx-4 rainbow-hr-rev" />
 
 {{ if $posts.events -}}
 <div id="events" class="">
@@ -257,7 +249,6 @@
 </section>
 </div> 
 
-<hr class="my-3 mx-4 rainbow-hr-alt" />
 {{ end -}}
 
 <div class="row mt-3 pb-2">

@@ -429,9 +429,37 @@ header {
 #issue {
     margin-bottom: 4rem;
     
-    > .text-center {
-        margin-top: 2rem;
+    .issue-header-card {
+        background: #1a1a1a;
+        padding: 2rem 1.5rem;
+        border-radius: 0.5rem;
+        border: 2px solid rgba($color-white, 0.1);
         margin-bottom: 2rem;
+        position: relative;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            right: 0.5rem;
+            bottom: 0.5rem;
+            border: 1px solid rgba($color-yellow, 0.5);
+            border-radius: 0.25rem;
+            pointer-events: none;
+        }
+        
+        .text-center {
+            margin-bottom: 2rem;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        
+        .issue-header {
+            margin-bottom: 2rem;
+        }
     }
 }
 
@@ -461,7 +489,7 @@ header {
             display: list-item;
             margin-bottom: 0.75rem;
             padding: 0.75rem 1rem;
-            background: rgba($color-black, 0.35);
+            background: #1a1a1a;
             border-left: 2px solid rgba($color-orange, 0.3);
             border-radius: 0.25rem;
             line-height: 1.6;
@@ -875,7 +903,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+    background: #1a1a1a;
     border-radius: 0.5rem;
     border: 2px solid rgba($color-white, 0.15);
     transition: all 0.2s ease;
@@ -883,7 +911,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 10px rgba($color-black, 0.3);
     
     &:hover {
-        background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+        background: #1a1a1a;
         border-color: rgba($color-purple, 0.3);
         box-shadow: 0 4px 20px rgba($color-black, 0.5), 0 0 20px rgba($color-purple, 0.15);
     }
@@ -1116,7 +1144,7 @@ h1, h2, h3, h4, h5, h6 {
 .major-release-card {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+    background: #1a1a1a;
     border: 3px solid rgba($color-white, 0.15);
     border-radius: 0.75rem;
     padding: 1.5rem;
@@ -1170,7 +1198,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &:hover {
-        background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+        background: #1a1a1a;
         border-color: rgba($color-yellow, 0.3);
         box-shadow: 0 8px 30px rgba($color-black, 0.6), 0 0 40px rgba($color-orange, 0.2);
         transform: translateY(-4px);
@@ -1349,7 +1377,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // Important section with elegant styling
 .important-section {
-    background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+    background: #1a1a1a;
     border: 2px solid rgba($color-purple, 0.3);
     border-radius: 0.5rem;
     padding: 1.25rem 1rem;
@@ -1428,7 +1456,8 @@ h1, h2, h3, h4, h5, h6 {
             justify-content: center;
             list-style-type: none;
             border-radius: 0.5rem;
-            background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+            background: #1a1a1a;
+            background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
             border: 2px solid rgba($color-white, 0.15);
             transition: all 0.2s ease;
             padding: 1.5rem;
@@ -1448,7 +1477,7 @@ h1, h2, h3, h4, h5, h6 {
             }
             
             &:hover {
-                background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+                background: #1a1a1a;
                 border-color: rgba($color-orange, 0.3);
                 box-shadow: 0 4px 15px rgba($color-black, 0.4), 0 0 20px rgba($color-orange, 0.1);
                 
@@ -1490,13 +1519,14 @@ h1, h2, h3, h4, h5, h6 {
                 grid-row: 1;
                 padding: 2rem;
                 padding-left: 2rem;
-                background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+                background: #1a1a1a;
+                background-image: radial-gradient(circle at 50% 0%, rgba(228, 135, 35, 0.12) 0%, transparent 60%);
                 border: 2px solid rgba($color-orange, 0.3);
                 box-shadow: 0 4px 20px rgba($color-black, 0.4), inset -4px 0 15px rgba($color-orange, 0.1);
                 position: relative;
 
                 &:hover {
-                    background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+                    background: #1a1a1a;
                     border-color: rgba($color-orange, 0.5);
                     box-shadow: 0 6px 25px rgba($color-black, 0.5), 0 0 30px rgba($color-orange, 0.2), inset -4px 0 15px rgba($color-orange, 0.15);
                 }
@@ -1542,7 +1572,8 @@ h1, h2, h3, h4, h5, h6 {
                 
                 .card {
                     height: 100%;
-                    background: linear-gradient(135deg, rgba($color-black, 0.4) 0%, rgba($color-black, 0.3) 100%);
+                    background: #1a1a1a;
+                    background-image: radial-gradient(circle at 50% 0%, rgba(73, 146, 114, 0.08) 0%, transparent 70%);
                     border: 2px solid rgba($color-green, 0.3);
                     border-radius: 0.5rem;
                     transition: all 0.2s ease;
@@ -1556,7 +1587,7 @@ h1, h2, h3, h4, h5, h6 {
                         left: 0.5rem;
                         right: 0.5rem;
                         bottom: 0.5rem;
-                        border: 1px solid rgba($color-orange, 0.5);
+                        border: 1px solid rgba($color-green, 0.6);
                         border-radius: 0.25rem;
                         pointer-events: none;
                     }
@@ -1567,7 +1598,7 @@ h1, h2, h3, h4, h5, h6 {
                     }
                     
                     &:hover {
-                        background: linear-gradient(135deg, rgba($color-black, 0.3) 0%, rgba($color-black, 0.2) 100%);
+                        background: #1a1a1a;
                         border-color: rgba($color-green, 0.3);
                         box-shadow: 0 4px 15px rgba($color-black, 0.4), 0 0 20px rgba($color-green, 0.1);
                         

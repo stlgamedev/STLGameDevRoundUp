@@ -49,10 +49,7 @@
 
 {{ $html := .OutputFormats.Get "HTML" }}
 
-
-{{- $stlru := resources.Get "images/stlgdru-logo-neon.png" }}
-  {{ $stlgdlogo := resources.Get "images/stlgd-logo.png" }}
-  {{ $stlgdicon := resources.Get "images/stlgd-icon.png" -}}
+{{- $baseURL := site.BaseURL | strings.TrimSuffix "/" }}
 
 <!doctype html>
 <html>
@@ -71,11 +68,11 @@
   <style type="text/css">
   :root {
     /* Theme-matched tokens (mirrors `assets/scss/main.scss`) */
-    --bg-page:    #000000;  /* $body-bg */
-    --bg-main:    #000000;  /* keep email background consistent with site */
+    --bg-page:    #1a1a1a;  /* $body-bg */
+    --bg-main:    #1a1a1a;  /* keep email background consistent with site */
     --bg-card:    #1a1a1a;  /* used in site header + good card contrast */
-    --bg-header:  #000000;
-    --bg-footer:  #000000;
+    --bg-header:  #1a1a1a;
+    --bg-footer:  #1a1a1a;
 
     --text-main:  #e8e8e8;  /* $body-color */
     --text-muted: rgba(255,255,255,0.60);
@@ -89,7 +86,7 @@
   body {
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #1a1a1a;
     -webkit-text-size-adjust: none;
   }
 
@@ -106,7 +103,7 @@
 
   .outer {
     width: 100%;
-    background-color: #000000;
+    background-color: #1a1a1a;
   }
 
   .container {
@@ -132,7 +129,7 @@
   }
 
   .header {
-    background-color: #000000;
+    background-color: #1a1a1a;
     color: #ffffff;
     text-align: center;
   }
@@ -141,7 +138,7 @@
   }
 
   .content {
-    background-color: #000000;
+    background-color: #1a1a1a;
     color: #e8e8e8 !important;
   }
   .content td {
@@ -334,7 +331,7 @@
           <tr class="header">
             <td>
               <a href="https://stlgame.dev" target="_blank">
-                <img src="{{ $stlgdlogo.Permalink }}" alt="STLGameDev"
+                <img src="{{ $baseURL }}/images/stlgd-logo.png" alt="STLGameDev"
                   style="margin: 8px auto 16px; max-width:260px;">
               </a>
             </td>
@@ -346,7 +343,7 @@
               <h1 style="margin:0 0 0.5rem;font-size:26px;">St Louis Game Developer RoundUp</h1>
               <a href="{{ if $html }}{{ $html.Permalink }}{{ else }}{{ .Permalink }}{{ end }}" target="_blank"
                 style="display:inline-block;margin-bottom:8px;">
-                <img src="{{ $stlru.Permalink }}" alt="STLGameDev RoundUp"
+                <img src="{{ $baseURL }}/images/stlgdru-logo-neon.png" alt="STLGameDev RoundUp"
                   width="360" style="display:block;margin:0 auto;max-width:360px;width:100%;height:auto;">
               </a>
               <h2 style="margin:0 0 0.25rem;font-size:20px;">
@@ -362,7 +359,7 @@
           <tr class="content">
             <td>
               <p class="intro">
-                {{ with site.Params.explanation }}
+                {{ with site.Params.explanation | markdownify }}
                 {{ . }}
                 {{ else }}
                 The St Louis Game Developer RoundUp is the official monthly digest of the St Louis Game Developer
@@ -375,7 +372,6 @@
                 <a href="https://roundup.stlgame.dev" target="_blank">Browse our 🗄 Archive</a>
                 and stay in the loop with STL game development!
               </p>
-              <div class="divider"></div>
             </td>
           </tr>
 
@@ -391,7 +387,6 @@
               {{ end }}
               {{ end }}
               {{ end }}
-              <div class="divider"></div>
             </td>
           </tr>
           {{ end }}
@@ -412,7 +407,6 @@
                 {{ end }}
                 {{ end }}
               </ul>
-              <div class="divider"></div>
             </td>
           </tr>
           {{ end }}
@@ -469,8 +463,6 @@
               {{ end }}
               {{ end }}
               {{ end }}
-
-              <div class="divider"></div>
             </td>
           </tr>
           {{ end }}
@@ -489,7 +481,6 @@
               </ul>
               {{ end }}
               {{ end }}
-              <div class="divider"></div>
             </td>
           </tr>
 
@@ -525,7 +516,6 @@
                 </li>
                 {{ end }}
               </ul>
-              <div class="divider"></div>
             </td>
           </tr>
           {{ end }}
@@ -534,7 +524,7 @@
           <tr class="content">
             <td align="right">
               <a href="https://stlgame.dev" target="_blank">
-                <img src="{{ $stlgdicon.Permalink }}" alt="STLGameDev Icon" width="50"
+                <img src="{{ $baseURL }}/images/stlgd-icon.png" alt="STLGameDev Icon" width="50"
                   height="50" style="margin-left:auto;">
               </a>
             </td>

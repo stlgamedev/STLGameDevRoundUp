@@ -73,7 +73,7 @@
   {{ end -}}
   
   <div class="text-center mb-4">
-    <p class="text-body-secondary small">{{ site.Params.explanation }}</p>
+    <p class="text-body-secondary small">{{ site.Params.explanation | markdownify }}</p>
     <p class="text-body-secondary lead">{{ "Missed a recent RoundUp? <a href=\"https://roundup.stlgamedev.com\">Browse our 🗄Archive</a> and stay in the loop with STL game development!" | partial "emoji.html" }}</p>
   </div>
 
