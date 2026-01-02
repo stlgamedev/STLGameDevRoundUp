@@ -20,6 +20,7 @@
       "hr",
       "html",
       "i",
+      "iframe",
       "img",
       "input",
       "label",
@@ -245,6 +246,8 @@
       "rainbow-hr",
       "rainbow-hr-alt",
       "rainbow-hr-rev",
+      "ratio",
+      "ratio-16x9",
       "required",
       "response",
       "ribbon",
@@ -273,7 +276,8 @@
       "text-nowrap",
       "text-secondary",
       "text-start",
-      "validate"
+      "validate",
+      "youtube-embed-container"
     ],
     "ids": [
       "1",

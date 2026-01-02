@@ -1,0 +1,24 @@
+{{/* Detects YouTube links in text and embeds the video */}}
+{{ $text := . }}
+{{ $hasYouTube := false }}
+{{ $videoID := "" }}
+
+{{/* Check for youtube.com/watch?v= format */}}
+{{ if findRE `youtube\.com/watch\?v=([a-zA-Z0-9_-]{11})` $text }}
+  {{ $videoID = replaceRE `.*youtube\.com/watch\?v=([a-zA-Z0-9_-]{11}).*` "$1" $text }}
+  {{ $hasYouTube = true }}
+{{ end }}
+
+{{/* Check for youtu.be/ format */}}
+{{ if and (not $hasYouTube) (findRE `youtu\.be/([a-zA-Z0-9_-]{11})` $text) }}
+  {{ $videoID = replaceRE `.*youtu\.be/([a-zA-Z0-9_-]{11}).*` "$1" $text }}
+  {{ $hasYouTube = true }}
+{{ end }}
+
+{{ if $hasYouTube }}
+<div class="youtube-embed-container mb-3">
+  <div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/{{ $videoID }}" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div>
+{{ end }}

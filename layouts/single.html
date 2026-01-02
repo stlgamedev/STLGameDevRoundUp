@@ -87,22 +87,23 @@
   {{ end }}
 
   {{ if gt (len $important) 0 }}
-    <section class="important-section d-block mb-4">
-      <ul>
-        {{ range $important }}
-          {{ $tag := replace .category "#" "" }}
-          <h3 class="ribbon ribbon-purple">{{ trim $tag " \t\n\r" | title | partial "emoji.html" }}</h3>
+    {{ range $important }}
+      <section class="important-section d-block mb-4">
+        {{ $tag := replace .category "#" "" }}
+        <h3 class="ribbon ribbon-purple">{{ trim $tag " \t\n\r" | title | partial "emoji.html" }}</h3>
+        <ul>
           {{ range $index, $entry := .entries }}
             <li class="shareable-entry">
               {{ $entry | markdownify | partial "emoji.html" }}
+              {{ partial "youtube-embed.html" $entry }}
               <button type="button" class="btn btn-sm btn-outline-primary entry-share-btn" data-entry-text="{{ $entry | plainify }}" title="Share this announcement">
                 <i class="bi bi-share"></i>
               </button>
             </li>
           {{ end }}
-        {{ end }}
-      </ul>
-    </section>
+        </ul>
+      </section>
+    {{ end }}
 
     <hr class="my-4 rainbow-hr-alt" />
   {{ end }}
