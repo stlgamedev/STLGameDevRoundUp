@@ -46,6 +46,9 @@ ignoreErrors = ["error-disable-taxonomy", "error-no-layout"]
     ID = "G-P29TNS4V9P"
   [services.scss]
     transpiler = "dartsass"
+    [services.scss.dartsass]
+      enable = true
+      verbose = false
 
 [outputFormats]
   [outputFormats.html]

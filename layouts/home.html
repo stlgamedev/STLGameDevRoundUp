@@ -7,10 +7,10 @@
     <li itemType="http://schema.org/Article"
     id="{{ $issue.Params.no }}">
     {{- if eq $count 0 -}}
-    <p class="ribbon ribbon-orange">Latest RoundUp</p>
+    <p class="ribbon ribbon-left ribbon-orange fs-3">Latest RoundUp</p>
     {{- end -}}
     <a title="St Louis Game Dev RoundUp № {{ $issue.Params.no }}" href="{{ $issue.RelPermalink }}">
-      <h2 itemprop="headline">{{ if eq $count 0 }}{{ "✨ " | partial "emoji.html" }}{{ end -}}RoundUp № {{ $issue.Params.no }}
+      <h2 itemprop="headline">{{ if eq $count 0 }}✨ {{ end -}}RoundUp № {{ $issue.Params.no }}
       </h2>
     </a>
     <time datecreated="{{ $issue.Params.Date.Format " 2006-01-02" }}" itemprop="datePublished" pubdate

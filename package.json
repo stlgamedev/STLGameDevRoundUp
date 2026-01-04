@@ -4,8 +4,11 @@
   "description": "Attempt at generating news from issues into a website",
   "main": "index.html",
   "scripts": {
-    "scss": "sass assets/scss:.",
-    "build": "npm run scss",
+    "scss": "sass --load-path=node_modules assets/scss:.",
+    "postprocess": "node scripts/postprocess-emoji.js",
+    "build": "./scripts/build.sh",
+    "serve": "hugo serve",
+    "serve:production": "npm run build && npx http-server public -p 1313 -o --silent",
     "watch:css": "sass --watch assets/scss:.",
     "watch": "npm run watch:css",
     "script": "npm run build && npm run watch"
@@ -17,6 +20,8 @@
     "sass": "^1.69.5"
   },
   "devDependencies": {
+    "glob": "^13.0.0",
+    "http-server": "^14.1.1",
     "prettier": "^3.1.0",
     "prettier-plugin-go-template": "^0.0.15",
     "watch": "^0.13.0"

@@ -87,6 +87,7 @@ jobs:
                     --gc \
                     --minify \
                     --baseURL "${{ steps.pages.outputs.base_url }}/"
+                    npm run postprocess
             -   name: Upload Artifact
                 uses: actions/upload-pages-artifact@v3.0.1
                 with: 

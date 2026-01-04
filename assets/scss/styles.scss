@@ -1440,7 +1440,7 @@ h1, h2, h3, h4, h5, h6 {
     ul#home-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-auto-rows: minmax(35vh, auto);
+        grid-auto-rows: minmax(160px, auto);
         gap: 1rem;
         
 
@@ -1701,7 +1701,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     &.ribbon-yellow {
-        background: linear-gradient(135deg, $color-yellow, $color-orange);
+        background: $color-yellow;
         color: $color-black;
     }
     
