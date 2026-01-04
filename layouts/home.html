@@ -4,7 +4,7 @@
     {{ range $index, $issue := sort site.RegularPages ".Params.no" "desc" }}
     {{ if ne $issue.Params.no nil }}
     {{ if not $issue.Params.is_test }}
-    <li itemType="http://schema.org/Article"
+    <li class="sg-card" itemType="http://schema.org/Article"
     id="{{ $issue.Params.no }}">
     {{- if eq $count 0 -}}
     <p class="ribbon ribbon-left ribbon-orange fs-4">✨ Latest RoundUp</p>

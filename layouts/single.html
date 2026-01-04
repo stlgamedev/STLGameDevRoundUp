@@ -41,7 +41,7 @@
 {{ end -}}
 
 <div id="issue" >
-  <div class="issue-header-card">
+  <div class="issue-header-card sg-card">
     <div class="text-center mb-4">
       <h1 class="display-2 fw-bold">RoundUp № {{ .Params.no }}</h1>
       {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
@@ -86,7 +86,7 @@
 
   {{ if gt (len $important) 0 }}
     {{ range $important }}
-      <section class="important-section d-block mb-4">
+      <section class="important-section sg-card d-block mb-4">
         {{ $tag := replace .category "#" "" }}
         <h3 class="ribbon ribbon-left ribbon-purple ">{{ trim $tag " \t\n\r" | title }}</h3>
         <ul>
@@ -124,7 +124,7 @@
                 {{ $url := trim (index $metaParts 1) " \t\n\r" }}
                 {{ $imageUrl := trim (index $metaParts 2) " \t\n\r" }}
                 {{ $creator := trim (index $metaParts 3) " \t\n\r" }}
-                <div class="major-release-card">
+                <div class="major-release-card sg-card">
                   <h3 class="major-release-title ribbon ribbon-left ribbon-yellow fs-3">
                     <a href="{{ $url }}" target="_blank" rel="noopener">{{ $title }}</a>
                   </h3>
@@ -203,7 +203,7 @@
       {{- $eventImagePath = "images/events/shares.png" -}}
     {{- end -}}
     {{- $eventImage := resources.Get $eventImagePath -}}
-    <section class="event-appointment shareable-entry">
+    <section class="event-appointment sg-card shareable-entry">
       <div class="event-time-indicator">
         <div class="event-time-badge text-nowrap">
           <div class="event-date">{{- time.Format "Jan 02" .dateTime | upper -}}</div>

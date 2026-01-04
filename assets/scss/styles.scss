@@ -7,10 +7,43 @@ $color-green: #499272;
 $color-black: #000;
 $color-white: #fff;
 
+// Shared card tokens (dimensions), used to keep spacing uniform
+$sg-card-bg: #1a1a1a;
+$sg-card-border-width: 2px;
+$sg-card-radius: 0.5rem;
+$sg-card-padding: 1.5rem;
+$sg-card-shadow: 0 2px 10px rgba($color-black, 0.3);
+
 // Dark tinted versions for card backgrounds
 $color-yellow-dark: rgba($color-yellow, 0.25);
 $color-orange-dark: rgba($color-orange, 0.25);
 $color-purple-dark: rgba($color-purple, 0.25);
+
+// Shared base card styling (prefixed to avoid colliding with Bootstrap .card)
+.sg-card {
+    background: $sg-card-bg;
+    border: $sg-card-border-width solid rgba($color-white, 0.15);
+    border-radius: $sg-card-radius;
+    padding: $sg-card-padding;
+    position: relative;
+    box-shadow: $sg-card-shadow;
+}
+
+// Optional inlay variants (intentionally additive)
+.sg-inlay-yellow {
+    outline: 1px solid rgba($color-yellow, 0.6);
+    outline-offset: -0.5rem;
+}
+
+.sg-inlay-orange {
+    outline: 1px solid rgba($color-orange, 0.6);
+    outline-offset: -0.5rem;
+}
+
+.sg-inlay-magenta {
+    outline: 1px solid rgba($color-purple, 0.6);
+    outline-offset: -0.5rem;
+}
 
 // body {
 //   --s: 84px; /* control the size*/
@@ -430,10 +463,10 @@ header {
     margin-bottom: 4rem;
     
     .issue-header-card {
-        background: #1a1a1a;
-        padding: 2rem 1.5rem;
-        border-radius: 0.5rem;
-        border: 2px solid rgba($color-white, 0.1);
+        background: $sg-card-bg;
+        padding: $sg-card-padding;
+        border-radius: $sg-card-radius;
+        border: $sg-card-border-width solid rgba($color-white, 0.1);
         margin-bottom: 2rem;
         position: relative;
         
@@ -902,13 +935,7 @@ h1, h2, h3, h4, h5, h6 {
 .event-appointment {
     display: flex;
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: #1a1a1a;
-    border-radius: 0.5rem;
-    border: 2px solid rgba($color-white, 0.15);
     transition: all 0.2s ease;
-    position: relative;
-    box-shadow: 0 2px 10px rgba($color-black, 0.3);
     
     &:hover {
         background: #1a1a1a;
@@ -1144,10 +1171,10 @@ h1, h2, h3, h4, h5, h6 {
 .major-release-card {
     display: flex;
     flex-direction: column;
-    background: #1a1a1a;
-    border: 3px solid rgba($color-white, 0.15);
-    border-radius: 0.75rem;
-    padding: 1.5rem;
+    background: $sg-card-bg;
+    border: $sg-card-border-width solid rgba($color-white, 0.15);
+    border-radius: $sg-card-radius;
+    padding: $sg-card-padding;
     padding-top: 8.5rem;
     position: relative;
     overflow: visible;
@@ -1181,7 +1208,7 @@ h1, h2, h3, h4, h5, h6 {
         top: 0;
         bottom: 0;
         right: 0;
-        border-radius: 0.75rem;
+        border-radius: $sg-card-radius;
         padding: 2px;
         background: linear-gradient(135deg, 
             rgba($color-yellow, 0.15) 0%,
@@ -1198,7 +1225,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &:hover {
-        background: #1a1a1a;
+        background: $sg-card-bg;
         border-color: rgba($color-yellow, 0.3);
         box-shadow: 0 8px 30px rgba($color-black, 0.6), 0 0 40px rgba($color-orange, 0.2);
         transform: translateY(-4px);
@@ -1377,12 +1404,11 @@ h1, h2, h3, h4, h5, h6 {
 
 // Important section with elegant styling
 .important-section {
-    background: #1a1a1a;
-    border: 2px solid rgba($color-purple, 0.3);
-    border-radius: 0.5rem;
-    padding: 1.25rem 1rem;
+    background: $sg-card-bg;
+    border: $sg-card-border-width solid rgba($color-purple, 0.3);
+    border-radius: $sg-card-radius;
+    padding: $sg-card-padding;
     padding-top: 3rem;
-    padding-left: 1.5rem;
     box-shadow: 0 4px 15px rgba($color-black, 0.3), inset -2px 0 10px rgba($color-purple, 0.1);
     position: relative;
     
@@ -1455,12 +1481,12 @@ h1, h2, h3, h4, h5, h6 {
             flex-direction: column;
             justify-content: center;
             list-style-type: none;
-            border-radius: 0.5rem;
-            background: #1a1a1a;
+            border-radius: $sg-card-radius;
+            background: $sg-card-bg;
             background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
-            border: 2px solid rgba($color-white, 0.15);
+            border: $sg-card-border-width solid rgba($color-white, 0.15);
             transition: all 0.2s ease;
-            padding: 1.5rem;
+            padding: $sg-card-padding;
             box-shadow: 0 2px 8px rgba($color-black, 0.3);
             position: relative;
 
@@ -1477,7 +1503,7 @@ h1, h2, h3, h4, h5, h6 {
             }
             
             &:hover {
-                background: #1a1a1a;
+                background: $sg-card-bg;
                 border-color: rgba($color-orange, 0.3);
                 box-shadow: 0 4px 15px rgba($color-black, 0.4), 0 0 20px rgba($color-orange, 0.1);
                 
@@ -1573,10 +1599,10 @@ h1, h2, h3, h4, h5, h6 {
                 
                 .card {
                     height: 100%;
-                    background: #1a1a1a;
+                    background: $sg-card-bg;
                     background-image: radial-gradient(circle at 50% 0%, rgba(73, 146, 114, 0.08) 0%, transparent 70%);
-                    border: 2px solid rgba($color-green, 0.3);
-                    border-radius: 0.5rem;
+                    border: $sg-card-border-width solid rgba($color-green, 0.3);
+                    border-radius: $sg-card-radius;
                     transition: all 0.2s ease;
                     box-shadow: 0 2px 8px rgba($color-black, 0.3);
                     position: relative;
@@ -1599,7 +1625,7 @@ h1, h2, h3, h4, h5, h6 {
                     }
                     
                     &:hover {
-                        background: #1a1a1a;
+                        background: $sg-card-bg;
                         border-color: rgba($color-green, 0.3);
                         box-shadow: 0 4px 15px rgba($color-black, 0.4), 0 0 20px rgba($color-green, 0.1);
                         
@@ -1612,7 +1638,7 @@ h1, h2, h3, h4, h5, h6 {
                 .card-body {
                     display: flex;
                     flex-direction: column;
-                    padding: 1.5rem;
+                    padding: $sg-card-padding;
                     padding-top: 5.5rem;
                     padding-bottom: 1rem;
                 }
