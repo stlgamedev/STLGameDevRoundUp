@@ -128,10 +128,10 @@
                 {{ $imageUrl := trim (index $metaParts 2) " \t\n\r" }}
                 {{ $creator := trim (index $metaParts 3) " \t\n\r" }}
                 <div class="major-release-card">
-                  <h3 class="major-release-title ribbon ribbon-left ribbon-yellow">
+                  <h3 class="major-release-title ribbon ribbon-left ribbon-yellow fs-3">
                     <a href="{{ $url }}" target="_blank" rel="noopener">{{ $title }}</a>
                   </h3>
-                  <p class="major-release-creator ribbon ribbon-right ribbon-orange">by {{ $creator }}</p>
+                  <p class="major-release-creator ribbon ribbon-right ribbon-orange fs-6">by {{ $creator }}</p>
                   <div class="major-release-description">{{ $description | markdownify }}</div>
                   <div class="major-release-image">
                     {{- $image := "" -}}

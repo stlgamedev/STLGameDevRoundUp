@@ -1148,7 +1148,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 3px solid rgba($color-white, 0.15);
     border-radius: 0.75rem;
     padding: 1.5rem;
-    padding-top: 6rem;
+    padding-top: 8.5rem;
     position: relative;
     overflow: visible;
     transition: all 0.3s ease;
@@ -1243,7 +1243,7 @@ h1, h2, h3, h4, h5, h6 {
 .major-release-creator {
     position: absolute;
     right: calc(-1 * 0.5em);
-    top: 3.5rem;
+    top: 5rem;
     padding-inline: 0.5em;
     line-height: 1.8;
     font-weight: 700;
@@ -1400,7 +1400,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .ribbon {
         top: 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
     
     h3.ribbon:first-child {
@@ -1440,7 +1440,7 @@ h1, h2, h3, h4, h5, h6 {
     ul#home-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-auto-rows: minmax(160px, auto);
+        grid-auto-rows: minmax(180px, auto);
         gap: 1rem;
         
 
@@ -1553,6 +1553,7 @@ h1, h2, h3, h4, h5, h6 {
                     font-size: 3rem;
                     color: $color-orange;
                     font-weight: 500;
+                    margin-top: 1rem;
                 }
 
                 time {
@@ -1591,7 +1592,7 @@ h1, h2, h3, h4, h5, h6 {
                         border-radius: 0.25rem;
                         pointer-events: none;
                     }
-                    
+
                     .ribbon {
                         top: 1rem;
                         font-size: 1.75rem;
@@ -1672,9 +1673,10 @@ h1, h2, h3, h4, h5, h6 {
 .ribbon {
     --f: 0.5em; /* control the folded part*/
     --r: 0.8em; /* control the ribbon shape */
-    
+
     position: absolute;
     left: calc(-1 * var(--f));
+    margin-top: 0.5rem;
     padding-inline: 0.5em;
     line-height: 1.8;
     font-weight: 700;
@@ -1704,7 +1706,7 @@ h1, h2, h3, h4, h5, h6 {
         background: $color-yellow;
         color: $color-black;
     }
-    
+
     // Right-side ribbon variant
     &.ribbon-right {
         left: auto;
@@ -1717,4 +1719,13 @@ h1, h2, h3, h4, h5, h6 {
                 calc(100% - var(--f)) calc(100% - var(--f)), var(--r) calc(100% - var(--f)),
                 0 calc(50% - var(--f)/2));
     }
+}
+
+// Compatibility: left is the default ribbon behavior.
+.ribbon-left {
+    padding-left: 2rem;
+}
+
+.ribbon-right {
+    padding-right: 2rem;
 }
