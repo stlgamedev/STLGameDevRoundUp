@@ -303,6 +303,15 @@
   .text-center {
     text-align: center;
   }
+
+  /* Inline emoji images - constrain to text size */
+  .emoji {
+    display: inline-block;
+    height: 1em;
+    width: auto;
+    vertical-align: -0.1em;
+    margin: 0 0.05em;
+  }
 </style>
 
 
@@ -343,8 +352,8 @@
               <h1 style="margin:0 0 0.5rem;font-size:26px;">St Louis Game Developer RoundUp</h1>
               <a href="{{ if $html }}{{ $html.Permalink }}{{ else }}{{ .Permalink }}{{ end }}" target="_blank"
                 style="display:inline-block;margin-bottom:8px;">
-                <img src="{{ $baseURL }}/images/stlgdru-logo-neon.png" alt="STLGameDev RoundUp"
-                  width="360" style="display:block;margin:0 auto;max-width:360px;width:100%;height:auto;">
+                <img src="{{ $baseURL }}/images/stlgdru-logo-neon.svg" alt="STLGameDev RoundUp"
+                  width="240" style="display:block;margin:0 auto;max-width:240px;width:100%;height:auto;">
               </a>
               <h2 style="margin:0 0 0.25rem;font-size:20px;">
                 {{ if .Params.no }}Issue № {{ .Params.no }}{{ else }}{{ .Title }}{{ end }}
@@ -401,7 +410,7 @@
                 {{ $tag := replace .category "#" "" }}
                 {{ range .entries }}
                 <li>
-                  <strong>{{ trim $tag " \t\n\r" | title }}:</strong>
+                  <strong>{{ trim $tag " \t\n\r" | title }}:</strong><br>
                   {{ . | markdownify }}
                 </li>
                 {{ end }}
