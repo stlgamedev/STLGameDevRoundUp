@@ -84,11 +84,13 @@ jobs:
             -   name: Checkout
                 uses: actions/checkout@v4
             -   name: Close Issue
+                id: close-issue
                 run: gh issue close ${{ needs.generate.outputs.issue_id }} -c "[Issue № ${{ needs.generate.outputs.issue_no }}](${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/) has been released!" -r completed
             -   name: Open New Issue
+                id: open-issue
                 run: |
                     new_no=$((${{ needs.generate.outputs.issue_no }}+1))
-                    gh issue create -t "RoundUp Issue #$new_no" -b "To add to the next roundup, use the following format:
+                    new_issue_number=$(gh issue create -t "RoundUp Issue #$new_no" -b "To add to the next roundup, use the following format:
                     
                     Regular Entry:
                     \`\`\`md
@@ -105,4 +107,75 @@ jobs:
                     \`\`\`
 
                     Use \`{!header}\` as the category for *only one comment* to set the header message for this RoundUp.
-                    Use \`{#title}\` as the category for Important messages which will appear above the rest (use sparingly!)" -l "next-roundup" 
+                    Use \`{#title}\` as the category for Important messages which will appear above the rest (use sparingly!)" -l "next-roundup" | grep -o '[0-9]*$')
+                    echo "new_issue_number=$new_issue_number" >> $GITHUB_OUTPUT
+
+    rollback:
+        runs-on: ubuntu-latest
+        needs: [prepare, generate, build, screenshot, newsletter, finish]
+        if: ${{ failure() && github.event.inputs.issue_type == 'next-roundup' }}
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+            
+            -   name: Rollback - Delete new issue if created
+                if: ${{ needs.finish.result == 'failure' && needs.finish.outputs.new_issue_number }}
+                run: |
+                    echo "Deleting newly created issue #${{ needs.finish.outputs.new_issue_number }}"
+                    gh issue delete ${{ needs.finish.outputs.new_issue_number }} --yes || echo "Failed to delete new issue or it doesn't exist"
+            
+            -   name: Rollback - Reopen closed issue
+                if: ${{ needs.finish.result == 'failure' }}
+                run: |
+                    echo "Reopening issue #${{ needs.generate.outputs.issue_id }}"
+                    gh issue reopen ${{ needs.generate.outputs.issue_id }} -c "Workflow failed, reopening for retry." || echo "Failed to reopen issue or it wasn't closed"
+            
+            -   name: Rollback - Delete screenshot
+                if: ${{ needs.screenshot.result == 'success' }}
+                run: |
+                    echo "Deleting screenshot for issue ${{ needs.generate.outputs.issue_no }}"
+                    git config user.name "github-actions[bot]"
+                    git config user.email "github-actions[bot]@users.noreply.github.com"
+                    git pull
+                    screenshot_path="screenshots/issue-${{ needs.generate.outputs.issue_no }}.png"
+                    if [ -f "$screenshot_path" ]; then
+                        git rm "$screenshot_path"
+                        git commit -m "Rollback: Remove screenshot for issue ${{ needs.generate.outputs.issue_no }}"
+                        git push
+                    else
+                        echo "Screenshot file not found"
+                    fi
+            
+            -   name: Rollback - Delete JSON data file
+                if: ${{ needs.generate.result == 'success' }}
+                run: |
+                    echo "Deleting data file for issue ${{ needs.generate.outputs.issue_no }}"
+                    git config user.name "github-actions[bot]"
+                    git config user.email "github-actions[bot]@users.noreply.github.com"
+                    git pull
+                    data_path="data/issue${{ needs.generate.outputs.issue_no }}.json"
+                    if [ -f "$data_path" ]; then
+                        git rm "$data_path"
+                        git commit -m "Rollback: Remove data file for issue ${{ needs.generate.outputs.issue_no }}"
+                        git push
+                    else
+                        echo "Data file not found"
+                    fi
+            
+            -   name: Rollback - Delete content file
+                if: ${{ needs.generate.result == 'success' }}
+                run: |
+                    echo "Deleting content file for issue ${{ needs.generate.outputs.issue_no }}"
+                    git config user.name "github-actions[bot]"
+                    git config user.email "github-actions[bot]@users.noreply.github.com"
+                    git pull
+                    content_path="content/issue-${{ needs.generate.outputs.issue_no }}.md"
+                    if [ -f "$content_path" ]; then
+                        git rm "$content_path"
+                        git commit -m "Rollback: Remove content file for issue ${{ needs.generate.outputs.issue_no }}"
+                        git push
+                    else
+                        echo "Content file not found"
+                    fi 

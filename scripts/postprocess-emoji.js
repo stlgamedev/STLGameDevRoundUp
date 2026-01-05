@@ -112,12 +112,16 @@ function main() {
     return;
   }
   
+  // Filter out email HTML files
+  const filteredFiles = htmlFiles.filter(file => !file.includes('/email/'));
+  
   console.log(`Found ${htmlFiles.length} HTML files to process`);
+  console.log(`Skipping ${htmlFiles.length - filteredFiles.length} email files`);
   
   let totalEmoji = 0;
   let filesWithEmoji = 0;
   
-  htmlFiles.forEach(file => {
+  filteredFiles.forEach(file => {
     const filepath = path.join(PUBLIC_DIR, file);
     const count = processHtmlFile(filepath);
     if (count > 0) {

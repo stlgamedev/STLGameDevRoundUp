@@ -21,7 +21,7 @@
 
 <meta name="keywords" content="{{ .Param "keywords" }}" />
 <meta name="author" content="{{ .Param "author" }}" />
-<meta name="description" content="{{ .Param "explanation" }}" />
+<meta name="description" content="{{ .Param "explanation" | plainify }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
 {{ with .OutputFormats.Get "rss" -}}
