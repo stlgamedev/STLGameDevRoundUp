@@ -340,7 +340,8 @@
           <tr class="header">
             <td style="text-align:center;">
               <a href="https://stlgame.dev" target="_blank">
-                <img src="{{ $baseURL }}/assets/images/stlgd-logo.png" alt="STLGameDev"
+                {{- $logo := resources.Get "images/stlgd-logo.png" -}}
+                <img src="{{ $logo.Permalink }}" alt="STLGameDev"
                   style="margin: 8px auto 16px; max-width:260px; display:block;">
               </a>
             </td>
@@ -352,7 +353,8 @@
               <h1 style="margin:0 0 0.5rem;font-size:26px;">St Louis Game Developer RoundUp</h1>
               <a href="{{ if $html }}{{ $html.Permalink }}{{ else }}{{ .Permalink }}{{ end }}" target="_blank"
                 style="display:inline-block;margin-bottom:8px;">
-                <img src="{{ $baseURL }}/assets/images/stlgdru-logo-neon-transparent.png" alt="STLGameDev RoundUp"
+                {{- $roundupLogo := resources.Get "images/stlgdru-logo-neon-transparent.png" -}}
+                <img src="{{ $roundupLogo.Permalink }}" alt="STLGameDev RoundUp"
                   width="240" style="display:block;margin:0 auto;max-width:240px;width:100%;height:auto;">
               </a>
               <h2 style="margin:0 0 0.25rem;font-size:20px;">
@@ -501,12 +503,13 @@
               <p class="events-header">Participate in these events from our community!</p>
               <ul style="padding-left:0;list-style:none;">
                 {{ range $posts.events }}
-                {{- $eventImagePath := "assets/images/events/generic.png" -}}
+                {{- $eventImagePath := "images/events/generic.png" -}}
                 {{- if strings.Contains .title "GameDev Social" -}}
-                  {{- $eventImagePath = "assets/images/events/social.png" -}}
+                  {{- $eventImagePath = "images/events/social.png" -}}
                 {{- else if strings.Contains .title "Share & Play" -}}
-                  {{- $eventImagePath = "assets/images/events/shares.png" -}}
+                  {{- $eventImagePath = "images/events/shares.png" -}}
                 {{- end -}}
+                {{- $eventImage := resources.Get $eventImagePath -}}
                 <li class="event-card">
                   <table class="event-title-table" cellspacing="0" cellpadding="0" border="0">
                     <tr>
@@ -523,7 +526,7 @@
                   {{ if .location }}
                   <div class="muted" style="margin:0 0 6px;">{{ .location }}</div>
                   {{ end }}
-                  <img src="{{ $baseURL }}/{{ $eventImagePath }}" alt="{{ .title }}" style="width:100%;max-width:400px;height:auto;display:block;border-radius:8px;margin:8px 0;">
+                  <img src="{{ $eventImage.Permalink }}" alt="{{ .title }}" style="width:100%;max-width:400px;height:auto;display:block;border-radius:8px;margin:8px 0;">
                   {{ if .description }}
                   <div style="margin-top:4px;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.70);">
                     {{ .description | markdownify }}
@@ -540,7 +543,8 @@
           <tr class="content">
             <td align="right">
               <a href="https://stlgame.dev" target="_blank">
-                <img src="{{ $baseURL }}/assets/images/stlgd-icon.png" alt="STLGameDev Icon" width="50"
+                {{- $icon := resources.Get "images/stlgd-icon.png" -}}
+                <img src="{{ $icon.Permalink }}" alt="STLGameDev Icon" width="50"
                   height="50" style="margin-left:auto;">
               </a>
             </td>
