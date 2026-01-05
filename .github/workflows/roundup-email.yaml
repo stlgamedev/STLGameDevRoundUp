@@ -51,7 +51,7 @@ jobs:
           echo "Created campaign: $campaign_id" >&2
 
           # Fetch HTML content
-          url="${{ inputs.base_url }}/issue-${{ inputs.issue_no }}/email.html"
+          url="${{ inputs.base_url }}/issue-${{ inputs.issue_no }}/email"
           html_file="issue_email.html"
           curl -fsSL "$url" -o "$html_file"
           if [ $? -ne 0 ] || [ ! -s "$html_file" ]; then
