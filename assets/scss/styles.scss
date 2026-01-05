@@ -195,7 +195,9 @@ $color-purple-dark: rgba($color-purple, 0.25);
     .event-appointment {
         flex-direction: column;
         padding: 1rem !important;
-        margin: 0 !important;
+        margin-bottom: 2rem !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         overflow: hidden !important;
         
         .event-time-indicator {
@@ -341,14 +343,87 @@ $color-purple-dark: rgba($color-purple, 0.25);
     }
 }
 
-// Extra small screens (320px)
-@media (max-width: 375px) {
+// Small screens
+@media (max-width: 576px) {
     nav img {
-        height: 24px !important;
+        height: 22px !important;
+        width: auto !important;
     }
     
     .navbar-brand {
-        font-size: 0.8rem !important;
+        font-size: 0.75rem !important;
+        white-space: nowrap !important;
+    }
+    
+    .issue-header-card {
+        h1 {
+            font-size: 2.5rem !important;
+        }
+        
+        .lead {
+            font-size: 1rem !important;
+        }
+    }
+    
+    .ribbon {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+        --f: 0.45em !important;
+        --r: 0.7em !important;
+        padding-inline: 0.45em !important;
+    }
+    
+    .important-section {
+        padding-top: 2rem !important;
+        
+        .ribbon {
+            margin-bottom: 0.5rem !important;
+        }
+    }
+}
+
+// Extra small screens (320px)
+@media (max-width: 375px) {
+    nav img {
+        height: 18px !important;
+        width: auto !important;
+    }
+    
+    .navbar-brand {
+        font-size: 0.65rem !important;
+        white-space: nowrap !important;
+        padding: 0.25rem 0.5rem !important;
+    }
+    
+    nav .container {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    .issue-header-card {
+        h1 {
+            font-size: 1.75rem !important;
+        }
+        
+        .lead {
+            font-size: 0.85rem !important;
+        }
+    }
+    
+    .ribbon {
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+        --f: 0.4em !important;
+        --r: 0.65em !important;
+        padding-inline: 0.4em !important;
+    }
+    
+    .important-section {
+        padding-top: 1.5rem !important;
+        
+        .ribbon {
+            margin-bottom: 0.35rem !important;
+        }
     }
     
     footer {
@@ -647,9 +722,13 @@ header {
 // Share button styling
 .issue-share-btn-container {
     position: absolute;
-    top: 5rem;
-    right: 2rem;
-    z-index: 100;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    
+    @media (max-width: 767px) {
+        display: none !important;
+    }
     
     .btn {
         display: inline-flex;
@@ -666,36 +745,7 @@ header {
 }
 
 .shareable-entry {
-    position: relative;
-    padding-bottom: 0.5rem;
-    
-    .entry-share-btn {
-        position: absolute;
-        right: 0.25rem;
-        bottom: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.35rem;
-        width: 1.75rem;
-        height: 1.75rem;
-        font-size: 0.7rem;
-        border: none;
-        color: $color-purple;
-        background-color: transparent;
-        opacity: 0.33;
-        transition: opacity 0.2s ease;
-        
-        i {
-            font-size: 0.875rem;
-            line-height: 1;
-            margin: 0;
-        }
-        
-        &:hover {
-            opacity: 1;
-        }
-    }
+    // No special styling needed, just a class for JS targeting
 }
 
 .modal-content {
@@ -937,16 +987,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2rem;
     transition: all 0.2s ease;
     
+    @media (max-width: 980px) {
+        flex-direction: column;
+    }
+    
     &:hover {
         background: #1a1a1a;
         border-color: rgba($color-purple, 0.3);
         box-shadow: 0 4px 20px rgba($color-black, 0.5), 0 0 20px rgba($color-purple, 0.15);
-    }
-    
-    .entry-share-btn {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
     }
 }
 
@@ -960,6 +1008,12 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: stretch;
     gap: 0.75rem;
+    
+    @media (max-width: 980px) {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: 1rem;
+    }
     
     .event-time-badge {
         background: $color-purple;
@@ -994,7 +1048,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .event-details {
     flex-grow: 1;
-    padding-right: 1.5rem;
+    padding-right: 3.5rem;
+    
+    @media (max-width: 980px) {
+        padding-right: 0;
+        padding-bottom: 1rem;
+    }
     
     .event-title-text {
         font-size: 1.5rem;
@@ -1028,6 +1087,11 @@ h1, h2, h3, h4, h5, h6 {
         color: rgba($color-white, 0.7);
         line-height: 1.6;
         margin-top: 0.5rem;
+
+        strong, b {
+            color: #FFF;
+            font-weight: 700;
+        }
     }
 }
 
@@ -1044,6 +1108,20 @@ h1, h2, h3, h4, h5, h6 {
         border: 1px solid rgba($color-white, 0.2);
         transition: all 0.3s ease;
         display: block;
+    }
+    
+    @media (max-width: 980px) {
+        padding-left: 0;
+        margin: 1rem auto 0;
+        text-align: center;
+        flex: 0 0 100%;
+        
+        img {
+            max-width: 100%;
+            min-width: auto;
+            width: auto;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -1183,6 +1261,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     max-width: 350px;
     margin: 1rem;
+    
+    @media (max-width: 576px) {
+        padding: 1rem;
+        padding-top: 5.5rem;
+        margin: 0.5rem;
+        max-width: 100%;
+    }
 
     &:before {
         content: '';
@@ -1256,6 +1341,14 @@ h1, h2, h3, h4, h5, h6 {
         100% calc(50% - var(--f)/2));
     box-shadow: 0 4px 10px rgba($color-black, 0.4);
     
+    @media (max-width: 576px) {
+        font-size: 1rem;
+        --f: 0.4em;
+        --r: 0.6em;
+        padding-inline: 0.4em;
+        line-height: 1.6;
+    }
+    
     a {
         color: $color-black;
         text-decoration: none;
@@ -1287,6 +1380,15 @@ h1, h2, h3, h4, h5, h6 {
         calc(100% - var(--f)) calc(100% - var(--f)), var(--r) calc(100% - var(--f)),
         0 calc(50% - var(--f)/2));
     box-shadow: 0 4px 10px rgba($color-black, 0.4);
+    
+    @media (max-width: 576px) {
+        font-size: 0.85rem;
+        top: 3rem;
+        --f: 0.4em;
+        --r: 0.6em;
+        padding-inline: 0.4em;
+        line-height: 1.6;
+    }
 }
 
 .major-release-description {
@@ -1328,6 +1430,17 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     gap: 0.75rem;
     width: 100%;
+    
+    @media (max-width: 576px) {
+        flex-direction: column;
+        gap: 0.5rem;
+        
+        .major-release-share-btn,
+        .btn-play-now {
+            flex: 1 !important;
+            width: 100% !important;
+        }
+    }
 }
 
 .major-release-share-btn {
@@ -1426,7 +1539,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .ribbon {
         top: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     
     h3.ribbon:first-child {
@@ -1441,12 +1554,9 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     li {
-        margin-bottom: 1rem;
         position: relative;
         font-size: 1.05rem;
         font-weight: 500;
-        padding: 0.5rem 0;
-        padding-bottom: 0.5rem;
     }
 
     .important-label {

@@ -1,12 +1,5 @@
 {{ define "main" }}
 
-<!-- Issue Share Button -->
-<div class="issue-share-btn-container">
-  <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#issueShareModal" title="Share this issue">
-    <i class="bi bi-share"></i>
-  </button>
-</div>
-
 {{- $categories := dict }}
 
 {{ $post := printf "%s" (string .Params.no) | printf "%s%s" "issue" | printf "%s" }}
@@ -42,6 +35,13 @@
 
 <div id="issue" >
   <div class="issue-header-card sg-card">
+    <!-- Issue Share Button -->
+    <div class="issue-share-btn-container">
+      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#issueShareModal" title="Share this issue">
+        <i class="bi bi-share"></i>
+      </button>
+    </div>
+    
     <div class="text-center mb-4">
       <h1 class="display-2 fw-bold">RoundUp № {{ .Params.no }}</h1>
       {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" -}}
@@ -65,9 +65,16 @@
     </section>
     {{ end -}}
     
-    <div class="text-center mb-4">
-      <p class="text-body-secondary small">{{ site.Params.explanation | markdownify }}</p>
-      <p class="text-body-secondary lead">{{ "Missed a recent RoundUp? <a href=\"https://roundup.stlgamedev.com\">Browse our 🗄Archive</a> and stay in the loop with STL game development!" | safeHTML }}</p>
+    <div class="text-center">
+      <div class="text-body-secondary small mb-1">{{ site.Params.explanation | markdownify }}</div>
+      <div class="text-body-secondary lead">{{ "Missed a recent RoundUp? <a href=\"https://roundup.stlgamedev.com\">Browse our 🗄Archive</a> and stay in the loop with STL game development!" | safeHTML }}</div>
+      
+      <!-- Mobile Share Button (visible only on small screens) -->
+      <div class="d-block d-md-none mt-3">
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#issueShareModal" title="Share this issue">
+          <i class="bi bi-share"></i> Share
+        </button>
+      </div>
     </div>
   </div>
 
@@ -94,9 +101,11 @@
             <li class="shareable-entry">
               {{ $entry | markdownify }}
               {{ partial "youtube-embed.html" $entry }}
-              <button type="button" class="btn btn-sm btn-outline-primary entry-share-btn" data-entry-text="{{ $entry | plainify }}" title="Share this announcement">
-                <i class="bi bi-share"></i>
-              </button>
+              <div class="w-100 d-block text-end">
+                <button type="button" class="entry-share-btn" style="background:transparent; border:none; color:rgba(209,49,211,0.6); padding:0.25rem; font-size:0.85rem; cursor:pointer;" data-entry-text="{{ $entry | plainify }}" title="Share this announcement">
+                  <i class="bi bi-share"></i>
+                </button>
+              </div>
             </li>
           {{ end }}
         </ul>
@@ -171,11 +180,13 @@
         <h3 class="display-6 pb-2">{{ .category | title }}</h3>
         <ul>
           {{ range $index, $entry := .entries }}
-          <li class="shareable-entry">
+          <li>
             {{ $entry | markdownify }}
-            <button type="button" class="btn btn-sm btn-outline-primary entry-share-btn" data-entry-text="{{ $entry | plainify }}" data-bs-toggle="modal" data-bs-target="#entryShareModal{{ $index }}" title="Share this entry">
-              <i class="bi bi-share"></i>
-            </button>
+            <div class="w-100 d-block text-end">
+              <button type="button" class="entry-share-btn" style="background:transparent; border:none; color:rgba(209,49,211,0.6); padding:0.25rem; font-size:0.85rem; cursor:pointer;" data-entry-text="{{ $entry | plainify }}" title="Share this entry">
+                <i class="bi bi-share"></i>
+              </button>
+            </div>
           </li>
           {{ end }}
         </ul>
@@ -221,15 +232,25 @@
           {{- $description = replace $description $fullMatch "" -}}
         <a href="https://www.meetup.com/st-louis-game-developers/events/{{ $eventID }}" target="_blank" rel="noopener" class="btn btn-sm btn-rsvp mt-2"><i class="bi bi-calendar-check"></i> RSVP</a>
         {{- end -}}
+        <button type="button" class="btn btn-sm btn-outline-primary mt-2 entry-share-btn" data-entry-text="{{ .title }} - {{ time.Format "Jan 02, 2006" .dateTime }} at {{ time.Format "3:04 PM" .dateTime }}{{ with .location }} - {{ . }}{{ end }}{{ with .description }} - {{ . | plainify }}{{ end }}" title="Share this event">
+          <i class="bi bi-share"></i> Share
+        </button>
       </div>
       <div class="event-details">
         <h4 class="event-title-text">{{ trim .title " \t\n\r" }}</h4>
         {{- if .location -}}
         {{- $displayLocation := trim .location " \t\n\r" | replaceRE `, us$` "" -}}
+        {{- $isOnline := or (strings.Contains (lower .location) "online") (strings.Contains (lower .location) "virtual") (strings.Contains (lower .location) "remote") -}}
         <div class="event-location">
+          {{- if $isOnline -}}
+            <span class="location-text">
+              <i class="bi bi-laptop"></i> {{ $displayLocation }}
+            </span>
+          {{- else -}}
           <a href="https://www.google.com/maps/search/?api=1&query={{ .location | urlquery }}" target="_blank" rel="noopener" class="location-link">
             <i class="bi bi-geo-alt-fill"></i> {{ $displayLocation }}
           </a>
+          {{- end -}}
         </div>
         {{- end -}}
         {{- if $description -}}
@@ -239,9 +260,6 @@
       <div class="event-image">
         <img src="{{ $eventImage.RelPermalink }}" alt="{{ .title }}" />
       </div>
-      <button type="button" class="btn btn-sm btn-outline-primary entry-share-btn" data-entry-text="{{ .title }} - {{ time.Format "Jan 02, 2006" .dateTime }} at {{ time.Format "3:04 PM" .dateTime }}{{ with .location }} - {{ . }}{{ end }}{{ with .description }} - {{ . | plainify }}{{ end }}" title="Share this event">
-        <i class="bi bi-share"></i>
-      </button>
     </section>
   {{ end }}
     
