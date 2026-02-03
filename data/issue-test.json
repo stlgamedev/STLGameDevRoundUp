@@ -1,94 +1,123 @@
 {
   "nodes": [
     {
-      "body": "{ 🧑‍💻 Dev Updates } Plunderer's Run Devlogs are now live on Itch! [Check them out here!](https://blusurfacemedia.itch.io/plunderers-run)"
+      "body": "{!header} \n{📢 announcements} \n{ 🎮 Releases }\n{ 🧑‍💻 Dev Updates }\n{ 🎼 Releases }\n{ 📚 Resources }\n{ 🕹️ Game Jam Releases } \n"
     },
     {
-      "body": "{!header} December was a creative and productive month for STLGameDev! Even with the busy end of the year, members continued to share exciting submissions and updates across their projects. From new mechanics and prototypes to art, audio, and polish, this RoundUp highlights the progress our developers made throughout the month."
+      "body": "{ 🕹️ Game Jam Releases } _Kit Kitsis_ and _JR_ released [Unmasked](https://jayaarrgh.itch.io/unmasked), a mini luchador unmasking punch-off!"
     },
     {
-      "body": "{ 🎼 Releases } _Lazarus D. Richardson_ made [N%](https://lazarusrichardson.bandcamp.com/track/n) for Dorian's music jam"
+      "body": "{ 🕹️ Game Jam Releases } _Aayush Gauba_ and _Aarav Gauba_ released [Space Adventure](https://globalgamejam.org/games/2026/space-adventure-9), a fast arcade space shooter where alien masks wrap your ship in new identities, changing how you survive waves."
     },
     {
-      "body": "{ 📢 News } Clair Obscur: Expedition 33 absolutely [sweeps the game awards](https://www.npr.org/2025/12/12/nx-s1-5640839/game-awards-2025-winners-clair-obscur-expedition-33), but [loses the Indie Game of the Year Award to Blue Prince due to AI](https://www.pcmag.com/news/clair-obscur-expedition-33-stripped-of-a-game-of-the-year-award-because)"
+      "body": "{ 🕹️ Game Jam Releases } _Tony Wojnar, Michael Wojnar,_ and _Laz Richardson_ released [Masquerade Mystery](https://globalgamejam.org/games/2026/masquerade-mystery-1), a deduction game set at a masquerade. Can you find your assassination target based on the clues given?"
     },
     {
-      "body": "{ 📢 News } [Naughty Dog has reportedly mandated crunch for Intergalactic](https://www.thegamer.com/naughty-dog-crunch-internal-intergalactic-the-heretic-prophet-demo/)"
+      "body": "{ 🕹️ Game Jam Releases } Keatin Werleman, Tori Hilgar, Fatema Salem, Jake Wampler, and Reed Parkhill released [Patchwork](https://globalgamejam.org/games/2026/patchwork-4). Use your trusty masking tape to set the line work for a painting!"
     },
     {
-      "body": "{ 📢 News } [Rockstar claims recent firings were for leaking confidential game information, union fires back](https://hitmarker.net/news/rockstar-claims-recent-firings-were-for-leaking-confidential-game-information-union-fires-back-1597277)"
+      "body": "{ 🕹️ Game Jam Releases } _Tailcoat John, Meghan_, and _Dingus Khan_ released [Rook Race](https://globalgamejam.org/games/2026/piece-my-mind-9). Try to deduce enemy types while moving on a grid."
     },
     {
-      "body": "{ 🎮 Releases } _Garry Alcorn_ released [ERL](https://asoftmedia.itch.io/erl), a fast-paced endless running game where your goal is to make the number go up! Collect multipliers and bonuses through 8 stages of a dynamic multisided platform. [Check out his devlogs on his throwback site](https://garryalcorn.com/)! "
+      "body": "{ 🕹️ Game Jam Releases } _James Struble, Tori St. John, Brady Maher, Jonathan Wintemberg_, and _Kel Gruber_ released [Trash Bandit](https://globalgamejam.org/games/2026/trash-bandit-1)! Collect trash, avoid obstacles, don’t get caught by animal control."
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Tony Woljnar_ continued working on the Toxic Tavern level for Dribble 2, with some [countertop platforms & a cool jukebox](https://bsky.app/profile/tonywojnar.bsky.social/post/3m7dhcu4l5s2l), [added spike shockwaves on certain enemies](https://bsky.app/profile/tonywojnar.bsky.social/post/3m7vavwniws2d), and experimented with [adding mugs that pop chemicals into the air](https://bsky.app/profile/tonywojnar.bsky.social/post/3magstpup7s25)."
+      "body": "{ 🕹️ Game Jam Releases } _John Haney, Everett Haney, _and_ Malcolm Haney_ released [Time Jump](https://globalgamejam.org/games/2026/time-jump-9)! Discovering a mysterious medieval helmet, you try it on and are transported to a castle. Vanquish the evil forces within and find your way back to reality… if you can!"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Axol Studio_ released [Echoes of the Infinite Recursor](https://axolstudio.itch.io/echoes-of-the-infinite-recursor), a game made in 1-week for the [Yogscast Games - Jingle Game Jam 2025](https://itch.io/jam/jinglegamejam2025), with the theme \"If you can't beat them, join them\". An ancient evil is waking from it's slumber - you must try to stop it, but keep in mind, if you fail, you will fight on your enemy's behalf... _Lazarus D. Richardson_ created an accompanying [soundtrack with six tracks](https://lazarusrichardson.bandcamp.com/album/echoes-of-the-infinite-recursor). "
+      "body": "{ 🕹️ Game Jam Releases } _Loren Naegle, Julia Bernett, Celina Monzon, Michael Lewis, Kendal Myers, Sara Myers_, and _Ethan Suttles_ released [Rabius Carta](https://globalgamejam.org/games/2026/rabidus-cartae-9). Sit down to a favorite pastime - a game of cards. Your opponents may not make for the best conversationalists, but be glad that they're not. Simply playing the game is enough to drive you off the deep end!"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } [Planet Poachers](https://danidomain.itch.io/planet-poachers) was made in two weeks as part of the Webster University Fall 2025 Intro to Unreal Engine class. You're a smuggler and poacher of exotic alien eggs. Repair your ship and find the eggs if you want to make it out alive!"
+      "body": "{ 🕹️ Game Jam Releases } _Rhiannon Abram, Dani Bequette, Nicole Dougherty, Nicholas Granada, Ethan Cargill_, and _Alexi Basi_ released [Intruder!](https://globalgamejam.org/games/2026/intruder-9) It's Halloween night and some pesky college kids have broken into YOUR cabin!! Better \"round them up\" so they don't find the literal actual skeletons in your closet! If only it was easier to see through your not-killer mask."
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } [Loaner's Pub](https://mirid7.itch.io/loaners-pub) was made in two weeks as part of the Webster University Fall 2025 Intro to Unreal Engine class. After several loans taken out to create your own business(and several failed attempts), a group of loan sharks have gotten angry at you. In one final ditch effort, you take out yet another loan with confidence that this business will succeed. You've opened up a bar and need to make enough money to pay your rent on time. If you don't, those loan sharks might seek payment another way..."
+      "body": "{ 🕹️ Game Jam Releases } _Jeff Wheaton_ and _Daniel Hogue_ released [Mask Dash](https://globalgamejam.org/games/2026/mask-dash-3). Rush to the end of each stage while avoiding obstacles and collecting masks that temporarily enhance your mobility!"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } [Slimber](https://whyinds.itch.io/slimber) was made in two weeks as part of the Webster University Fall 2025 Intro to Unreal Engine class. Talk to townsfolk and complete their quests. Solve the issues of the town of Slimber, and see how the town unfolds. Who knows what might happen?"
+      "body": "{ 🕹️ Game Jam Releases } _Alex Dollar, Andrew Jones, Daniel Nagel, George Fetters, Jason Moree_, and _Paul Hennerich_ released [Masque of the Red Death](https://globalgamejam.org/games/2026/masque-red-death-1). Find the noble who has been infected. You know the individual infected only by their mask, and must find them before it is too late. Fail to find them before the time is up, and the Red Death claims ALL!"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Colorgrave_ announced their latest game coming soon: [Curse Chapter: Dawnthief](https://store.steampowered.com/app/4228390/Curse_Chapter_Dawnthief/)! Plunder all the treasure worth taking from the exotic wilderness with your band of rogues. Jump, kick and sling your chain mace to smash and climb your way through any obstacle. Face off against beasts and hopeful heroes that rise up to stop you. "
+      "body": "{ 🕹️ Game Jam Releases } _Nathan Amiri_ & _Dorian Kavadlo_ released [Phantom Pane](https://globalgamejam.org/games/2026/phantom-pane-9), a puzzle platformer where you build the level as you go."
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Butterscotch Shenanigans'_ newest game, How Many Dudes? - an autobattler roguelike that seeks to answer one of humanity's oldest questions - How many dudes does it take? - has a [demo out now](https://store.steampowered.com/app/3934270/How_Many_Dudes/)! "
+      "body": "{ 🕹️ Game Jam Releases } _Sarah Lester, Jacob Stauch, Cameron Walker, Tucker Baumgartner_, and _Ben High_ released [Bian Lian Lian Lian Lian](https://globalgamejam.org/games/2026/bian-lian-lian-lian-lian-2). You are a Bian Lian dancer, and you have an important gig at a chain Hot Pot establishment. You must use your magical mask changing abilities to navigate the rooftops of the city and reach the Hot Pot restaurant."
     },
     {
-      "body": "{ 📚 Resources } [The Brutal Truth About Pricing Your Art](https://www.youtube.com/watch?v=_o5mE8o39bM) - the most comprehensive advice online on pricing illustration artwork"
+      "body": "{ 🕹️ Game Jam Releases } _Jasmine and Philip Hayes_ released [Kingdom's Gambit](https://globalgamejam.org/games/2026/juice-phayes-4). Built like a good ol' game of chess, but each piece has a mind of its own."
     },
     {
-      "body": "{ 📢 News } Lucia Robbins won big for [Draco vs Decoy](https://www.instagram.com/p/DRadkm3kW9b/?img_index=1) at the Big Picture Peoria Film Festival! "
+      "body": "{ 🕹️ Game Jam Releases } _Brian, Wes, Tim, Cam, Laz,_ and _Colin_ released [Web of Deceit](https://globalgamejam.org/games/2026/web-deceit-0). Play as an undercover journalist posing as a party photographer, with a secret objective to match masked guests to their true identities while uncovering a web of corruption, blackmail, and hidden alliances. "
     },
     {
-      "body": "{ 📢 News } James C. Kane's ‘The Nanauts’ won a $30,000 prize for [Best Immersive Web Experience](https://www.linkedin.com/feed/update/urn:li:activity:7409377607064039424/) in the [Meta](https://www.linkedin.com/company/meta/) Start Developer Competition! He created it solo in 3 weeks with the [Immersive Web SDK](https://iwsdk.dev/). "
+      "body": "{ 🕹️ Game Jam Releases } _Pedro, Bella_, and _Audrey Albea_ released [Sushi Blind Date](https://globalgamejam.org/games/2026/sushi-blind-date-3). With your lucky sidekick, Sushi, you navigate levels to learn who is your soulmate and who is a disaster."
     },
     {
-      "body": "{#🎮 Global Game Jam 2026}\n\nDon't forget to sign up for the Global Game Jam 2026!\n\nJoin us at UMSL January 30th - February 1st, 2026 and make a game over 48 hours!\n\nThis event is open to ALL (even remote friends)! Students from any campus are also welcome. Online and in-person participants are both welcome!\n\nRegistration is Required!\n\n[REGISTER HERE!](https://globalgamejam.org/jam-sites/2026/university-missouri-st-louis-it-and-cybersecurity-club-hosting-stlgamedev)"
+      "body": "{ 🕹️ Game Jam Releases } _Kelsey Watkins_ and _Lazarus Richardson_ released [Untitled Ghost Game](https://globalgamejam.org/games/2026/ghost-game-title-pending-4), a game that can only be played with the right equipment. Spin your volume dial to run and pivot at the right time in order to cross the river to get candy."
     },
     {
-      "body": "{#📡 An Incoming Transmission...!?}\nWe intercepted a transmission from a distance source... [watch it here](https://www.youtube.com/watch?v=7C2W6oHyBjE)!"
+      "body": "{ 🕹️ Game Jam Releases } _Noel, Jeremy, Jason, Xian, Damian,_ and _Cherryisu_ released [BloodMoon](https://bloodmoonggj26.github.io/). Defend the city from the monsters that show up at night while protecting your own secret."
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Nicolas Lynch, Gregory Perry, Ani Speaker, Ameer Alzahabi, Gryfon Munier_, and _Vannia U_ released [Mask Through Time](https://chakamoonga.itch.io/mask-through-time). A 4D Puzzle Platformer, Try to escape the museum using the Masks of Time found throughout the game."
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } The _Maryville University Game Design Club_ released [Matt Clipz and the Labyrinth of Layers](https://globalgamejam.org/games/2026/matt-clipz-and-labyrinth-layers-6). "
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Kurt Glastetter_ released [Gas Mask Hero](https://globalgamejam.org/games/2026/gas-rescue-2). There has recently been a massive deadly gas outbreak in a post-apocalyptic daycare. You've been assigned to save small children trapped in the deadly gas. Save all the children, but make sure your gas mask filters don't run out."
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Tobi B_ released [FPS](https://globalgamejam.org/games/2026/fps-8). Your goal is to navigate a run-down building, taking out enemies as you go. "
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _scftm, Jeremiah Dyson, GameBoyJT, Jeff K,_ and _Sabrex_ released [A Crack in the Mask](https://globalgamejam.org/games/2026/crack-mask-8). You control Lost, a child who fights wielding emotional masks. Each mask has unique abilities and weaknesses based on type matchups."
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _BlackCatLuck_ released [Memory Mask Maker](https://globalgamejam.org/games/2026/memory-mask-maker-9), a game about memorizing mask features quickly and applying them to a blank mask."
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _GiantToast_ released [NORMAL DOG](https://globalgamejam.org/games/2026/normal-dog-1), a game about wearing masks and fitting in."
+    },
+    {
+      "body": "{ 🧑‍💻 Dev Updates } Gelli Fields is [selling merch](https://fairlii-shop.fourthwall.com/) and has a new [teaser trailer](https://www.youtube.com/watch?v=mJ5LaXE_w4s)! Get a sticker or a tshirt and support their endeavors. "
+    },
+    {
+      "body": "{ 🎮 Releases } _Nathan Burchard, Ethan Carter Lyons, Calvin Chen, Eric Leon_ and _Michael Martinez_ released [Cat-ching Critters](https://profxora.itch.io/cat-ching-critters)! Take control of Gelato to fight back the encroaching hordes of rats, roaches, and other gluttonous Critters aiming to gorge themselves on the fine delicacies of the restaurant and tarnish their reputation in their pursuits. "
+    },
+    {
+      "body": "{ 🎮 Releases } _Kris Truitt_ released the demo for [Mansion of a Million Monsters](https://store.steampowered.com/app/3627210/Mansion_of_a_Million_Monsters/) on Steam! Investigate a spooky cartoon mansion and its zany suspects, uncover the clues, and unmask the monsters prowling its halls in this action-adventure whodunnit!"
+    },
+    {
+      "body": "{ 🧑‍💻 Dev Updates } _Asoft Media_ [showed off the hotloading](https://www.tiktok.com/@asoftmedia/video/7596414347254025503?is_from_webapp=1&sender_device=pc&web_id=7555653127405602318) on their game! "
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Lazarus Richardson_ made songs for many of the Global Game Jam games - [here they are in a collection](https://lazarusrichardson.bandcamp.com/album/game-jam-music-2026)! "
+    },
+    {
+      "body": "{ 🧑‍💻 Dev Updates } _James C. Kane_ was featured on 80 Level: [Escape Winter Storms In This Tropical WebGPU Pool With XR Support](https://80.lv/articles/escape-winter-storms-in-this-tropical-webgpu-pool-with-xr-support)"
+    },
+    {
+      "body": "{ 🎮 Releases } lialoveloud and jno8295 are accepting preorders for [togtiles](https://www.instagram.com/togtiles/), a 10 piece pocket puzzle based on the Einstein tile, a new shape and a single shape that tiles the plane without repeating."
+    },
+    {
+      "body": "{!header} Greetings, St. Louis Developers! Did you see our [final tally of games made in 2025](https://www.youtube.com/watch?v=7C2W6oHyBjE)?! \n2026 is already looking to challenge that number, with **95**(!!!) **attendees** at our location for the Global Game Jam alone! Be sure to watch the [Twitch VOD](https://www.twitch.tv/videos/2686643588) of the Global Game Jam Showcase where the developers talk about their games! "
     }
   ],
   "events": [
     {
-      "title": "January GameDev Social!",
-      "description": "Chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to EVERYONE. This is an all ages event, but minors must be accompanied by a parent or guardian. Alcoholic drinks are 100% optional. Dirty 20 has plenty of non-alcoholic drink options, yummy mac n' cheeses, and other munchies if you get hungry. \n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/312629446",
+      "title": "February GameDev Social!",
+      "description": "Chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to EVERYONE. This is an all ages event, but minors must be accompanied by a parent or guardian. \n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/312692347",
       "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
-      "dateTime": "2026-01-08T19:00:00.000-06:00",
-      "endTime": "2026-01-08T22:00:00.000-06:00",
+      "dateTime": "2026-02-12T19:00:00.000-06:00",
+      "endTime": "2026-02-12T22:00:00.000-06:00",
       "eventUrl": ""
     },
     {
-      "title": "Game Audio Club (January): Music Share",
-      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio.\nWe’re a chill group where you can share your work, get feedback, or just vibe with people who love game audio. \n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/312431714",
-      "location": "MAP St. Louis Montessori School - 3840 Washington Ave - St. Louis, MO, us",
-      "dateTime": "2026-01-24T16:00:00.000-06:00",
-      "endTime": "2026-01-24T18:00:00.000-06:00",
-      "eventUrl": ""
-    },
-    {
-      "title": "Game Club: TBD",
-      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. <br><br>We are voting on what game to play right now on the discord, so get in there and vote! <b>This month we'll also be meeting virtually on Discord</b> (in the general voice chat). Come share your thoughts on the game with us!<br> <br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/312633421\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/312633421</a>",
-      "location": "Online event",
-      "dateTime": "2026-01-26T18:30:00.000-06:00",
-      "endTime": "2026-01-26T20:30:00.000-06:00",
-      "eventUrl": ""
-    },
-    {
-      "title": "Global Game Jam 2026",
-      "description": "We are excited to announce Global Game Jam 2026! Come team up with local creators and make a game over the weekend! This event is open to ALL (even remote friends).  Students from any campus are welcome!<br><br>Online and In-Person participants are both welcome.  We will be using our community-run Discord server to handle announcements and online participation.  <a href=\"https://discord.gg/mTMKpre\" target=\"_blank\">Join here!</a> <br><br><a href=\"https://globalgamejam.org/jam-sites/2026/university-missouri-st-louis-it-and-cybersecurity-club-hosting-stlgamedev\" target=\"_blank\"><b>Registration for Global Game Jam is now open!</b></a>",
-      "location": "Millennium Student Center, 17 Arnold B Grobman Dr, St. Louis, MO 63121, USA",
-      "dateTime": "2026-01-30T17:00:00.000-06:00",
-      "endTime": "2026-02-01T18:00:00.000-06:00",
+      "title": "Share & Play: Game Playtesting",
+      "description": "Join us for casual game playtesting! This is an opportunity for developers to share their progress, observe playtesting, and get feedback on their projects, and for local game enthusiasts to get their hands on new games, prototypes, and give helpful feedback.\n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/312859534",
+      "location": "St. Louis County Library - Clark Family branch - 1640 South Lindbergh Blvd - St. Louis, MO, us",
+      "dateTime": "2026-02-28T12:00:00.000-06:00",
+      "endTime": "2026-02-28T16:00:00.000-06:00",
       "eventUrl": ""
     }
   ]
