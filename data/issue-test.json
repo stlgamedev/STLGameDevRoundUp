@@ -1,9 +1,6 @@
 {
   "nodes": [
     {
-      "body": "{!header} \n{📢 announcements} \n{ 🎮 Releases }\n{ 🧑‍💻 Dev Updates }\n{ 🎼 Releases }\n{ 📚 Resources }\n{ 🕹️ Game Jam Releases } \n"
-    },
-    {
       "body": "{ 🕹️ Game Jam Releases } _Kit Kitsis_ and _JR_ released [Unmasked](https://jayaarrgh.itch.io/unmasked), a mini luchador unmasking punch-off!"
     },
     {
@@ -101,6 +98,9 @@
     },
     {
       "body": "{!header} Greetings, St. Louis Developers! Did you see our [final tally of games made in 2025](https://www.youtube.com/watch?v=7C2W6oHyBjE)?! \n2026 is already looking to challenge that number, with **95**(!!!) **attendees** at our location for the Global Game Jam alone! Be sure to watch the [Twitch VOD](https://www.twitch.tv/videos/2686643588) of the Global Game Jam Showcase where the developers talk about their games! "
+    },
+    {
+      "body": "{ 🎮 Releases } _SuperWes_ published a [Twine parser](https://pub.dev/packages/twine_parser) that was used in his Global Game Jam game as an open source package along with an example project that shows how to use it."
     }
   ],
   "events": [
@@ -110,7 +110,8 @@
       "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
       "dateTime": "2026-02-12T19:00:00.000-06:00",
       "endTime": "2026-02-12T22:00:00.000-06:00",
-      "eventUrl": ""
+      "eventUrl": "",
+      "imagePath": ""
     },
     {
       "title": "Game Audio Club (February): Music Share",
@@ -118,7 +119,8 @@
       "location": "MAP St. Louis Montessori School - 3840 Washington Ave - St. Louis, MO, us",
       "dateTime": "2026-02-21T16:00:00.000-06:00",
       "endTime": "2026-02-21T18:00:00.000-06:00",
-      "eventUrl": ""
+      "eventUrl": "",
+      "imagePath": "images/events/external/bc67f3a758c99d67ea7ed9198428e5af776108fbfa04e0083d3bbbddba7e41bf.jpg"
     },
     {
       "title": "Game Club: Sonic Robo Blast 2",
@@ -126,7 +128,8 @@
       "location": "Online event",
       "dateTime": "2026-02-23T18:30:00.000-06:00",
       "endTime": "2026-02-23T20:30:00.000-06:00",
-      "eventUrl": ""
+      "eventUrl": "",
+      "imagePath": "images/events/external/ef1e13e346c1282c7647cda3f4d04de5e4fe4882fcf9d83ca2eaf79677e29107.jpg"
     },
     {
       "title": "Share & Play: Game Playtesting",
@@ -134,7 +137,8 @@
       "location": "St. Louis County Library - Clark Family branch - 1640 South Lindbergh Blvd - St. Louis, MO, us",
       "dateTime": "2026-02-28T12:00:00.000-06:00",
       "endTime": "2026-02-28T16:00:00.000-06:00",
-      "eventUrl": ""
+      "eventUrl": "",
+      "imagePath": ""
     }
   ]
 }
