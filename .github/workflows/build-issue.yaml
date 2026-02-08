@@ -41,7 +41,7 @@ jobs:
       -   name: Checkout
           uses: actions/checkout@v4
 
-        -   name: Download event images
+      -   name: Download event images
           uses: actions/download-artifact@v4
             continue-on-error: true
           with:
