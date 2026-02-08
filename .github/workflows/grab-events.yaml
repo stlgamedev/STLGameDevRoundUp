@@ -38,6 +38,13 @@ jobs:
       - name: Convert ICS to JSON
         run: node scripts/convert-ics-to-json.js
 
+      - name: Upload event images
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-images
+          path: assets/images/events/external
+          if-no-files-found: ignore
+
       - name: Set output
         id: set-output
         run: |
