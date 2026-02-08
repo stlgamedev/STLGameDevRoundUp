@@ -42,6 +42,13 @@ jobs:
       -   name: Checkout
           uses: actions/checkout@v4
 
+        -   name: Download event images
+          uses: actions/download-artifact@v4
+            continue-on-error: true
+          with:
+            name: event-images
+            path: assets/images/events/external
+
       -   name: Grab Issue Comments
           id: issue
           run: |
@@ -137,17 +144,18 @@ jobs:
           run: |
               git config --global user.name "GitHub Actions"
               git config --global user.email "no-reply@github.com"
+              mkdir -p assets/images/events/external
               if [[ "${{ inputs.issue_no }}" == "regenerate" ]]; then
                 git tag re-generated-issue-${ISSUE_NO}
-                git add data/issue${ISSUE_NO}.json
+                git add data/issue${ISSUE_NO}.json assets/images/events/external
                 git commit -m "Regenerated issue ${ISSUE_NO}"
               elif [[ "${{ inputs.issue_no }}" == "test" ]]; then
                 git tag generated-test-issue-${ISSUE_NO}
-                git add content/issue-test.md data/issue-test.json
+                git add content/issue-test.md data/issue-test.json assets/images/events/external
                 git commit -m "Update issue ${ISSUE_NO}"
               else
                 git tag generated-issue-${ISSUE_NO}
-                git add content/issue-${ISSUE_NO}.md data/issue${ISSUE_NO}.json
+                git add content/issue-${ISSUE_NO}.md data/issue${ISSUE_NO}.json assets/images/events/external
                 git commit -m "Update issue ${ISSUE_NO}"
               fi
               git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}

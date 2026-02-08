@@ -508,6 +508,8 @@
                   {{- $eventImagePath = "images/events/social.png" -}}
                 {{- else if strings.Contains .title "Share & Play" -}}
                   {{- $eventImagePath = "images/events/shares.png" -}}
+                {{- else if .imagePath -}}
+                  {{- $eventImagePath = .imagePath -}}
                 {{- end -}}
                 {{- $eventImage := resources.Get $eventImagePath -}}
                 <li class="event-card">
