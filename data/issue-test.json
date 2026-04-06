@@ -1,72 +1,126 @@
 {
   "nodes": [
     {
-      "body": "{ 🎮 Game Releases } _James Kane_ is launching into early access with [STARSPEED: Zero-G Aerial Combat](https://bsky.app/profile/jamesckane.bsky.social/post/3mfkkdrj44s2l), which features multiplayer and a campaign inspired by Descent and DOOM with a gripping story & synthwave OST, in partnership with WorldLabs.ai!"
+      "body": "{ 🕹️ Game Jam Releases } _Vadeum_ released [Quantum Superhacker](https://vadeum.itch.io/quantum-superhacker) for the Adroit Game Jam and won third place! \"You invented QuantumOS. Now hack the world and make it a better place.\" "
     },
     {
-      "body": "{ 🎮 Game Demos } _Colorgrave_ has been burning the midnight oil to get a demo out for [Curse Chapter: Dawnthief](https://store.steampowered.com/app/4228390/Curse_Chapter_Dawnthief/) in Steam Next Fest!"
+      "body": "{ 🧑‍💻 Dev Updates } _Jesse Chounard_ is working on an [SDF font renderer](https://www.youtube.com/watch?v=nlkaaLeFgLY)"
     },
     {
-      "body": "{ 🎮 Game Demos } _Studio Tapioca_ has a new demo out for [Bunny Beats](https://store.steampowered.com/app/917640/Bunny_Beats/), a cute rhythm-matching game, in Steam Next Fest!"
+      "body": "{ 🧑‍💻 Dev Updates } _Kelsey Watkins_ made a [stained glass window](https://bsky.app/profile/neitherworld.bsky.social/post/3mglsgvm7fs2i) in UE5"
     },
     {
-      "body": "{ 🎮 Game Demos } _Jundroo_ has a demo out for their new flight sim [Simple Planes 2](https://store.steampowered.com/app/3938060/SimplePlanes_2_Demo/) in Steam Next Fest!"
+      "body": "{ 🧑‍💻 Dev Updates } _Hutchkey Games'_ Enter The Depths now has [Steam Achievements](https://www.youtube.com/watch?v=0O9x-WoOiIw)! "
     },
     {
-      "body": "{ 🎮 Game Demos } _Wonderpond_ has a new demo out for [Gelli Fields](https://store.steampowered.com/app/1965980/Gelli_Fields/), the cozy gelli farming roguelite, in Steam Next Fest!\n"
+      "body": "{ 🧑‍💻 Dev Updates } _Tim Hely_ has been working on a haxelib to make it [easy to add navigation](https://axolstudio.github.io/flixel-ux/) to any HaxeFlixel game"
     },
     {
-      "body": "{ 🎮 Game Demos } _Butterscotch Shenanigans'_ wacky roguelite dude-builder [How Many Dudes?](https://store.steampowered.com/app/3934270/How_Many_Dudes/) has a demo out in Steam Next Fest!"
+      "body": "{ 🎮 Game Releases } _chisatonishikigi479_ released a prototype for their game, [So Close Yet So Far](https://chisatonishikigi479.itch.io/so-close-yet-so-far), a Hell-themed endless runner game"
     },
     {
-      "body": "{!header} February is quietly one of the best months of the year to make games. While January is full of pressure and December is full of distraction, February hits a sweet spot that game developers uniquely benefit from. This month brought the Steam Next Fest and the Adroit Game Jam, and our developers rose to the challenge: "
+      "body": "{ 🧑‍💻 Dev Updates } _Butterscotch Shenanigans_ talk about the Steam Next Fest's [impact on sales](https://www.youtube.com/watch?v=aTEbSoqbkBU) on their podcast"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Kelsey Watkins_ showed off her [cabinet prototype](https://bsky.app/profile/neitherworld.bsky.social/post/3mejzc6gbhk2z) for her Global Game Jam game! "
+      "body": "{📆 Events} [STL TechWeek](https://techstl.com/techweek/) is happening April 13 - 17."
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Fairlii_ has been regularly posting Developer Update vlogs - the latest was on how their game, [Gelli Fields](https://gellifields.com/), performed at the [Steam Next Fest](https://www.youtube.com/watch?v=4HSnYNgPL68)! "
+      "body": "{📆 Events} _Nic Weber_, Co-Founder & CPO of Noise, is giving a talk on [How To Go Viral](https://luma.com/doiao58u) at 6:30pm, Thursday April 16th at their office in City Foundry."
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Kris Truitt_ posted a [very important update to if you can pet the dog](https://bsky.app/profile/kristruitt.bsky.social/post/3mer63lo2dc2w) in [Mansion of a Million Monsters](https://store.steampowered.com/app/4251230/Mansion_of_a_Million_Monsters_Demo/)! "
+      "body": "{📆 Events} The Maryville Senior Showcase will be held on April 10th 5:30pm - 8:30pm at Maryville University."
     },
     {
-      "body": "{ 🎮 Game Demos } _Studio Tapioca_'s [Bunny Beats](https://store.steampowered.com/app/917640/Bunny_Beats/), a rhythm game where bunnies swing mochi hammers to the beat, has a demo out in Steam Next Fest!"
+      "body": "{📆 Events} _Matt Raithel_ (of Graphite Lab) and _James C. Kane_ will be speaking about [Indie Game Dev in the Age of AI](https://www.eventbrite.com/e/immersiv-interactive-media-design-stl-techweek-2026-tickets-1985608977904) as part of STL Tech Week on April 16 at 1pm."
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Evie D._ released [waveform](https://evie-d.itch.io/waveform), a unique game written entirely in C++! Using SDF rendering and some artistic shaderwork, shapes merge and melt together in a trippy and satisfying experience. This game won the [Adroit Game Jam](https://itch.io/jam/adroit-game-jam-2026)! "
+      "body": "{ 🎨 Visual Art } _J-Dudd_ made a [Custom Character (Riku) for Fraymakers](https://youtu.be/WdwAauOoFW4)"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Axol Studio_ released [supurrposition](https://axolstudio.itch.io/supurrposition), following the quantastic adventures of an uncertain kitten, for the [Adroit Game Jam](https://itch.io/jam/adroit-game-jam-2026)! "
+      "body": "{ 🎨 Visual Art } _Xain Russel_ continues to crank out awesome character art like this [fanart for Slightly Damned](https://bsky.app/profile/xainrussell.bsky.social/post/3mgzz3xv76k2s)"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Goofy Gourd Studios_ are working on [setting up their pause menu](https://bsky.app/profile/goofygourds.bsky.social/post/3mfcjp5vvfs23)."
+      "body": "{ 🎨 Visual Art } _DoodleDupe_ submitted a rattlesnake-themed boss character to the [Mega Man X: Reminiscence fan game art challenge](https://bsky.app/profile/doodledupe.bsky.social/post/3mh46gaa5y224)."
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Tony Woljnar_ [continues to work on](https://bsky.app/profile/tonywojnar.bsky.social/post/3mfwedddb7c2m) the Toxic Tavern level for Dribble 2! "
+      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ has been working on a new [Crayon Canyon](https://bsky.app/profile/tonywojnar.bsky.social/post/3mi4y5qkcns26) level for Dribble 2!"
     },
     {
-      "body": "{ 🎼 Music Releases } Celebrating the release of Demon Tides, _Fat Bard_ posted the soundtrack! "
+      "body": "{ 🧑‍💻 Dev Updates } [Butterscotch Shenanigans](https://bsky.app/profile/bscotch.net/post/3mhvlchpmv224) and [Colorgrave](https://bsky.app/profile/looloopaa.bsky.social/post/3mhxo46kck22f) were both at **Pax East** in March showing off their games!"
     },
     {
-      "body": "{ 🎼 Music Releases } _Walpang_ is [uploading their work](https://www.instagram.com/p/DU1yIeYj8Af/) to Spotify! "
+      "body": "{ 🧑‍💻 Dev Updates } _Goofy Gourd_ has been adding [a dialogue system and art assets](https://bsky.app/profile/goofygourds.bsky.social/post/3mhz4fgxjy22l) (and many other things) to their new RPG game."
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Vadeum_ released [Quantum Superhacker](https://vadeum.itch.io/quantum-superhacker) for the Adroit Game Jam! \"You invented QuantumOS. Now hack the world and make it a better place.\" "
+      "body": "{ 🧑‍💻 Dev Updates } _Chelsea Catz_ has a wip demo for her new game [Splice Kitchen](https://chelseaz6.itch.io/splice-kitchen)!"
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Grenhunterr_ released [Quantum Slicer](https://grenhunterrwastaken.itch.io/quantum-slicer) for the [Adroit Game Jam](https://itch.io/jam/adroit-game-jam-2026)! The goal of the game is to destroy as many objects as you can without missing. Good luck!"
+      "body": "{ 🎼 Music Releases } _Laz Richardson_ made [Crepuscula Town](https://lazarusrichardson.bandcamp.com/track/crepuscula-town), which took 3rd place in the [Brainless Music Jam](https://itch.io/jam/brainless-music-jam)!"
     }
   ],
   "events": [
     {
-      "title": "Game Club: 30XX",
-      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design.  This month's game is the roguelite action platformer, 30XX!\nWe will be meeting virtually on Discord this month (in the general voice chat). Come share your thoughts on the game with us!\n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/",
-      "location": "Online event",
-      "dateTime": "2026-03-23T18:30:00.000-05:00",
-      "endTime": "2026-03-23T20:30:00.000-05:00",
+      "title": "April GameDev Social!",
+      "description": "Chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to EVERYONE. This is an all ages event, but minors must be accompanied by a parent or guardian.\n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/312692351",
+      "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
+      "dateTime": "2026-04-09T19:00:00.000-05:00",
+      "endTime": "2026-04-09T22:00:00.000-05:00",
       "eventUrl": "",
-      "imagePath": "images/events/external/46167ca5d99d981d87ce4ba09141ae6c4ab546b25226b8e3856c0eaaf394b9fa.jpg"
+      "imagePath": ""
+    },
+    {
+      "title": "Dev Day Out: Hike at Castlewood!",
+      "description": "Let's get outside and touch grass! Join us for a hike around Castlewood State Park. We can get inspired and brainstorm game ideas while we move and take in the sights and sounds of nature along the Meramec river.\n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/313935893",
+      "location": "Castlewood State Park - 1401 Kriefer Creek rd,  - Ballwin, MO, US",
+      "dateTime": "2026-04-12T10:30:00.000-05:00",
+      "endTime": "2026-04-12T13:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/567d04b1850f0ffe108572f64e3c0445810477a43ffbbf5060f441010a9c51f2.jpg"
+    },
+    {
+      "title": "Game Club: Turnip Boy Commits Tax Evasion",
+      "description": "<p>Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. This month's game is ... <a href=\"https://store.steampowered.com/app/1205450/Turnip_Boy_Commits_Tax_Evasion/\" target=\"_blank\">Turnip Boy Commits Tax Evasion</a>!</p><p></p>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/313935700",
+      "location": "Online event",
+      "dateTime": "2026-04-20T18:30:00.000-05:00",
+      "endTime": "2026-04-20T20:30:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/fc00b1e07fe0be98592ece7511e558403d7f8c6913ca6eb9ea09539c23d67ff1.jpg"
+    },
+    {
+      "title": "Game Audio Club",
+      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio.\nWe’re a chill group where you can share your work, get feedback, or just vibe with people who love game audio. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/314100367",
+      "location": "Online event",
+      "dateTime": "2026-04-21T17:30:00.000-05:00",
+      "endTime": "2026-04-21T19:30:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/76a4d8ee8b2b1cfa862eca62298bad304be5514028d2de3e81cb8d0d45fc1a48.jpg"
+    },
+    {
+      "title": "Spring Game Jam Theme Reveal",
+      "description": "<p>Join STLGameDev in challenging yourself to make a game over a week! It can be a board game or a video game, it's up to you! The Theme Reveal will be streamed online on <a href=\"https://www.twitch.tv/STLGameDev\" target=\"_blank\">Twitch</a>.</p><p></p>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/314039471",
+      "location": "Online event",
+      "dateTime": "2026-04-24T18:30:00.000-05:00",
+      "endTime": "2026-04-24T19:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/a4180307e9d6947d5df679b418c85befed6464d05928f8d659624bf8694fa741.jpg"
+    },
+    {
+      "title": "Gamedev Work Night",
+      "description": "St. Louis County Library Clark Family branch is hosting casual work time for local game developers in the Creative Lab. Bring your project to work on and talk with other devs for feedback or fun. This is open to EVERYONE ages 14 and up. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/313609823",
+      "location": "St. Louis County Library - Clark Family branch - 1640 South Lindbergh Blvd - St. Louis, MO, us",
+      "dateTime": "2026-04-27T17:00:00.000-05:00",
+      "endTime": "2026-04-27T20:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/6e55eb1aec49a209753b1a516f0ddfbf05c7167a91ee4276c2649d8008db381d.jpg"
+    },
+    {
+      "title": "Spring Game Jam Showcase",
+      "description": "Join us in-person for a showcase of submitted Spring Game Jam demos at the St. Louis County <strong>Grand Glaize</strong> Library, Meeting Room 1.<br> <br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/314039471\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/314039471</a>",
+      "location": "St. Louis County Library–Grand Glaize Branch, 1010 Meramec Station Road, Manchester, MO 63021, USA",
+      "dateTime": "2026-05-02T15:00:00.000-05:00",
+      "endTime": "2026-05-02T17:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/e49e3b35bf82750d77c5a8f5ca613def4d73b8d809edce60d6c825d7cfce19fb.jpg"
     }
   ]
 }
