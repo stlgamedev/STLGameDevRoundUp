@@ -1,6 +1,57 @@
 {
-    "nodes": 
-
-[ { "body": "{📢 announcement} Some really big news was announced a couple of weeks ago: The St Louis Game Developer Community is now under new management! With new branding, a new website, and plans to revitalize the community! Check out [the announcement here](https://stlgame.dev/news/2024-10-29-new-site-new-leadership/)!" }, { "body": "{🏗️ changes} The STLGameDev RoundUps will be going through a few changes to better integrate with the STLGameDev site. First, the directory and events are going to be removed and integrated into the STLGameDev website directly, with the goal of eventually using the same data to create highlights about projects of developers in each RoundUp. Secondly, you might have already noticed the new URL for the RoundUp site: https://roundup.stlgame.dev This is the new home of the site going forward!" }, { "body": "{📅 events} The November GameDev DrinkUp is happening on Thursday, Nov 14 · 7:00 PM CST at [Dirty 20 Bar!](https://www.dirty20bar.com/) Come and share a drink with fellow game developers!" }, { "body": "{📅 events} The 2024 STLGameDev Holiday Party has been announced! It's happening Thursday, December 5th at 7pm at Earthbound Brewing. More details and RSVP on [Meetup.com](https://www.meetup.com/st-louis-game-developers/events/304308574/)" }, { "body": "{👯 social media} Jesse Chounard has started putting together a [Bluesky Starter Pack of St Louis Game Developers](https://bsky.app/starter-pack/did:plc:ryowriubmalxuikaecjgcdzg/3laks46ixsk22). Reach out to him if you want to be added." }, { "body": "{🫙 game jams} The [Yogscast Games - Jingle Game Jam 2024](https://itch.io/jam/jinglegamejam2024) has been announced for the first week of December!" }, { "body": "{🗣️ feedback} **STLGameDev is looking for [feedback](https://forms.gle/8yw88DMSQiErQTnS9)** in order to get a better sense of how best we can support the community! Please take a moment to fill out the survey before the end of November so that we can use the data to guide our efforts." }, { "body": "{🧪 testing} DLV Games is running a [Fortnite Experience Testing Event](https://www.dlvgames.com/fortnite-experience-testing-event/nov24) on Saturday, November 16th!" }, { "body": "{🎮 releases} Meepalasheep has released an in-development build of their RPG project: [Orphans of Providence](https://meepalasheep.itch.io/orphans-of-providence). Check it out!" }, { "body": "{🕹️ updates} [The Violets of Amicus](https://www.violetsofamicus.com/2024/11/10/8-weeks-remaining/) has a new update!" }, { "body": "{🎮 releases} Speiro has released their take on Asteroids called [Adrift](https://speiro.itch.io/adrift)!" }, { "body": "{📖 articles} Alan Carter wrote about how they [Created the Plasma Ball Electric VR Music Visualizer](https://aleinindland.artstation.com/projects/mAz6Zy)." }, { "body": "{🎮 releases} Miniscule has a new demo of their game [The Road Jess Traveled](https://miniscule.itch.io/the-road-jess-traveled) available!" }, { "body": "{!header} It's time for another RoundUp! It has been awhile and a lot of BIG things have happened since the last one of these!! We really would like for these to be more frequent, so make sure to share your news, your game releases, and everything else that might be relevant to the community with us! ✌️ " } ]
-
+  "nodes": [
+    {
+      "body": "{📢 announcement} Some really big news was announced a couple of weeks ago: The St Louis Game Developer Community is now under new management! With new branding, a new website, and plans to revitalize the community! Check out [the announcement here](https://stlgame.dev/news/2024-10-29-new-site-new-leadership/)!"
+    },
+    {
+      "body": "{🏗️ changes} The STLGameDev RoundUps will be going through a few changes to better integrate with the STLGameDev site. First, the directory and events are going to be removed and integrated into the STLGameDev website directly, with the goal of eventually using the same data to create highlights about projects of developers in each RoundUp. Secondly, you might have already noticed the new URL for the RoundUp site: https://roundup.stlgame.dev This is the new home of the site going forward!"
+    },
+    {
+      "body": "{📅 events} The November GameDev DrinkUp is happening on Thursday, Nov 14 · 7:00 PM CST at [Dirty 20 Bar!](https://www.dirty20bar.com/) Come and share a drink with fellow game developers!"
+    },
+    {
+      "body": "{📅 events} The 2024 STLGameDev Holiday Party has been announced! It's happening Thursday, December 5th at 7pm at Earthbound Brewing. More details and RSVP on [Meetup.com](https://www.meetup.com/st-louis-game-developers/events/304308574/)"
+    },
+    {
+      "body": "{👯 social media} Jesse Chounard has started putting together a [Bluesky Starter Pack of St Louis Game Developers](https://bsky.app/starter-pack/did:plc:ryowriubmalxuikaecjgcdzg/3laks46ixsk22). Reach out to him if you want to be added."
+    },
+    {
+      "body": "{🫙 game jams} The [Yogscast Games - Jingle Game Jam 2024](https://itch.io/jam/jinglegamejam2024) has been announced for the first week of December!"
+    },
+    {
+      "body": "{🗣️ feedback} **STLGameDev is looking for [feedback](https://forms.gle/8yw88DMSQiErQTnS9)** in order to get a better sense of how best we can support the community! Please take a moment to fill out the survey before the end of November so that we can use the data to guide our efforts."
+    },
+    {
+      "body": "{🧪 testing} DLV Games is running a [Fortnite Experience Testing Event](https://www.dlvgames.com/fortnite-experience-testing-event/nov24) on Saturday, November 16th!"
+    },
+    {
+      "body": "{🎮 releases} Meepalasheep has released an in-development build of their RPG project: [Orphans of Providence](https://meepalasheep.itch.io/orphans-of-providence). Check it out!"
+    },
+    {
+      "body": "{🕹️ updates} [The Violets of Amicus](https://www.violetsofamicus.com/2024/11/10/8-weeks-remaining/) has a new update!"
+    },
+    {
+      "body": "{🎮 releases} Speiro has released their take on Asteroids called [Adrift](https://speiro.itch.io/adrift)!"
+    },
+    {
+      "body": "{📖 articles} Alan Carter wrote about how they [Created the Plasma Ball Electric VR Music Visualizer](https://aleinindland.artstation.com/projects/mAz6Zy)."
+    },
+    {
+      "body": "{🎮 releases} Miniscule has a new demo of their game [The Road Jess Traveled](https://miniscule.itch.io/the-road-jess-traveled) available!"
+    },
+    {
+      "body": "{!header} It's time for another RoundUp! It has been awhile and a lot of BIG things have happened since the last one of these!! We really would like for these to be more frequent, so make sure to share your news, your game releases, and everything else that might be relevant to the community with us! ✌️"
+    }
+  ],
+  "events": [
+    {
+      "title": "Share & Play: Game Playtesting!",
+      "description": "Join us for casual game playtesting! This is an opportunity for developers to share their progress, observe playtesting, and get feedback on their projects, and for local game enthusiasts to get their hands on new games, prototypes, and give helpful feedback. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/313646267",
+      "location": "St. Louis County Library - Clark Family branch - 1640 South Lindbergh Blvd - St. Louis, MO, us",
+      "dateTime": "2026-05-23T12:00:00.000-05:00",
+      "endTime": "2026-05-23T16:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": ""
+    }
+  ]
 }
