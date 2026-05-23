@@ -55,11 +55,12 @@ jobs:
       - name: Grab Issue Comments
         id: issue
         run: |
+          REGENERATE_LOOKBACK=25
           if [[ "${{ inputs.issue_type }}" == "regenerate" ]]; then
-          RUIssue="$(gh api graphql -F owner="$OWNER" -F name="$REPO" -f query='
-            query($name: String!, $owner: String!) {
+          RUIssue="$(gh api graphql -F owner="$OWNER" -F name="$REPO" -F lookback=$REGENERATE_LOOKBACK -f query='
+            query($name: String!, $owner: String!, $lookback: Int!) {
               repository(name: $name, owner: $owner) {
-                issues(first: 200, states: [OPEN, CLOSED], orderBy: { field: CREATED_AT, direction: DESC }) {
+                issues(first: $lookback, states: [OPEN, CLOSED], orderBy: { field: CREATED_AT, direction: DESC }) {
                   nodes {
                     title
                     number
@@ -104,7 +105,12 @@ jobs:
           fi
 
           if [[ -z "$issue_id" || -z "$issue_title" ]]; then
-            echo "Could not find source GitHub issue for roundup issue #${{ inputs.issue_no }}"
+            if [[ "${{ inputs.issue_type }}" == "regenerate" ]]; then
+              echo "Could not find RoundUp Issue #${{ inputs.issue_no }} in the most recent ${REGENERATE_LOOKBACK} issues."
+              echo "Regenerate is intentionally limited to recent issues."
+            else
+              echo "Could not find source GitHub issue for roundup issue #${{ inputs.issue_no }}"
+            fi
             exit 1
           fi
 
