@@ -56,15 +56,17 @@ jobs:
         id: issue
         run: |
           if [[ "${{ inputs.issue_type }}" == "regenerate" ]]; then
-          RUIssue="$(gh api graphql -F owner="$OWNER" -F name="$REPO" -F issueNo=${{ inputs.issue_no }} -f query='
-            query($name: String!, $owner: String!, $issueNo: Int!) {
+          RUIssue="$(gh api graphql -F owner="$OWNER" -F name="$REPO" -f query='
+            query($name: String!, $owner: String!) {
               repository(name: $name, owner: $owner) {
-                issue(number: $issueNo) {
-                  title
-                  number
-                  comments(first:100) {
-                    nodes {
-                      body
+                issues(first: 200, states: [OPEN, CLOSED], orderBy: { field: CREATED_AT, direction: DESC }) {
+                  nodes {
+                    title
+                    number
+                    comments(first:100) {
+                      nodes {
+                        body
+                      }
                     }
                   }
                 }
@@ -92,13 +94,18 @@ jobs:
           fi
 
           if [[ "${{ inputs.issue_type }}" == "regenerate" ]]; then
-            issue_id=$(echo "$RUIssue" | jq -r '.data.repository.issue.number')
-            issue_title=$(echo "$RUIssue" | jq -r '.data.repository.issue.title')
-            RUIComments=$(echo "$RUIssue" | jq '[.data.repository.issue.comments.nodes[] | select(.body | startswith("{"))]')
+            issue_id=$(echo "$RUIssue" | jq -r --arg expected_title "RoundUp Issue #${{ inputs.issue_no }}" '[.data.repository.issues.nodes[] | select(.title == $expected_title)][0].number // empty')
+            issue_title=$(echo "$RUIssue" | jq -r --arg expected_title "RoundUp Issue #${{ inputs.issue_no }}" '[.data.repository.issues.nodes[] | select(.title == $expected_title)][0].title // empty')
+            RUIComments=$(echo "$RUIssue" | jq --arg expected_title "RoundUp Issue #${{ inputs.issue_no }}" '[.data.repository.issues.nodes[] | select(.title == $expected_title)][0].comments.nodes[] | select(.body | test("^\\s*\\{"))]')
           else
             issue_id=$(echo "$RUIssue" | jq -r '.data.repository.issues.nodes[0].number')
             issue_title=$(echo "$RUIssue" | jq -r '.data.repository.issues.nodes[0].title')
-            RUIComments=$(echo "$RUIssue" | jq '[.data.repository.issues.nodes[].comments.nodes[] | select(.body | startswith("{"))]')
+            RUIComments=$(echo "$RUIssue" | jq '[.data.repository.issues.nodes[].comments.nodes[] | select(.body | test("^\\s*\\{"))]')
+          fi
+
+          if [[ -z "$issue_id" || -z "$issue_title" ]]; then
+            echo "Could not find source GitHub issue for roundup issue #${{ inputs.issue_no }}"
+            exit 1
           fi
 
           echo 'issue_id'=$issue_id >> $GITHUB_OUTPUT
