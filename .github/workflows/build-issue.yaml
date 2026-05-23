@@ -6,6 +6,10 @@ on:
       issue_no:
         required: true
         type: string
+      issue_type:
+        required: false
+        type: string
+        default: next-roundup
     outputs:
       issue_no:
         value: ${{ jobs.generate.outputs.issue_no }}
@@ -51,7 +55,23 @@ jobs:
       - name: Grab Issue Comments
         id: issue
         run: |
-          if [[ "${{ inputs.issue_no }}" != "regenerate" ]]; then
+          if [[ "${{ inputs.issue_type }}" == "regenerate" ]]; then
+          RUIssue="$(gh api graphql -F owner="$OWNER" -F name="$REPO" -F issueNo=${{ inputs.issue_no }} -f query='
+            query($name: String!, $owner: String!, $issueNo: Int!) {
+              repository(name: $name, owner: $owner) {
+                issue(number: $issueNo) {
+                  title
+                  number
+                  comments(first:100) {
+                    nodes {
+                      body
+                    }
+                  }
+                }
+              }
+            }
+          ')"
+          else
           RUIssue="$(gh api graphql -F owner=$OWNER -F name=$REPO -f query='
               query($name: String!, $owner: String!) {
                   repository(name: $name, owner: $owner) {
@@ -69,29 +89,24 @@ jobs:
                   }
               }
           ')"
-          else
-          RUIssue="$(gh api graphql -f query='
-            query getRepoByTitle {
-              search(query: """repo:STLGameDev/STLGameDevRoundUp in:title #${{ inputs.issue_no }}""", type:ISSUE, first: 1 ) {
-                nodes {
-                  ... on Issue {
-                    title
-                    number
-                  }
-                }
-              }
-            }
-          ')"
           fi
 
-          issue_id=$(echo $RUIssue | jq -r '.data.repository.issues.nodes[0].number')
+          if [[ "${{ inputs.issue_type }}" == "regenerate" ]]; then
+            issue_id=$(echo "$RUIssue" | jq -r '.data.repository.issue.number')
+            issue_title=$(echo "$RUIssue" | jq -r '.data.repository.issue.title')
+            RUIComments=$(echo "$RUIssue" | jq '[.data.repository.issue.comments.nodes[] | select(.body | startswith("{"))]')
+          else
+            issue_id=$(echo "$RUIssue" | jq -r '.data.repository.issues.nodes[0].number')
+            issue_title=$(echo "$RUIssue" | jq -r '.data.repository.issues.nodes[0].title')
+            RUIComments=$(echo "$RUIssue" | jq '[.data.repository.issues.nodes[].comments.nodes[] | select(.body | startswith("{"))]')
+          fi
+
           echo 'issue_id'=$issue_id >> $GITHUB_OUTPUT
-          issue_title=$(echo $RUIssue | jq -r '.data.repository.issues.nodes[0].title')
           ru_no="${issue_title##*#}"
           file_no=$ru_no;
           content_no=$ru_no;
           is_test="false";
-          if [[ "${{ inputs.issue_no }}" == "test" ]]; then
+          if [[ "${{ inputs.issue_type }}" == "test" ]]; then
             file_no="-test"
             content_no="test";
             is_test="true";
@@ -102,8 +117,7 @@ jobs:
           echo '{
               "nodes": 
           ' > $save_to
-          
-          RUIComments=$(echo $RUIssue | jq '[.data.repository.issues.nodes[].comments.nodes[] | select(.body | startswith("{"))]')
+
           RUIComments=$(echo $RUIComments | sed 's/\\r\\n/\\r\\n\\r\\n/g')
           
           echo $RUIComments >> $save_to
@@ -133,7 +147,7 @@ jobs:
           EVENTS_JSON: ${{ needs.grab-events.outputs.events }}
         run: |
           tmpfile=$(mktemp)
-          if [[ "${{ inputs.issue_no }}" == "test" ]]; then
+          if [[ "${{ inputs.issue_type }}" == "test" ]]; then
             jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue-test.json" > "$tmpfile" && mv "$tmpfile" "data/issue-test.json"
           else
             jq --argjson events "$EVENTS_JSON" '.events = $events' "data/issue${ISSUE_NO}.json" > "$tmpfile" && mv "$tmpfile" "data/issue${ISSUE_NO}.json"
@@ -144,11 +158,11 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "no-reply@github.com"
           mkdir -p assets/images/events/external
-          if [[ "${{ inputs.issue_no }}" == "regenerate" ]]; then
+          if [[ "${{ inputs.issue_type }}" == "regenerate" ]]; then
             git tag re-generated-issue-${ISSUE_NO}
-            git add data/issue${ISSUE_NO}.json assets/images/events/external
+            git add content/issue-${ISSUE_NO}.md data/issue${ISSUE_NO}.json assets/images/events/external
             git commit -m "Regenerated issue ${ISSUE_NO}"
-          elif [[ "${{ inputs.issue_no }}" == "test" ]]; then
+          elif [[ "${{ inputs.issue_type }}" == "test" ]]; then
             git tag generated-test-issue-${ISSUE_NO}
             git add content/issue-test.md data/issue-test.json assets/images/events/external
             git commit -m "Update issue ${ISSUE_NO}"

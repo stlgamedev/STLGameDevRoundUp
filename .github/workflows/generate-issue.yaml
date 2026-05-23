@@ -49,6 +49,7 @@ jobs:
         uses: ./.github/workflows/build-issue.yaml
         with:
             issue_no: ${{ needs.prepare.outputs.final-issue-no }}
+            issue_type: ${{ github.event.inputs.issue_type }}
         secrets: inherit
 
     build:
@@ -85,7 +86,20 @@ jobs:
                 uses: actions/checkout@v4
             -   name: Close Issue
                 id: close-issue
-                run: gh issue close ${{ needs.generate.outputs.issue_id }} -c "[Issue № ${{ needs.generate.outputs.issue_no }}](${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/) has been released!" -r completed
+                run: |
+                    gh issue close ${{ needs.generate.outputs.issue_id }} -c "[Issue № ${{ needs.generate.outputs.issue_no }}](${{ needs.build.outputs.base_url }}/issue-${{ needs.generate.outputs.issue_no }}/) has been released!" -r completed
+                    gh issue edit ${{ needs.generate.outputs.issue_id }} --remove-label "next-roundup" || true
+            -   name: Cleanup next-roundup label on closed issues
+                run: |
+                    closed_issues=$(gh issue list --state closed --label "next-roundup" --limit 200 --json number --jq '.[].number')
+                    if [ -z "$closed_issues" ]; then
+                        echo "No closed issues with next-roundup label found."
+                    else
+                        for issue_number in $closed_issues; do
+                            echo "Removing next-roundup label from closed issue #$issue_number"
+                            gh issue edit "$issue_number" --remove-label "next-roundup" || true
+                        done
+                    fi
             -   name: Open New Issue
                 id: open-issue
                 run: |
@@ -131,6 +145,7 @@ jobs:
                 run: |
                     echo "Reopening issue #${{ needs.generate.outputs.issue_id }}"
                     gh issue reopen ${{ needs.generate.outputs.issue_id }} -c "Workflow failed, reopening for retry." || echo "Failed to reopen issue or it wasn't closed"
+                    gh issue edit ${{ needs.generate.outputs.issue_id }} --add-label "next-roundup" || echo "Failed to restore next-roundup label"
             
             -   name: Rollback - Delete screenshot
                 if: ${{ needs.screenshot.result == 'success' }}
