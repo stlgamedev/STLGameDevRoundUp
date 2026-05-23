@@ -77,6 +77,8 @@ jobs:
         runs-on: ubuntu-latest
         needs: [screenshot, generate, build, newsletter]
         if: ${{ github.event.inputs.issue_type == 'next-roundup' }}
+        outputs:
+            new_issue_number: ${{ steps.open-issue.outputs.new_issue_number }}
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             OWNER: ${{ github.repository_owner }}
