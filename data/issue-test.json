@@ -1,12 +1,73 @@
 {
-  "nodes": [],
+  "nodes": [
+    {
+      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ continues the epic creation of Dribble 2 by adding [platforms dependent on color](https://bsky.app/profile/tonywojnar.bsky.social/post/3mkuy6xniek27), a [mini maze](https://bsky.app/profile/tonywojnar.bsky.social/post/3mlghyn4ajk2b), [aggressive crayons](https://bsky.app/profile/tonywojnar.bsky.social/post/3mmjpkakpi22a), and [collectables](https://bsky.app/profile/tonywojnar.bsky.social/post/3mn32jl6rgc2z)!"
+    },
+    {
+      "body": "{ 🧑‍💻 Dev Updates } _James C. Kane_ showed off STARSPEED's [procedural spaceship generator](https://x.com/jamesckane/status/2050331344404709644), and will be [speaking at SIGGRAPH](https://www.linkedin.com/posts/james-c-kane_3dgs-in-web-gaming-the-shadow-of-the-czar-share-7460377519490256896-brCi/) about 3DGS in Web Gaming: ‘[The Shadow of the Czar](https://theshadowoftheczar.com/)‘! "
+    },
+    {
+      "body": "{ 🎮 Game Demos } _SolidStateKC_ released a prototype of [Rail Shot](https://solidstatekc.itch.io/railshot-proto), a precision arcade game where a single launch sets a coin rolling through a mechanical scoring board, and every run is a chance at the perfect line. "
+    },
+    {
+      "body": "{ 🎮 Game Releases } _Philocypher_ released [Primordio](https://store.steampowered.com/app/4385580/Primordio/) on Steam, a game where you control a wisp of pure energy in this roguelite bullet-hell survival game."
+    },
+    {
+      "body": "{ 🧑‍💻 Dev Updates } _Hutchkey Games_ is making progress on [Send It!](https://www.youtube.com/watch?v=kBX1dUCHDSQ) - play as a mailbox sending a letter in this high-pace top-down platformer!"
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Lazarus D. Richardson_ created the music for [Operation Alien Translation](https://sheepolution.itch.io/operation-alien-translation) as part of the Ludum Dare Jam. They placed 13th overall, 3rd in graphics, 4th in humor, and 30th in audio! [Check out the soundtrack here](https://lazarusrichardson.bandcamp.com/album/operation-alien-translation)!"
+    },
+    {
+      "body": "{ 🧑‍💻 Dev Updates } _Weird Mage_ has been working on [Chrono Cards](https://store.steampowered.com/app/4402530/Chrono_Cards/), a fast-paced, multiplayer competitive card game where you have the power to bend time itself! It was featured on Steam in the \"Upcoming\" section of the Deckbuilder Fest! \n"
+    },
+    {
+      "body": "{ 🎼 Music Releases } _Gabriel Vianello_ showcased [XYLO.dnb](https://drive.google.com/file/d/1KS8Y3_k80azVv7hKRlCA5cgo-J2-0n7x/view) at the Game Audio Club! "
+    },
+    {
+      "body": "{ 🧑‍💻 Dev Updates } _Ryan Swanson_ showcased their upcoming game [Mini Raid Leaders](https://store.steampowered.com/app/4484690/Mini_Raid_Leader/), a single-player Action RTS in which you command an ever-growing party of heroes to take down powerful bosses. "
+    },
+    {
+      "body": "{ 🎮 Game Demos } _Luke Puchard_ released a demo of [Cthonet](https://lupuchard.itch.io/cthonet), a game about networks and assembly programming, with rats."
+    },
+    {
+      "body": "{ 🎮 Game Demos } _Vadeum_ released a demo of [Legendum](https://vadeum.itch.io/legendum), an incremental / idle RPG where you live many lives in a fantasy world, aging from youth to elder. Your deeds shape the world your next life inherits. Spare a goblin in one life, meet them as a trader in the next."
+    },
+    {
+      "body": "{ 🎮 Game Releases } _Wonderpond_ released [Gelli Fields](https://store.steampowered.com/app/1965980/Gelli_Fields/), a casual farming game with little slimes. Relax, Collect, & Discover! "
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Dustin Triplett_ released [Kittens Against Kapitalism](https://dustintriplett.itch.io/kittens-against-kapitalism) for the Fuck Capitalism 2026 Game Jam! This game follows a radicalized kitty who sets off on a journey after being abruptly fired. "
+    },
+    {
+      "body": "{ 🎮 Game Releases } _Axol Studio_ released [Bring It On! v1.1](https://store.steampowered.com/app/2020460/Bring_It_On/), with tons of Quality of Life improvements, bug fixes, and performance updates! Additionally, the [soundtrack is now available on Bandcamp](https://axolstudio.bandcamp.com/album/bring-it-on-original-soundtrack)! "
+    },
+    {
+      "body": "{ 📰 News } The Chicago Indie Games Showcase (CIGs) is [looking for submissions](https://docs.google.com/forms/d/e/1FAIpQLSc62lIxneJoeKI74k6zxd0xXflh9TC8fAw4lJRcEqHkNnZHFQ/viewform), and has a couple of days left on their successful [Kickstarter](https://www.kickstarter.com/projects/indiecitygames/cigs-chicago-indie-game-showcase-2026)! "
+    },
+    {
+      "body": "{ 📚 Resources } The VFX Campus is closing. As a thank you to their community, [every course](https://thevfxschool.com/) is now available at no cost. "
+    },
+    {
+      "body": "{ 🎮 Game Releases } [Rubber Ducky Rampage](https://www.kickstarter.com/projects/rdr/rubber-ducky-rampage-the-battle-for-the-tub-begins) by _Mike Breault_ is a board game that’s fun for all ages! You can order it now on Kickstarter before it hits game store shelves."
+    }
+  ],
   "events": [
     {
+      "title": "June GameDev Social!",
+      "description": "Chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to EVERYONE!\n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/312692352",
+      "location": "Dirty 20 Bar - 14051 Manchester Rd - Ballwin, MO, us",
+      "dateTime": "2026-06-11T19:00:00.000-05:00",
+      "endTime": "2026-06-11T22:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": ""
+    },
+    {
       "title": "Share & Play: Game Playtesting!",
-      "description": "Join us for casual game playtesting! This is an opportunity for developers to share their progress, observe playtesting, and get feedback on their projects, and for local game enthusiasts to get their hands on new games, prototypes, and give helpful feedback. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/313646267",
+      "description": "Join us for casual game playtesting! This is an opportunity for developers to share their progress, observe playtesting, and get feedback on their projects, and for local game enthusiasts to get their hands on new games, prototypes, and give helpful feedback. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/314944378",
       "location": "St. Louis County Library - Clark Family branch - 1640 South Lindbergh Blvd - St. Louis, MO, us",
-      "dateTime": "2026-05-23T12:00:00.000-05:00",
-      "endTime": "2026-05-23T16:00:00.000-05:00",
+      "dateTime": "2026-08-29T12:00:00.000-05:00",
+      "endTime": "2026-08-29T16:00:00.000-05:00",
       "eventUrl": "",
       "imagePath": ""
     }
