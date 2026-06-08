@@ -171,7 +171,7 @@ const downloadImage = async (imageUrl) => {
 
 const resolveEventImagePath = async (event) => {
   if (!event || !event.title) return '';
-  if (recurringTitleMatches.some(match => event.title.includes(match))) return '';
+  //if (recurringTitleMatches.some(match => event.title.includes(match))) return '';
 
   const pageUrl = event.eventUrl || extractFirstUrl(event.description || '');
   if (!pageUrl) return '';
