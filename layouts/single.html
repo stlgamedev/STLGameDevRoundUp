@@ -214,8 +214,6 @@
       {{- $eventImagePath = "images/events/shares.png" -}}
     {{- else if .imagePath -}}
       {{- $eventImagePath = .imagePath -}} -->
-    {{- if .imagePath -}}
-      {{- $eventImagePath = .imagePath -}}
     {{- end -}}
     {{- $eventImage := resources.Get $eventImagePath -}}
     <section class="event-appointment sg-card shareable-entry">
