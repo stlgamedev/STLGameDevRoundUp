@@ -504,13 +504,9 @@
               <ul style="padding-left:0;list-style:none;">
                 {{ range $posts.events }}
                 {{- $eventImagePath := "images/events/generic.png" -}}
-                <!-- {{- if strings.Contains .title "GameDev Social" -}}
-                  {{- $eventImagePath = "images/events/social.png" -}}
-                {{- else if strings.Contains .title "Share & Play" -}}
-                  {{- $eventImagePath = "images/events/shares.png" -}}
-                {{- else if .imagePath -}}
+                {{- if .imagePath -}}
                   {{- $eventImagePath = .imagePath -}}
-                {{- end -}} -->
+                {{- end -}}
                 {{- $eventImage := resources.Get $eventImagePath -}}
                 <li class="event-card">
                   <table class="event-title-table" cellspacing="0" cellpadding="0" border="0">
