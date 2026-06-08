@@ -50,6 +50,9 @@
     },
     {
       "body": "{ 🎮 Game Releases } [Rubber Ducky Rampage](https://www.kickstarter.com/projects/rdr/rubber-ducky-rampage-the-battle-for-the-tub-begins) by _Mike Breault_ is a board game that’s fun for all ages! You can order it now on Kickstarter before it hits game store shelves."
+    },
+    {
+      "body": "{!header} May’s warmth sparked a surge of creativity in the community, yielding a bounty of projects on Steam and beyond!\nDon’t miss out on the fun! [Join us for events coming up in June!](https://www.meetup.com/st-louis-game-developers/events/)"
     }
   ],
   "events": [
@@ -60,7 +63,7 @@
       "dateTime": "2026-06-11T19:00:00.000-05:00",
       "endTime": "2026-06-11T22:00:00.000-05:00",
       "eventUrl": "",
-      "imagePath": ""
+      "imagePath": "images/events/external/249e7d16fa939384fe8fe86d5dcf6ebbd1495dbee7b8f2ffe498fbf4f0577101.jpg"
     },
     {
       "title": "June Game Audio Club: Project Share",
@@ -96,7 +99,16 @@
       "dateTime": "2026-07-09T19:00:00.000-05:00",
       "endTime": "2026-07-09T22:00:00.000-05:00",
       "eventUrl": "",
-      "imagePath": ""
+      "imagePath": "images/events/external/7e5e0028a97fd5eb1d14b2c00cb5a952a85f2ed4742c970d40b3d41522b68c28.jpg"
+    },
+    {
+      "title": "MO Game Con",
+      "description": "<p><span><span><b>STLGameDev will have a table. Stop by and say hi!</b></span></span> </p><p><span>Missouri Game Convention (MoGameCon) is a convention celebrating all forms of games and unites the gaming community. Each year it features </span><span><span>vendors of all types of games and gaming merchandise</span></span>, <span><span>games on free play, </span></span><span>video game tournaments, and a cosplay contest.</span></p><p><span>More information and tickets are available on the <a href=\"https://www.mogamecon.com/\" target=\"_blank\">MoGameCon website</a>!</span></p>",
+      "location": "Greensfelder Recreation Complex, 550 Weidman Rd, Manchester, MO 63011, USA",
+      "dateTime": "2026-07-25T11:00:00.000-05:00",
+      "endTime": "2026-07-25T18:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/1e1a7c725c351586b0cf8872c382bf03863b7418e18c0d78fdc43c5756959fcf.jpg"
     },
     {
       "title": "Share & Play: Game Playtesting!",
@@ -105,7 +117,7 @@
       "dateTime": "2026-08-29T12:00:00.000-05:00",
       "endTime": "2026-08-29T16:00:00.000-05:00",
       "eventUrl": "",
-      "imagePath": ""
+      "imagePath": "images/events/external/3d9d474be3cde63e6ed777daef8d1695370a280780e79ece458dfabbf690d7b0.jpg"
     }
   ]
 }
