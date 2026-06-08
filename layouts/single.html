@@ -213,8 +213,8 @@
     {{- else if strings.Contains .title "Share & Play" -}}
       {{- $eventImagePath = "images/events/shares.png" -}}
     {{- if .imagePath -}}
-      {{- $eventImagePath = .imagePath -}}
-    {{- end -}} -->
+      {{- $eventImagePath = .imagePath -}} -->
+    {{- end -}}
     {{- $eventImage := resources.Get $eventImagePath -}}
     <section class="event-appointment sg-card shareable-entry">
       <div class="event-time-indicator">
