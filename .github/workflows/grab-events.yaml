@@ -1,4 +1,6 @@
 name: 📅▶ Update Events from Google Calendar
+permissions:
+  contents: read
 
 on:
   workflow_call:
