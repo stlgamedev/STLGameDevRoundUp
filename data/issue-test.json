@@ -1,106 +1,52 @@
 {
   "nodes": [
     {
-      "body": "{!header} June was an exciting month for game developers! One of the most significant events is the [Steam Next Fest](https://store.steampowered.com/sale/nextfest), where developers release playable demos, gather valuable player feedback, and build excitement ahead of their games' launches. There were also some major game jams, like the [The Very Serious Juniper Dev Game Jam](https://itch.io/jam/theveryseriousjuniperdevgamejam), the [NES Jam](https://itch.io/jam/nes-jam-2026), the [Game Poems Jam](https://itch.io/jam/multiplatform-2026), and the [Manifesto Jam](https://itch.io/jam/manifesto-jam-2026)! \nWe also had a Miniature Paint Night, starring our yellow gamelien, Terrence! [Check out the pictures on instagram](https://www.instagram.com/stlgamedev/p/DZpk2eQEQiT/)! "
+      "body": "{ 🎮 Game Releases } _Ludicrousda3ve_ released [Sayonara, Space Rocks](https://ludicrousda3ve.itch.io/adios-asteroids-arcade-demo) demo, a high scoring asteroid-blasting game and [TNA](https://ludicrousda3ve.itch.io/tna), an 18+ spin on it. "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ finished creating the [Crayon Canyon](https://bsky.app/profile/tonywojnar.bsky.social/post/3mnmkc457tk2z) level for Dribble 2 and is now working on a [static-themed level](https://bsky.app/profile/tonywojnar.bsky.social/post/3moq2qsamh22i)! "
+      "body": "{ 🧑‍💻 Dev Updates } _James C. Kane_ updated [STARSPEED](https://www.linkedin.com/posts/james-c-kane_two-new-kilometer-scale-starspeed-missions-activity-7480685679312793600-VVoQ) with some new missions! Pursue rogue AI through the luxury space station Saturnalia toward a boss battle inside Earth's capital ship 🪐🛳️"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Eternal Delta Games_ put up a demo of their game, [Yacht Sea: Island Casino](https://store.steampowered.com/app/4831180/Yacht_Sea_Island_Casino_Demo/) for Steam Next Fest! A non-idle clicker dice game about getting rich the honest way: brazen cheating and lucky rolls. Bribe the dealer, rig the table, chase bigger payouts, and cool it down before the casino catches on."
+      "body": "{ 🎮 Game Releases } _Graphite Lab_ released [Centipede Swarm](https://luna.amazon.com/game/centipede-swarm/B0FP79K7WS), a reimagining of the classic Centipede for Amazon’s Luna game service "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Dustin Triplett_ has been working on a [typing game in godot](https://bsky.app/profile/dustintriplett.bsky.social/post/3mnxlbfll6s2x). What if there was a Typing of the Dead spinoff, but for destroying your personal demons holding you back?"
+      "body": "{ 🧑‍💻 Dev Updates } _Cheezy-Z_ has been working on programming multiplayer client server replication in a [basketball style game](https://www.youtube.com/watch?v=g3EWqgYvRp4) with working [passing, inbounding, ref pickup + passing to another player](https://x.com/Cheezy_UNI/status/2079024611946061848)!"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Goofy Gourd Studios_ has been working on a [dialogue system to play mid-battle](https://bsky.app/profile/goofygourds.bsky.social/post/3mojro4q4p22j)!"
+      "body": "{ 🕹️ Game Jam Releases } _Xain Russell_ helped to make [Sky's Landline](https://steamstuckdragon.itch.io/skys-landline) for [Furry Game Jam #2](https://itch.io/jam/furries)! Sky's Landline is an infinite upwards high-score-chasing platformer, where you must ascend through the structure of a colossal radio tower, linking the main data cable from relay console to relay console, acquiring temporary upgrades along the way, and racing against the degrading battery of your jetpack as you try to get as high as you can!"
     },
     {
-      "body": "{ 📰 News } _Butterscotch Shenanigans'_ [How Many Dudes?](https://store.steampowered.com/app/3934270) was nominated for [Best Strategic Roguelike for TMG](https://bsky.app/profile/bscotch.net/post/3mog5xs4hss2n)! It's set to release on Steam and mobile July 30th!"
+      "body": "{ 🕹️ Game Jam Releases } _Dorian K, azeTrom, StarBiscute, Poyumonium, _and_ F1r3-Dragon_ made [Mixtape Match](https://cutloaf.itch.io/mixtape-match), a music memory matching game where you listen closely, then pick out exactly which tracks played. Each round layers more sounds into the mix, testing how sharp your ear really is before the clock runs out. Made for the [GMTK Jam](https://itch.io/jam/gmtk-jam-2026)! Out of over 10k entries in the jam, right now, the game is ranked #9 in the audio category!"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Todd Mitchell_ posted a clip from a [side-scrolling brawler](https://bsky.app/profile/toddnotmitchell.com/post/3mpeexau75k2i ) made in Godot at a hot-topic historical site!"
+      "body": "{ 🎮 Game Releases } _Butterscotch Shenanigans_ released How Many Dudes? on [Steam](https://store.steampowered.com/app/3934270/How_Many_Dudes/), [App Store](https://apps.apple.com/us/app/how-many-dudes/id6753077755), and [Google Play](https://play.google.com/store/apps/details?id=com.bscotch.hmd)! How many dudes does it take to beat up a gorilla? A thousand toddlers? A horse-sized duck? A GOD? Enter the Dude Ranch and find out in this roguelike dudebuilder where you recruit an army of dudes to fight ridiculous battles. Fat Bard has also released the [soundtrack](https://fatbard.bandcamp.com/album/how-many-dudes)! "
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Axol Studio_ released [The Colisino](https://axolstudio.itch.io/the-colisino) for [The Very Serious Juniper Dev Game Jam](https://itch.io/jam/theveryseriousjuniperdevgamejam). Fight your way to Big Wins at the Calisino! Spin to determine your opponents each round! "
+      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ is done with the [environment art for the Glitch Ditch](https://bsky.app/profile/tonywojnar.bsky.social/post/3mrzmmplh4c2j) level in Dribble 2! "
     },
     {
-      "body": "{ 🎮 Game Releases } _Ryan Swanson_ released [Mini Raid Leader](https://store.steampowered.com/app/4484690/Mini_Raid_Leader/) on Steam! Mini Raid Leader is a single-player Action RTS, in which you command an ever-growing party of heroes to take down powerful bosses."
+      "body": "{ 🎮 Game Releases } _Fat Bard_ worked on the music for [Signy & Mino: Against All Gods](https://bsky.app/profile/fatbard.com/post/3mrurqjqqik26), a Tag-Team Battle RPG where every move combos together! Discover your hidden powers as you find yourself hurtled into a conflict among the gods! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _CodeInInk_ uploaded a prototype of [Goblin City Planner](https://codeinink.itch.io/goblin-city-planner-prototype)! Connect houses and caves together as you expand the transportation in the depths of a goblin city. Do well and you're entrusted with more of the city; poorly .. well, it's best not to think of that now."
+      "body": "{ 🕹️ Game Jam Releases } _Dustin Triplett_ made [Dopaminer](https://dustintriplett.itch.io/dopaminer) for the [The Kenney Jam 2026](https://itch.io/jam/kenney-jam-2026), a frantic fulfillment game about chasing tiny hits of happiness through online shopping, fast shipping, and the sweet satisfaction of adding things to a cart YOU don't actually have to pay for."
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _Renhet Studio_ released [Beelze Pub](https://renhetstudio.itch.io/beelze-pub) as part of [Comfy Jam: Summer](https://itch.io/jam/comfy-jam-summer-2026/rate/4682327)! You are Skelly, a laid-back skeletender filling in behind the bar at Beelze Pub for the weekend. Your job is simple: mix drinks, serve customers, and keep the business running until the boss gets back. Everyone arrives with their own problems, questionable life choices, and surprisingly strong opinions about cocktails."
+      "body": "{ 🎮 Game Releases } _Wes Ehrlichman_ created [Time To Rogue](https://apps.apple.com/us/app/time-to-rogue/id6786902468), a roguelike for your Apple Watch that lives on your wrist and plays out over your day - the maze keeps moving while you're away. How deep can you get before it finds you?"
     },
     {
-      "body": "{ 🎼 Music Releases } _Nathan Amiri_ made this cool [song site](https://nathan-amiri.github.io/Monster/) inspired by *My Singing Monsters* where you can hear different combinations of tracks by toggling them on/off."
+      "body": "{ 🧑‍💻 Dev Updates } _Izzy_ has been working on a personal [javascript canvas library](https://bsky.app/profile/cr1ttr.bsky.social/post/3mqlkzihg7225) for blogging and prototyping"
     },
     {
-      "body": "{ 📅 Events } [STLVGMO](https://stlvgmo.com) (_St. Louis Video Game Music Orchestra_) is playing their third concert on July 11th at Webster Groves High School. _Echoes of Hyrule_ will feature music from the Legend of Zelda franchise.  [Check out their trailer](https://youtu.be/okLd6RQQ4AY)!"
+      "body": "{ 🎼 Music Releases } The Colisino Original Soundtrack, by _Elliot Hely_, is available to download from [Bandcamp](https://axolstudio.bandcamp.com/album/the-colisino-original-soundtrack) FOR FREE!"
     },
     {
-      "body": "{ 📅 Events } [Video Game Music Fest](<https://www.moshmellow.org/event-details/video-game-music-and-breakbeat-jazz>) featuring _3 of 5_, _Boxwood Currents_, _Joystick Drift_, and _The Vibe Exchange_ with representation from STLGameDev, STLVGMO, and Gateway Blerds on Sunday 7/19 at Moshmellow. Admission is just $10!"
+      "body": "{!header} July was packed with progress, great conversations on the Discord, and exciting moments from the STLGameDev community. Our monthly meetup was at [Schlafly Bottleworks](https://bsky.app/profile/stlgame.dev/post/3mqconqjp222v), and we showed off games made in the community at [MOGameCon](https://bsky.app/profile/stlgame.dev/post/3mrna46mchk2g)! Here's a look back at what happened throughout the month!"
     },
     {
-      "body": "{ 📅 Events } [MOGameCon](<https://www.mogamecon.com/>) is happening once again at Greensfelder Rec Complex in Queeny Park on Saturday 7/25. Come out to check out retro games, arcade games, and visit _STLGameDev_'s table while you're there! Admission is $10. If you're interested in volunteering to help out at our table, [email us](volunteer@stlgame.dev)."
-    },
-    {
-      "body": " { 🎨 Visual Art } _StarBiscute_ made some amazing [Knights of Guinevere fan art](https://bsky.app/profile/starbiscute.bsky.social/post/3molaasnq6k2q)!"
-    },
-    {
-      "body": "{ 🎨 Visual Art } _Xain Russell_ made some great [Mina the Hollower](https://bsky.app/profile/xainrussell.bsky.social/post/3mn2vunj7mk2o) and [Spyro the Dragon fan art!](https://bsky.app/profile/xainrussell.bsky.social/post/3mnpv6inhys2m)"
-    },
-    {
-      "body": "{ 🎨 Visual Art } Lucia Williams made this fantastic [Amazing Digital Circus cosplay](https://www.instagram.com/reels/DZL3_mSM-cg/)!"
+      "body": "{ 🎼 Music Releases } _Nathan Amiri_ put together an interactive [Soundboard](https://machine-box.itch.io/soundboard) collaboration that lets you mix and match audio tracks made by community members Laz, Duk, Auron, Star, Tim and Nathan himself."
     }
   ],
   "events": [
-    {
-      "title": "July GameDev Social!",
-      "description": "Chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to EVERYONE! <br><em><strong>WE ARE MOVING TO A NEW LOCATION THIS MONTH!</strong></em><br> <br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/313699544\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/313699544</a>",
-      "location": "Schlafly Bottleworks, 7260 Southwest Ave, St. Louis, MO 63143, USA",
-      "dateTime": "2026-07-09T19:00:00.000-05:00",
-      "endTime": "2026-07-09T22:00:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/7e5e0028a97fd5eb1d14b2c00cb5a952a85f2ed4742c970d40b3d41522b68c28.jpg"
-    },
-    {
-      "title": "Game Club: Sunless Sea",
-      "description": "<p>Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. Our game for this month is <a href=\"https://store.steampowered.com/app/304650/SUNLESS_SEA/\" target=\"_blank\">Sunless Sea</a>!</p>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/315376266",
-      "location": "Sauce on the Side, 701 N New Ballas Rd, Creve Coeur, MO 63141, USA",
-      "dateTime": "2026-07-20T18:30:00.000-05:00",
-      "endTime": "2026-07-20T20:30:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/5a5afa67cd4db614659ac4b277b7068eef70d31cb039bb6aa5babe2b6bbf778f.jpg"
-    },
-    {
-      "title": "MOGameCon 2026",
-      "description": "<p><b>This is not an official STLGameDev event</b>, but we will have a table there once again. Stop by and say hi if you attend!</p><p><b>General admission tickets for the convention are $10</b> and will be available at the door. For more information or to purchase tickets online, check out the MOGameCon website.</p>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/315511103\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/315511103</a>",
-      "location": "Greensfelder Recreation Complex, 550 Weidman Rd, Manchester, MO 63011, USA",
-      "dateTime": "2026-07-25T11:00:00.000-05:00",
-      "endTime": "2026-07-25T18:00:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/1bec7808ee04c266f6d7bda6d6c766e432d39962b5c5610f3191fbb343c121a0.jpg"
-    },
-    {
-      "title": "July Game Audio Club - Project Share",
-      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio. Chill time where you can share your work, get feedback, or just vibe with people who love game audio. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/315446561",
-      "location": "St. Louis County Library - Clark Family Branch, 1640 S Lindbergh Blvd, St. Louis, MO 63131, USA",
-      "dateTime": "2026-07-25T15:00:00.000-05:00",
-      "endTime": "2026-07-25T17:00:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/c9cddc517185d29675c17830a963b8da90f259006aa93ab82fed7b39563db3c4.jpg"
-    },
-    {
-      "title": "July Gamedev Work Night",
-      "description": "St. Louis County Library Clark Family branch is hosting casual work time for local game developers in the Creative Lab. Bring your project to work on and talk with other devs for feedback or fun. This is open to EVERYONE ages 14 and up. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/315376282",
-      "location": "St. Louis County Library - Clark Family Branch, 1640 S Lindbergh Blvd, St. Louis, MO 63131, USA",
-      "dateTime": "2026-07-27T17:00:00.000-05:00",
-      "endTime": "2026-07-27T20:00:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/6e55eb1aec49a209753b1a516f0ddfbf05c7167a91ee4276c2649d8008db381d.jpg"
-    },
     {
       "title": "Game Night at MO History Museum",
       "description": "The Missouri History Museum is having a big <a href=\"https://mohistory.org/events/game-night\" target=\"_blank\">Game Night</a> featuring games and creators from the St. Louis area (including STLGameDev)! <br> <br>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/315376686",
@@ -127,6 +73,15 @@
       "endTime": "2026-08-29T16:00:00.000-05:00",
       "eventUrl": "",
       "imagePath": "images/events/external/3d9d474be3cde63e6ed777daef8d1695370a280780e79ece458dfabbf690d7b0.jpg"
+    },
+    {
+      "title": "September GameDev Social!",
+      "description": "Chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to EVERYONE! <br><i>WE ARE MOVING TO A NEW LOCATION THIS MONTH!</i><br> <br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/315814547\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/315814547</a>",
+      "location": "Schlafly Bottleworks, 7260 Southwest Ave, St. Louis, MO 63143, USA",
+      "dateTime": "2026-09-17T19:00:00.000-05:00",
+      "endTime": "2026-09-17T22:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/7e5e0028a97fd5eb1d14b2c00cb5a952a85f2ed4742c970d40b3d41522b68c28.jpg"
     }
   ]
 }
