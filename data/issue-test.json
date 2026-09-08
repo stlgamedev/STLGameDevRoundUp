@@ -59,6 +59,12 @@
     },
     {
       "body": "{ 🎮 Game Releases } _Midnight Launch Games'_ [Time To Rogue](https://midnightlaunchgames.com/games/timetorogue/), a dungeon crawler where the resource isn't mana or gold, it's real-world time, is now out on iOS and Apple Watch!"
+    },
+    {
+      "body": "{ 📢 Announcements } Are you ready for Spooky Season? Well prepare yourself! _STLGameDev_ is having a [**Spooky Jam**](https://itch.io/jam/stlgamedev-spooky-jam-2026) October 1st - 18th! Gather your team and get ready to make some spooky games! More details soon..."
+    },
+    {
+      "body": "{ 📢 Announcements } Some of the _STLGameDev crew_ will be representing at [CIGS](https://www.indiecitygames.org/calendar/cigs-2026) (Chicago Indie Games Showcase) on September 13th! If you will be there, stop by to say hi and play some of the games from our community members!"
     }
   ],
   "events": [
@@ -88,6 +94,15 @@
       "endTime": "2026-09-21T20:30:00.000-05:00",
       "eventUrl": "",
       "imagePath": "images/events/external/800bde3554e65c79157f4da7a27b9f8636df7145fab853ba2db9ed168ea01c60.png"
+    },
+    {
+      "title": "Spooky Jam 2026",
+      "description": "It's time to make more spooky games!  <br> <br><a href=\"https://itch.io/jam/stlgamedev-spooky-jam-2026\" target=\"_blank\">More details soon</a>...",
+      "location": "",
+      "dateTime": "2026-10-01T18:00:00.000-05:00",
+      "endTime": "2026-10-18T16:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/f8e83ac08a5820a8cc267f75cf9aec474c8ef64503602704053dbb9ebdd57aa8.png"
     },
     {
       "title": "October GameDev Social!",
