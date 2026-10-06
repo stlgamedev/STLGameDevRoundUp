@@ -1,106 +1,64 @@
 {
   "nodes": [
     {
-      "body": "{ 🎮 Game Demos } Try out the first Alpha Playtest for _BluSurfaceMedia's_ [Plunderer's Run](https://blusurfacemedia.itch.io/plunderers-run/devlog/1641452/the-withertide-awaits-try-the-alpha-playtest-now) and give them feedback!"
+      "body": "{ 🧑‍💻 Dev Updates } _James C. Kane_ has been developing a bunch this month, with [researching DIY dynamic gaussian splats and testing 1-to-4 camera capture methods like 4DAnyone and SharpML, played back with World Labs' SparkJS in real-time in the browser](https://www.linkedin.com/posts/james-c-kane_nvidiagtc-activity-7501663390977830912-2hLn), announced that [The Nanauts will be featured at Meta Connect](https://www.linkedin.com/posts/james-c-kane_proud-to-say-the-nanauts-will-be-featured-activity-7504194873625968640-IfJN), and is experimenting with [Slime sims running on zero-dependency WebGPU + WebXR](https://x.com/jamesckane/status/2104657221863047665)!"
     },
     {
-      "body": "{!header} August was packed with all kinds of events, from the [Missouri History Museum's Game Night ](https://www.instagram.com/p/Dbv09kekfEs/?img_index=1)that had 400 attendees, to our monthly social (this time at [Boco Boba](https://www.instagram.com/p/DcB6nYfkW2G/?img_index=1)!), to having a [Share and Play](https://www.instagram.com/p/DcqsfWhESaM/?img_index=1) with over 50 devs! It's a great time to be involved in our community, jump in if you haven't already! "
+      "body": "{ 🧑‍💻 Dev Updates } _LargerThanAverageGames_ made a fun [video to help promote Guild Legends' multiplayer](https://www.youtube.com/watch?v=Nw_6U9b6qs4)!"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ has been hard at work getting things ready for the [Chicago Indie Game Showcase](https://www.indiecitygames.org/calendar/cigs-2026) with Dribble 2, and has been working on [level design](https://bsky.app/profile/tonywojnar.bsky.social/post/3mt4vcpynyc2k) for the Glitch Ditch level!"
+      "body": "{ 🧑‍💻 Dev Updates } _Mike Breault_ has been demo-ing [Rubber Ducky Rampage!](https://prelaunch.breaultgames.com/) at game cons starting with GenCon in early August, then MoonCityCon (Springfield, MO) in mid-August, Who's Yer Con in Indy on 9/4-6/2026, TableTop Central (Savoy, IL) on 9/12-13/2026, Greyhawke Con (Murfreesboro, IL) on 9/19, and Archon (Collinsville, IL) on 10/2-4/2026. Coming up is MOBot's Best of Missouri show (St. Louis) on 10/9-11/2026, MadCon (Ft. Wayne, IN) on 10/23-25/2026, Meeple-A-Thon (Kansas City) on 11/6-8/2026, and Effing-Con (Effingham, IL) on 11/28/26!"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _BluSurfaceMedia_ posted a [devlog for Plunderer's Run](https://blusurfacemedia.itch.io/plunderers-run/devlog/1616117/july-2026-modular-cards-and-synergies)! "
+      "body": "{ 🎨 Visual Art } _Xain Russell_ is open for commissions! [Support their awesome work here](https://vgen.co/XainRussell)! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _James C. Kane_ posted a [gel, water & sand simulation](https://x.com/jamesckane/status/2084390370771656807) running on Apple Vision Pro WebXR + WebGPU and is also experimenting with [photoreal 3D performance capture](https://www.linkedin.com/posts/james-c-kane_nvidiagtc-activity-7501663390977830912-2hLn) with 1-4 cameras for games and edutainment!"
+      "body": "{ 🎨 Visual Art } _Noah Sliney_ showed off their awesome [Artstation filled with excellent character art](https://www.artstation.com/artwork/4NQ4mq)! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } Beelze Pub was updated to its final version! [Give it a play on itch.io](https://renhetstudio.itch.io/beelze-pub)! "
+      "body": "{ 🧑‍💻 Dev Updates } _Midnight Launch Games'_ Time To Rouge has been [updated with some major new features](https://midnightlaunchgames.com/games/timetorogue/)! The graphics have seen a total overhaul, the game now has a roguelike feature where certain floors let you choose a modifier that will make the rest of the game easier, some floors are boss floors, and there are now unlockable themes! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates }  Primordio [Season One Launch Trailer](https://www.youtube.com/watch?v=JNaoyebzlJg) is live on YouTube! "
+      "body": "{ 🧑‍💻 Dev Updates } _Bloodrite Magicka_ released a video on [how to play their game](https://www.youtube.com/watch?v=NZeNt7eAwRg)! "
     },
     {
-      "body": "{ 🎮 Game Releases } _Graphite Lab_ launched [Smithsonian: Digging for Dinosaurs](https://www.linkedin.com/posts/mattraithel_smithsonian-digging-for-dinosaurs-for-nintendo-share-7496258647107252224-OAFp/?rcm=ACoAAA-Ha_QB8CLbKk6H1px8GKvBtVVEzIQRf1w)! A interactive adventure where young explorers excavate fossils, discover prehistoric creatures, and learn through play in a safe, engaging experience designed for curious kids."
+      "body": "{ 🕹️ Game Jam Releases } _TimConceivable!_ made art for [Diggin' Dragon](https://macrowdev.itch.io/diggin-dragon), for the [GBJAM 14](https://itch.io/jam/gbjam-14) game jam!"
     },
     {
-      "body": "{ 🎼 Music Releases } _Dorian Kavadlo_ posted [_Circuit Breaker_ from Mixtape Match](https://soundcloud.com/dorian_kavadlo/circuit-breaker) on Soundcloud! "
+      "body": "{ 🧑‍💻 Dev Updates } _Will Slama_ showed off [Unity realtime lights converted to vertex coloring](https://www.youtube.com/watch?v=knxJ6iBY3K4)! "
     },
     {
-      "body": "{ 🎼 Music Releases } _azetrom_ posted [their own songs from Mixtape Match](https://soundcloud.com/nese0/sets/mixtape-match) on Soundcloud as well! "
+      "body": "{ 🧑‍💻 Dev Updates } _Miniscule Games_ is working on a 3D kart racing game called [The Road Jess Karted](https://miniscule.itch.io/the-road-jess-karted?secret=2Lzznlmxewu7GLwLFvwuFoPwjQ) for Maryville University's Game Scripting class! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Larger Than Average Games_ showcased [Guild Legends](https://store.steampowered.com/app/4946840/Guild_Legends/) at the Share & Play! A nostalgic, heartfelt, and chaotic action game for up to four players. Build your guild, recruit diverse heroes, and slay hordes of monsters! "
+      "body": "{!header} September brought in a gust of developer updates! STLGameDev represented St. Louis with our arcade launcher at the [Chicago Indie Games Showcase](https://www.indiecitygames.org/calendar/cigs-2026)! This upcoming month, we are hosting the [2026 Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026) from October 1st through October 18th, and it's not too late to join! Check out the rules at the provided link. \nHave a creative October, everyone! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _jackachulian_ showcased [Which Witch?](https://jackachulian.itch.io/which-witch) at the Share & Play! Which Witch? is a rhythm game + dating simulator where your conversations influence the music and the notes."
+      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ is almost done with the [general layout of Glitch Ditch](https://bsky.app/profile/tonywojnar.bsky.social/post/3mwxzqfienk2b) for the upcoming game, Dribble 2! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Butterscotch Shenanigans'_ [How Many Dudes](https://store.steampowered.com/app/3934270/How_Many_Dudes/) has past [100,000 Steam sales](https://bsky.app/profile/bscotch.net/post/3ms25ywljt22i)! "
+      "body": "{ 🎮 Game Releases } _Carol Mertz_ and game developer _Mary McKenzie_ created [Museum Memory](https://goo.gle/museum-memory), which is set inside a virtual museum gallery and requires a good memory and a sharp eye."
     },
     {
-      "body": "{ 🎼 Music Releases } _Fat Bard_'s music on Demon Tides is [now available on record](https://bsky.app/profile/lostincult.co.uk/post/3msit6gzp4e24) for pre-order with a limited 300 units to grab!"
+      "body": "{ 🎼 Music Releases } _Goofy Gourd Studios_ released a [Battle Theme track](https://bsky.app/profile/goofygourds.bsky.social/post/3mwf2yygzhc2t) for an upcoming game! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Goofy Gourd Studios_ is working on [converting more NPCs for cutscene backgrounds](https://bsky.app/profile/goofygourds.bsky.social/post/3mshb57y7vs2a) and [improving the background UI](https://bsky.app/profile/goofygourds.bsky.social/post/3mtkhwncqpk2s) for their latest game!"
+      "body": "{ 🎼 Music Releases } _Austin Miller_ worked on a couple of tracks for the newly released [Sealed Fortress](https://bsky.app/profile/austinmwav.com/post/3mux43afr2k23) game! "
     },
     {
-      "body": "{ 🎼 Music Releases } Listen to a compilation of video game music from our community on [STLGameDev's YouTube](https://www.youtube.com/watch?v=0_wfBnL3MjA)! Great for jamming out to while working on games 🕺"
+      "body": "{ 🎮 Game Releases } _Alice Bucknell, Joseph Pleass, Ben West, Khalid Makshoush, Omar Khouri, and Nina Keith_ debuted Coyote Time, a game where players take on the role of a gig worker tasked with delivering to the City Museum. Play today on-site at the City Museum or online at [https://coyotetime.world/](https://coyotetime.world/). "
     },
     {
-      "body": "{ 🎼 Music Releases } _Fat Bard_ worked on the music for [Warfare 1776](https://store.steampowered.com/app/4746630/Warfare_1776/)! [Check out the new trailer](https://www.youtube.com/watch?v=ZQSf3GT5wFw)!"
-    },
-    {
-      "body": "{ 🧑‍💻 Dev Updates } _Aaron Sumner_ has been making [scenes for an office](https://bsky.app/profile/ruralocity.bsky.social/post/3musumzw4sk2o) on pico8!"
-    },
-    {
-      "body": "{ 🧑‍💻 Dev Updates } _Axol Studio_ has put out a [survey with a couple of questions](https://bsky.app/profile/axolstudio.com/post/3muk6ymk2za2y) for research on their next game! "
-    },
-    {
-      "body": "{ 🎮 Game Releases } _Midnight Launch Games'_ [Time To Rogue](https://midnightlaunchgames.com/games/timetorogue/), a dungeon crawler where the resource isn't mana or gold, it's real-world time, is now out on iOS and Apple Watch!"
-    },
-    {
-      "body": "{ 📢 Announcements } Are you ready for Spooky Season? Well prepare yourself! _STLGameDev_ is having a [**Spooky Jam**](https://itch.io/jam/stlgamedev-spooky-jam-2026) October 1st - 18th! Gather your team and get ready to make some spooky games! More details soon..."
-    },
-    {
-      "body": "{ 📢 Announcements } Some of the _STLGameDev crew_ will be representing at [CIGS](https://www.indiecitygames.org/calendar/cigs-2026) (Chicago Indie Games Showcase) on September 13th! If you will be there, stop by to say hi and play some of the games from our community members!"
+      "body": "{ 🎼 Music Releases } _Chrono Cards_ released their [soundtrack](https://www.youtube.com/playlist?list=PLD-6tiXUk050) on Youtube!"
     }
   ],
   "events": [
     {
-      "title": "September Game Audio Club - Project Share",
-      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio. Chill time where you can share your work, get feedback, or just vibe with people who love game audio.\n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/316130904",
-      "location": "St. Louis County Library - Clark Family Branch, 1640 S Lindbergh Blvd, St. Louis, MO 63131, USA",
-      "dateTime": "2026-09-12T15:00:00.000-05:00",
-      "endTime": "2026-09-12T17:00:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/c9cddc517185d29675c17830a963b8da90f259006aa93ab82fed7b39563db3c4.jpg"
-    },
-    {
-      "title": "September GameDev Social!",
-      "description": "Chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to everyone! <i>WE ARE BACK AT SCHLAFLY AGAIN THIS MONTH!</i><br> <br>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/315814547\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/315814547</a>",
-      "location": "Schlafly Bottleworks, 7260 Southwest Ave, St. Louis, MO 63143, USA",
-      "dateTime": "2026-09-17T19:00:00.000-05:00",
-      "endTime": "2026-09-17T22:00:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/7e5e0028a97fd5eb1d14b2c00cb5a952a85f2ed4742c970d40b3d41522b68c28.jpg"
-    },
-    {
-      "title": "Game Club: Counterfeit Monkey",
-      "description": "<p>Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. Our game for this month is <a href=\"https://ifdb.org/viewgame?id=aearuuxv83plclpl\">Counterfeit Monkey</a>!</p><p>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/316410911</p>",
-      "location": "Sauce on the Side, 701 N New Ballas Rd, Creve Coeur, MO 63141, USA",
-      "dateTime": "2026-09-21T18:30:00.000-05:00",
-      "endTime": "2026-09-21T20:30:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/800bde3554e65c79157f4da7a27b9f8636df7145fab853ba2db9ed168ea01c60.png"
-    },
-    {
       "title": "Spooky Jam 2026",
-      "description": "It's time to make more spooky games!  <br> <br><a href=\"https://itch.io/jam/stlgamedev-spooky-jam-2026\" target=\"_blank\">More details soon</a>...",
-      "location": "",
-      "dateTime": "2026-10-01T18:00:00.000-05:00",
-      "endTime": "2026-10-18T16:00:00.000-05:00",
+      "description": "<span><br><span>It's Spooky Season, which means it's time for another <a href=\"https://itch.io/jam/stlgamedev-spooky-jam-2026\" target=\"_blank\">Spooky Jam</a>! We encourage everyone to make games but <b>we will accept creations of all kinds for this jam!</b> Feel free to make a video game, board game, card game, visual art, comic, zine, song, music album, visual novel, poem, short story, sculpture... anything!</span></span> <br>For full details, including the address, and to RSVP see:<a href=\"https://www.meetup.com/st-louis-game-developers/events/316821011/?eventOrigin=group_events_list\">https://www.meetup.com/st-louis-game-developers/events/316821011/</a>",
+      "location": "https://itch.io/jam/stlgamedev-spooky-jam-2026",
+      "dateTime": "2026-10-01T19:00:00.000-05:00",
+      "endTime": "2026-10-18T23:30:00.000-05:00",
       "eventUrl": "",
       "imagePath": "images/events/external/f8e83ac08a5820a8cc267f75cf9aec474c8ef64503602704053dbb9ebdd57aa8.png"
     },
@@ -111,7 +69,43 @@
       "dateTime": "2026-10-08T19:00:00.000-05:00",
       "endTime": "2026-10-08T22:00:00.000-05:00",
       "eventUrl": "",
-      "imagePath": "images/events/external/7e5e0028a97fd5eb1d14b2c00cb5a952a85f2ed4742c970d40b3d41522b68c28.jpg"
+      "imagePath": "images/events/external/78dd329da9c78467ca6839a52da112cfee7bc12e561ef15c3f89ec1c0fdbdfb7.jpg"
+    },
+    {
+      "title": "Game Club: Toree Saturn",
+      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. Our game for this month is <a href=\"https://store.steampowered.com/app/2549240/Toree_Saturn/\">Toree Saturn</a>!<br><br>For full details, including the address, and to RSVP see:<a href=\"https://www.meetup.com/st-louis-game-developers/events/316753984/\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/316753984/</a>",
+      "location": "Sauce on the Side, 701 N New Ballas Rd, Creve Coeur, MO 63141, USA",
+      "dateTime": "2026-10-19T18:30:00.000-05:00",
+      "endTime": "2026-10-19T20:30:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/56e1a0c7c552fe21e9cb743df21d71dac1a7365a6effc70e7505738ed689f2f9.jpg"
+    },
+    {
+      "title": "October Game Audio Club",
+      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio. Chill time where you can share your work, get feedback, or just vibe with people who love game audio. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/316765267",
+      "location": "St. Louis County Library - Clark Family Branch, 1640 S Lindbergh Blvd, St. Louis, MO 63131, USA",
+      "dateTime": "2026-10-24T15:00:00.000-05:00",
+      "endTime": "2026-10-24T17:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/c9cddc517185d29675c17830a963b8da90f259006aa93ab82fed7b39563db3c4.jpg"
+    },
+    {
+      "title": "October Gamedev Work Night",
+      "description": "St. Louis County Library Clark Family branch is hosting casual work time for local game developers in the Creative Lab. Bring your project to work on and talk with other devs for feedback or fun. This is open to EVERYONE ages 14 and up. \n\nFor full details, including the address, and to RSVP see: <a href=\"https://www.google.com/url?q=https://www.meetup.com/st-louis-game-developers/events/316753085&amp;sa=D&amp;source=calendar&amp;usd=2&amp;usg=AOvVaw2WIQCb8tuwdiEzedJN2Dly\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/316753085</a>",
+      "location": "St. Louis County Library - Clark Family Branch, 1640 S Lindbergh Blvd, St. Louis, MO 63131, USA",
+      "dateTime": "2026-10-26T17:00:00.000-05:00",
+      "endTime": "2026-10-26T20:00:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/06e2bace23d7bf2f636de5818c3ec5c9057c4b6cee261729a90189eda46e52f8.jpg"
+    },
+    {
+      "title": "Spooky Jam 2026 Games Showcase",
+      "description": "We will demo all of the entries to the jam at Maryville University in the Design & Visual Art Building Rm 103. \n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/316806627",
+      "location": "Maryville University, 650 Maryville University Dr, St. Louis, MO 63141, USA",
+      "dateTime": "2026-10-29T18:30:00.000-05:00",
+      "endTime": "2026-10-29T20:30:00.000-05:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/67480ed712724ee981c3b658465ba1693c9967aed707fa70b4b1b2eb5f508f92.jpg"
     },
     {
       "title": "Share & Play: Game Playtesting!",
