@@ -83,6 +83,24 @@
     },
     {
       "body": "{# 📢Announcements } We will have our annual [Holiday Party](https://www.meetup.com/st-louis-game-developers/events/317248375) at Archportals downtown on Sunday December 6th! Join us in celebrating another year of game development in the St. Louis region. **If you made a game in 2026 please [let us know](https://forms.gle/n2E4nzHp8U24WiHfA)!**"
+    },
+    {
+      "body": "{ 📰 Industry News } GameMaker will be [free for commercial use](https://gamefromscratch.com/gamemaker-going-free-for-commercial-use/) starting in 2027!"
+    },
+    {
+      "body": "{ 📰 Industry News } There was a lot of conversation on our Discord about [Epic Games’ _Unreal Engine AI MegaJam_ contest](https://www.destructoid.com/epic-games-unreal-engine-ai-megajamcash-ai-vibe-coded-games/) with cash prizes for AI vibe-coded slop games that no one asked for."
+    },
+    {
+      "body": "{ 📰 Industry News } Unreal Engine announced [version 5.9](https://fxtwitter.com/unrealengine/status/2117603978489811012) which will include improved AI workflows, web as a target platform, rendering and animation updates, plus more."
+    },
+    {
+      "body": "{ 📰 Industry News } GMTK released an epic feature film length documentary on [The History of Every Video Game Genre](https://www.youtube.com/watch?v=Dbgdi7BzMR0)"
+    },
+    {
+      "body": "{ 📰 Industry News } The topics of [AI slop flooding Steam Next Fest](https://www.youtube.com/watch?v=MRO1iaEv-LE) and the rise of **fast-appearing game clones** (_Needle in a Haystack Simulator_) was also big on our Discord server. _Valve_ doesn't seem to be [too concerned](https://thisweekinvideogames.com/news/valve-fully-aware-of-ai-clones-and-low-effort-games-during-steam-next-fest/) about it. They encouraged developers to focus on making their game the best possible experience so that that no one would want to play the knock-offs. “Rather than relying on a single mechanic that someone can easily copy, you need to keep growing your game by adding features, personality, and creativity that stem from your own perspective,” Local devs _Butterscotch Shenganigans_ had a similar take on their [weekly podcast](https://www.youtube.com/watch?v=JfVOSeDV6iM)."
+    },
+    {
+      "body": "{ 📰 Industry News } Some articles on the [hidden costs of AI](https://sustainability.wustl.edu/the-hidden-costs-of-ai/) were also shared on our Discord server. \n[AI costs arriving before benefits](https://www.haver.com/articles/ai-s-costs-are-arriving-before-its-benefits) \n[AI cost problem you can't ban away](https://www.spectrocloud.com/blog/cheaper-tokens-bigger-bills-the-ai-cost-problem-you-cant-ban-your-way-out-of) \n[Anthropic subsidizing AI costs](https://www.upbound.io/blog/anthropic-is-subsidizing-our-ai-coding-at-13x.-how-long-will-it-last)"
     }
   ],
   "events": [
