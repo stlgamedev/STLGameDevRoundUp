@@ -1,111 +1,123 @@
 {
   "nodes": [
     {
-      "body": "{ 🧑‍💻 Dev Updates } _James C. Kane_ has been developing a bunch this month, with [researching DIY dynamic gaussian splats and testing 1-to-4 camera capture methods like 4DAnyone and SharpML, played back with World Labs' SparkJS in real-time in the browser](https://www.linkedin.com/posts/james-c-kane_nvidiagtc-activity-7501663390977830912-2hLn), announced that [The Nanauts will be featured at Meta Connect](https://www.linkedin.com/posts/james-c-kane_proud-to-say-the-nanauts-will-be-featured-activity-7504194873625968640-IfJN), and is experimenting with [Slime sims running on zero-dependency WebGPU + WebXR](https://x.com/jamesckane/status/2104657221863047665)!"
+      "body": "{!header} October was full of creativity and we hosted our annual [Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026), with the theme being _The Other Side_! Check out the [pictures](https://www.instagram.com/p/DfSxa2ln-aA/?img_index=1), and the [video recording](https://youtu.be/3COeS3Tcvbs) from our live jam showcase! November has events coming up right around the corner, such as our monthly social and quarterly Share & Play! Get involved!"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _LargerThanAverageGames_ made a fun [video to help promote Guild Legends' multiplayer](https://www.youtube.com/watch?v=Nw_6U9b6qs4)!"
+      "body": "{ 🧑‍💻 Dev Updates } _facet_ is hard at work on the sequel to Primordio - [Primordio Tower Defense](https://www.reddit.com/r/TowerDefense/comments/1wydup9/primordio_tower_defense/?solution=02e0df8d18ed282f02e0df8d18ed282f&js_challenge=1&jsc_token=2824be10929bdc604753c70a67a1c331077ca2a9e8fd470c40350fcb40acf98a&jsc_orig_r=&share_id=1EfP5Y8czH2KK1DmU9wwa&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1), also known as [Primordaeon](https://www.reddit.com/r/TowerDefense/comments/1x8c91t/cosmic_straw/?share_id=-R5eCQpqOeB-90GmRqeLB&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1)!  Instead of another roguelite survivors-like, it'll be an incremental RTS tower defense with some roguelite mechanics. [The playtest is open here!](https://store.steampowered.com/app/5413470/Primordaeon/) "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Mike Breault_ has been demo-ing [Rubber Ducky Rampage!](https://prelaunch.breaultgames.com/) at game cons starting with GenCon in early August, then MoonCityCon (Springfield, MO) in mid-August, Who's Yer Con in Indy on 9/4-6/2026, TableTop Central (Savoy, IL) on 9/12-13/2026, Greyhawke Con (Murfreesboro, IL) on 9/19, and Archon (Collinsville, IL) on 10/2-4/2026. Coming up is MOBot's Best of Missouri show (St. Louis) on 10/9-11/2026, MadCon (Ft. Wayne, IN) on 10/23-25/2026, Meeple-A-Thon (Kansas City) on 11/6-8/2026, and Effing-Con (Effingham, IL) on 11/28/26!"
+      "body": "{ 🧑‍💻 Dev Updates } _ASoft Media_ put out an early version demo of the game [Tac-Tile](https://asoftmedia.itch.io/tac-tile), and is looking for feedback. Tac-Tile is a rummy inspired roguelite all about building powerful tile combinations, creating game-changing synergies, and scoring big. "
     },
     {
-      "body": "{ 🎨 Visual Art } _Xain Russell_ is open for commissions! [Support their awesome work here](https://vgen.co/XainRussell)! "
+      "body": "{ 🧑‍💻 Dev Updates } _Weird Mage_ dropped their demo on Steam for [Chrono Cards](https://store.steampowered.com/app/4402530/Chrono_Cards/), a fast-paced, multiplayer competitive card game where you have the power to bend time itself! Build history-spanning decks and construct explosive, timeline-shattering combos. Exploit endless synergies to shape the timeline in your favor and send your opponent back to the stone age. "
     },
     {
-      "body": "{ 🎨 Visual Art } _Noah Sliney_ showed off their awesome [Artstation filled with excellent character art](https://www.artstation.com/artwork/4NQ4mq)! "
+      "body": "{ 🎮 Game Releases } _Alastair Low_ soft launched on Viverse [Endless Estate](https://www.viverse.com/Rzo6Ckq), a spooky multiplayer game where you draft rooms to escape a haunted mansion. Play in the browser and on mobile!"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Midnight Launch Games'_ Time To Rogue has been [updated with some major new features](https://midnightlaunchgames.com/games/timetorogue/)! The graphics have seen a total overhaul, the game now has a roguelike feature where certain floors let you choose a modifier that will make the rest of the game easier, some floors are boss floors, and there are now unlockable themes! "
+      "body": "{ 🧑‍💻 Dev Updates } _J-Dudd_ released a [trailer](https://www.youtube.com/watch?v=4vBJsEcbJ7I&feature=youtu.be) for [Fraymakers Custom Content](https://steamcommunity.com/sharedfiles/filedetails/?id=3823768617)! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Bloodrite Magicka_ released a video on [how to play their game](https://www.youtube.com/watch?v=NZeNt7eAwRg)! "
+      "body": "{ 🕹️ Game Jam Releases } _Lazarus D. Richardson_ competed in Ludum Dare with the talented duo _Sheep and Shores_ to make [Troll the King](https://sheepolution.itch.io/troll-the-king)! Robots have replaced everyone’s jobs, so now you have free time… to do a little trolling."
     },
     {
-      "body": "{ 🕹️ Game Jam Releases } _TimConceivable!_ made art for [Diggin' Dragon](https://macrowdev.itch.io/diggin-dragon) for the [GBJAM 14](https://itch.io/jam/gbjam-14) game jam!"
+      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ has finished the [Glitch Ditch level](https://bsky.app/profile/tonywojnar.bsky.social/post/3mymzr6b3ds2m) for Dribble 2 and is moving on to [the next level](https://bsky.app/profile/tonywojnar.bsky.social/post/3mz6os3labs2m)! "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Will Slama_ showed off [Unity realtime lights converted to vertex coloring](https://www.youtube.com/watch?v=knxJ6iBY3K4)! "
+      "body": "{ 🕹️ Game Jam Releases } _Backspace Cadet_ submitted [Strange Visitors](https://backspacecadet.itch.io/strange-visitors) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! Strange Visitors is a manic trick-or-treat-like where you must defend your home from a door-to-door salesman. "
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Miniscule Games_ is working on a 3D kart racing game called [The Road Jess Karted](https://miniscule.itch.io/the-road-jess-karted?secret=2Lzznlmxewu7GLwLFvwuFoPwjQ) for Maryville University's Game Scripting class! "
+      "body": "{ 🕹️ Game Jam Releases } _Hutchkey and Bilson_ submitted [Behind Closed Doors](https://hutchkey23.itch.io/behind-closed-doors) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! It's your first day on the job, and there's only one rule: stay away from the red door. But when you hear a familiar voice calling from the other side, you can't help but open it."
     },
     {
-      "body": "{!header} September brought in a gust of developer updates! STLGameDev represented St. Louis with our arcade launcher at the [Chicago Indie Games Showcase](https://www.indiecitygames.org/calendar/cigs-2026)! This upcoming month, we are hosting the [2026 Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026) from October 1st through October 18th, and it's not too late to join! Check out the rules at the provided link. \nHave a creative October, everyone! "
+      "body": "{ 🕹️ Game Jam Releases } _Karstic Games_ submitted [Corn Maze From Hell](https://karsticgames.itch.io/corn-maze-from-hell) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! Help the lost soul reach it's final resting place. Beware, the looming stalks of corn hide dark secrets... Will you make it to the other side?"
     },
     {
-      "body": "{ 🧑‍💻 Dev Updates } _Tony Wojnar_ is almost done with the [general layout of Glitch Ditch](https://bsky.app/profile/tonywojnar.bsky.social/post/3mwxzqfienk2b) for the upcoming game, Dribble 2! "
+      "body": "{ 🕹️ Game Jam Releases } _lupuchard_ submitted [Midnight Meadow](https://lupuchard.itch.io/midnight-meadow) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! A fully accurate rabbit simulator. Eat, sleep, dig, evade predators and complete the ritual."
     },
     {
-      "body": "{ 🎮 Game Releases } _Carol Mertz_ and game developer _Mary McKenzie_ created [Museum Memory](https://goo.gle/museum-memory), which is set inside a virtual museum gallery and requires a good memory and a sharp eye."
+      "body": "{ 🕹️ Game Jam Releases } _Cheezy-Z_ submitted [Initial Z](https://cheezy-z.itch.io/initial-z) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! Race to the bottom of a zombie infested mountain road as fast and as stylish as possible by drifting, taking jumps, using boost, and roadkilling zombies."
     },
     {
-      "body": "{ 🎼 Music Releases } _Goofy Gourd Studios_ released a [Battle Theme track](https://bsky.app/profile/goofygourds.bsky.social/post/3mwf2yygzhc2t) for an upcoming game! "
+      "body": "{ 🕹️ Game Jam Releases } _Walpang, Lucy the Witch, timconceivable, _and_ Skillsmith Studios_ submitted [The Hearth](https://walpang.itch.io/the-hearth) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! A dimension-hopping mind-bending puzzle platformer!"
     },
     {
-      "body": "{ 🎼 Music Releases } _Austin Miller_ worked on a couple of tracks for the newly released [Sealed Fortress](https://bsky.app/profile/austinmwav.com/post/3mux43afr2k23) game! "
+      "body": "{ 🕹️ Game Jam Releases } _Chris DeLeon_ submitted [Ghost in the Machine: STL Spookyjam 2026 Interpretive Dance](https://hometeam.itch.io/ghost-in-the-machine-interpretive-dance) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! A Spookyjam Interpretive Dance, which, as per the rules of the jam, was an acceptable submission!"
     },
     {
-      "body": "{ 🎮 Game Releases } _Alice Bucknell, Joseph Pleass, Ben West, Khalid Makshoush, Omar Khouri, and Nina Keith_ debuted Coyote Time, a game where players take on the role of a gig worker tasked with delivering to the City Museum. Play today on-site at the City Museum or online at [https://coyotetime.world/](https://coyotetime.world/). "
+      "body": "{ 🕹️ Game Jam Releases } _Axol Studio and nazunaan_ submitted [End of the Line](https://axolstudio.itch.io/end-of-the-line) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! You are the Conductor for the train that carries souls through the underworld to their final destination. Protect your passengers from the dangerous nightmares as you move from station-to-station and take as many of them past the End of the Line."
     },
     {
-      "body": "{ 🎼 Music Releases } _Chrono Cards_ released their [soundtrack](https://www.youtube.com/playlist?list=PLD-6tiXUk050) on Youtube!"
+      "body": "{ 🕹️ Game Jam Releases } _CutLoaf_ submitted [Corpse Corp.](https://cutloaf.itch.io/corpse-corp) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! After the apocalypse, you cannot pass on until you turn in your assignment. Play as a business ghost and pilot your coworkers’ corpses to put an end to your unfinished business."
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _SuperWes_ submitted [Disturbing the Peace](https://superwes.itch.io/disturbing-the-peace) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! A solo card game of resistance, resolve, and choosing what comes next. Turn protest signs, boycotts, and grassroots campaigning into victories against censorship, surveillance, and intimidation. Every card has two sides: a tool of resistance and an instrument of oppression. The cards you spend to win become your choices for the next challenge."
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _grubd0g, Laz_The_Composer, Jenonen, Kaesus, kelgruber, vstjohn042, _and_ paul5x_ submitted [Wanted: Dead & Alive](https://grubd0g.itch.io/wanted-dead-alive) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! Play as the Outlaw, a criminal who has cheated death for so long they have become stuck between the planes of life and death."
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _infinityJKA, MommMercy, Miniscule Entertainment, Cliffsmash, VampishCrowd, Quickstar007, snakesgobrr, nocturnal developer, kylekiske254, jmcclain2163, GreyStar4, _and_ AWuench1_ submitted [Soul Searching](https://infinityjka.itch.io/soul-searching) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! Soul Searching is set on the two sides of a mirror, each with its own perspective. You are a child who has lost his soul to his reflection, and now he must traverse the two sides in order to find it. Collect the souls of others as keys to open the gates; push their bodies, now statues, to activate switches. Can you scale this mysterious realm and save your own soul?"
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Team Tōkon_ submitted [A Poltergeist Story](https://devrip.itch.io/a-poltergeist-story) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! Point and click on things in the house to scare away the family members, but beware the monkey will thwart your efforts if he is near. "
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _sheltron01_ submitted the painting [ALTERNATE](https://sheltron01.itch.io/alternate1) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! "
+    },
+    {
+      "body": "{ 🕹️ Game Jam Releases } _Iggyz6_ submitted [Mannequin](https://chelseaz6.itch.io/mannequin) to the [2026 STLGameDev Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026)! You are a ghost with unfinished business. Possess objects and solve puzzles to deliver an important item."
+    },
+    {
+      "body": "{ 📅 Related Events } The _SIUE Game Development Group_ is hosting [Cougar Jam](https://cougarjam.cs.siue.edu/), their annual game jam, November 6th - 8th! Teams have three days to make a game complete for scratch! It is a weekend event with special guest judges, free food, and prizes! Open to any college student!"
+    },
+    {
+      "body": "{ 📅 Related Events } _STLVGMO_ is having a [Trivia Night Fundraiser](https://givebutter.com/c/st-louis-video-game-orchestra-trivia-night) November 7th at 6:30pm! Register a table of 8, bring a smaller group, or go solo and be matched up with new friends for the evening."
+    },
+    {
+      "body": "{ 📅 Related Events } We will be showing off STLGameDev community-made games on our arcade launcher at [MDEV](https://www.mdevconf.com/) in Milwaukee on November 6 & 7th!  Stop by and say hi if you will be there!"
+    },
+    {
+      "body": "{ 📢 Announcements } Sign up to demo at our next [Share & Play](https://www.meetup.com/st-louis-game-developers/events/314944382/) on November 28th by filling out [this form](https://forms.gle/uuekMhzgK37F8Yxh7)! Only 15 spots available!"
     }
   ],
   "events": [
     {
-      "title": "Spooky Jam 2026",
-      "description": "<span><br><span>It's Spooky Season, which means it's time for another <a href=\"https://itch.io/jam/stlgamedev-spooky-jam-2026\" target=\"_blank\">Spooky Jam</a>! We encourage everyone to make games but <b>we will accept creations of all kinds for this jam!</b> Feel free to make a video game, board game, card game, visual art, comic, zine, song, music album, visual novel, poem, short story, sculpture... anything!</span></span> <br>For full details, including the address, and to RSVP see:<a href=\"https://www.meetup.com/st-louis-game-developers/events/316821011/?eventOrigin=group_events_list\">https://www.meetup.com/st-louis-game-developers/events/316821011/</a>",
-      "location": "https://itch.io/jam/stlgamedev-spooky-jam-2026",
-      "dateTime": "2026-10-01T19:00:00.000-05:00",
-      "endTime": "2026-10-18T23:30:00.000-05:00",
+      "title": "Cougar Jam 2026 (SIUE)",
+      "description": "<a href=\"https://cougarjam.cs.siue.edu/\">Cougar Jam</a> is the SIUE Game Development Group's annual game jam! Teams have three days to make a game complete for scratch! It is a weekend event with special guest judges, free food, and prizes! Open to any college student!",
+      "location": "SIUE School of Engineering, 62026, 61 Circle Dr, Edwardsville, IL 62026, USA",
+      "dateTime": "2026-11-06T18:00:00.000-06:00",
+      "endTime": "2026-11-08T18:00:00.000-06:00",
       "eventUrl": "",
-      "imagePath": "images/events/external/f8e83ac08a5820a8cc267f75cf9aec474c8ef64503602704053dbb9ebdd57aa8.png"
+      "imagePath": "images/events/external/aa4bbd322a435a9264e69acfc06cb8dcc51d297a00e86ec66829116ac398d146.jpg"
     },
     {
-      "title": "October GameDev Social!",
-      "description": "<p>Chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to EVERYONE!</p><p>For full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/316205663</p>",
+      "title": "STLVGMO Trivia Night Fundraiser",
+      "description": "<span>A night of harvest-themed fun with trivia categories for both gamers and non-gamers alike. Guests can sign up as a table of 8, or can register solo/in groups smaller than 8 to be paired up with new friends for the evening.<br></span><span><span>$25 / person or $200 / 8-person table </span></span><span><span><a href=\"https://givebutter.com/c/st-louis-video-game-orchestra-trivia-night\" target=\"_blank\"><span>GET TICKETS</span></a> </span></span>",
+      "location": "THE HEIGHTS: The Richmond Heights Community Center, 8001 Dale Ave, Richmond Heights, MO 63117, USA",
+      "dateTime": "2026-11-07T18:30:00.000-06:00",
+      "endTime": "2026-11-07T21:30:00.000-06:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/78e3e3756e79bade0064074ee97034cc59f2c9a0ea05ad7ea7edb80044b4ebf6.png"
+    },
+    {
+      "title": "November GameDev Social!",
+      "description": "Chat with fellow creators about making, playing, and admiring games! Talk about your game ideas and get inspired! Make friends and find collaborators. Our monthly hangout is open to EVERYONE! \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/316699479",
       "location": "Schlafly Bottleworks, 7260 Southwest Ave, St. Louis, MO 63143, USA",
-      "dateTime": "2026-10-08T19:00:00.000-05:00",
-      "endTime": "2026-10-08T22:00:00.000-05:00",
+      "dateTime": "2026-11-12T19:00:00.000-06:00",
+      "endTime": "2026-11-12T22:00:00.000-06:00",
       "eventUrl": "",
-      "imagePath": "images/events/external/78dd329da9c78467ca6839a52da112cfee7bc12e561ef15c3f89ec1c0fdbdfb7.jpg"
+      "imagePath": "images/events/external/8629bb23d55609b44092ba333c442afb67a73483853830080de5f1527cbc057f.jpg"
     },
     {
-      "title": "Game Club: Toree Saturn",
-      "description": "Game Club is like a book club except we pick a game to play each month and then meet up to discuss it with a focus on game design. Our game for this month is <a href=\"https://store.steampowered.com/app/2549240/Toree_Saturn/\">Toree Saturn</a>!<br><br>For full details, including the address, and to RSVP see:<a href=\"https://www.meetup.com/st-louis-game-developers/events/316753984/\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/316753984/</a>",
-      "location": "Sauce on the Side, 701 N New Ballas Rd, Creve Coeur, MO 63141, USA",
-      "dateTime": "2026-10-19T18:30:00.000-05:00",
-      "endTime": "2026-10-19T20:30:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/56e1a0c7c552fe21e9cb743df21d71dac1a7365a6effc70e7505738ed689f2f9.jpg"
-    },
-    {
-      "title": "October Game Audio Club",
-      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio. Chill time where you can share your work, get feedback, or just vibe with people who love game audio. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/316765267",
+      "title": "November Game Audio Club",
+      "description": "If you’re into making video game music or sound design (or just curious) come hang out with us once a month! Doesn’t matter if you’re a pro or just starting out— everyone’s welcome. Just bring your love for game audio. Chill time where you can share your work, get feedback, or just vibe with people who love game audio. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/317001810",
       "location": "St. Louis County Library - Clark Family Branch, 1640 S Lindbergh Blvd, St. Louis, MO 63131, USA",
-      "dateTime": "2026-10-24T15:00:00.000-05:00",
-      "endTime": "2026-10-24T17:00:00.000-05:00",
+      "dateTime": "2026-11-14T15:00:00.000-06:00",
+      "endTime": "2026-11-14T17:00:00.000-06:00",
       "eventUrl": "",
       "imagePath": "images/events/external/c9cddc517185d29675c17830a963b8da90f259006aa93ab82fed7b39563db3c4.jpg"
-    },
-    {
-      "title": "October Gamedev Work Night",
-      "description": "St. Louis County Library Clark Family branch is hosting casual work time for local game developers in the Creative Lab. Bring your project to work on and talk with other devs for feedback or fun. This is open to EVERYONE ages 14 and up. \n\nFor full details, including the address, and to RSVP see: <a href=\"https://www.google.com/url?q=https://www.meetup.com/st-louis-game-developers/events/316753085&amp;sa=D&amp;source=calendar&amp;usd=2&amp;usg=AOvVaw2WIQCb8tuwdiEzedJN2Dly\" target=\"_blank\">https://www.meetup.com/st-louis-game-developers/events/316753085</a>",
-      "location": "St. Louis County Library - Clark Family Branch, 1640 S Lindbergh Blvd, St. Louis, MO 63131, USA",
-      "dateTime": "2026-10-26T17:00:00.000-05:00",
-      "endTime": "2026-10-26T20:00:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/f8330555d91fef02ee510a41da36ffd319780188a16ddd5abc113d86a3a3035d.jpg"
-    },
-    {
-      "title": "Spooky Jam 2026 Games Showcase",
-      "description": "We will demo all of the entries to the jam at Maryville University in the Design & Visual Art Building Rm 103. \n\nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/316806627",
-      "location": "Maryville University, 650 Maryville University Dr, St. Louis, MO 63141, USA",
-      "dateTime": "2026-10-29T18:30:00.000-05:00",
-      "endTime": "2026-10-29T20:30:00.000-05:00",
-      "eventUrl": "",
-      "imagePath": "images/events/external/67480ed712724ee981c3b658465ba1693c9967aed707fa70b4b1b2eb5f508f92.jpg"
     },
     {
       "title": "Share & Play: Game Playtesting!",
@@ -115,6 +127,24 @@
       "endTime": "2026-11-28T16:00:00.000-06:00",
       "eventUrl": "",
       "imagePath": "images/events/external/3d9d474be3cde63e6ed777daef8d1695370a280780e79ece458dfabbf690d7b0.jpg"
+    },
+    {
+      "title": "November Gamedev Work Night",
+      "description": "St. Louis County Library Clark Family branch is hosting casual work time for local game developers in the Creative Lab. Bring your project to work on and talk with other devs for feedback or fun. This is open to EVERYONE ages 14 and up. \n \nFor full details, including the address, and to RSVP see: https://www.meetup.com/st-louis-game-developers/events/316934050",
+      "location": "St. Louis County Library - Clark Family Branch, 1640 S Lindbergh Blvd, St. Louis, MO 63131, USA",
+      "dateTime": "2026-11-30T17:00:00.000-06:00",
+      "endTime": "2026-11-30T20:00:00.000-06:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/596e0bb6d56a6bf6e018aef3427e53eb3f22711c57e73e942b9efb67aece6fd9.jpg"
+    },
+    {
+      "title": "STLGameDev Holiday Party",
+      "description": "Join us in <span><span>celebrating another year of game development in St. Louis at</span></span> our annual Holiday Party! We will have fun multiplayer games on a giant screen, retro consoles, STL-made games, and ornament making! It will be a great time to chat with other devs, make new friends, and find collaborators. Don't miss one of the biggest game dev events of the year!<span> </span><br><span> </span><br><span>For full details, including the address, and to RSVP see: <a href=\"https://www.meetup.com/st-louis-game-developers/events/317248375\">https://www.meetup.com/st-louis-game-developers/events/317248375</a></span>",
+      "location": "Archportals, 1006 Olive St #3W, St. Louis, MO 63101, USA",
+      "dateTime": "2026-12-06T14:30:00.000-06:00",
+      "endTime": "2026-12-06T18:30:00.000-06:00",
+      "eventUrl": "",
+      "imagePath": "images/events/external/749b7dd5d81a1e78eed08f14f38fbccc892dac5a526c37c09de187f95b70ebc7.jpg"
     }
   ]
 }
