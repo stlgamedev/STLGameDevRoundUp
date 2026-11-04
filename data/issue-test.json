@@ -1,7 +1,7 @@
 {
   "nodes": [
     {
-      "body": "{!header} October was full of creativity and we hosted our annual [Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026), with the theme being _The Other Side_! Check out the [pictures](https://www.instagram.com/p/DfSxa2ln-aA/?img_index=1), and the [video recording](https://youtu.be/3COeS3Tcvbs) from our live jam showcase! November has events coming up right around the corner, such as our monthly social and quarterly Share & Play! Get involved!"
+      "body": "{!header} October was full of creativity and we hosted our annual [Spooky Jam](https://itch.io/jam/stlgamedev-spooky-jam-2026), with the theme being _The Other Side_! Check out [pictures](https://www.instagram.com/p/DfSxa2ln-aA/?img_index=1) and the [video recording](https://youtu.be/3COeS3Tcvbs) from our live jam showcase! November has events coming up right around the corner, such as our monthly social and quarterly Share & Play! Get involved!"
     },
     {
       "body": "{ 🧑‍💻 Dev Updates } _facet_ is hard at work on the sequel to Primordio - [Primordio Tower Defense](https://www.reddit.com/r/TowerDefense/comments/1wydup9/primordio_tower_defense/?solution=02e0df8d18ed282f02e0df8d18ed282f&js_challenge=1&jsc_token=2824be10929bdc604753c70a67a1c331077ca2a9e8fd470c40350fcb40acf98a&jsc_orig_r=&share_id=1EfP5Y8czH2KK1DmU9wwa&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1), also known as [Primordaeon](https://www.reddit.com/r/TowerDefense/comments/1x8c91t/cosmic_straw/?share_id=-R5eCQpqOeB-90GmRqeLB&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1)!  Instead of another roguelite survivors-like, it'll be an incremental RTS tower defense with some roguelite mechanics. [The playtest is open here!](https://store.steampowered.com/app/5413470/Primordaeon/) "
@@ -80,6 +80,9 @@
     },
     {
       "body": "{ 📢 Announcements } Sign up to demo at our next [Share & Play](https://www.meetup.com/st-louis-game-developers/events/314944382/) on November 28th by filling out [this form](https://forms.gle/uuekMhzgK37F8Yxh7)! Only 15 spots available!"
+    },
+    {
+      "body": "{ 📢 Announcements } We will have our annual Holiday Party at Archportals downtown on Sunday December 6th! Join us in celebrating another year of game development in the St. Louis region. If you made a game in 2026 please [let us know](https://www.meetup.com/st-louis-game-developers/events/317248375) when you RSVP."
     }
   ],
   "events": [
